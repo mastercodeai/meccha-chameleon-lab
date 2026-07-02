@@ -14,84 +14,112 @@ export default function HomePage() {
   ]);
 
   return (
-    <main className="mx-auto max-w-5xl px-4 py-10">
+    <main>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
-      {/* Hero */}
-      <div className="text-center mb-12">
-        <h1 className="text-4xl font-extrabold tracking-tight mb-4">
-          🦎 MECCHA CHAMELEON Guide
-        </h1>
-        <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-          The ultimate companion for MECCHA CHAMELEON — best hiding spots for every map, 
-          paint color guides, and pro tips. Updated {config.game.lastUpdated}.
-        </p>
-        <div className="mt-4 text-sm text-gray-500">
-          Steam: {config.stats.rating} ({config.stats.totalReviews.toLocaleString()} reviews) · {config.stats.platform}
+      {/* Hero Section */}
+      <section className="relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-[#3ecf8e]/5 to-transparent pointer-events-none" />
+        <div className="max-w-6xl mx-auto px-4 pt-20 pb-16 relative">
+          <div className="text-center max-w-3xl mx-auto">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#3ecf8e]/30 bg-[#3ecf8e]/5 text-[12px] font-medium text-[#3ecf8e] mb-6" style={{ fontFamily: "'Source Code Pro', monospace", letterSpacing: '1.2px', textTransform: 'uppercase' as const }}>
+              Updated {config.game.lastUpdated}
+            </div>
+            <h1 className="text-5xl md:text-6xl font-semibold tracking-tight leading-[1.00] mb-6 text-[#fafafa]">
+              MECCHA CHAMELEON
+              <br />
+              <span className="text-[#3ecf8e]">Guide & Spots</span>
+            </h1>
+            <p className="text-lg text-[#b4b4b4] leading-relaxed mb-8 max-w-xl mx-auto">
+              Best hiding spots for every map. Paint color guides. Pro tips from top YouTube creators.
+              Everything you need to master the game.
+            </p>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+              <Link href="/maps/" className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full text-[14px] font-medium bg-[#3ecf8e] text-[#0f0f0f] hover:bg-[#00c573] transition-colors">
+                Explore Spots →
+              </Link>
+              <Link href="/beginner-guide/" className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full text-[14px] font-medium bg-[#0f0f0f] text-[#fafafa] border border-[#2e2e2e] hover:border-[#363636] transition-colors">
+                Beginner Guide
+              </Link>
+            </div>
+          </div>
+          <div className="mt-6 text-center text-[13px] text-[#898989]">
+            {config.stats.rating} · {config.stats.totalReviews.toLocaleString()} reviews · {config.stats.platform} · {config.game.price}
+          </div>
         </div>
-      </div>
+      </section>
 
-      {/* Quick Links */}
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
-        <Link href="/maps" className="p-4 rounded-xl bg-gray-900 border border-gray-800 hover:border-green-500 transition-colors text-center">
-          <div className="text-2xl mb-2">🗺️</div>
-          <div className="font-bold text-sm">Best Spots</div>
-          <div className="text-xs text-gray-500">By map</div>
-        </Link>
-        <Link href="/paint-guide" className="p-4 rounded-xl bg-gray-900 border border-gray-800 hover:border-green-500 transition-colors text-center">
-          <div className="text-2xl mb-2">🎨</div>
-          <div className="font-bold text-sm">Paint Guide</div>
-          <div className="text-xs text-gray-500">Color palettes</div>
-        </Link>
-        <Link href="/beginner-guide" className="p-4 rounded-xl bg-gray-900 border border-gray-800 hover:border-green-500 transition-colors text-center">
-          <div className="text-2xl mb-2">📖</div>
-          <div className="font-bold text-sm">Beginner Guide</div>
-          <div className="text-xs text-gray-500">Start here</div>
-        </Link>
-        <Link href="/workshop" className="p-4 rounded-xl bg-gray-900 border border-gray-800 hover:border-green-500 transition-colors text-center">
-          <div className="text-2xl mb-2">🔧</div>
-          <div className="font-bold text-sm">Workshop</div>
-          <div className="text-xs text-gray-500">Custom maps</div>
-        </Link>
-      </div>
+      {/* Quick Nav */}
+      <section className="max-w-6xl mx-auto px-4 pb-16">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+          {[
+            { href: '/maps/', icon: '🗺️', label: 'Best Spots', sub: 'By map' },
+            { href: '/paint-guide/', icon: '🎨', label: 'Paint Guide', sub: 'Color palettes' },
+            { href: '/beginner-guide/', icon: '📖', label: 'Beginner Guide', sub: 'Start here' },
+            { href: '/workshop/', icon: '🔧', label: 'Workshop', sub: 'Custom maps' },
+          ].map((item) => (
+            <Link key={item.href} href={item.href} className="group p-4 rounded-xl bg-[#171717] border border-[#2e2e2e] hover:border-[#3ecf8e]/30 transition-colors">
+              <div className="text-2xl mb-2">{item.icon}</div>
+              <div className="text-[14px] font-medium text-[#fafafa] group-hover:text-[#3ecf8e] transition-colors">{item.label}</div>
+              <div className="text-[12px] text-[#898989]">{item.sub}</div>
+            </Link>
+          ))}
+        </div>
+      </section>
 
-      {/* Maps Overview */}
-      <section className="mb-12">
-        <h2 className="text-2xl font-bold mb-6">🗺️ Maps</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      {/* Maps */}
+      <section className="max-w-6xl mx-auto px-4 pb-16">
+        <div className="flex items-center justify-between mb-6">
+          <h2 className="text-2xl font-semibold text-[#fafafa]">Maps</h2>
+          <Link href="/maps/" className="text-[13px] text-[#00c573] hover:text-[#3ecf8e] transition-colors">
+            View all →
+          </Link>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
           {maps.map((map) => (
-            <Link key={map.id} href={`/maps/${map.slug}`} className="p-4 rounded-xl bg-gray-900 border border-gray-800 hover:border-green-500 transition-colors">
-              <div className="flex justify-between items-start mb-2">
-                <h3 className="font-bold">{map.name}</h3>
-                <span className={`text-xs px-2 py-0.5 rounded ${
-                  map.difficulty === 'Easy' ? 'bg-green-900/50 text-green-400' :
-                  map.difficulty === 'Medium' ? 'bg-yellow-900/50 text-yellow-400' :
-                  'bg-red-900/50 text-red-400'
+            <Link key={map.id} href={`/maps/${map.slug}/`} className="group p-5 rounded-xl bg-[#171717] border border-[#2e2e2e] hover:border-[#3ecf8e]/30 transition-colors">
+              <div className="flex justify-between items-start mb-3">
+                <h3 className="text-[16px] font-medium text-[#fafafa] group-hover:text-[#3ecf8e] transition-colors">{map.name}</h3>
+                <span className={`text-[11px] px-2 py-0.5 rounded-full border ${
+                  map.difficulty === 'Easy' ? 'border-[#3ecf8e]/30 text-[#3ecf8e] bg-[#3ecf8e]/5' :
+                  map.difficulty === 'Medium' ? 'border-[#f59e0b]/30 text-[#f59e0b] bg-[#f59e0b]/5' :
+                  'border-[#ef4444]/30 text-[#ef4444] bg-[#ef4444]/5'
                 }`}>
                   {map.difficulty}
                 </span>
               </div>
-              <p className="text-sm text-gray-400 mb-2">{map.description.slice(0, 80)}...</p>
-              <div className="text-xs text-gray-500">{map.spotCount} spots · Best for {map.bestFor}</div>
+              <p className="text-[13px] text-[#898989] mb-3 line-clamp-2">{map.description}</p>
+              <div className="flex items-center justify-between text-[12px] text-[#898989]">
+                <span>{map.spotCount} spots</span>
+                <span>{map.bestFor}</span>
+              </div>
             </Link>
           ))}
         </div>
       </section>
 
       {/* Top Spots */}
-      <section className="mb-12">
-        <h2 className="text-2xl font-bold mb-6">⭐ Top Hiding Spots</h2>
-        <div className="space-y-3">
+      <section className="max-w-6xl mx-auto px-4 pb-16">
+        <h2 className="text-2xl font-semibold text-[#fafafa] mb-6">Top Hiding Spots</h2>
+        <div className="space-y-2">
           {topSpots.map((spot, i) => (
-            <div key={spot.id} className="p-4 rounded-xl bg-gray-900 border border-gray-800 flex items-center gap-4">
-              <div className="text-2xl font-black text-green-400 w-8">#{i + 1}</div>
-              <div className="flex-1">
-                <div className="font-bold">{spot.name}</div>
-                <div className="text-sm text-gray-400">{spot.description.slice(0, 80)}...</div>
+            <div key={spot.id} className="group flex items-center gap-4 p-4 rounded-xl bg-[#171717] border border-[#2e2e2e] hover:border-[#3ecf8e]/30 transition-colors">
+              <div className="text-[12px] font-medium text-[#3ecf8e] w-6 text-center" style={{ fontFamily: "'Source Code Pro', monospace" }}>
+                {String(i + 1).padStart(2, '0')}
               </div>
-              <div className="text-right">
-                <div className="text-yellow-400">{'★'.repeat(spot.effectiveness)}{'☆'.repeat(5 - spot.effectiveness)}</div>
-                <div className="text-xs text-gray-500">{spot.difficulty}</div>
+              <div className="flex-1 min-w-0">
+                <div className="text-[14px] font-medium text-[#fafafa] group-hover:text-[#3ecf8e] transition-colors">{spot.name}</div>
+                <div className="text-[12px] text-[#898989] truncate">{spot.description}</div>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="text-[#f59e0b] text-[12px]">{'★'.repeat(spot.effectiveness)}</span>
+                <span className={`text-[11px] px-2 py-0.5 rounded-full border ${
+                  spot.difficulty === 'Easy' ? 'border-[#3ecf8e]/30 text-[#3ecf8e]' :
+                  spot.difficulty === 'Medium' ? 'border-[#f59e0b]/30 text-[#f59e0b]' :
+                  'border-[#ef4444]/30 text-[#ef4444]'
+                }`}>
+                  {spot.difficulty}
+                </span>
               </div>
             </div>
           ))}
@@ -99,21 +127,22 @@ export default function HomePage() {
       </section>
 
       {/* FAQ */}
-      <section className="p-6 rounded-xl border border-gray-800">
-        <h2 className="text-xl font-bold mb-4">Frequently Asked Questions</h2>
-        <div className="space-y-4">
-          <div>
-            <h3 className="font-semibold mb-1">What is MECCHA CHAMELEON?</h3>
-            <p className="text-gray-400 text-sm">MECCHA CHAMELEON is a multiplayer hide-and-seek game on Steam where players paint their bodies to blend into the environment. Released June 9, 2026.</p>
-          </div>
-          <div>
-            <h3 className="font-semibold mb-1">How do I hide better?</h3>
-            <p className="text-gray-400 text-sm">Use the paint tool to match the color of the surface you want to blend with. Crouch to reduce your visible area, and stay still when Seekers are nearby.</p>
-          </div>
-          <div>
-            <h3 className="font-semibold mb-1">Is MECCHA CHAMELEON free?</h3>
-            <p className="text-gray-400 text-sm">No, MECCHA CHAMELEON costs $5.99 on Steam.</p>
-          </div>
+      <section className="max-w-6xl mx-auto px-4 pb-16">
+        <h2 className="text-2xl font-semibold text-[#fafafa] mb-6">FAQ</h2>
+        <div className="space-y-3">
+          {[
+            { q: 'What is MECCHA CHAMELEON?', a: 'A multiplayer hide-and-seek game on Steam where players paint their bodies to blend into the environment. Released June 9, 2026.' },
+            { q: 'How do I hide better?', a: 'Use the paint tool to match the color of the surface you want to blend with. Crouch to reduce your visible area, and stay still when Seekers are nearby.' },
+            { q: 'Is MECCHA CHAMELEON free?', a: 'No, it costs $5.99 on Steam.' },
+          ].map((faq) => (
+            <details key={faq.q} className="group p-4 rounded-xl bg-[#171717] border border-[#2e2e2e]">
+              <summary className="text-[14px] font-medium text-[#fafafa] cursor-pointer list-none flex items-center justify-between">
+                {faq.q}
+                <span className="text-[#898989] group-open:rotate-45 transition-transform ml-2">+</span>
+              </summary>
+              <p className="mt-3 text-[13px] text-[#b4b4b4] leading-relaxed">{faq.a}</p>
+            </details>
+          ))}
         </div>
       </section>
     </main>
