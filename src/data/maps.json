@@ -1,0 +1,67 @@
+{
+  "gameName": "MECCHA CHAMELEON",
+  "lastUpdated": "2026-07-02",
+  "source": "YouTube gameplay analysis + Steam community",
+  "maps": [
+    {
+      "id": "living-room",
+      "name": "Living Room",
+      "slug": "living-room",
+      "description": "A cozy living room with sofas, TV, shelves, and plenty of small objects to mimic.",
+      "difficulty": "Easy",
+      "bestFor": "Beginners",
+      "spotCount": 12,
+      "youtubeSource": "https://www.youtube.com/watch?v=Z8U_0y4ShW0"
+    },
+    {
+      "id": "kitchen",
+      "name": "Kitchen",
+      "slug": "kitchen",
+      "description": "A busy kitchen with counters, appliances, and food items. Lots of color variety.",
+      "difficulty": "Medium",
+      "bestFor": "Intermediate players",
+      "spotCount": 10,
+      "youtubeSource": "https://www.youtube.com/watch?v=9SolYqu6NCU"
+    },
+    {
+      "id": "bathroom",
+      "name": "Bathroom",
+      "slug": "bathroom",
+      "description": "A small bathroom with limited hiding options but creative paint opportunities.",
+      "difficulty": "Hard",
+      "bestFor": "Advanced players",
+      "spotCount": 8,
+      "youtubeSource": "https://www.youtube.com/watch?v=aBV80RTgSNQ"
+    },
+    {
+      "id": "bedroom",
+      "name": "Bedroom",
+      "slug": "bedroom",
+      "description": "A bedroom with bed, wardrobe, desk, and various small items.",
+      "difficulty": "Medium",
+      "bestFor": "All levels",
+      "spotCount": 10,
+      "youtubeSource": "https://www.youtube.com/watch?v=WxI4pqGkZmc"
+    },
+    {
+      "id": "garage",
+      "name": "Garage",
+      "slug": "garage",
+      "description": "A garage with tools, boxes, and industrial items. Dark corners are key.",
+      "difficulty": "Medium",
+      "bestFor": "Creative players",
+      "spotCount": 9,
+      "youtubeSource": "https://www.youtube.com/watch?v=HRxLBSA9WGQ"
+    },
+    {
+      "id": "office",
+      "name": "Office",
+      "slug": "office",
+      "description": "An office space with desks, chairs, monitors, and filing cabinets.",
+      "difficulty": "Easy",
+      "bestFor": "Beginners",
+      "spotCount": 11,
+      "youtubeSource": "https://www.youtube.com/watch?v=riOdNiXvkd4"
+    }
+  ]
+}

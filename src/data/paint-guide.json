@@ -1,0 +1,75 @@
+{
+  "gameName": "MECCHA CHAMELEON",
+  "lastUpdated": "2026-07-02",
+  "source": "YouTube paint demonstrations + community tips",
+  "generalTips": [
+    "Always sample the color from the surface you want to blend into BEFORE painting.",
+    "Darker shades work better in shadows. Lighter shades work better in well-lit areas.",
+    "Don't try to match complex patterns — solid colors are more reliable.",
+    "Crouching reduces your visible surface area, making camouflage easier.",
+    "Moving breaks camouflage instantly. Stay still until the Seeker passes.",
+    "The paint tool has a limited range — get close to your target surface."
+  ],
+  "colorPalettes": [
+    {
+      "id": "living-room-warm",
+      "mapId": "living-room",
+      "name": "Living Room Warm Tones",
+      "colors": [
+        { "hex": "#8B7355", "name": "Wood Brown", "use": "Furniture, shelves, table legs" },
+        { "hex": "#C4A882", "name": "Beige", "use": "Sofa cushions, curtains, walls" },
+        { "hex": "#4A5568", "name": "Slate Gray", "use": "TV stand, electronics, shadows" },
+        { "hex": "#2D3748", "name": "Dark Charcoal", "use": "Deep shadows, behind furniture" },
+        { "hex": "#68D391", "name": "Leaf Green", "use": "Plants, pot areas" }
+      ]
+    },
+    {
+      "id": "kitchen-cool",
+      "mapId": "kitchen",
+      "name": "Kitchen Cool Tones",
+      "colors": [
+        { "hex": "#E2E8F0", "name": "Off-White", "use": "Fridge, counter tops, cabinets" },
+        { "hex": "#A0AEC0", "name": "Steel Gray", "use": "Appliances, sink, metal surfaces" },
+        { "hex": "#744210", "name": "Dark Wood", "use": "Cabinet doors, table" },
+        { "hex": "#FEFCBF", "name": "Cream", "use": "Walls, tiles, light areas" },
+        { "hex": "#1A202C", "name": "Black", "use": "Oven, microwave, dark corners" }
+      ]
+    },
+    {
+      "id": "bathroom-white",
+      "mapId": "bathroom",
+      "name": "Bathroom Whites",
+      "colors": [
+        { "hex": "#FFFFFF", "name": "Pure White", "use": "Bathtub, toilet, sink" },
+        { "hex": "#F7FAFC", "name": "Porcelain", "use": "Tiles, ceramic surfaces" },
+        { "hex": "#BEE3F8", "name": "Light Blue", "use": "Towels, bath mat" },
+        { "hex": "#718096", "name": "Grout Gray", "use": "Tile grout lines, shadows" },
+        { "hex": "#2D3748", "name": "Dark Shadow", "use": "Behind door, under sink" }
+      ]
+    },
+    {
+      "id": "bedroom-neutral",
+      "mapId": "bedroom",
+      "name": "Bedroom Neutrals",
+      "colors": [
+        { "hex": "#EDF2F7", "name": "Sheet White", "use": "Bed sheets, pillows" },
+        { "hex": "#8B4513", "name": "Furniture Brown", "use": "Wardrobe, desk, bed frame" },
+        { "hex": "#4A5568", "name": "Shadow Gray", "use": "Under bed, closet shadows" },
+        { "hex": "#D69E2E", "name": "Lamp Gold", "use": "Lamp shade, warm light areas" },
+        { "hex": "#1A202C", "name": "Deep Black", "use": "Dark corners, behind wardrobe" }
+      ]
+    },
+    {
+      "id": "garage-industrial",
+      "mapId": "garage",
+      "name": "Garage Industrial",
+      "colors": [
+        { "hex": "#A0522D", "name": "Cardboard", "use": "Boxes, packaging" },
+        { "hex": "#696969", "name": "Concrete", "use": "Floor, walls" },
+        { "hex": "#2F4F4F", "name": "Dark Slate", "use": "Tool wall, shadows" },
+        { "hex": "#CD853F", "name": "Plywood", "use": "Shelves, workbench" },
+        { "hex": "#000000", "name": "Oil Black", "use": "Deep shadows, tire marks" }
+      ]
+    }
+  ]
+}

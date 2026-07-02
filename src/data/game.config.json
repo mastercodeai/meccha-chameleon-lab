@@ -1,0 +1,52 @@
+{
+  "game": {
+    "name": "MECCHA CHAMELEON",
+    "slug": "meccha-chameleon",
+    "steamAppId": "4704690",
+    "developer": "lemorion_1224",
+    "genre": "Casual, PvP, Hide-and-Seek",
+    "price": "$5.99",
+    "releaseDate": "2026-06-09",
+    "lastUpdated": "2026-07-02"
+  },
+  "stats": {
+    "totalReviews": 44029,
+    "positiveReviews": 37251,
+    "rating": "Very Positive",
+    "platform": "Steam PC (Windows)"
+  },
+  "seo": {
+    "siteTitle": "MECCHA CHAMELEON Guide — Best Spots, Tips & Maps (2026)",
+    "siteDescription": "The ultimate MECCHA CHAMELEON companion — best hiding spots for every map, paint guides, tips, and workshop maps. Updated daily.",
+    "baseUrl": "https://mecchachameleonlab.com",
+    "primaryKeywords": [
+      "meccha chameleon",
+      "meccha chameleon guide",
+      "meccha chameleon best spots"
+    ],
+    "secondaryKeywords": [
+      "meccha chameleon wiki",
+      "meccha chameleon tips",
+      "meccha chameleon paint guide",
+      "meccha chameleon maps",
+      "meccha chameleon workshop"
+    ],
+    "themeColor": "#22c55e"
+  },
+  "routes": [
+    { "path": "/", "title": "MECCHA CHAMELEON Guide", "priority": "1.0" },
+    { "path": "/maps", "title": "Best Hiding Spots", "priority": "0.9" },
+    { "path": "/paint-guide", "title": "Paint & Color Guide", "priority": "0.9" },
+    { "path": "/beginner-guide", "title": "Beginner Guide", "priority": "0.8" },
+    { "path": "/hider-guide", "title": "Hider Guide", "priority": "0.8" },
+    { "path": "/seeker-guide", "title": "Seeker Guide", "priority": "0.8" },
+    { "path": "/workshop", "title": "Workshop Maps", "priority": "0.8" },
+    { "path": "/controls", "title": "Controls & Keybinds", "priority": "0.7" },
+    { "path": "/system-requirements", "title": "System Requirements", "priority": "0.6" },
+    { "path": "/about", "title": "About", "priority": "0.5" }
+  ],
+  "socials": {
+    "steam": "https://store.steampowered.com/app/4704690/MECCHA_CHAMELEON/",
+    "steamCommunity": "https://steamcommunity.com/app/4704690"
+  }
+}
