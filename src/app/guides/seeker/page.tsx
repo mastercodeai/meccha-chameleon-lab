@@ -1,11 +1,24 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import { BreadcrumbSchema, ArticleSchema } from "@/components/Schema";
+import RelatedPages from "@/components/RelatedPages";
 
 export const metadata: Metadata = {
   title: "Seeker Guide — Hunt Like a Pro",
   description: "Sharpen your detection skills and become an unstoppable Seeker. Learn search patterns, environment reading, team coordination, and time management in MECCHA CHAMELEON.",
   alternates: {
     canonical: "https://mecchachameleonlab.com/guides/seeker",
+  },
+  openGraph: {
+    title: "Seeker Guide — Hunt Like a Pro | MECCHA CHAMELEON Lab",
+    description: "Sharpen your detection skills and become an unstoppable Seeker. Learn search patterns, environment reading, team coordination, and time management in MECCHA CHAMELEON.",
+    url: "https://mecchachameleonlab.com/guides/seeker",
+    type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Seeker Guide — Hunt Like a Pro | MECCHA CHAMELEON Lab",
+    description: "Sharpen your detection skills and become an unstoppable Seeker. Learn search patterns, environment reading, team coordination, and time management in MECCHA CHAMELEON.",
   },
 };
 
@@ -21,12 +34,25 @@ const sections = [
 export default function SeekerGuidePage() {
   return (
     <main className="pt-[100px] pb-stack-lg max-w-[1440px] mx-auto px-4 md:px-gutter">
+      <BreadcrumbSchema
+        items={[
+          { name: "Home", url: "https://mecchachameleonlab.com" },
+          { name: "Guides", url: "https://mecchachameleonlab.com/guides/beginner" },
+          { name: "Seeker Guide", url: "https://mecchachameleonlab.com/guides/seeker" },
+        ]}
+      />
+      <ArticleSchema
+        title="Seeker Guide — Hunt Like a Pro"
+        description="Sharpen your detection skills and become an unstoppable Seeker. Learn search patterns, environment reading, team coordination, and time management in MECCHA CHAMELEON."
+        url="https://mecchachameleonlab.com/guides/seeker"
+        datePublished="2026-06-15"
+      />
       <div className="flex flex-col lg:flex-row gap-8">
         {/* Sidebar TOC */}
         <aside className="lg:w-64 shrink-0">
           <div className="lg:sticky lg:top-[100px] bg-surface border border-outline-variant rounded-lg p-4">
             <h3 className="font-label-caps text-label-caps text-on-surface mb-4 uppercase">Table of Contents</h3>
-            <nav className="flex flex-col gap-1">
+            <nav aria-label="Table of Contents" className="flex flex-col gap-1">
               {sections.map((s) => (
                 <a
                   key={s.id}
@@ -181,6 +207,14 @@ export default function SeekerGuidePage() {
           </div>
         </article>
       </div>
+
+      <RelatedPages
+        pages={[
+          { title: "Hider Guide", description: "Become an invisible master of disguise.", href: "/guides/hider", icon: "🎨" },
+          { title: "Seeker Counters", description: "Advanced strategies to catch even the best hiders.", href: "/guides/seeker-counters", icon: "🛡️" },
+          { title: "Tips & Tricks", description: "50 essential tips for hiders, seekers, painters, and map experts.", href: "/guides/tips", icon: "💡" },
+        ]}
+      />
     </main>
   );
 }

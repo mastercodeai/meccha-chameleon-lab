@@ -5,6 +5,10 @@ type Props = {
   params: Promise<{ slug: string }>;
 };
 
+export async function generateStaticParams() {
+  return maps.map((map) => ({ slug: map.slug }));
+}
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const map = maps.find((m) => m.slug === slug);

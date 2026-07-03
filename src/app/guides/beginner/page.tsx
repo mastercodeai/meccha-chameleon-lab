@@ -1,11 +1,24 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import { BreadcrumbSchema, ArticleSchema } from "@/components/Schema";
+import RelatedPages from "@/components/RelatedPages";
 
 export const metadata: Metadata = {
   title: "Beginner Guide — How to Play",
   description: "Everything you need to know before your first round of MECCHA CHAMELEON. Rules, controls, painting tips, and common mistakes.",
   alternates: {
     canonical: "https://mecchachameleonlab.com/guides/beginner",
+  },
+  openGraph: {
+    title: "Beginner Guide — How to Play | MECCHA CHAMELEON Lab",
+    description: "Everything you need to know before your first round of MECCHA CHAMELEON. Rules, controls, painting tips, and common mistakes.",
+    url: "https://mecchachameleonlab.com/guides/beginner",
+    type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Beginner Guide — How to Play | MECCHA CHAMELEON Lab",
+    description: "Everything you need to know before your first round of MECCHA CHAMELEON. Rules, controls, painting tips, and common mistakes.",
   },
 };
 
@@ -22,12 +35,25 @@ const sections = [
 export default function BeginnerGuidePage() {
   return (
     <main className="pt-[100px] pb-stack-lg max-w-[1440px] mx-auto px-4 md:px-gutter">
+      <BreadcrumbSchema
+        items={[
+          { name: "Home", url: "https://mecchachameleonlab.com" },
+          { name: "Guides", url: "https://mecchachameleonlab.com/guides/beginner" },
+          { name: "Beginner Guide", url: "https://mecchachameleonlab.com/guides/beginner" },
+        ]}
+      />
+      <ArticleSchema
+        title="Beginner Guide — How to Play"
+        description="Everything you need to know before your first round of MECCHA CHAMELEON. Rules, controls, painting tips, and common mistakes."
+        url="https://mecchachameleonlab.com/guides/beginner"
+        datePublished="2026-06-15"
+      />
       <div className="flex flex-col lg:flex-row gap-8">
         {/* Sidebar TOC */}
         <aside className="lg:w-64 shrink-0">
           <div className="lg:sticky lg:top-[100px] bg-surface border border-outline-variant rounded-lg p-4">
             <h3 className="font-label-caps text-label-caps text-on-surface mb-4 uppercase">Table of Contents</h3>
-            <nav className="flex flex-col gap-1">
+            <nav aria-label="Table of Contents" className="flex flex-col gap-1">
               {sections.map((s) => (
                 <a
                   key={s.id}
@@ -189,6 +215,15 @@ export default function BeginnerGuidePage() {
           </div>
         </article>
       </div>
+
+      <RelatedPages
+        pages={[
+          { title: "Hider Guide", description: "Become an invisible master of disguise with advanced painting techniques.", href: "/guides/hider", icon: "🎨" },
+          { title: "Seeker Guide", description: "Sharpen your detection skills and hunt like a pro.", href: "/guides/seeker", icon: "🔍" },
+          { title: "Tips & Tricks", description: "50 essential tips for hiders, seekers, painters, and map experts.", href: "/guides/tips", icon: "💡" },
+          { title: "All Maps", description: "Browse all 7 official maps with hiding spot guides.", href: "/maps", icon: "🗺️" },
+        ]}
+      />
     </main>
   );
 }

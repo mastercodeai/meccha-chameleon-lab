@@ -5,7 +5,6 @@ import Link from "next/link";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { maps } from "@/data/maps";
-import type { Metadata } from "next";
 
 // Register plugins
 if (typeof window !== "undefined") {

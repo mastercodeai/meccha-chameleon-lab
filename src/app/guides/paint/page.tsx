@@ -1,11 +1,24 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import { BreadcrumbSchema, ArticleSchema } from "@/components/Schema";
+import RelatedPages from "@/components/RelatedPages";
 
 export const metadata: Metadata = {
   title: "Paint Guide — Best Color Combinations",
   description: "Master the art of painting in MECCHA CHAMELEON. Learn color matching, surface-specific techniques, map palettes, and advanced tricks to become invisible.",
   alternates: {
     canonical: "https://mecchachameleonlab.com/guides/paint",
+  },
+  openGraph: {
+    title: "Paint Guide — Best Color Combinations | MECCHA CHAMELEON Lab",
+    description: "Master the art of painting in MECCHA CHAMELEON. Learn color matching, surface-specific techniques, map palettes, and advanced tricks to become invisible.",
+    url: "https://mecchachameleonlab.com/guides/paint",
+    type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Paint Guide — Best Color Combinations | MECCHA CHAMELEON Lab",
+    description: "Master the art of painting in MECCHA CHAMELEON. Learn color matching, surface-specific techniques, map palettes, and advanced tricks to become invisible.",
   },
 };
 
@@ -20,12 +33,25 @@ const sections = [
 export default function PaintGuidePage() {
   return (
     <main className="pt-[100px] pb-stack-lg max-w-[1440px] mx-auto px-4 md:px-gutter">
+      <BreadcrumbSchema
+        items={[
+          { name: "Home", url: "https://mecchachameleonlab.com" },
+          { name: "Guides", url: "https://mecchachameleonlab.com/guides/beginner" },
+          { name: "Paint Guide", url: "https://mecchachameleonlab.com/guides/paint" },
+        ]}
+      />
+      <ArticleSchema
+        title="Paint Guide — Best Color Combinations"
+        description="Master the art of painting in MECCHA CHAMELEON. Learn color matching, surface-specific techniques, map palettes, and advanced tricks to become invisible."
+        url="https://mecchachameleonlab.com/guides/paint"
+        datePublished="2026-06-15"
+      />
       <div className="flex flex-col lg:flex-row gap-8">
         {/* Sidebar TOC */}
         <aside className="lg:w-64 shrink-0">
           <div className="lg:sticky lg:top-[100px] bg-surface border border-outline-variant rounded-lg p-4">
             <h3 className="font-label-caps text-label-caps text-on-surface mb-4 uppercase">Table of Contents</h3>
-            <nav className="flex flex-col gap-1">
+            <nav aria-label="Table of Contents" className="flex flex-col gap-1">
               {sections.map((s) => (
                 <a
                   key={s.id}
@@ -252,6 +278,14 @@ export default function PaintGuidePage() {
           </div>
         </article>
       </div>
+
+      <RelatedPages
+        pages={[
+          { title: "Object Tiers", description: "Best objects to disguise as, ranked from S-tier to C-tier.", href: "/guides/object-tiers", icon: "📦" },
+          { title: "Hider Guide", description: "Become an invisible master of disguise.", href: "/guides/hider", icon: "🎭" },
+          { title: "All Maps", description: "Browse all 7 official maps with hiding spot guides.", href: "/maps", icon: "🗺️" },
+        ]}
+      />
     </main>
   );
 }

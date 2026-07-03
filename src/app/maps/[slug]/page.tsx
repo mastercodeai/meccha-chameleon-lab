@@ -9,11 +9,6 @@ import { BreadcrumbSchema } from "@/components/Schema";
 import { getSpotsByMapSlug } from "@/data/spots";
 import { notFound } from "next/navigation";
 
-// Register plugins
-if (typeof window !== "undefined") {
-  gsap.registerPlugin(ScrollTrigger);
-}
-
 function DifficultyBadge({ difficulty }: { difficulty: string }) {
   const colors: Record<string, string> = {
     EASY: "bg-green-500/10 text-green-400 border-green-500/30",

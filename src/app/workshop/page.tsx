@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import RelatedPages from "@/components/RelatedPages";
 
 export const metadata: Metadata = {
   title: "Workshop — Best Maps & Mods",
@@ -82,6 +83,14 @@ export default function WorkshopPage() {
           We&apos;re building a searchable database of all 489 Workshop items with ratings, subscriber counts, and detailed descriptions. In the meantime, browse the full collection on Steam Workshop.
         </p>
       </div>
+
+      <RelatedPages
+        pages={[
+          { title: "All Maps", description: "Browse all 7 official maps with hiding spot guides and strategies.", href: "/maps", icon: "🗺️" },
+          { title: "Gallery", description: "Game screenshots, map previews, and character art.", href: "/gallery", icon: "🖼️" },
+          { title: "Tier List", description: "All 7 official maps ranked from S-tier to C-tier.", href: "/tier-list", icon: "🏆" },
+        ]}
+      />
     </main>
   );
 }

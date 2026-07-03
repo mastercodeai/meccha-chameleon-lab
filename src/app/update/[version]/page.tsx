@@ -38,7 +38,7 @@ const knownUpdates = [
     highlights: [
       "Full release on Steam",
       "7 official maps included",
-      "Online multiplayer with cross-platform support",
+      "Online multiplayer with regional server support",
       "Paint system with color matching mechanics",
     ],
   },

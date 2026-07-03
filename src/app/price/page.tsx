@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import { BreadcrumbSchema, FAQSchema } from "@/components/Schema";
+import RelatedPages from "@/components/RelatedPages";
 
 export const metadata: Metadata = {
   title: "MECCHA CHAMELEON Price — Is It Worth $5.99?",
@@ -10,11 +11,17 @@ export const metadata: Metadata = {
     canonical: "https://mecchachameleonlab.com/price",
   },
   openGraph: {
-    title: "MECCHA CHAMELEON Price — Is It Worth $5.99?",
+    title: "MECCHA CHAMELEON Price — Is It Worth $5.99? | MECCHA CHAMELEON Lab",
     description:
       "Is MECCHA CHAMELEON worth buying? Price breakdown, what you get, and honest verdict for the $5.99 Steam game.",
     url: "https://mecchachameleonlab.com/price",
     type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "MECCHA CHAMELEON Price — Is It Worth $5.99? | MECCHA CHAMELEON Lab",
+    description:
+      "Is MECCHA CHAMELEON worth buying? Price breakdown, what you get, and honest verdict for the $5.99 Steam game.",
   },
 };
 
@@ -74,7 +81,7 @@ export default function PricePage() {
             <h3 className="font-label-caps text-label-caps text-on-surface mb-4 uppercase">
               Table of Contents
             </h3>
-            <nav className="flex flex-col gap-1">
+            <nav aria-label="Table of Contents" className="flex flex-col gap-1">
               {sections.map((s) => (
                 <a
                   key={s.id}
@@ -284,6 +291,14 @@ export default function PricePage() {
           </div>
         </article>
       </div>
+
+      <RelatedPages
+        pages={[
+          { title: "System Requirements", description: "Check if your PC can run MECCHA CHAMELEON.", href: "/system-requirements", icon: "💻" },
+          { title: "Crossplay", description: "Can you play together across different platforms?", href: "/crossplay", icon: "🌐" },
+          { title: "Beginner Guide", description: "Everything you need to know before your first round.", href: "/guides/beginner", icon: "📖" },
+        ]}
+      />
     </main>
   );
 }

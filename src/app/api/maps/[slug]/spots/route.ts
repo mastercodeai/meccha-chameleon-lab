@@ -14,6 +14,16 @@ export async function GET(
     const difficulty = searchParams.get("difficulty");
     const bestFor = searchParams.get("bestFor");
 
+    // Whitelist validation
+    const VALID_DIFFICULTIES = ["EASY", "MEDIUM", "HARD"];
+    const VALID_BEST_FOR = ["Hider", "Seeker"];
+    if (difficulty && !VALID_DIFFICULTIES.includes(difficulty.toUpperCase())) {
+      return Response.json({ success: false, error: "Invalid difficulty" }, { status: 400 });
+    }
+    if (bestFor && !VALID_BEST_FOR.includes(bestFor)) {
+      return Response.json({ success: false, error: "Invalid bestFor" }, { status: 400 });
+    }
+
     let query = "SELECT * FROM spots WHERE map_slug = ?";
     const bindings: (string | number)[] = [slug];
 

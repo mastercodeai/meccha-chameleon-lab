@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import RelatedPages from "@/components/RelatedPages";
 
 export const metadata: Metadata = {
   title: "Steam Deck — Setup & Performance Guide",
@@ -262,6 +263,14 @@ export default function SteamDeckPage() {
           </div>
         </section>
       </div>
+
+      <RelatedPages
+        pages={[
+          { title: "System Requirements", description: "Check if your PC can run MECCHA CHAMELEON.", href: "/system-requirements", icon: "💻" },
+          { title: "Price", description: "Is MECCHA CHAMELEON worth $5.99? Price breakdown and honest verdict.", href: "/price", icon: "💰" },
+          { title: "Settings Guide", description: "Optimize your settings for maximum performance.", href: "/settings", icon: "⚙️" },
+        ]}
+      />
     </main>
   );
 }

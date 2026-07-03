@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import RelatedPages from "@/components/RelatedPages";
 
 export const metadata: Metadata = {
   title: "Crossplay — Can You Play Together?",
@@ -162,6 +163,14 @@ export default function CrossplayPage() {
           </ol>
         </section>
       </div>
+
+      <RelatedPages
+        pages={[
+          { title: "All Maps", description: "Browse all 7 official maps with hiding spot guides and strategies.", href: "/maps", icon: "🗺️" },
+          { title: "Beginner Guide", description: "Everything you need to know before your first round of MECCHA CHAMELEON.", href: "/guides/beginner", icon: "📖" },
+          { title: "Price", description: "Is MECCHA CHAMELEON worth $5.99? Price breakdown and honest verdict.", href: "/price", icon: "💰" },
+        ]}
+      />
     </main>
   );
 }

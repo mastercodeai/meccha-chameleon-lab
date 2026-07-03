@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import { BreadcrumbSchema } from "@/components/Schema";
+import RelatedPages from "@/components/RelatedPages";
 
 export const metadata: Metadata = {
   title: "MECCHA CHAMELEON Easter Eggs & Secrets Guide",
@@ -10,11 +11,17 @@ export const metadata: Metadata = {
     canonical: "https://mecchachameleonlab.com/guides/easter-eggs",
   },
   openGraph: {
-    title: "MECCHA CHAMELEON Easter Eggs & Secrets Guide",
+    title: "MECCHA CHAMELEON Easter Eggs & Secrets Guide | MECCHA CHAMELEON Lab",
     description:
       "All hidden easter eggs and secrets in MECCHA CHAMELEON. Find hidden rooms, secret objects, and developer references.",
     url: "https://mecchachameleonlab.com/guides/easter-eggs",
     type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "MECCHA CHAMELEON Easter Eggs & Secrets Guide | MECCHA CHAMELEON Lab",
+    description:
+      "All hidden easter eggs and secrets in MECCHA CHAMELEON. Find hidden rooms, secret objects, and developer references.",
   },
 };
 
@@ -44,7 +51,7 @@ export default function EasterEggsPage() {
             <h3 className="font-label-caps text-label-caps text-on-surface mb-4 uppercase">
               Table of Contents
             </h3>
-            <nav className="flex flex-col gap-1">
+            <nav aria-label="Table of Contents" className="flex flex-col gap-1">
               {sections.map((s) => (
                 <a
                   key={s.id}
@@ -301,6 +308,14 @@ export default function EasterEggsPage() {
           </div>
         </article>
       </div>
+
+      <RelatedPages
+        pages={[
+          { title: "All Maps", description: "Browse all 7 official maps with hiding spot guides.", href: "/maps", icon: "🗺️" },
+          { title: "Gallery", description: "Game screenshots, map previews, and character art.", href: "/gallery", icon: "🖼️" },
+          { title: "Beginner Guide", description: "Everything you need to know before your first round.", href: "/guides/beginner", icon: "📖" },
+        ]}
+      />
     </main>
   );
 }

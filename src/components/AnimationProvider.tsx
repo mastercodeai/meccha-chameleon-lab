@@ -33,6 +33,8 @@ export default function AnimationProvider({
 
     return () => {
       tl.kill();
+      ScrollTrigger.getAll().forEach(t => t.kill());
+      ScrollTrigger.refresh();
     };
   }, []);
 

@@ -1,7 +1,8 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import { maps } from "@/data/maps";
-import { BreadcrumbSchema } from "@/components/Schema";
+import { BreadcrumbSchema, FAQSchema } from "@/components/Schema";
+import RelatedPages from "@/components/RelatedPages";
 
 export const metadata: Metadata = {
   title: "MECCHA CHAMELEON Tier List — Best Maps Ranked (2026)",
@@ -141,6 +142,7 @@ export default function TierListPage() {
           { name: "Tier List", url: "https://mecchachameleonlab.com/tier-list" },
         ]}
       />
+      <FAQSchema items={faqItems} />
       <main className="pt-[100px] pb-stack-lg max-w-[1440px] mx-auto px-4 md:px-gutter">
         <div className="flex flex-col lg:flex-row gap-8">
           {/* Sidebar TOC */}
@@ -149,7 +151,7 @@ export default function TierListPage() {
               <h3 className="font-label-caps text-label-caps text-on-surface mb-4 uppercase">
                 Table of Contents
               </h3>
-              <nav className="flex flex-col gap-1">
+              <nav aria-label="Table of Contents" className="flex flex-col gap-1">
                 {sections.map((s) => (
                   <a
                     key={s.id}
@@ -310,6 +312,14 @@ export default function TierListPage() {
             </div>
           </article>
         </div>
+
+        <RelatedPages
+          pages={[
+            { title: "All Maps", description: "Browse all 7 official maps with hiding spot guides and strategies.", href: "/maps", icon: "🗺️" },
+            { title: "Hider Guide", description: "Become an invisible master of disguise with advanced painting techniques.", href: "/guides/hider", icon: "🎨" },
+            { title: "Seeker Guide", description: "Sharpen your detection skills and hunt like a pro.", href: "/guides/seeker", icon: "🔍" },
+          ]}
+        />
       </main>
     </>
   );

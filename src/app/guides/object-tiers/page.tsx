@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import { BreadcrumbSchema } from "@/components/Schema";
+import RelatedPages from "@/components/RelatedPages";
 
 export const metadata: Metadata = {
   title: "MECCHA CHAMELEON Object Tier List — Best Objects to Disguise As",
@@ -14,6 +15,21 @@ export const metadata: Metadata = {
     "meccha chameleon object tier list",
     "what to disguise as meccha chameleon",
   ],
+  openGraph: {
+    title:
+      "MECCHA CHAMELEON Object Tier List — Best Objects to Disguise As | MECCHA CHAMELEON Lab",
+    description:
+      "Complete object tier list for MECCHA CHAMELEON: ranked from S-tier to C-tier. Learn which objects are the best to disguise as for maximum survival.",
+    url: "https://mecchachameleonlab.com/guides/object-tiers",
+    type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title:
+      "MECCHA CHAMELEON Object Tier List — Best Objects to Disguise As | MECCHA CHAMELEON Lab",
+    description:
+      "Complete object tier list for MECCHA CHAMELEON: ranked from S-tier to C-tier. Learn which objects are the best to disguise as for maximum survival.",
+  },
 };
 
 const sections = [
@@ -47,7 +63,7 @@ export default function ObjectTiersPage() {
             <h3 className="font-label-caps text-label-caps text-on-surface mb-4 uppercase">
               Table of Contents
             </h3>
-            <nav className="flex flex-col gap-1">
+            <nav aria-label="Table of Contents" className="flex flex-col gap-1">
               {sections.map((s) => (
                 <a
                   key={s.id}
@@ -449,6 +465,14 @@ export default function ObjectTiersPage() {
           </div>
         </article>
       </div>
+
+      <RelatedPages
+        pages={[
+          { title: "Paint Guide", description: "Best color combinations for every surface type.", href: "/guides/paint", icon: "🎨" },
+          { title: "Hider Guide", description: "Become an invisible master of disguise.", href: "/guides/hider", icon: "🎭" },
+          { title: "All Maps", description: "Browse all 7 official maps with hiding spot guides.", href: "/maps", icon: "🗺️" },
+        ]}
+      />
     </main>
   );
 }

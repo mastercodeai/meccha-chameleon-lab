@@ -122,11 +122,42 @@ export function WebSiteSchema() {
     url: "https://mecchachameleonlab.com",
     description:
       "Free MECCHA CHAMELEON guides: best hiding spots for every map with screenshots, Workshop map database, beginner guide, and tips.",
-    potentialAction: {
-      "@type": "SearchAction",
-      target:
-        "https://mecchachameleonlab.com/search?q={search_term_string}",
-      "query-input": "required name=search_term_string",
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+    />
+  );
+}
+
+export function ArticleSchema({
+  title,
+  description,
+  url,
+  datePublished,
+}: {
+  title: string;
+  description: string;
+  url: string;
+  datePublished: string;
+}) {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: title,
+    description,
+    url,
+    datePublished,
+    author: {
+      "@type": "Organization",
+      name: "MECCHA CHAMELEON Lab",
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "MECCHA CHAMELEON Lab",
+      url: "https://mecchachameleonlab.com",
     },
   };
 

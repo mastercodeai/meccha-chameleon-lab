@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import { BreadcrumbSchema } from "@/components/Schema";
+import RelatedPages from "@/components/RelatedPages";
 
 export const metadata: Metadata = {
   title: "Best MECCHA CHAMELEON Settings — FPS, Graphics & Controls",
@@ -15,6 +16,21 @@ export const metadata: Metadata = {
     "meccha chameleon graphics settings",
     "best settings meccha chameleon",
   ],
+  openGraph: {
+    title:
+      "Best MECCHA CHAMELEON Settings — FPS, Graphics & Controls | MECCHA CHAMELEON Lab",
+    description:
+      "Optimize your MECCHA CHAMELEON settings for maximum performance. Best graphics, FPS, and control settings for competitive play.",
+    url: "https://mecchachameleonlab.com/settings",
+    type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title:
+      "Best MECCHA CHAMELEON Settings — FPS, Graphics & Controls | MECCHA CHAMELEON Lab",
+    description:
+      "Optimize your MECCHA CHAMELEON settings for maximum performance. Best graphics, FPS, and control settings for competitive play.",
+  },
 };
 
 const sections = [
@@ -42,7 +58,7 @@ export default function SettingsPage() {
               <h3 className="font-label-caps text-label-caps text-on-surface mb-4 uppercase">
                 Table of Contents
               </h3>
-              <nav className="flex flex-col gap-1">
+              <nav aria-label="Table of Contents" className="flex flex-col gap-1">
                 {sections.map((s) => (
                   <a
                     key={s.id}
@@ -433,6 +449,14 @@ export default function SettingsPage() {
             </div>
           </article>
         </div>
+
+        <RelatedPages
+          pages={[
+            { title: "Controls Guide", description: "Full control bindings and input customization guide.", href: "/guides/controls", icon: "🎮" },
+            { title: "System Requirements", description: "Check if your PC can run MECCHA CHAMELEON.", href: "/system-requirements", icon: "💻" },
+            { title: "Beginner Guide", description: "Everything you need to know before your first round.", href: "/guides/beginner", icon: "📖" },
+          ]}
+        />
       </main>
     </>
   );

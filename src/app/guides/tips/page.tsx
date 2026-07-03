@@ -1,11 +1,24 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import { BreadcrumbSchema, ArticleSchema } from "@/components/Schema";
+import RelatedPages from "@/components/RelatedPages";
 
 export const metadata: Metadata = {
   title: "Top 50 Tips & Tricks",
   description: "Master MECCHA CHAMELEON with 50 essential tips for hiders, seekers, painters, and map experts. Level up your gameplay today.",
   alternates: {
     canonical: "https://mecchachameleonlab.com/guides/tips",
+  },
+  openGraph: {
+    title: "Top 50 Tips & Tricks | MECCHA CHAMELEON Lab",
+    description: "Master MECCHA CHAMELEON with 50 essential tips for hiders, seekers, painters, and map experts. Level up your gameplay today.",
+    url: "https://mecchachameleonlab.com/guides/tips",
+    type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Top 50 Tips & Tricks | MECCHA CHAMELEON Lab",
+    description: "Master MECCHA CHAMELEON with 50 essential tips for hiders, seekers, painters, and map experts. Level up your gameplay today.",
   },
 };
 
@@ -85,12 +98,25 @@ export default function TipsGuidePage() {
 
   return (
     <main className="pt-[100px] pb-stack-lg max-w-[1440px] mx-auto px-4 md:px-gutter">
+      <BreadcrumbSchema
+        items={[
+          { name: "Home", url: "https://mecchachameleonlab.com" },
+          { name: "Guides", url: "https://mecchachameleonlab.com/guides/beginner" },
+          { name: "Tips & Tricks", url: "https://mecchachameleonlab.com/guides/tips" },
+        ]}
+      />
+      <ArticleSchema
+        title="Top 50 Tips & Tricks"
+        description="Master MECCHA CHAMELEON with 50 essential tips for hiders, seekers, painters, and map experts. Level up your gameplay today."
+        url="https://mecchachameleonlab.com/guides/tips"
+        datePublished="2026-06-15"
+      />
       <div className="flex flex-col lg:flex-row gap-8">
         {/* Sidebar TOC */}
         <aside className="lg:w-64 shrink-0">
           <div className="lg:sticky lg:top-[100px] bg-surface border border-outline-variant rounded-lg p-4">
             <h3 className="font-label-caps text-label-caps text-on-surface mb-4 uppercase">Table of Contents</h3>
-            <nav className="flex flex-col gap-1">
+            <nav aria-label="Table of Contents" className="flex flex-col gap-1">
               {sections.map((s) => (
                 <a
                   key={s.id}
@@ -152,6 +178,14 @@ export default function TipsGuidePage() {
           </div>
         </article>
       </div>
+
+      <RelatedPages
+        pages={[
+          { title: "Beginner Guide", description: "Everything you need to know before your first round.", href: "/guides/beginner", icon: "📖" },
+          { title: "Hider Guide", description: "Become an invisible master of disguise.", href: "/guides/hider", icon: "🎨" },
+          { title: "Seeker Guide", description: "Sharpen your detection skills and hunt like a pro.", href: "/guides/seeker", icon: "🔍" },
+        ]}
+      />
     </main>
   );
 }

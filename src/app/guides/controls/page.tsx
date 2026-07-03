@@ -1,11 +1,24 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import { BreadcrumbSchema, ArticleSchema } from "@/components/Schema";
+import RelatedPages from "@/components/RelatedPages";
 
 export const metadata: Metadata = {
   title: "Controls — Keyboard & Controller Guide",
   description: "Complete controls guide for MECCHA CHAMELEON. Keyboard, mouse, and controller mappings for movement, painting, and more.",
   alternates: {
     canonical: "https://mecchachameleonlab.com/guides/controls",
+  },
+  openGraph: {
+    title: "Controls — Keyboard & Controller Guide | MECCHA CHAMELEON Lab",
+    description: "Complete controls guide for MECCHA CHAMELEON. Keyboard, mouse, and controller mappings for movement, painting, and more.",
+    url: "https://mecchachameleonlab.com/guides/controls",
+    type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Controls — Keyboard & Controller Guide | MECCHA CHAMELEON Lab",
+    description: "Complete controls guide for MECCHA CHAMELEON. Keyboard, mouse, and controller mappings for movement, painting, and more.",
   },
 };
 
@@ -48,12 +61,25 @@ const advancedControls: { title: string; desc: string }[] = [
 export default function ControlsGuidePage() {
   return (
     <main className="pt-[100px] pb-stack-lg max-w-[1440px] mx-auto px-4 md:px-gutter">
+      <BreadcrumbSchema
+        items={[
+          { name: "Home", url: "https://mecchachameleonlab.com" },
+          { name: "Guides", url: "https://mecchachameleonlab.com/guides/beginner" },
+          { name: "Controls Guide", url: "https://mecchachameleonlab.com/guides/controls" },
+        ]}
+      />
+      <ArticleSchema
+        title="Controls — Keyboard & Controller Guide"
+        description="Complete controls guide for MECCHA CHAMELEON. Keyboard, mouse, and controller mappings for movement, painting, and more."
+        url="https://mecchachameleonlab.com/guides/controls"
+        datePublished="2026-06-15"
+      />
       <div className="flex flex-col lg:flex-row gap-8">
         {/* Sidebar TOC */}
         <aside className="lg:w-64 shrink-0">
           <div className="lg:sticky lg:top-[100px] bg-surface border border-outline-variant rounded-lg p-4">
             <h3 className="font-label-caps text-label-caps text-on-surface mb-4 uppercase">Table of Contents</h3>
-            <nav className="flex flex-col gap-1">
+            <nav aria-label="Table of Contents" className="flex flex-col gap-1">
               {sections.map((s) => (
                 <a
                   key={s.id}
@@ -159,6 +185,14 @@ export default function ControlsGuidePage() {
           </div>
         </article>
       </div>
+
+      <RelatedPages
+        pages={[
+          { title: "Settings Guide", description: "Optimize your settings for maximum performance.", href: "/settings", icon: "⚙️" },
+          { title: "Combo Guide", description: "Master every disguise combination with paint + object combos.", href: "/guides/combos", icon: "🎯" },
+          { title: "Beginner Guide", description: "Everything you need to know before your first round.", href: "/guides/beginner", icon: "📖" },
+        ]}
+      />
     </main>
   );
 }

@@ -1,11 +1,24 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import { BreadcrumbSchema, ArticleSchema } from "@/components/Schema";
+import RelatedPages from "@/components/RelatedPages";
 
 export const metadata: Metadata = {
   title: "Hider Guide — Master the Art of Blending",
   description: "Become an invisible master of disguise. Learn advanced painting techniques, positioning strategies, and map-specific hiding spots to dominate as a Hider in MECCHA CHAMELEON.",
   alternates: {
     canonical: "https://mecchachameleonlab.com/guides/hider",
+  },
+  openGraph: {
+    title: "Hider Guide — Master the Art of Blending | MECCHA CHAMELEON Lab",
+    description: "Become an invisible master of disguise. Learn advanced painting techniques, positioning strategies, and map-specific hiding spots to dominate as a Hider in MECCHA CHAMELEON.",
+    url: "https://mecchachameleonlab.com/guides/hider",
+    type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Hider Guide — Master the Art of Blending | MECCHA CHAMELEON Lab",
+    description: "Become an invisible master of disguise. Learn advanced painting techniques, positioning strategies, and map-specific hiding spots to dominate as a Hider in MECCHA CHAMELEON.",
   },
 };
 
@@ -21,12 +34,25 @@ const sections = [
 export default function HiderGuidePage() {
   return (
     <main className="pt-[100px] pb-stack-lg max-w-[1440px] mx-auto px-4 md:px-gutter">
+      <BreadcrumbSchema
+        items={[
+          { name: "Home", url: "https://mecchachameleonlab.com" },
+          { name: "Guides", url: "https://mecchachameleonlab.com/guides/beginner" },
+          { name: "Hider Guide", url: "https://mecchachameleonlab.com/guides/hider" },
+        ]}
+      />
+      <ArticleSchema
+        title="Hider Guide — Master the Art of Blending"
+        description="Become an invisible master of disguise. Learn advanced painting techniques, positioning strategies, and map-specific hiding spots to dominate as a Hider in MECCHA CHAMELEON."
+        url="https://mecchachameleonlab.com/guides/hider"
+        datePublished="2026-06-15"
+      />
       <div className="flex flex-col lg:flex-row gap-8">
         {/* Sidebar TOC */}
         <aside className="lg:w-64 shrink-0">
           <div className="lg:sticky lg:top-[100px] bg-surface border border-outline-variant rounded-lg p-4">
             <h3 className="font-label-caps text-label-caps text-on-surface mb-4 uppercase">Table of Contents</h3>
-            <nav className="flex flex-col gap-1">
+            <nav aria-label="Table of Contents" className="flex flex-col gap-1">
               {sections.map((s) => (
                 <a
                   key={s.id}
@@ -180,6 +206,14 @@ export default function HiderGuidePage() {
           </div>
         </article>
       </div>
+
+      <RelatedPages
+        pages={[
+          { title: "Seeker Guide", description: "Sharpen your detection skills and hunt like a pro.", href: "/guides/seeker", icon: "🔍" },
+          { title: "Paint Guide", description: "Best color combinations for every surface type.", href: "/guides/paint", icon: "🎨" },
+          { title: "Tips & Tricks", description: "50 essential tips for hiders, seekers, painters, and map experts.", href: "/guides/tips", icon: "💡" },
+        ]}
+      />
     </main>
   );
 }

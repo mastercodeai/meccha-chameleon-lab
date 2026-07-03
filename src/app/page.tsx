@@ -73,6 +73,26 @@ const faqItems = [
     q: "How often is the content updated?",
     a: "We update guides when the game releases new maps or major balance changes. Workshop data refreshes daily via the Steam API.",
   },
+  {
+    q: "What are the best hiding spots in MECCHA CHAMELEON?",
+    a: "The best MECCHA CHAMELEON hiding spots depend on the map. On Sewer, pipes and dark corners are top-tier. On Backrooms, blending into furniture works best. Check our per-map guides with screenshots for the best hiding spots on every MECCHA CHAMELEON map.",
+  },
+  {
+    q: "How do I paint my character in MECCHA CHAMELEON?",
+    a: "In MECCHA CHAMELEON, you can paint your character before each round to match the environment. Use the paint tool to pick colors that blend with the current map surface. Our MECCHA CHAMELEON paint guide covers the best color combinations for every map.",
+  },
+  {
+    q: "What maps are in MECCHA CHAMELEON?",
+    a: "MECCHA CHAMELEON has 7 official maps including Sewer and The Backrooms. The Steam Workshop adds 489+ community-created maps. Each map has unique hiding spots, layouts, and surfaces to blend into. Browse our MECCHA CHAMELEON map guide for details on every map.",
+  },
+  {
+    q: "Is MECCHA CHAMELEON on Steam Deck?",
+    a: "MECCHA CHAMELEON is a PC game on Steam, so it can run on Steam Deck through Proton compatibility. However, there is no official Steam Deck optimization. Check our MECCHA CHAMELEON Steam Deck guide for setup tips and recommended settings.",
+  },
+  {
+    q: "How many players can play MECCHA CHAMELEON?",
+    a: "MECCHA CHAMELEON supports multiple players in online PvP matches. One player is the Seeker while the rest are Hiders who morph into objects and hide. The game is best with larger groups for maximum chaos and fun.",
+  },
 ];
 
 export default function HomePage() {

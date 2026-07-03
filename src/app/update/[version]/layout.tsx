@@ -1,8 +1,14 @@
 import type { Metadata } from "next";
 
+const knownVersions = ["v1.3.0", "v1.2.0", "v1.1.0", "v1.0.0"];
+
 type Props = {
   params: Promise<{ version: string }>;
 };
+
+export async function generateStaticParams() {
+  return knownVersions.map((version) => ({ version }));
+}
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { version } = await params;

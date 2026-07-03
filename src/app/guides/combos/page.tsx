@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { Metadata } from "next";
-import { BreadcrumbSchema } from "@/components/Schema";
+import { BreadcrumbSchema, ArticleSchema } from "@/components/Schema";
+import RelatedPages from "@/components/RelatedPages";
 
 export const metadata: Metadata = {
   title: "MECCHA CHAMELEON Combo Guide — Best Paint + Object Combos",
@@ -8,6 +9,17 @@ export const metadata: Metadata = {
     "Master every disguise combination in MECCHA CHAMELEON. Best paint + object combos for each map with screenshots and strategies.",
   alternates: {
     canonical: "https://mecchachameleonlab.com/guides/combos",
+  },
+  openGraph: {
+    title: "MECCHA CHAMELEON Combo Guide — Best Paint + Object Combos | MECCHA CHAMELEON Lab",
+    description: "Master every disguise combination in MECCHA CHAMELEON. Best paint + object combos for each map with screenshots and strategies.",
+    url: "https://mecchachameleonlab.com/guides/combos",
+    type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "MECCHA CHAMELEON Combo Guide — Best Paint + Object Combos | MECCHA CHAMELEON Lab",
+    description: "Master every disguise combination in MECCHA CHAMELEON. Best paint + object combos for each map with screenshots and strategies.",
   },
   keywords: [
     "meccha chameleon combos",
@@ -93,6 +105,12 @@ export default function ComboGuidePage() {
           { name: "Combo Guide", url: "https://mecchachameleonlab.com/guides/combos" },
         ]}
       />
+      <ArticleSchema
+        title="MECCHA CHAMELEON Combo Guide — Best Paint + Object Combos"
+        description="Master every disguise combination in MECCHA CHAMELEON. Best paint + object combos for each map with screenshots and strategies."
+        url="https://mecchachameleonlab.com/guides/combos"
+        datePublished="2026-06-15"
+      />
 
       <div className="flex flex-col lg:flex-row gap-8">
         {/* Sidebar TOC */}
@@ -101,7 +119,7 @@ export default function ComboGuidePage() {
             <h3 className="font-label-caps text-label-caps text-on-surface mb-4 uppercase">
               Table of Contents
             </h3>
-            <nav className="flex flex-col gap-1">
+            <nav aria-label="Table of Contents" className="flex flex-col gap-1">
               {sections.map((s) => (
                 <a
                   key={s.id}
@@ -416,6 +434,14 @@ export default function ComboGuidePage() {
           </div>
         </article>
       </div>
+
+      <RelatedPages
+        pages={[
+          { title: "Controls Guide", description: "Full control bindings and input customization guide.", href: "/guides/controls", icon: "🎮" },
+          { title: "Hider Guide", description: "Become an invisible master of disguise.", href: "/guides/hider", icon: "🎨" },
+          { title: "Tips & Tricks", description: "50 essential tips for hiders, seekers, painters, and map experts.", href: "/guides/tips", icon: "💡" },
+        ]}
+      />
     </main>
   );
 }

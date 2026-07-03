@@ -30,7 +30,7 @@ export default function PrivacyPage() {
 
         <section>
           <h2 className="font-headline-md text-lg text-on-surface mb-4">Analytics</h2>
-          <p>We use privacy-focused analytics (Plausible Analytics) to understand how visitors use our site. This analytics tool does not use cookies and does not collect personal data. All data is aggregated and anonymized.</p>
+          <p>We use privacy-focused analytics tools to understand how visitors use our site. This includes Plausible Analytics (which does not use cookies and does not collect personal data — all data is aggregated and anonymized), Microsoft Clarity (which may use cookies to track user interactions for usability analysis), and Google Analytics (which uses cookies to collect anonymized usage data). All analytics data is used solely to improve the site experience.</p>
         </section>
 
         <section>
@@ -40,7 +40,7 @@ export default function PrivacyPage() {
 
         <section>
           <h2 className="font-headline-md text-lg text-on-surface mb-4">Cookies</h2>
-          <p>MECCHA CHAMELEON Lab does not use tracking cookies. We may use essential technical cookies for site functionality.</p>
+          <p>MECCHA CHAMELEON Lab uses essential technical cookies for site functionality. Our analytics partners (Microsoft Clarity and Google Analytics) may also set cookies for usage tracking. You can block or delete cookies through your browser settings without affecting site functionality.</p>
         </section>
 
         <section>

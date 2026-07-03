@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import { BreadcrumbSchema } from "@/components/Schema";
+import RelatedPages from "@/components/RelatedPages";
 
 export const metadata: Metadata = {
   title: "10 MECCHA CHAMELEON Mistakes Beginners Make",
@@ -8,6 +9,19 @@ export const metadata: Metadata = {
     "Avoid these 10 common MECCHA CHAMELEON beginner mistakes. Learn what NOT to do as a new player and improve fast.",
   alternates: {
     canonical: "https://mecchachameleonlab.com/guides/beginner-mistakes",
+  },
+  openGraph: {
+    title: "10 MECCHA CHAMELEON Mistakes Beginners Make | MECCHA CHAMELEON Lab",
+    description:
+      "Avoid these 10 common MECCHA CHAMELEON beginner mistakes. Learn what NOT to do as a new player and improve fast.",
+    url: "https://mecchachameleonlab.com/guides/beginner-mistakes",
+    type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "10 MECCHA CHAMELEON Mistakes Beginners Make | MECCHA CHAMELEON Lab",
+    description:
+      "Avoid these 10 common MECCHA CHAMELEON beginner mistakes. Learn what NOT to do as a new player and improve fast.",
   },
 };
 
@@ -127,7 +141,7 @@ export default function BeginnerMistakesPage() {
             <h3 className="font-label-caps text-label-caps text-on-surface mb-4 uppercase">
               Table of Contents
             </h3>
-            <nav className="flex flex-col gap-1">
+            <nav aria-label="Table of Contents" className="flex flex-col gap-1">
               {sections.map((s) => (
                 <a
                   key={s.id}
@@ -235,6 +249,14 @@ export default function BeginnerMistakesPage() {
           </div>
         </article>
       </div>
+
+      <RelatedPages
+        pages={[
+          { title: "Beginner Guide", description: "Everything you need to know before your first round.", href: "/guides/beginner", icon: "📖" },
+          { title: "Tips & Tricks", description: "50 essential tips for hiders, seekers, painters, and map experts.", href: "/guides/tips", icon: "💡" },
+          { title: "Hider Guide", description: "Become an invisible master of disguise.", href: "/guides/hider", icon: "🎨" },
+        ]}
+      />
     </main>
   );
 }
