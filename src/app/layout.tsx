@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Orbitron, Rajdhani, Inter } from "next/font/google";
+import Script from "next/script";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ParticleBg from "@/components/ParticleBg";
@@ -73,6 +74,9 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
+  other: {
+    "msvalidate.01": "711D023A581945A37EA78CB925D2A7A9",
+  },
 };
 
 export default function RootLayout({
@@ -85,7 +89,55 @@ export default function RootLayout({
       lang="en"
       className={`dark ${orbitron.variable} ${rajdhani.variable} ${inter.variable}`}
     >
+      <head>
+        {/* Bing Webmaster */}
+        <meta name="msvalidate.01" content="711D023A581945A37EA78CB925D2A7A9" />
+      </head>
       <body className="font-body-main bg-background text-on-surface antialiased overflow-x-hidden">
+        {/* Microsoft Clarity */}
+        <Script id="clarity" strategy="afterInteractive">
+          {`
+            (function(c,l,a,r,i,t,y){
+                c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+                t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+                y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+            })(window, document, "clarity", "script", "xggeuggf7b");
+          `}
+        </Script>
+
+        {/* Plausible Analytics */}
+        <Script
+          src="https://plausible.shipsolo.io/js/pa-fvsf9y25CvYQYtSohbXSP.js"
+          strategy="afterInteractive"
+        />
+        <Script id="plausible-init" strategy="afterInteractive">
+          {`
+            window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+            plausible.init()
+          `}
+        </Script>
+
+        {/* Google Analytics */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-3RJR2L26DG"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-3RJR2L26DG');
+          `}
+        </Script>
+
+        {/* Ahrefs Analytics */}
+        <Script
+          src="https://analytics.ahrefs.com/analytics.js"
+          data-key="crBy5UYpsRs/kdvFGmkIrg"
+          strategy="afterInteractive"
+        />
+
         <ParticleBg />
         <Navbar />
         {children}
