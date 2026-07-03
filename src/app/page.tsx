@@ -148,30 +148,33 @@ export default function HomePage() {
           if (numMatch) {
             const finalNum = parseFloat(numMatch[0]);
             const suffix = finalText.replace(numMatch[0], "");
+            const isDecimal = finalText.includes(".");
             
-            gsap.fromTo(valueEl, 
-              { textContent: 0 },
-              {
-                textContent: finalNum,
-                duration: 2,
-                ease: "power1.out",
-                snap: { textContent: 1 },
-                scrollTrigger: {
-                  trigger: stat,
-                  start: "top 80%",
-                },
-                onUpdate: function() {
-                  const current = gsap.getProperty(valueEl, "textContent");
-                  if (typeof current === "number") {
-                    if (finalNum >= 100) {
-                      valueEl.textContent = Math.round(current) + suffix;
-                    } else {
-                      valueEl.textContent = current.toFixed(0) + suffix;
-                    }
-                  }
+            // Set initial display to preserve text width
+            valueEl.textContent = (isDecimal ? "0.0" : "0") + suffix;
+            
+            const counter = { val: 0 };
+            gsap.to(counter, {
+              val: finalNum,
+              duration: 2,
+              ease: "power1.out",
+              scrollTrigger: {
+                trigger: stat,
+                start: "top 80%",
+              },
+              onUpdate: function() {
+                if (isDecimal) {
+                  valueEl.textContent = counter.val.toFixed(1) + suffix;
+                } else if (finalNum >= 100) {
+                  valueEl.textContent = Math.round(counter.val) + suffix;
+                } else {
+                  valueEl.textContent = Math.round(counter.val) + suffix;
                 }
+              },
+              onComplete: function() {
+                valueEl.textContent = finalText;
               }
-            );
+            });
           }
         }
       });
