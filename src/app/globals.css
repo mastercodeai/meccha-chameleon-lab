@@ -1,26 +1,98 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
+/* ===== Design Tokens ===== */
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  /* Colors */
+  --color-primary: #4be277;
+  --color-primary-container: #22c55e;
+  --color-inverse-primary: #006e2f;
+  --color-secondary: #d0bcff;
+  --color-secondary-container: #571bc1;
+  --color-surface: #0e150e;
+  --color-surface-dim: #0e150e;
+  --color-surface-bright: #333b33;
+  --color-surface-container-lowest: #091009;
+  --color-surface-container-low: #161d16;
+  --color-surface-container: #1a221a;
+  --color-surface-container-high: #242c24;
+  --color-surface-container-highest: #2f372e;
+  --color-on-surface: #dce5d9;
+  --color-on-surface-variant: #bccbb9;
+  --color-on-primary: #003915;
+  --color-background: #0e150e;
+  --color-on-background: #dce5d9;
+  --color-outline: #869585;
+  --color-outline-variant: #3d4a3d;
+  --color-error: #ffb4ab;
+  --color-tertiary: #8bcfff;
+
+  /* Font Families */
+  --font-display-lg: "Orbitron", sans-serif;
+  --font-headline-md: "Orbitron", sans-serif;
+  --font-label-caps: "Rajdhani", sans-serif;
+  --font-body-main: "Inter", sans-serif;
+  --font-body-sm: "Inter", sans-serif;
+
+  /* Font Sizes */
+  --text-display-lg: 3rem;
+  --text-headline-md: 1.5rem;
+  --text-stat-lg: 2.25rem;
+  --text-label-caps: 0.875rem;
+  --text-body-main: 1rem;
+  --text-body-sm: 0.875rem;
+
+  /* Spacing */
+  --spacing-container-max: 1440px;
+  --spacing-gutter: 1.5rem;
+  --spacing-margin-mobile: 1rem;
+  --spacing-stack-xs: 0.25rem;
+  --spacing-stack-sm: 0.5rem;
+  --spacing-stack-md: 1rem;
+  --spacing-stack-lg: 2rem;
+
+  /* Border Radius */
+  --radius-DEFAULT: 0.125rem;
+  --radius-lg: 0.25rem;
+  --radius-xl: 0.5rem;
+  --radius-full: 0.75rem;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* ===== Root Variables ===== */
+:root {
+  --background: #0a0a12;
+  --foreground: #dce5d9;
+}
+
+/* ===== Base Styles ===== */
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* ===== Utility Classes ===== */
+
+/* Glow hover effect */
+.glow-hover {
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.glow-hover:hover {
+  box-shadow: 0 0 15px rgba(75, 226, 119, 0.4), 0 0 30px rgba(75, 226, 119, 0.2);
+  border-color: #4be277;
+}
+
+/* Hero background gradient */
+.hero-bg {
+  background: radial-gradient(
+    ellipse at center,
+    rgba(75, 226, 119, 0.08) 0%,
+    rgba(14, 21, 14, 0) 70%
+  );
 }
