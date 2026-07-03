@@ -5,6 +5,7 @@ import Link from "next/link";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { maps, getMapBySlug } from "@/data/maps";
+import { BreadcrumbSchema } from "@/components/Schema";
 import { getSpotsByMapSlug } from "@/data/spots";
 import { notFound } from "next/navigation";
 
@@ -119,6 +120,11 @@ export default function MapPage({ params }: { params: Promise<{ slug: string }> 
 
   return (
     <main className="pt-[100px] pb-stack-lg max-w-[1440px] mx-auto px-4 md:px-gutter">
+      <BreadcrumbSchema items={[
+        { name: "Home", url: "https://mecchachameleonlab.com" },
+        { name: "Maps", url: "https://mecchachameleonlab.com/maps" },
+        { name: map.name, url: `https://mecchachameleonlab.com/maps/${slug}` },
+      ]} />
       {/* Breadcrumbs */}
       <nav className="flex items-center gap-2 text-sm text-on-surface-variant mb-6">
         <Link href="/maps" className="hover:text-primary transition-colors">Maps</Link>
