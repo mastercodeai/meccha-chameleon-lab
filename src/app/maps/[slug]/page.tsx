@@ -81,32 +81,21 @@ export default async function MapPage({ params }: { params: Promise<{ slug: stri
           {spots.map((spot) => (
             <div
               key={spot.id}
-              className="bg-surface border border-outline-variant rounded-lg overflow-hidden glow-hover transition-all"
+              className="bg-surface border border-outline-variant rounded-lg p-4 glow-hover transition-all"
             >
-              <div className="relative aspect-video">
-                <Image
-                  src={spot.image}
-                  alt={spot.name}
-                  fill
-                  className="object-cover"
-                />
-                {/* Spot number badge */}
-                <div className="absolute top-3 left-3 w-8 h-8 rounded-full bg-primary flex items-center justify-center shadow-[0_0_8px_rgba(75,226,119,0.6)]">
+              <div className="flex items-center gap-3 mb-3">
+                <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center shadow-[0_0_8px_rgba(75,226,119,0.6)]">
                   <span className="text-sm font-bold text-on-primary">{spot.id}</span>
                 </div>
+                <h3 className="font-headline-md text-base text-on-surface">{spot.name}</h3>
+                <DifficultyBadge difficulty={spot.difficulty} />
               </div>
-              <div className="p-4">
-                <div className="flex items-center gap-2 mb-2">
-                  <h3 className="font-headline-md text-base text-on-surface">{spot.name}</h3>
-                  <DifficultyBadge difficulty={spot.difficulty} />
-                </div>
-                <p className="font-body-sm text-body-sm text-on-surface-variant">{spot.description}</p>
-                <div className="mt-3 flex items-center gap-2">
-                  <span className="text-xs text-on-surface-variant">Best for:</span>
-                  <span className={`text-xs font-label-caps ${spot.bestFor === "Hider" ? "text-primary" : "text-secondary"}`}>
-                    {spot.bestFor}
-                  </span>
-                </div>
+              <p className="font-body-sm text-body-sm text-on-surface-variant mb-3">{spot.description}</p>
+              <div className="flex items-center gap-2">
+                <span className="text-xs text-on-surface-variant">Best for:</span>
+                <span className={`text-xs font-label-caps ${spot.bestFor === "Hider" ? "text-primary" : "text-secondary"}`}>
+                  {spot.bestFor}
+                </span>
               </div>
             </div>
           ))}
