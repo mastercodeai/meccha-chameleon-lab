@@ -127,10 +127,8 @@ export default function HomePage() {
       const statElements = statsRef.current.querySelectorAll(".stat-item");
       
       gsap.from(statElements, {
-        y: 50,
         opacity: 0,
-        duration: 0.6,
-        stagger: 0.1,
+        duration: 0.8,
         ease: "power2.out",
         scrollTrigger: {
           trigger: statsRef.current,
