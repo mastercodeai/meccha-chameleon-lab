@@ -26,6 +26,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/settings`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.6 },
     { url: `${baseUrl}/system-requirements`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.6 },
     { url: `${baseUrl}/terms`, lastModified: new Date(), changeFrequency: "yearly" as const, priority: 0.3 },
+    { url: `${baseUrl}/price`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.9 },
+    { url: `${baseUrl}/guides/easter-eggs`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.7 },
+    { url: `${baseUrl}/update/v1.3.0`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.6 },
+    { url: `${baseUrl}/update/v1.2.0`, lastModified: new Date(), changeFrequency: "yearly" as const, priority: 0.5 },
+    { url: `${baseUrl}/update/v1.1.0`, lastModified: new Date(), changeFrequency: "yearly" as const, priority: 0.5 },
+    { url: `${baseUrl}/update/v1.0.0`, lastModified: new Date(), changeFrequency: "yearly" as const, priority: 0.4 },
   ];
 
   const mapPages = maps.map((map) => ({

@@ -1,3 +1,13 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Gallery — Game Screenshots & Art",
+  description: "MECCHA CHAMELEON game screenshots, title screens, map previews, and character art. See what the game looks like before you buy.",
+  alternates: {
+    canonical: "https://mecchachameleonlab.com/gallery",
+  },
+};
+
 const R2_BASE = "https://pub-42f70497cda741b99d02e6434a897ec1.r2.dev";
 
 const screenshots = [

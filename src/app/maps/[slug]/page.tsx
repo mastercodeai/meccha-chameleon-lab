@@ -131,6 +131,7 @@ export default function MapPage({ params }: { params: Promise<{ slug: string }> 
         <span>/</span>
         <span className="text-on-surface">{map.name}</span>
       </nav>
+      <p className="text-xs text-on-surface-variant mb-4">Last updated: July 2026 · {spots.length} hiding spots documented</p>
 
       {/* Map Hero */}
       <div ref={heroRef} className="relative rounded-lg overflow-hidden border-2 border-[#1e1e32] mb-stack-lg">
