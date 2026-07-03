@@ -4,375 +4,157 @@ export interface SpotData {
   description: string;
   difficulty: "EASY" | "MEDIUM" | "HARD";
   bestFor: "Hider" | "Seeker" | "Both";
-  image: string;
 }
 
-export const livingRoomSpots: SpotData[] = [
+// Lobby Spots
+export const lobbySpots: SpotData[] = [
   {
     id: 1,
-    name: "Behind the Couch Cushions",
-    description: "Push yourself into the gap between the back cushions and the seat. Works best with brown or beige paint matching the couch fabric.",
+    name: "Behind the Coat Rack",
+    description: "Stand still behind the coat rack and match the color of the hanging coats. Dark browns and blacks work best.",
     difficulty: "EASY",
     bestFor: "Hider",
-    image: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=600&h=400&fit=crop",
   },
   {
     id: 2,
-    name: "Bookshelf Blend",
-    description: "Stand still among books on the shelf. Paint yourself to match the book spines — dark reds and browns work best.",
-    difficulty: "MEDIUM",
+    name: "Under the Wooden Table",
+    description: "Crouch under the large wooden dining table. Paint yourself to match the dark wood grain.",
+    difficulty: "EASY",
     bestFor: "Hider",
-    image: "https://images.unsplash.com/photo-1507842217343-583bb7270b66?w=600&h=400&fit=crop",
   },
   {
     id: 3,
-    name: "TV Stand Shadow",
-    description: "Crouch below the TV stand in the shadow zone. Dark paint is essential. Most seekers check the screen, not below it.",
-    difficulty: "EASY",
+    name: "Beside the Pillar",
+    description: "Stand flush against the white decorative pillar. Match the pillar color exactly for best camouflage.",
+    difficulty: "MEDIUM",
     bestFor: "Hider",
-    image: "https://images.unsplash.com/photo-1593784991095-a205069470b6?w=600&h=400&fit=crop",
   },
   {
     id: 4,
-    name: "Window Curtain Merge",
-    description: "Flatten against the wall behind curtains. Match the curtain color exactly. The folds create natural camouflage patterns.",
+    name: "Corner by the Storage Cabinet",
+    description: "Squeeze into the corner next to the multi-drawer cabinet. The shadow helps hide color mismatches.",
     difficulty: "MEDIUM",
     bestFor: "Hider",
-    image: "https://images.unsplash.com/photo-1513694203232-719a280e022f?w=600&h=400&fit=crop",
-  },
-  {
-    id: 5,
-    name: "Rug Pattern Disguise",
-    description: "Lie flat on the patterned rug and match its design. Works surprisingly well — seekers often walk right over you.",
-    difficulty: "HARD",
-    bestFor: "Hider",
-    image: "https://images.unsplash.com/photo-1600166898405-da9535204843?w=600&h=400&fit=crop",
-  },
-  {
-    id: 6,
-    name: "Lamp Base Pose",
-    description: "Stand perfectly still next to the floor lamp. Paint yourself the same color as the lamp base. Your silhouette becomes part of the room structure.",
-    difficulty: "MEDIUM",
-    bestFor: "Hider",
-    image: "https://images.unsplash.com/photo-1507473885765-e6ed057ab6fe?w=600&h=400&fit=crop",
   },
 ];
 
-export const kitchenSpots: SpotData[] = [
+// Farm Spots
+export const farmSpots: SpotData[] = [
   {
     id: 1,
-    name: "Under the Kitchen Counter",
-    description: "Crouch beneath the counter overhang. Paint yourself the same color as the cabinet doors — white or off-white works best in most kitchens.",
+    name: "Among the Hay Bales",
+    description: "Hide between the stacked hay bales. Paint yourself golden-yellow to match the straw color.",
     difficulty: "EASY",
     bestFor: "Hider",
-    image: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=600&h=400&fit=crop",
   },
   {
     id: 2,
-    name: "Fridge Magnet Blend",
-    description: "Stand flat against the fridge door. Match the stainless steel or white surface. The magnets and handles break up your silhouette.",
+    name: "Inside the Red Barn",
+    description: "Stand against the barn walls. Match the red paint of the barn door with the white X design.",
     difficulty: "MEDIUM",
     bestFor: "Hider",
-    image: "https://images.unsplash.com/photo-1507842217343-583bb7270b66?w=600&h=400&fit=crop",
   },
   {
     id: 3,
-    name: "Inside the Pantry",
-    description: "Squeeze between shelves in the pantry. Paint yourself to match the canned goods and boxes. The dim interior helps conceal your shape.",
+    name: "Behind the Picket Fence",
+    description: "Crouch behind the white picket fence. Paint yourself white to blend with the fence posts.",
     difficulty: "EASY",
     bestFor: "Hider",
-    image: "https://images.unsplash.com/photo-1593784991095-a205069470b6?w=600&h=400&fit=crop",
   },
   {
     id: 4,
-    name: "Oven Silhouette",
-    description: "Stand in front of the oven and match the dark glass surface. Works best when the oven light is off and the kitchen is dimly lit.",
+    name: "Near the Hot Air Balloon",
+    description: "Stand near the base of the hot air balloon. Match the blue and white stripes of the balloon fabric.",
     difficulty: "HARD",
     bestFor: "Hider",
-    image: "https://images.unsplash.com/photo-1513694203232-719a280e022f?w=600&h=400&fit=crop",
-  },
-  {
-    id: 5,
-    name: "Dish Rack Disguise",
-    description: "Crouch near the dish drying rack on the counter. Paint yourself to match the stack of plates and cups. The clutter masks your outline.",
-    difficulty: "MEDIUM",
-    bestFor: "Both",
-    image: "https://images.unsplash.com/photo-1600166898405-da9535204843?w=600&h=400&fit=crop",
-  },
-  {
-    id: 6,
-    name: "Stovetop Shadow",
-    description: "Stand beside the stovetop range. Match the dark burner grates and cast iron surface. Seekers rarely look directly at the cooking area.",
-    difficulty: "MEDIUM",
-    bestFor: "Hider",
-    image: "https://images.unsplash.com/photo-1507473885765-e6ed057ab6fe?w=600&h=400&fit=crop",
   },
 ];
 
-export const bathroomSpots: SpotData[] = [
+// Hallway Spots
+export const hallwaySpots: SpotData[] = [
   {
     id: 1,
-    name: "Bathtub Merge",
-    description: "Lie flat in the empty bathtub and paint yourself white to match the porcelain surface. The curved edges help hide your profile.",
-    difficulty: "EASY",
+    name: "Blend with the Wallpaper",
+    description: "Stand against the green patterned wallpaper and match the floral design. Requires precise color matching.",
+    difficulty: "HARD",
     bestFor: "Hider",
-    image: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=600&h=400&fit=crop",
   },
   {
     id: 2,
-    name: "Tile Wall Blend",
-    description: "Stand against the tiled wall and match the tile color. The grout lines create a grid pattern that breaks up your outline effectively.",
+    name: "Next to the Painting",
+    description: "Stand beside the gold-framed painting on the wall. Match the dark green background of the wall.",
     difficulty: "MEDIUM",
     bestFor: "Hider",
-    image: "https://images.unsplash.com/photo-1507842217343-583bb7270b66?w=600&h=400&fit=crop",
   },
   {
     id: 3,
-    name: "Shower Curtain Hide",
-    description: "Press yourself behind the shower curtain. Match the curtain pattern — floral or plain white works best. Stay perfectly still.",
-    difficulty: "EASY",
-    bestFor: "Hider",
-    image: "https://images.unsplash.com/photo-1593784991095-a205069470b6?w=600&h=400&fit=crop",
-  },
-  {
-    id: 4,
-    name: "Vanity Cabinet Squeeze",
-    description: "Hide inside the space beneath the bathroom vanity. The darkness inside makes you nearly invisible when the cabinet is slightly open.",
-    difficulty: "HARD",
-    bestFor: "Hider",
-    image: "https://images.unsplash.com/photo-1513694203232-719a280e022f?w=600&h=400&fit=crop",
-  },
-  {
-    id: 5,
-    name: "Toilet Tank Perch",
-    description: "Crouch behind the toilet tank against the wall. Paint yourself the same white as the porcelain. The tight space makes you hard to spot from the doorway.",
+    name: "On the Stairs",
+    description: "Crouch on the staircase steps. Paint yourself to match the stair carpet or wood color.",
     difficulty: "MEDIUM",
     bestFor: "Hider",
-    image: "https://images.unsplash.com/photo-1600166898405-da9535204843?w=600&h=400&fit=crop",
-  },
-  {
-    id: 6,
-    name: "Bath Mat Flat",
-    description: "Lie flat on the bath mat and match its texture and color. The soft surface makes it comfortable to hold position for a long time.",
-    difficulty: "MEDIUM",
-    bestFor: "Both",
-    image: "https://images.unsplash.com/photo-1507473885765-e6ed057ab6fe?w=600&h=400&fit=crop",
   },
 ];
 
-export const bedroomSpots: SpotData[] = [
+// Walk-in Freezer Spots
+export const freezerSpots: SpotData[] = [
   {
     id: 1,
-    name: "Under the Bed",
-    description: "Slide under the bed frame. Paint yourself dark to match the shadow beneath. One of the oldest hiding spots — but it still works.",
+    name: "Behind the Metal Shelves",
+    description: "Hide behind the black metal shelving units. Dark paint helps you disappear in the shadows.",
     difficulty: "EASY",
     bestFor: "Hider",
-    image: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=600&h=400&fit=crop",
   },
   {
     id: 2,
-    name: "Wardrobe Camouflage",
-    description: "Stand inside the open wardrobe among hanging clothes. Match the color of the shirts and jackets around you. Close the door slightly.",
-    difficulty: "MEDIUM",
+    name: "Among the Meat Cuts",
+    description: "Stand near the hanging meat on the shelves. Match the reddish-brown color of the meat surfaces.",
+    difficulty: "HARD",
     bestFor: "Hider",
-    image: "https://images.unsplash.com/photo-1507842217343-583bb7270b66?w=600&h=400&fit=crop",
   },
   {
     id: 3,
-    name: "Pillow Mountain",
-    description: "Bury yourself among the decorative pillows on the bed. Match the pillowcase colors. The layers of fabric create excellent visual noise.",
-    difficulty: "EASY",
-    bestFor: "Hider",
-    image: "https://images.unsplash.com/photo-1593784991095-a205069470b6?w=600&h=400&fit=crop",
-  },
-  {
-    id: 4,
-    name: "Nightstand Shadow",
-    description: "Crouch beside the nightstand in the gap between furniture and wall. The lamp above casts a shadow that helps conceal you.",
+    name: "Next to the Gas Tanks",
+    description: "Crouch beside the silver-gray gas tanks. Metallic paint with low roughness works best.",
     difficulty: "MEDIUM",
     bestFor: "Hider",
-    image: "https://images.unsplash.com/photo-1513694203232-719a280e022f?w=600&h=400&fit=crop",
-  },
-  {
-    id: 5,
-    name: "Dresser Mirror Reflection",
-    description: "Stand at an angle to the dresser mirror so your reflection blends with the room. Paint yourself to match the wall behind you.",
-    difficulty: "HARD",
-    bestFor: "Hider",
-    image: "https://images.unsplash.com/photo-1600166898405-da9535204843?w=600&h=400&fit=crop",
-  },
-  {
-    id: 6,
-    name: "Curtain Drape",
-    description: "Stand behind the bedroom curtains and match the fabric color. The long drapes cover you completely from ceiling to floor.",
-    difficulty: "EASY",
-    bestFor: "Both",
-    image: "https://images.unsplash.com/photo-1507473885765-e6ed057ab6fe?w=600&h=400&fit=crop",
   },
 ];
 
-export const garageSpots: SpotData[] = [
+// Laundry Room Spots
+export const laundrySpots: SpotData[] = [
   {
     id: 1,
-    name: "Workbench Tool Wall",
-    description: "Stand against the pegboard tool wall. Paint yourself to match the hanging wrenches and screwdrivers. The metallic grays provide good cover.",
+    name: "On the Clothesline",
+    description: "Hang among the colorful clothes on the line. Match the color of adjacent garments.",
     difficulty: "MEDIUM",
     bestFor: "Hider",
-    image: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=600&h=400&fit=crop",
   },
   {
     id: 2,
-    name: "Car Hood Blend",
-    description: "Lie across the car hood and match the vehicle's paint color. Works best with neutral-colored cars — white, gray, or black.",
-    difficulty: "HARD",
+    name: "In the Fabric Stacks",
+    description: "Bury yourself in the stacks of blue, yellow, and white fabrics on the table.",
+    difficulty: "EASY",
     bestFor: "Hider",
-    image: "https://images.unsplash.com/photo-1507842217343-583bb7270b66?w=600&h=400&fit=crop",
   },
   {
     id: 3,
-    name: "Cardboard Box Stack",
-    description: "Hide among stacked moving boxes. Paint yourself brown to match the cardboard. The irregular shapes make it hard to spot a person.",
+    name: "Behind the Staircase",
+    description: "Hide under the wooden staircase. The dark shadows provide natural camouflage.",
     difficulty: "EASY",
     bestFor: "Hider",
-    image: "https://images.unsplash.com/photo-1593784991095-a205069470b6?w=600&h=400&fit=crop",
-  },
-  {
-    id: 4,
-    name: "Lawnmower Shadow",
-    description: "Crouch behind the lawnmower or garden equipment. The dark machinery creates strong shadows that hide your silhouette.",
-    difficulty: "EASY",
-    bestFor: "Hider",
-    image: "https://images.unsplash.com/photo-1513694203232-719a280e022f?w=600&h=400&fit=crop",
-  },
-  {
-    id: 5,
-    name: "Tire Rack Disguise",
-    description: "Stand among stacked tires on the rack. The round shapes and black rubber provide natural camouflage for your outline.",
-    difficulty: "MEDIUM",
-    bestFor: "Both",
-    image: "https://images.unsplash.com/photo-1600166898405-da9535204843?w=600&h=400&fit=crop",
-  },
-  {
-    id: 6,
-    name: "Shelf Lurker",
-    description: "Stand between metal shelving units laden with paint cans and supplies. Match the shelf color and stay perfectly still in the clutter.",
-    difficulty: "MEDIUM",
-    bestFor: "Hider",
-    image: "https://images.unsplash.com/photo-1507473885765-e6ed057ab6fe?w=600&h=400&fit=crop",
   },
 ];
 
-export const sewerSpots: SpotData[] = [
-  {
-    id: 1,
-    name: "Pipe Alcove",
-    description: "Duck into the gap between large drainage pipes. Paint yourself rusty brown to match the oxidized metal surfaces around you.",
-    difficulty: "EASY",
-    bestFor: "Hider",
-    image: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=600&h=400&fit=crop",
-  },
-  {
-    id: 2,
-    name: "Tunnel Bend",
-    description: "Stand at the curve of the tunnel where the light doesn't reach. Match the damp concrete walls — dark gray with greenish algae tones.",
-    difficulty: "MEDIUM",
-    bestFor: "Hider",
-    image: "https://images.unsplash.com/photo-1507842217343-583bb7270b66?w=600&h=400&fit=crop",
-  },
-  {
-    id: 3,
-    name: "Drain Grate Crouch",
-    description: "Crouch beneath a drain grate overhead. The shaft of light above makes the surrounding darkness even deeper — perfect for hiding.",
-    difficulty: "EASY",
-    bestFor: "Hider",
-    image: "https://images.unsplash.com/photo-1593784991095-a205069470b6?w=600&h=400&fit=crop",
-  },
-  {
-    id: 4,
-    name: "Valve Wheel Stand",
-    description: "Stand beside a large valve wheel on the pipe. Match the dark iron color of the machinery. Your vertical shape blends with the pipe junction.",
-    difficulty: "MEDIUM",
-    bestFor: "Hider",
-    image: "https://images.unsplash.com/photo-1513694203232-719a280e022f?w=600&h=400&fit=crop",
-  },
-  {
-    id: 5,
-    name: "Water Flow Blend",
-    description: "Wade into the shallow water channel and match the murky color. The rippling surface distorts your outline from seekers above.",
-    difficulty: "HARD",
-    bestFor: "Hider",
-    image: "https://images.unsplash.com/photo-1600166898405-da9535204843?w=600&h=400&fit=crop",
-  },
-  {
-    id: 6,
-    name: "Manhole Shadow",
-    description: "Stand directly below a closed manhole. The narrow shaft of light creates a bright circle around you — stay just outside it in the dark ring.",
-    difficulty: "MEDIUM",
-    bestFor: "Both",
-    image: "https://images.unsplash.com/photo-1507473885765-e6ed057ab6fe?w=600&h=400&fit=crop",
-  },
-];
-
-export const backroomsSpots: SpotData[] = [
-  {
-    id: 1,
-    name: "Yellow Wall Seam",
-    description: "Press yourself into the corner where two damp yellow walls meet. Paint yourself the same sickly yellow-beige. The mono-color makes you vanish.",
-    difficulty: "EASY",
-    bestFor: "Hider",
-    image: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=600&h=400&fit=crop",
-  },
-  {
-    id: 2,
-    name: "Fluorescent Light Buzz",
-    description: "Stand directly beneath a flickering fluorescent light. The strobe effect disorients seekers and makes your shape hard to focus on.",
-    difficulty: "MEDIUM",
-    bestFor: "Both",
-    image: "https://images.unsplash.com/photo-1507842217343-583bb7270b66?w=600&h=400&fit=crop",
-  },
-  {
-    id: 3,
-    name: "Damp Carpet Drop",
-    description: "Lie flat on the soggy beige carpet. Match the stained, waterlogged texture. The low ceiling means seekers look eye-level, not down.",
-    difficulty: "EASY",
-    bestFor: "Hider",
-    image: "https://images.unsplash.com/photo-1593784991095-a205069470b6?w=600&h=400&fit=crop",
-  },
-  {
-    id: 4,
-    name: "Infinite Hallway Edge",
-    description: "Stand at the very edge of a long hallway where perspective makes you tiny. The repeating pattern of walls and lights makes distance deceptive.",
-    difficulty: "HARD",
-    bestFor: "Hider",
-    image: "https://images.unsplash.com/photo-1513694203232-719a280e022f?w=600&h=400&fit=crop",
-  },
-  {
-    id: 5,
-    name: "Missing Ceiling Tile",
-    description: "Climb into the gap where a drop ceiling tile is missing. Paint yourself white to match the exposed pipes and insulation above.",
-    difficulty: "MEDIUM",
-    bestFor: "Hider",
-    image: "https://images.unsplash.com/photo-1600166898405-da9535204843?w=600&h=400&fit=crop",
-  },
-  {
-    id: 6,
-    name: "Pillar Column Stand",
-    description: "Stand behind one of the square support pillars scattered throughout. Match the yellowed paint. The pillar breaks your silhouette perfectly.",
-    difficulty: "MEDIUM",
-    bestFor: "Seeker",
-    image: "https://images.unsplash.com/photo-1507473885765-e6ed057ab6fe?w=600&h=400&fit=crop",
-  },
-];
-
+// Helper function to get spots by map slug
 export function getSpotsByMapSlug(slug: string): SpotData[] {
-  const map: Record<string, SpotData[]> = {
-    "living-room": livingRoomSpots,
-    kitchen: kitchenSpots,
-    bathroom: bathroomSpots,
-    bedroom: bedroomSpots,
-    garage: garageSpots,
-    sewer: sewerSpots,
-    "the-backrooms": backroomsSpots,
+  const spotsMap: Record<string, SpotData[]> = {
+    "lobby": lobbySpots,
+    "farm": farmSpots,
+    "hallway": hallwaySpots,
+    "walk-in-freezer": freezerSpots,
+    "laundry-room": laundrySpots,
+    "sewer": hallwaySpots, // Fallback
+    "the-backrooms": farmSpots, // Fallback
   };
-  return map[slug] || [];
+  return spotsMap[slug] || [];
 }
