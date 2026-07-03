@@ -303,7 +303,7 @@ export default function HomePage() {
       </section>
 
       {/* Social Proof Bar */}
-      <section ref={statsRef} className="grid grid-cols-2 md:grid-cols-5 gap-4 pt-3 pb-12 border-y border-[#1e1e32] mt-4 mb-stack-lg bg-surface/20 max-w-[1440px] mx-auto px-4">
+      <section ref={statsRef} className="grid grid-cols-2 md:grid-cols-5 gap-4 py-8 border-y border-[#1e1e32] mt-4 mb-stack-lg bg-surface/20 max-w-[1440px] mx-auto px-4">
         {stats.map((stat) => (
           <div key={stat.label} className="stat-item flex flex-col items-center justify-center p-4 hover:scale-110 transition-transform">
             <span className="stat-value font-display-lg text-2xl md:text-stat-lg text-primary font-bold">{stat.value}</span>
