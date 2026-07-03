@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { getCloudflareContext } from '@opennextjs/cloudflare';
 
 export async function GET(
   request: NextRequest,
@@ -8,8 +9,8 @@ export async function GET(
     const { path } = await params;
     const key = path.join('/');
     
-    // Get R2 bucket
-    const env = (globalThis as any).__env || {};
+    // Get Cloudflare context
+    const { env } = getCloudflareContext();
     const bucket = env.ASSETS_R2;
     
     if (!bucket) {
