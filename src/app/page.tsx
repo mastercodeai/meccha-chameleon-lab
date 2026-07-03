@@ -266,7 +266,7 @@ export default function HomePage() {
             <span className="text-primary">Best Hiding Spots & Maps Guide</span>
           </h1>
           <p className="font-body-main text-body-main text-on-surface-variant max-w-lg">
-            MECCHA CHAMELEON sold 5 million copies in 3 weeks. Top YouTube videos have 93M+ views. But search for hiding spot guides and all you get is irrelevant results. Until now.
+            <Link href="/maps/backrooms" className="text-primary hover:underline">MECCHA CHAMELEON</Link> sold 5 million copies in 3 weeks. Top YouTube videos have 93M+ views. But search for hiding spot guides and all you get is irrelevant results. Our <Link href="/tier-list" className="text-primary hover:underline">map tier list</Link> and <Link href="/maps" className="text-primary hover:underline">per-map spot guides</Link> fix that.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <Link

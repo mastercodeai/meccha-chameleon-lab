@@ -210,6 +210,48 @@ export default function MapPage({ params }: { params: Promise<{ slug: string }> 
         )}
       </div>
 
+      {/* Map Strategy */}
+      <div className="mt-12 bg-surface border border-outline-variant rounded-lg p-6">
+        <h2 className="font-headline-md text-headline-md text-on-surface mb-4 uppercase">{map.name} Strategy Tips</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="bg-[#12121e] border border-[#1e1e32] rounded-lg p-4">
+            <h3 className="font-label-caps text-label-caps text-primary mb-2">FOR HIDERS</h3>
+            <p className="font-body-sm text-body-sm text-on-surface-variant">
+              On {map.name}, prioritize spots with natural cover. With {map.spots} known hiding locations, 
+              rotate between {map.difficulty >= 4 ? "harder spots that seekers rarely check" : "beginner-friendly spots with good cover"}. 
+              Paint matching is critical on this map — use colors that blend with the environment.
+            </p>
+          </div>
+          <div className="bg-[#12121e] border border-[#1e1e32] rounded-lg p-4">
+            <h3 className="font-label-caps text-label-caps text-primary mb-2">FOR SEEKERS</h3>
+            <p className="font-body-sm text-body-sm text-on-surface-variant">
+              {map.name} has a difficulty rating of {map.difficulty}/5 for seekers. 
+              {map.difficulty >= 4 ? "This is a tough map to search — focus on systematic room-by-room sweeps." : "This map favors seekers — check common hiding spots first."} 
+              Look for objects that seem out of place or have unnatural paint colors.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {/* Related Guides */}
+      <div className="mt-8 bg-surface border border-outline-variant rounded-lg p-6">
+        <h2 className="font-headline-md text-headline-md text-on-surface mb-4 uppercase">Related Guides</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          <Link href="/guides/hider" className="bg-[#12121e] border border-[#1e1e32] rounded-lg p-4 hover:border-primary/50 transition-all hover:scale-105">
+            <h3 className="font-label-caps text-label-caps text-primary mb-2">HIDER GUIDE</h3>
+            <p className="font-body-sm text-body-sm text-on-surface-variant">Master the art of hiding with advanced strategies.</p>
+          </Link>
+          <Link href="/guides/seeker" className="bg-[#12121e] border border-[#1e1e32] rounded-lg p-4 hover:border-primary/50 transition-all hover:scale-105">
+            <h3 className="font-label-caps text-label-caps text-primary mb-2">SEEKER GUIDE</h3>
+            <p className="font-body-sm text-body-sm text-on-surface-variant">Learn how to find any hider on any map.</p>
+          </Link>
+          <Link href="/guides/paint" className="bg-[#12121e] border border-[#1e1e32] rounded-lg p-4 hover:border-primary/50 transition-all hover:scale-105">
+            <h3 className="font-label-caps text-label-caps text-primary mb-2">PAINT GUIDE</h3>
+            <p className="font-body-sm text-body-sm text-on-surface-variant">Best paint combos for every surface type.</p>
+          </Link>
+        </div>
+      </div>
+
       {/* Other Maps */}
       <div ref={otherMapsRef} className="mt-16">
         <h2 className="font-display-lg text-xl text-on-surface uppercase mb-6">Other Maps</h2>
