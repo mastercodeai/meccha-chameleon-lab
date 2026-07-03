@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, use } from "react";
 import Link from "next/link";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -26,8 +26,8 @@ function DifficultyBadge({ difficulty }: { difficulty: string }) {
   );
 }
 
-export default function MapPage({ params }: { params: { slug: string } }) {
-  const { slug } = params;
+export default function MapPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = use(params);
   const map = getMapBySlug(slug);
   if (!map) notFound();
 
