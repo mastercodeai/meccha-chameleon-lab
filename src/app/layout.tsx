@@ -74,9 +74,6 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-  other: {
-    "msvalidate.01": "711D023A581945A37EA78CB925D2A7A9",
-  },
 };
 
 export default function RootLayout({
@@ -92,19 +89,22 @@ export default function RootLayout({
       <head>
         {/* Bing Webmaster */}
         <meta name="msvalidate.01" content="711D023A581945A37EA78CB925D2A7A9" />
+
+        {/* Microsoft Clarity */}
+        <script
+          type="text/javascript"
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function(c,l,a,r,i,t,y){
+                  c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+                  t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+                  y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+              })(window, document, "clarity", "script", "xggeuggf7b");
+            `,
+          }}
+        />
       </head>
       <body className="font-body-main bg-background text-on-surface antialiased overflow-x-hidden">
-        {/* Microsoft Clarity */}
-        <Script id="clarity" strategy="afterInteractive">
-          {`
-            (function(c,l,a,r,i,t,y){
-                c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-                t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-                y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-            })(window, document, "clarity", "script", "xggeuggf7b");
-          `}
-        </Script>
-
         {/* Plausible Analytics */}
         <Script
           src="https://plausible.shipsolo.io/js/pa-fvsf9y25CvYQYtSohbXSP.js"
