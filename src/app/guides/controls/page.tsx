@@ -2,8 +2,11 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Controls — Keyboard & Controller Guide | MECCHA CHAMELEON Lab",
+  title: "Controls — Keyboard & Controller Guide",
   description: "Complete controls guide for MECCHA CHAMELEON. Keyboard, mouse, and controller mappings for movement, painting, and more.",
+  alternates: {
+    canonical: "https://mecchachameleonlab.com/guides/controls",
+  },
 };
 
 const sections = [

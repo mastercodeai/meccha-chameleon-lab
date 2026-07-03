@@ -4,10 +4,13 @@ import { maps } from "@/data/maps";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "All Maps — Best Hiding Spots Guide | MECCHA CHAMELEON Lab",
+  title: "All Maps — Best Hiding Spots Guide",
   description: "Browse all MECCHA CHAMELEON maps with detailed hiding spot guides. Screenshots, difficulty ratings, and strategies for every official map.",
+  alternates: {
+    canonical: "https://mecchachameleonlab.com/maps",
+  },
   openGraph: {
-    title: "All Maps — Best Hiding Spots Guide | MECCHA CHAMELEON Lab",
+    title: "All Maps — Best Hiding Spots Guide",
     description: "Browse all MECCHA CHAMELEON maps with detailed hiding spot guides.",
   },
 };

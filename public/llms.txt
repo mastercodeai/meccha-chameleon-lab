@@ -1,0 +1,49 @@
+# MECCHA CHAMELEON Lab
+
+> The ultimate tactical database for MECCHA CHAMELEON — best hiding spots, maps, and strategies.
+
+## Core Pages
+
+- [Homepage](https://mecchachameleonlab.com/): Free MECCHA CHAMELEON guides with best hiding spots for every map, Workshop database, and beginner tips.
+- [All Maps](https://mecchachameleonlab.com/maps): Browse all official maps with detailed hiding spot guides, screenshots, and difficulty ratings.
+- [Beginner Guide](https://mecchachameleonlab.com/guides/beginner): Complete beginner's guide to MECCHA CHAMELEON — rules, controls, and basic strategies.
+- [Hider Guide](https://mecchachameleonlab.com/guides/hider): Advanced strategies for the Hider role — painting techniques, best spots, and evasion tactics.
+- [Seeker Guide](https://mecchachameleonlab.com/guides/seeker): Seeker strategies — how to find hidden players efficiently and win rounds.
+- [Paint Guide](https://mecchachameleonlab.com/guides/paint): Visual guide showing best color combinations for each map surface.
+- [Tips & Tricks](https://mecchachameleonlab.com/guides/tips): Pro tips and advanced techniques for both Hiders and Seekers.
+- [Controls Guide](https://mecchachameleonlab.com/guides/controls): Complete controls reference for MECCHA CHAMELEON.
+- [Workshop Maps](https://mecchachameleonlab.com/workshop): Searchable database of 489+ community-created Workshop maps with ratings and subscribe links.
+- [Gallery](https://mecchachameleonlab.com/gallery): Game screenshots and artwork from MECCHA CHAMELEON.
+- [Crossplay](https://mecchachameleonlab.com/crossplay): Information about cross-platform play support.
+- [Steam Deck](https://mecchachameleonlab.com/platforms/steam-deck): Steam Deck compatibility and performance guide.
+
+## Key Facts
+
+- MECCHA CHAMELEON is a casual PvP hide-and-seek game where you paint your body to blend into the environment.
+- Developed by lemorion_1224, released June 9, 2026 on Steam.
+- Price: $5.99 USD on Steam.
+- 5 million copies sold in first 3 weeks.
+- 93M+ YouTube views.
+- 44K+ Steam reviews (Very Positive).
+- 7+ official maps including Sewer and The Backrooms.
+- 489+ community-created Workshop maps.
+- Supports 2-10 players per match.
+- PC (Windows) only — no crossplay as of July 2026.
+
+## Maps Included
+
+- [Living Room](https://mecchachameleonlab.com/maps/living-room): Best hiding spots for the Living Room map.
+- [Kitchen](https://mecchachameleonlab.com/maps/kitchen): Best hiding spots for the Kitchen map.
+- [Bathroom](https://mecchachameleonlab.com/maps/bathroom): Best hiding spots for the Bathroom map.
+- [Bedroom](https://mecchachameleonlab.com/maps/bedroom): Best hiding spots for the Bedroom map.
+- [Garage](https://mecchachameleonlab.com/maps/garage): Best hiding spots for the Garage map.
+- [Sewer](https://mecchachameleonlab.com/maps/sewer): Best hiding spots for the Sewer map.
+- [The Backrooms](https://mecchachameleonlab.com/maps/the-backrooms): Best hiding spots for The Backrooms map.
+
+## Contact
+
+- Website: https://mecchachameleonlab.com
+- Discord: https://discord.gg/eNFUDBSwag
+- Steam Store: https://store.steampowered.com/app/4704690/MECCHA_CHAMELEON/
+
+Last updated: 2026-07-03

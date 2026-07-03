@@ -6,6 +6,9 @@ const screenshots = [
     alt: "MECCHA CHAMELEON Title Screen - Colorful 3D Text",
     title: "Title Screen",
     description: "The iconic title screen featuring the colorful MECCHA CHAMELEON logo against a brick wall backdrop.",
+  alternates: {
+    canonical: "https://mecchachameleonlab.com/gallery",
+  },
   },
   {
     src: `${R2_BASE}/screenshots/title-screen-2.jpg`,
@@ -18,6 +21,9 @@ const screenshots = [
     alt: "MECCHA CHAMELEON Title Screen - Camouflage Concept",
     title: "Camouflage Concept",
     description: "The chameleon character blending into the brick wall, demonstrating the core camouflage mechanic.",
+  alternates: {
+    canonical: "https://mecchachameleonlab.com/gallery",
+  },
   },
   {
     src: `${R2_BASE}/screenshots/farm-map.jpg`,
@@ -30,42 +36,63 @@ const screenshots = [
     alt: "Indoor Scene - Green Walls with Photo Frames",
     title: "Indoor Scene",
     description: "An indoor environment with green walls and decorative photo frames. A cozy hiding spot.",
+  alternates: {
+    canonical: "https://mecchachameleonlab.com/gallery",
+  },
   },
   {
     src: `${R2_BASE}/screenshots/train-car.jpg`,
     alt: "Train Car - Moving Train Interior",
     title: "Train Car",
     description: "The interior of a moving train car. A dynamic environment where players must hide while in motion.",
+  alternates: {
+    canonical: "https://mecchachameleonlab.com/gallery",
+  },
   },
   {
     src: `${R2_BASE}/screenshots/underground-tunnel.jpg`,
     alt: "Underground Tunnel - Dark Industrial Space",
     title: "Underground Tunnel",
     description: "A dark, atmospheric underground tunnel. Perfect for tense hide-and-seek gameplay.",
+  alternates: {
+    canonical: "https://mecchachameleonlab.com/gallery",
+  },
   },
   {
     src: `${R2_BASE}/screenshots/underground-ruins.jpg`,
     alt: "Underground Ruins - Ancient Stone Structures",
     title: "Underground Ruins",
     description: "Ancient underground ruins with wooden beams and stone walls. A mysterious exploration area.",
+  alternates: {
+    canonical: "https://mecchachameleonlab.com/gallery",
+  },
   },
   {
     src: `${R2_BASE}/screenshots/christmas-room.jpg`,
     alt: "Christmas Room - Festive Indoor Scene",
     title: "Christmas Room",
     description: "A festive Christmas-themed room with colorful lights and decorations. Limited-time seasonal content.",
+  alternates: {
+    canonical: "https://mecchachameleonlab.com/gallery",
+  },
   },
   {
     src: `${R2_BASE}/screenshots/restaurant.jpg`,
     alt: "Restaurant - Futuristic Dining Hall",
     title: "Restaurant",
     description: "A futuristic restaurant with warm lighting and mechanical decorations. A social hub area.",
+  alternates: {
+    canonical: "https://mecchachameleonlab.com/gallery",
+  },
   },
   {
     src: `${R2_BASE}/screenshots/color-challenge.jpg`,
     alt: "Color Challenge - Interactive Puzzle Room",
     title: "Color Challenge",
     description: "An interactive challenge room with floating colored balls. Test your color-matching skills!",
+  alternates: {
+    canonical: "https://mecchachameleonlab.com/gallery",
+  },
   },
   {
     src: `${R2_BASE}/screenshots/10m-downloads.png`,

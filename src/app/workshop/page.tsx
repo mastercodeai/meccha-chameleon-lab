@@ -1,8 +1,11 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Workshop — Best Maps & Mods | MECCHA CHAMELEON Lab",
+  title: "Workshop — Best Maps & Mods",
   description: "Browse 489 community-created Workshop maps for MECCHA CHAMELEON. Find the best custom maps with ratings and subscribe links.",
+  alternates: {
+    canonical: "https://mecchachameleonlab.com/workshop",
+  },
 };
 
 export default function WorkshopPage() {

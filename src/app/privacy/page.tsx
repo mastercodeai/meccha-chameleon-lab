@@ -1,8 +1,11 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy | MECCHA CHAMELEON Lab",
+  title: "Privacy Policy",
   description: "Privacy policy for MECCHA CHAMELEON Lab, an independent fan site.",
+  alternates: {
+    canonical: "https://mecchachameleonlab.com/privacy",
+  },
 };
 
 export default function PrivacyPage() {

@@ -1,9 +1,12 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Steam Deck — Setup & Performance Guide | MECCHA CHAMELEON Lab",
+  title: "Steam Deck — Setup & Performance Guide",
   description:
     "Is MECCHA CHAMELEON playable on Steam Deck? Performance settings, controller mapping, and recommended configuration for the best handheld experience.",
+  alternates: {
+    canonical: "https://mecchachameleonlab.com/platforms/steam-deck",
+  },
 };
 
 export default function SteamDeckPage() {

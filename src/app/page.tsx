@@ -76,8 +76,8 @@ export default function HomePage() {
       <section className="min-h-[80vh] flex flex-col md:flex-row items-center gap-gutter py-stack-lg px-4 md:px-gutter max-w-[1440px] mx-auto hero-bg relative">
         <div className="w-full md:w-1/2 flex flex-col gap-stack-lg z-10">
           <h1 className="font-display-lg text-3xl md:text-display-lg text-on-surface leading-tight">
-            You Watched the YouTube Videos.{" "}
-            <span className="text-primary">You Still Can&apos;t Find Good Spots.</span>
+            MECCHA CHAMELEON:{" "}
+            <span className="text-primary">Best Hiding Spots & Maps Guide</span>
           </h1>
           <p className="font-body-main text-body-main text-on-surface-variant max-w-lg">
             MECCHA CHAMELEON sold 5 million copies in 3 weeks. Top YouTube videos have 93M+ views. But search for hiding spot guides and all you get is irrelevant results. Until now.

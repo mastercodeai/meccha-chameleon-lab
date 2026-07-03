@@ -2,8 +2,11 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Seeker Guide — Hunt Like a Pro | MECCHA CHAMELEON Lab",
+  title: "Seeker Guide — Hunt Like a Pro",
   description: "Sharpen your detection skills and become an unstoppable Seeker. Learn search patterns, environment reading, team coordination, and time management in MECCHA CHAMELEON.",
+  alternates: {
+    canonical: "https://mecchachameleonlab.com/guides/seeker",
+  },
 };
 
 const sections = [

@@ -1,9 +1,12 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Crossplay — Can You Play Together? | MECCHA CHAMELEON Lab",
+  title: "Crossplay — Can You Play Together?",
   description:
     "Can you play MECCHA CHAMELEON with friends on different platforms? Check the current crossplay status and platform availability.",
+  alternates: {
+    canonical: "https://mecchachameleonlab.com/crossplay",
+  },
 };
 
 export default function CrossplayPage() {

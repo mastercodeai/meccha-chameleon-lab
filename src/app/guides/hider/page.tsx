@@ -2,8 +2,11 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Hider Guide — Master the Art of Blending | MECCHA CHAMELEON Lab",
+  title: "Hider Guide — Master the Art of Blending",
   description: "Become an invisible master of disguise. Learn advanced painting techniques, positioning strategies, and map-specific hiding spots to dominate as a Hider in MECCHA CHAMELEON.",
+  alternates: {
+    canonical: "https://mecchachameleonlab.com/guides/hider",
+  },
 };
 
 const sections = [

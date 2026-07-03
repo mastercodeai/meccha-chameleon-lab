@@ -2,8 +2,11 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Top 50 Tips & Tricks | MECCHA CHAMELEON Lab",
+  title: "Top 50 Tips & Tricks",
   description: "Master MECCHA CHAMELEON with 50 essential tips for hiders, seekers, painters, and map experts. Level up your gameplay today.",
+  alternates: {
+    canonical: "https://mecchachameleonlab.com/guides/tips",
+  },
 };
 
 const sections = [

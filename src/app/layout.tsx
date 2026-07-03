@@ -35,13 +35,16 @@ export const metadata: Metadata = {
   },
   description:
     "Free MECCHA CHAMELEON guides: best hiding spots for every map with screenshots, Workshop map database, beginner guide, and tips. Updated for 2026.",
+  alternates: {
+    canonical: "https://mecchachameleonlab.com",
+  },
   openGraph: {
     title: "MECCHA CHAMELEON Lab — Best Hiding Spots, Maps & Guides",
     description:
       "Free MECCHA CHAMELEON guides: best hiding spots for every map with screenshots, Workshop map database, beginner guide, and tips.",
     images: [
       {
-        url: "/og-image.png",
+        url: "/og-image.jpg",
         width: 1200,
         height: 630,
         alt: "MECCHA CHAMELEON Lab",
@@ -56,7 +59,7 @@ export const metadata: Metadata = {
     title: "MECCHA CHAMELEON Lab — Best Hiding Spots, Maps & Guides",
     description:
       "Free MECCHA CHAMELEON guides: best hiding spots for every map with screenshots, Workshop map database, beginner guide, and tips.",
-    images: ["/og-image.png"],
+    images: ["/og-image.jpg"],
   },
   icons: {
     icon: "/Favicon.svg",

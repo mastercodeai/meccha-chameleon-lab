@@ -2,8 +2,11 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Beginner Guide — How to Play | MECCHA CHAMELEON Lab",
+  title: "Beginner Guide — How to Play",
   description: "Everything you need to know before your first round of MECCHA CHAMELEON. Rules, controls, painting tips, and common mistakes.",
+  alternates: {
+    canonical: "https://mecchachameleonlab.com/guides/beginner",
+  },
 };
 
 const sections = [

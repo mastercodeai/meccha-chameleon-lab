@@ -14,8 +14,11 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const map = getMapBySlug(slug);
   if (!map) return {};
   return {
-    title: `${map.name} — Best Hiding Spots | MECCHA CHAMELEON Lab`,
+    title: `${map.name} — Best Hiding Spots`,
     description: `Detailed hiding spot guide for ${map.name} in MECCHA CHAMELEON. ${map.spots} spots with screenshots and difficulty ratings.`,
+    alternates: {
+      canonical: `https://mecchachameleonlab.com/maps/${slug}`,
+    },
   };
 }
 

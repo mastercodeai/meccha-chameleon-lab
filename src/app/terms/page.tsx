@@ -1,8 +1,11 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Terms of Service | MECCHA CHAMELEON Lab",
+  title: "Terms of Service",
   description: "Terms of service for MECCHA CHAMELEON Lab, an independent fan site.",
+  alternates: {
+    canonical: "https://mecchachameleonlab.com/terms",
+  },
 };
 
 export default function TermsPage() {

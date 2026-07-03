@@ -2,8 +2,11 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Paint Guide — Best Color Combinations | MECCHA CHAMELEON Lab",
+  title: "Paint Guide — Best Color Combinations",
   description: "Master the art of painting in MECCHA CHAMELEON. Learn color matching, surface-specific techniques, map palettes, and advanced tricks to become invisible.",
+  alternates: {
+    canonical: "https://mecchachameleonlab.com/guides/paint",
+  },
 };
 
 const sections = [
