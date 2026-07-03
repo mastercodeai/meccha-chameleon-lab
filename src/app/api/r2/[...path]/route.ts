@@ -11,7 +11,7 @@ export async function GET(
     
     // Get Cloudflare context
     const { env } = getCloudflareContext();
-    const bucket = env.ASSETS_R2;
+    const bucket = (env as any).ASSETS_R2;
     
     if (!bucket) {
       return new NextResponse('R2 bucket not available', { status: 500 });
