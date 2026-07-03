@@ -54,24 +54,6 @@ export const maps: MapData[] = [
     color: "#DDA0DD",
     image: "/screenshots/screenshot-5.jpg",
   },
-  {
-    slug: "sewer",
-    name: "Sewer",
-    description: "Dark underground tunnels with pipes and grates. Low visibility makes both hiding and seeking challenging.",
-    spots: 13,
-    difficulty: 5,
-    color: "#556B2F",
-    image: "/screenshots/screenshot-1.jpg",
-  },
-  {
-    slug: "the-backrooms",
-    name: "The Backrooms",
-    description: "An endless maze of yellow rooms and buzzing lights. The surreal environment creates unpredictable hiding dynamics.",
-    spots: 16,
-    difficulty: 4,
-    color: "#DAA520",
-    image: "/screenshots/screenshot-2.jpg",
-  },
 ];
 
 export function getMapBySlug(slug: string): MapData | undefined {

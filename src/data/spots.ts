@@ -153,8 +153,6 @@ export function getSpotsByMapSlug(slug: string): SpotData[] {
     "hallway": hallwaySpots,
     "walk-in-freezer": freezerSpots,
     "laundry-room": laundrySpots,
-    "sewer": hallwaySpots, // Fallback
-    "the-backrooms": farmSpots, // Fallback
   };
   return spotsMap[slug] || [];
 }
