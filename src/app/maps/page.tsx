@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Image from "next/image";
 import { maps } from "@/data/maps";
 import type { Metadata } from "next";
 
@@ -50,11 +49,10 @@ export default function MapsPage() {
             className="group bg-surface border border-outline-variant rounded-lg overflow-hidden glow-hover transition-all"
           >
             <div className="relative aspect-video overflow-hidden">
-              <Image
+              <img
                 src={map.image}
                 alt={`${map.name} map`}
-                fill
-                className="object-cover group-hover:scale-105 transition-transform duration-300"
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-surface/80 to-transparent" />
               <div className="absolute bottom-3 left-4">

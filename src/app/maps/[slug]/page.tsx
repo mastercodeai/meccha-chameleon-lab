@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Image from "next/image";
 import { maps, getMapBySlug } from "@/data/maps";
 import { getSpotsByMapSlug } from "@/data/spots";
 import { notFound } from "next/navigation";
@@ -53,13 +52,10 @@ export default async function MapPage({ params }: { params: Promise<{ slug: stri
 
       {/* Map Hero */}
       <div className="relative rounded-lg overflow-hidden border-2 border-[#1e1e32] mb-stack-lg">
-        <Image
+        <img
           src={map.image}
           alt={`${map.name} map`}
-          width={1200}
-          height={675}
           className="w-full h-auto object-cover"
-          priority
         />
         <div className="absolute inset-0 bg-gradient-to-t from-surface/90 via-surface/30 to-transparent" />
         <div className="absolute bottom-6 left-6">
@@ -101,31 +97,36 @@ export default async function MapPage({ params }: { params: Promise<{ slug: stri
           ))}
         </div>
       ) : (
-        <div className="bg-surface border border-outline-variant rounded-lg p-12 text-center">
-          <p className="font-body-main text-body-main text-on-surface-variant">
-            Detailed spot guide for {map.name} coming soon. Check back for updates!
-          </p>
+        <div className="text-center py-12">
+          <p className="text-on-surface-variant">No hiding spots data available yet.</p>
         </div>
       )}
 
-      {/* Related Maps */}
-      <div className="mt-stack-lg">
-        <h2 className="font-headline-md text-headline-md text-on-surface mb-6 uppercase">Other Maps</h2>
+      {/* Other Maps */}
+      <div className="mt-16">
+        <h2 className="font-display-lg text-xl text-on-surface uppercase mb-6">Other Maps</h2>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-          {maps.filter((m) => m.slug !== slug).slice(0, 4).map((m) => (
-            <Link
-              key={m.slug}
-              href={`/maps/${m.slug}`}
-              className="bg-surface border border-outline-variant rounded-lg overflow-hidden glow-hover transition-all"
-            >
-              <div className="relative aspect-video">
-                <Image src={m.image} alt={m.name} fill className="object-cover" />
-              </div>
-              <div className="p-3">
-                <span className="font-label-caps text-sm text-on-surface uppercase">{m.name}</span>
-              </div>
-            </Link>
-          ))}
+          {maps
+            .filter((m) => m.slug !== slug)
+            .map((m) => (
+              <Link
+                key={m.slug}
+                href={`/maps/${m.slug}`}
+                className="group bg-surface border border-outline-variant rounded-lg overflow-hidden glow-hover"
+              >
+                <div className="relative aspect-video overflow-hidden">
+                  <img
+                    src={m.image}
+                    alt={`${m.name} map`}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-surface/80 to-transparent" />
+                  <div className="absolute bottom-2 left-2">
+                    <span className="text-xs font-display-lg text-on-surface uppercase">{m.name}</span>
+                  </div>
+                </div>
+              </Link>
+            ))}
         </div>
       </div>
     </main>
