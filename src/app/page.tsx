@@ -2,7 +2,6 @@
 
 import { useRef, useEffect } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { FAQSchema, WebSiteSchema, GameSchema } from "@/components/Schema";
@@ -286,19 +285,13 @@ export default function HomePage() {
         </div>
         <div className="w-full md:w-1/2 relative z-10 hero-image">
           <div className="relative rounded-lg overflow-hidden border-2 border-[#1e1e32] shadow-[0_0_15px_rgba(75,226,119,0.2)]">
-            <Image
-              src="https://images.unsplash.com/photo-1511512578047-dfb367046420?w=800&h=450&fit=crop"
-              alt="Game map tactical view"
+            <img
+              src="/hero-character.jpg"
+              alt="MECCHA CHAMELEON character peeling off a brick wall"
               width={800}
               height={450}
               className="w-full h-auto object-cover"
-              priority
             />
-            {/* Annotation dots */}
-            <div className="absolute top-[30%] left-[40%] w-3 h-3 rounded-full bg-primary animate-ping" />
-            <div className="absolute top-[30%] left-[40%] w-3 h-3 rounded-full bg-primary shadow-[0_0_8px_rgba(75,226,119,1)]" />
-            <div className="absolute bottom-[20%] right-[30%] w-3 h-3 rounded-full bg-primary animate-ping" />
-            <div className="absolute bottom-[20%] right-[30%] w-3 h-3 rounded-full bg-primary shadow-[0_0_8px_rgba(75,226,119,1)]" />
           </div>
         </div>
       </section>
