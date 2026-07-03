@@ -21,6 +21,10 @@
       "binding": "ASSETS_R2"
     }
   ],
+  "routes": [
+    { "pattern": "mecchachameleonlab.com", "custom_domain": true },
+    { "pattern": "www.mecchachameleonlab.com", "custom_domain": true }
+  ],
   "observability": {
     "enabled": true
   }
