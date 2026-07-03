@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="bg-surface-container-lowest w-full py-stack-lg px-4 md:px-gutter border-t border-outline-variant">
+    <footer className="bg-surface-container-lowest w-full py-stack-lg px-4 md:px-gutter border-t border-outline-variant overflow-hidden">
       <div className="max-w-[1440px] mx-auto grid grid-cols-1 md:grid-cols-4 gap-gutter">
         <div className="col-span-1 md:col-span-2">
           <div className="font-headline-md text-headline-md text-primary mb-4">MECCHA CHAMELEON LAB</div>

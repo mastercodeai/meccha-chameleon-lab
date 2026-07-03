@@ -117,11 +117,11 @@ export default function HomePage() {
       </section>
 
       {/* Social Proof Bar */}
-      <section className="grid grid-cols-2 md:grid-cols-5 gap-4 py-stack-lg border-y border-[#1e1e32] my-stack-lg bg-surface/20 max-w-[1440px] mx-auto">
+      <section className="grid grid-cols-2 md:grid-cols-5 gap-4 py-stack-lg border-y border-[#1e1e32] my-stack-lg bg-surface/20 max-w-[1440px] mx-auto px-4">
         {stats.map((stat) => (
           <div key={stat.label} className="flex flex-col items-center justify-center p-4">
-            <span className="font-display-lg text-3xl md:text-stat-lg text-primary font-bold">{stat.value}</span>
-            <span className="font-label-caps text-label-caps text-on-surface-variant mt-2">{stat.label}</span>
+            <span className="font-display-lg text-2xl md:text-stat-lg text-primary font-bold">{stat.value}</span>
+            <span className="font-label-caps text-label-caps text-on-surface-variant mt-2 text-center">{stat.label}</span>
           </div>
         ))}
       </section>
