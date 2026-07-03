@@ -1,18 +1,16 @@
+"use client";
+
+import { useRef, useEffect } from "react";
 import Link from "next/link";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { maps } from "@/data/maps";
 import type { Metadata } from "next";
 
-export const metadata: Metadata = {
-  title: "All Maps — Best Hiding Spots Guide",
-  description: "Browse all MECCHA CHAMELEON maps with detailed hiding spot guides. Screenshots, difficulty ratings, and strategies for every official map.",
-  alternates: {
-    canonical: "https://mecchachameleonlab.com/maps",
-  },
-  openGraph: {
-    title: "All Maps — Best Hiding Spots Guide",
-    description: "Browse all MECCHA CHAMELEON maps with detailed hiding spot guides.",
-  },
-};
+// Register plugins
+if (typeof window !== "undefined") {
+  gsap.registerPlugin(ScrollTrigger);
+}
 
 function DifficultyStars({ level }: { level: number }) {
   return (
@@ -30,9 +28,47 @@ function DifficultyStars({ level }: { level: number }) {
 }
 
 export default function MapsPage() {
+  const headerRef = useRef<HTMLDivElement>(null);
+  const gridRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    // Header animation
+    if (headerRef.current) {
+      gsap.from(headerRef.current, {
+        y: -50,
+        opacity: 0,
+        duration: 0.8,
+        ease: "power3.out",
+      });
+    }
+
+    // Map cards stagger animation
+    if (gridRef.current) {
+      const cards = gridRef.current.querySelectorAll(".map-card");
+      
+      gsap.from(cards, {
+        y: 80,
+        opacity: 0,
+        duration: 0.6,
+        stagger: 0.12,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: gridRef.current,
+          start: "top 80%",
+          toggleActions: "play none none reverse",
+        },
+      });
+    }
+
+    // Cleanup
+    return () => {
+      ScrollTrigger.getAll().forEach(t => t.kill());
+    };
+  }, []);
+
   return (
     <main className="pt-[100px] pb-stack-lg max-w-[1440px] mx-auto px-4 md:px-gutter">
-      <div className="text-center mb-stack-lg">
+      <div ref={headerRef} className="text-center mb-stack-lg">
         <h1 className="font-display-lg text-3xl md:text-display-lg text-on-surface uppercase">
           Select Your Map
         </h1>
@@ -41,18 +77,18 @@ export default function MapsPage() {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div ref={gridRef} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {maps.map((map) => (
           <Link
             key={map.slug}
             href={`/maps/${map.slug}`}
-            className="group bg-surface border border-outline-variant rounded-lg overflow-hidden glow-hover transition-all"
+            className="map-card group bg-surface border border-outline-variant rounded-lg overflow-hidden glow-hover transition-all hover:scale-105 hover:border-primary/50 hover:shadow-[0_0_20px_rgba(75,226,119,0.2)]"
           >
             <div className="relative aspect-video overflow-hidden">
               <img
                 src={map.image}
                 alt={`${map.name} map`}
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-surface/80 to-transparent" />
               <div className="absolute bottom-3 left-4">
@@ -60,6 +96,8 @@ export default function MapsPage() {
                   {map.name}
                 </h2>
               </div>
+              {/* Hover overlay */}
+              <div className="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </div>
             <div className="p-4 flex items-center justify-between">
               <div className="flex items-center gap-3">
@@ -68,7 +106,7 @@ export default function MapsPage() {
                 </span>
                 <DifficultyStars level={map.difficulty} />
               </div>
-              <svg className="w-5 h-5 text-on-surface-variant group-hover:text-primary transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-5 h-5 text-on-surface-variant group-hover:text-primary group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
               </svg>
             </div>

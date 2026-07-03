@@ -4,6 +4,7 @@ import Script from "next/script";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ParticleBg from "@/components/ParticleBg";
+import AnimationProvider from "@/components/AnimationProvider";
 import "./globals.css";
 
 const orbitron = Orbitron({
@@ -142,9 +143,11 @@ export default function RootLayout({
         />
 
         <ParticleBg />
-        <Navbar />
-        {children}
-        <Footer />
+        <AnimationProvider>
+          <Navbar />
+          {children}
+          <Footer />
+        </AnimationProvider>
       </body>
     </html>
   );
