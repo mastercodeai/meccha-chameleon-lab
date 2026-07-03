@@ -8,6 +8,19 @@
     "directory": ".open-next/assets",
     "binding": "ASSETS"
   },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "meccha-chameleon-db",
+      "database_id": "74607a61-c1e7-4a48-9838-3b0f0863ed4a"
+    }
+  ],
+  "r2_buckets": [
+    {
+      "bucket_name": "meccha-chameleon-assets",
+      "binding": "ASSETS_R2"
+    }
+  ],
   "observability": {
     "enabled": true
   }
