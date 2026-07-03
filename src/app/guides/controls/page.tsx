@@ -159,7 +159,7 @@ export default function ControlsGuidePage() {
           <section id="advanced" className="mb-stack-lg">
             <h2 className="font-headline-md text-headline-md text-on-surface mb-4">Advanced Controls</h2>
             <p className="font-body-main text-body-main text-on-surface-variant mb-6">
-              These controls give you finer control over painting and gameplay. Mastering them will significantly improve your performance.
+              These controls are community-reported and may not all be confirmed. They give you finer control over painting and gameplay.
             </p>
             <div className="space-y-4">
               {advancedControls.map((ctrl, i) => (

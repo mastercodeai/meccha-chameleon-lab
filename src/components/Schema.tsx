@@ -47,7 +47,7 @@ export function GameSchema() {
       ratingValue: "4.2",
       bestRating: "5",
       worstRating: "1",
-      ratingCount: "44529",
+      ratingCount: "42620",
     },
     datePublished: "2026-06-09",
   };

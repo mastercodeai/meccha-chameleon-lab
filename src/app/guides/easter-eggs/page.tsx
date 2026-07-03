@@ -4,24 +4,24 @@ import { BreadcrumbSchema } from "@/components/Schema";
 import RelatedPages from "@/components/RelatedPages";
 
 export const metadata: Metadata = {
-  title: "MECCHA CHAMELEON Easter Eggs & Secrets Guide",
-  description:
-    "All hidden easter eggs and secrets in MECCHA CHAMELEON. Find hidden rooms, secret objects, and developer references.",
+  title: "MECCHA CHAMELEON Community Secrets & Rumors",
+ description:
+    "Community-reported secrets, rumored easter eggs, and hidden details in MECCHA CHAMELEON. Unverified findings from the community.",
   alternates: {
     canonical: "https://mecchachameleonlab.com/guides/easter-eggs",
   },
   openGraph: {
-    title: "MECCHA CHAMELEON Easter Eggs & Secrets Guide | MECCHA CHAMELEON Lab",
+    title: "MECCHA CHAMELEON Community Secrets & Rumors | MECCHA CHAMELEON Lab",
     description:
-      "All hidden easter eggs and secrets in MECCHA CHAMELEON. Find hidden rooms, secret objects, and developer references.",
+      "Community-reported secrets, rumored easter eggs, and hidden details in MECCHA CHAMELEON. Unverified findings from the community.",
     url: "https://mecchachameleonlab.com/guides/easter-eggs",
     type: "article",
   },
   twitter: {
     card: "summary_large_image",
-    title: "MECCHA CHAMELEON Easter Eggs & Secrets Guide | MECCHA CHAMELEON Lab",
+    title: "MECCHA CHAMELEON Community Secrets & Rumors | MECCHA CHAMELEON Lab",
     description:
-      "All hidden easter eggs and secrets in MECCHA CHAMELEON. Find hidden rooms, secret objects, and developer references.",
+      "Community-reported secrets, rumored easter eggs, and hidden details in MECCHA CHAMELEON. Unverified findings from the community.",
   },
 };
 
@@ -40,7 +40,7 @@ export default function EasterEggsPage() {
         items={[
           { name: "Home", url: "https://mecchachameleonlab.com" },
           { name: "Guides", url: "https://mecchachameleonlab.com/guides/beginner" },
-          { name: "Easter Eggs", url: "https://mecchachameleonlab.com/guides/easter-eggs" },
+          { name: "Community Secrets", url: "https://mecchachameleonlab.com/guides/easter-eggs" },
         ]}
       />
 
@@ -68,10 +68,15 @@ export default function EasterEggsPage() {
         {/* Content */}
         <article className="flex-1 max-w-3xl">
           <h1 className="font-display-lg text-3xl md:text-display-lg text-on-surface uppercase mb-8">
-            Easter Eggs & Secrets Guide
+            Community Secrets & Rumors
           </h1>
+          <div className="bg-yellow-500/10 border border-yellow-500/30 rounded-lg p-4 mb-8">
+            <p className="font-body-sm text-body-sm text-yellow-200">
+              ⚠️ <strong>Disclaimer:</strong> The following are community-reported findings and may not all be accurate. We verify entries as patches release. Some details are speculative or based on unconfirmed player reports.
+            </p>
+          </div>
           <p className="font-body-main text-body-main text-on-surface-variant mb-8">
-            MECCHA CHAMELEON is packed with hidden secrets for observant players. From hidden rooms to developer references, this guide catalogs every known easter egg in the game. Some are easy to find, others require you to look in places you&apos;d never think to check.
+            The MECCHA CHAMELEON community has reported various hidden secrets, easter eggs, and mysterious details across the game&apos;s maps. While not all findings have been officially confirmed, these are the most discussed community discoveries.
           </p>
 
           {/* Hidden Rooms */}
@@ -80,32 +85,32 @@ export default function EasterEggsPage() {
               Hidden Rooms
             </h2>
             <p className="font-body-main text-body-main text-on-surface-variant mb-4">
-              Several maps contain secret rooms that aren&apos;t immediately obvious. These rooms often contain unique objects or visual gags.
+              Several maps have been reported to contain secret areas. These community findings may require further verification.
             </p>
             <div className="space-y-4">
               {[
                 {
                   title: "The Basement Vault",
-                  map: "Kitchen Map",
-                  desc: "Behind the refrigerator, there's a narrow gap that leads to a hidden basement vault. Inside you'll find a collection of golden chameleon figurines and a developer message on the wall.",
+                  map: "Backrooms",
+                  desc: "Behind a row of filing cabinets, players report a narrow gap that leads to a hidden area with golden chameleon figurines and what appears to be a developer message on the wall.",
                   difficulty: "Medium",
                 },
                 {
                   title: "Attic Crawlspace",
-                  map: "House Map",
-                  desc: "Climb the bookshelf in the study room to access a small attic crawlspace. The space contains old developer concept art pinned to the walls.",
+                  map: "Hide-and-Seek Mansion",
+                  desc: "Climb the bookshelf in the library to access a small crawlspace. Community members report finding what looks like developer concept art pinned to the walls.",
                   difficulty: "Hard",
                 },
                 {
                   title: "Rooftop Garden",
-                  map: "Night Map",
-                  desc: "On the rooftop area, look for a vent cover that can be walked through. It leads to a small rooftop garden with glowing plants and a hidden chameleon statue.",
+                  map: "Osaka",
+                  desc: "Players report a vent cover on an elevated area that can be walked through, leading to a small garden with glowing plants and a hidden chameleon statue.",
                   difficulty: "Easy",
                 },
                 {
                   title: "Server Room",
-                  map: "Office Map",
-                  desc: "In the back corner of the office, a filing cabinet hides a passage to a mini server room filled with blinking lights and computer terminals.",
+                  map: "Backrooms",
+                  desc: "In a back corner, a filing cabinet reportedly hides a passage to a mini room filled with blinking lights and computer terminals.",
                   difficulty: "Medium",
                 },
               ].map((room, i) => (
@@ -149,8 +154,8 @@ export default function EasterEggsPage() {
                 },
                 {
                   name: "Rubber Duck Army",
-                  desc: "A collection of rubber ducks arranged in a military formation, hidden under a desk. If you interact with them, they all turn to face you.",
-                  hint: "Look under desks and tables in the office-themed areas.",
+                  desc: "Community reports describe rubber ducks arranged in a formation under a desk that react when you interact with them.",
+                  hint: "Look under desks and tables in office-themed maps like Backrooms.",
                 },
                 {
                   name: "Developer's Coffee Mug",
@@ -159,7 +164,7 @@ export default function EasterEggsPage() {
                 },
                 {
                   name: "The Infinity Cube",
-                  desc: "A strange glowing cube that seems to shift colors. It's hidden in a location that changes every few updates, keeping the community guessing.",
+                  desc: "Rumors of a strange glowing cube that shifts colors. Its reported location seems to change between updates.",
                   hint: "Community members report it appears near reflective surfaces.",
                 },
               ].map((obj, i) => (
@@ -237,16 +242,16 @@ export default function EasterEggsPage() {
               </h3>
               <ul className="space-y-3 font-body-sm text-body-sm text-on-surface-variant">
                 <li>
-                  • <strong className="text-on-surface">Morse Code Message:</strong> A series of blinking lights in one hidden room spells out a morse code message — decoded, it reads &quot;THANKS FOR PLAYING&quot;
+                  • <strong className="text-on-surface">Morse Code Message:</strong> Community members report blinking lights in a hidden room that spell out &quot;THANKS FOR PLAYING&quot; in morse code
                 </li>
                 <li>
-                  • <strong className="text-on-surface">QR Code Object:</strong> A scannable QR code hidden on a poster leads to a secret Steam community page with developer commentary
+                  • <strong className="text-on-surface">QR Code Object:</strong> A reportedly scannable QR code hidden on a poster — community members say it leads to a secret page with developer commentary
                 </li>
                 <li>
-                  • <strong className="text-on-surface">Color Theory Puzzle:</strong> Paint certain surfaces in the correct color order to reveal a hidden message on the wall
+                  • <strong className="text-on-surface">Color Theory Puzzle:</strong> Rumored puzzle where painting surfaces in a specific color order reveals a hidden message
                 </li>
                 <li>
-                  • <strong className="text-on-surface">Shadow Formation:</strong> At a specific time on the night map, shadows cast by multiple objects combine to form the shape of a chameleon
+                  • <strong className="text-on-surface">Shadow Formation:</strong> Unconfirmed reports of shadows combining to form a chameleon shape at specific positions on certain maps
                 </li>
               </ul>
             </div>
@@ -258,17 +263,17 @@ export default function EasterEggsPage() {
               Map-Specific Secrets
             </h2>
             <p className="font-body-main text-body-main text-on-surface-variant mb-4">
-              Every official map has at least one unique secret. Here&apos;s a quick reference.
+              Each official map may have unique secrets. These are community-reported and not all are confirmed.
             </p>
             <div className="space-y-3">
               {[
-                { map: "Kitchen", secret: "Hidden pantry behind the fridge with a tiny chameleon colony" },
-                { map: "House", secret: "Attic crawl space with developer concept art" },
-                { map: "Night", secret: "Rooftop garden accessible through a vent" },
-                { map: "Office", secret: "Secret server room behind a filing cabinet" },
-                { map: "Garden", secret: "Underground tunnel system connected to the greenhouse" },
-                { map: "Warehouse", secret: "Hidden control room overlooking the main floor" },
-                { map: "School", secret: "Teacher's lounge with a hidden trophy case" },
+                { map: "Backrooms", secret: "Hidden area behind filing cabinets with golden figurines" },
+                { map: "Mansion", secret: "Crawlspace behind bookshelves in the library" },
+                { map: "Indoor Country", secret: "Reported underground tunnel near farm equipment area" },
+                { map: "Osaka", secret: "Rooftop area accessible through a vent cover" },
+                { map: "Penguin Hotel", secret: "Hidden room behind the hotel lobby counter" },
+                { map: "Sewer", secret: "Secret area behind a breakable pipe section" },
+                { map: "Sugar Land", secret: "Hidden candy cave behind a gingerbread house" },
               ].map((item, i) => (
                 <div
                   key={i}

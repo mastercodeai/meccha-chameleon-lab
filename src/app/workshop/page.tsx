@@ -3,7 +3,7 @@ import RelatedPages from "@/components/RelatedPages";
 
 export const metadata: Metadata = {
   title: "Workshop — Best Maps & Mods",
-  description: "Browse 489 community-created Workshop maps for MECCHA CHAMELEON. Find the best custom maps with ratings and subscribe links.",
+  description: "Browse 521 community-created Workshop maps for MECCHA CHAMELEON. Find the best custom maps with ratings and subscribe links.",
   alternates: {
     canonical: "https://mecchachameleonlab.com/workshop",
   },
@@ -17,7 +17,7 @@ export default function WorkshopPage() {
           Workshop
         </h1>
         <p className="font-body-main text-body-main text-on-surface-variant mt-4">
-          489 community maps and mods. Find your next favorite custom map.
+          521 community maps and mods. Find your next favorite custom map.
         </p>
         <a
           href="https://steamcommunity.com/app/4704690/workshop/"
@@ -80,7 +80,7 @@ export default function WorkshopPage() {
       <div className="bg-surface border border-outline-variant rounded-lg p-8 text-center">
         <h2 className="font-headline-md text-headline-md text-on-surface mb-4">Full Workshop Database Coming Soon</h2>
         <p className="font-body-main text-body-main text-on-surface-variant max-w-2xl mx-auto">
-          We&apos;re building a searchable database of all 489 Workshop items with ratings, subscriber counts, and detailed descriptions. In the meantime, browse the full collection on Steam Workshop.
+          We&apos;re building a searchable database of all 521 Workshop items with ratings, subscriber counts, and detailed descriptions. In the meantime, browse the full collection on Steam Workshop.
         </p>
       </div>
 

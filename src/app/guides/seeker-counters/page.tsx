@@ -209,7 +209,7 @@ export default function SeekerCountersPage() {
                 },
                 {
                   sign: "Chipped Paint",
-                  desc: "When hiders take damage, their paint chips and exposes bright original colors. Scanning for patches of unnatural brightness can reveal damaged hiders instantly.",
+                  desc: "When hiders take damage, their paint may degrade and expose their original colors. Scanning for patches of unnatural brightness near suspected objects can reveal damaged hiders.",
                 },
               ].map((item, i) => (
                 <div
@@ -291,7 +291,7 @@ export default function SeekerCountersPage() {
                 },
                 {
                   technique: "Damage Baiting",
-                  desc: "If you suspect a spot but aren't sure, deal a small amount of damage to the area. Paint chips will reveal if a hider is present without needing a confirmed visual.",
+                  desc: "If you suspect a spot but aren't sure, testing interactions with objects in the area may reveal inconsistencies. Pay attention to how objects respond compared to real props.",
                 },
                 {
                   technique: "Pattern Memory",
@@ -324,10 +324,6 @@ export default function SeekerCountersPage() {
             <div className="space-y-4">
               {[
                 {
-                  tip: "Learn Default Object Counts",
-                  desc: "Know how many of each object type should exist on a map. If there are suddenly 11 chairs instead of 10, one of them is a hider.",
-                },
-                {
                   tip: "Exploit Color Zones",
                   desc: "Maps have distinct color zones — a red carpet area, a blue wall section, a green garden. Hiders moving between zones often have imperfect paint transitions at zone boundaries.",
                 },
@@ -340,8 +336,8 @@ export default function SeekerCountersPage() {
                   desc: "Understand which areas are well-lit and which are dark. Dark areas are more forgiving for hiders — prioritize checking them with extra scrutiny or damage probes.",
                 },
                 {
-                  tip: "Map Rotation Awareness",
-                  desc: "If the map has moving elements — elevators, rotating platforms, opening doors — use them to your advantage. Movement forces hiders to react, sometimes revealing their position.",
+                  tip: "Use Environmental Features",
+                  desc: "Pay attention to map-specific features and areas with unique lighting or visual elements. These can help you spot inconsistencies that indicate a hider's presence.",
                 },
               ].map((item, i) => (
                 <div

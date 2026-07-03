@@ -32,7 +32,7 @@ const sections = [
 
 const tips: Record<string, { title: string; desc: string }[]> = {
   general: [
-    { title: "Learn the maps in Custom mode", desc: "Spend time in Custom mode exploring every corner of each map before jumping into ranked play." },
+    { title: "Learn the maps in Custom mode", desc: "Spend time in Custom mode exploring every corner of each map before jumping into online matches." },
     { title: "Watch experienced streamers", desc: "Twitch and YouTube are full of top players. Observe their strategies, hiding spots, and paint techniques." },
     { title: "Communicate with your team", desc: "Use the emote system to share intel. A quick ping can save a teammate." },
     { title: "Stay calm under pressure", desc: "Panicking leads to sloppy paint or bad positioning. Take a breath and think strategically." },

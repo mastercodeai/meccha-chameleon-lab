@@ -12,11 +12,11 @@ if (typeof window !== "undefined") {
 }
 
 const stats = [
-  { value: "5M+", label: "COPIES SOLD" },
+  { value: "10M+", label: "COPIES SOLD" },
   { value: "93M+", label: "YOUTUBE VIEWS" },
-  { value: "44K+", label: "STEAM REVIEWS" },
+  { value: "42K+", label: "STEAM REVIEWS" },
   { value: "7+", label: "OFFICIAL MAPS" },
-  { value: "489", label: "WORKSHOP ITEMS" },
+  { value: "521", label: "WORKSHOP ITEMS" },
 ];
 
 const features = [
@@ -33,7 +33,7 @@ const features = [
   {
     icon: "🔧",
     title: "Workshop Database",
-    description: "A searchable database of 489 Workshop maps with ratings, subscriber counts, and direct Steam subscribe links.",
+    description: "A searchable database of 500+ Workshop maps with ratings, subscriber counts, and direct Steam subscribe links.",
   },
   {
     icon: "🎭",
@@ -67,7 +67,7 @@ const faqItems = [
   },
   {
     q: "How many maps does the game have?",
-    a: "The game has multiple official maps including Sewer and The Backrooms. The Workshop adds 489 community-created maps.",
+    a: "The game has multiple official maps including Sewer and The Backrooms. The Workshop adds 500+ community-created maps.",
   },
   {
     q: "How often is the content updated?",
@@ -83,7 +83,7 @@ const faqItems = [
   },
   {
     q: "What maps are in MECCHA CHAMELEON?",
-    a: "MECCHA CHAMELEON has 7 official maps including Sewer and The Backrooms. The Steam Workshop adds 489+ community-created maps. Each map has unique hiding spots, layouts, and surfaces to blend into. Browse our MECCHA CHAMELEON map guide for details on every map.",
+    a: "MECCHA CHAMELEON has 7 official maps including Sewer and The Backrooms. The Steam Workshop adds 500+ community-created maps. Each map has unique hiding spots, layouts, and surfaces to blend into. Browse our MECCHA CHAMELEON map guide for details on every map.",
   },
   {
     q: "Is MECCHA CHAMELEON on Steam Deck?",
@@ -286,7 +286,7 @@ export default function HomePage() {
             <span className="text-primary">Best Hiding Spots & Maps Guide (2026)</span>
           </h1>
           <p className="font-body-main text-body-main text-on-surface-variant max-w-lg">
-            <Link href="/maps/backrooms" className="text-primary hover:underline">MECCHA CHAMELEON</Link> sold 5 million copies in 3 weeks. Top YouTube videos have 93M+ views. But search for hiding spot guides and all you get is irrelevant results. Our <Link href="/tier-list" className="text-primary hover:underline">map tier list</Link> and <Link href="/maps" className="text-primary hover:underline">per-map spot guides</Link> fix that.
+            <Link href="/maps/backrooms" className="text-primary hover:underline">MECCHA CHAMELEON</Link> sold 10 million copies. Top YouTube videos have 93M+ views. But search for hiding spot guides and all you get is irrelevant results. Our <Link href="/tier-list" className="text-primary hover:underline">map tier list</Link> and <Link href="/maps" className="text-primary hover:underline">per-map spot guides</Link> fix that.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <Link

@@ -125,7 +125,7 @@ export default function GalleryPage() {
       <RelatedPages
         pages={[
           { title: "All Maps", description: "Browse all 7 official maps with hiding spot guides and strategies.", href: "/maps", icon: "🗺️" },
-          { title: "Workshop", description: "Browse 489 community-created Workshop maps with ratings and subscribe links.", href: "/workshop", icon: "🔧" },
+          { title: "Workshop", description: "Browse 521 community-created Workshop maps with ratings and subscribe links.", href: "/workshop", icon: "🔧" },
           { title: "Beginner Guide", description: "Everything you need to know before your first round of MECCHA CHAMELEON.", href: "/guides/beginner", icon: "📖" },
         ]}
       />

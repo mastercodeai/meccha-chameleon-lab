@@ -71,9 +71,9 @@ const mistakes = [
   {
     title: "Not Re-Painting After Taking Damage",
     description:
-      "When a Seeker damages you, your paint chips and exposes your original colors. Many beginners forget or don't know they need to repaint.",
+      "When a Seeker damages you, your paint may chip or degrade, potentially exposing your original colors. Many beginners forget or don't know they may need to repaint.",
     whyWrong:
-      "Damaged paint reveals bright patches of your original body color, making you extremely visible against the environment. A single chip can blow your cover entirely.",
+      "Damaged paint can reveal patches of your original body color, making you more visible against the environment. Even minor paint damage can blow your cover.",
     whatToDo:
       "The moment you take damage, find a safe spot and immediately repaint. Keep your paint tool ready and memorize your camouflage colors so you can quickly reapply them.",
   },
@@ -111,7 +111,7 @@ const mistakes = [
     whyWrong:
       "Knowing the Seeker's position lets you plan repositions, anticipate their search path, and know when it's safe to adjust. Without this awareness, you're just guessing.",
     whatToDo:
-      "Regularly check your minimap and listen for audio cues. Track the Seeker's movement patterns so you can predict their next area of focus and stay one step ahead.",
+      "Listen for audio cues like footsteps and paint spraying. Track the Seeker's movement patterns so you can predict their next area of focus and stay one step ahead.",
   },
   {
     title: "Panicking and Moving",

@@ -98,9 +98,8 @@ export default function CrossplayPage() {
             Why No Crossplay Yet?
           </h2>
           <p className="mb-4">
-            MECCHA CHAMELEON is developed by a solo developer (lemorion_1224)
-            and is built on Valve&apos;s Source engine. The game is exclusive to
-            PC Windows through Steam.
+            MECCHA CHAMELEON is developed by a solo developer (lemorion_1224).
+            The game is exclusive to PC Windows through Steam.
           </p>
           <p>
             Crossplay only becomes relevant when a game exists on more than one

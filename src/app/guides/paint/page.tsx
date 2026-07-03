@@ -166,39 +166,39 @@ export default function PaintGuidePage() {
             <div className="space-y-4">
               {[
                 {
-                  map: "Living Room",
-                  colors: "Browns, beiges, warm tans, and cream",
-                  desc: "Wooden furniture and carpet dominate. Stick to earth tones. The couch and bookshelf areas are prime hiding spots with rich brown palettes.",
+                  map: "Backrooms",
+                  colors: "Yellows, off-whites, old carpet browns",
+                  desc: "The iconic off-yellow wallpaper and stained carpet. Match the sickly yellow-beige palette. Fluorescent lighting washes out colors — desaturate slightly. Sample from the wallpaper near the ceiling for the most accurate tone.",
                 },
                 {
-                  map: "Kitchen",
-                  colors: "Whites, silvers, light grays, and stainless steel",
-                  desc: "Clean and bright. Match the appliance whites and countertop silvers. Keep metallic values up for stainless steel surfaces.",
+                  map: "Hide-and-Seek Mansion",
+                  colors: "Dark walnut browns, burgundy reds, gold accents",
+                  desc: "Rich walnut wood, velvet curtains, and gold trim define the Mansion. Use warm dark browns on furniture and burgundy tones on fabric. The library section is especially forgiving for brown-painted objects.",
                 },
                 {
-                  map: "Bathroom",
-                  colors: "Blues, whites, light grays, and porcelain tones",
-                  desc: "Tile-heavy environment. Match the cool blue-white palette of bathroom tiles. Towel racks offer fabric-type hiding with warmer tones.",
+                  map: "Indoor Country",
+                  colors: "Greens, earth tones, hay yellows, wood browns",
+                  desc: "Green foliage, hay bales, and wooden farm equipment create a natural palette. Use darker greens near the ground and lighter greens near windows. The hay and wood tones make warm browns a strong fallback.",
                 },
                 {
-                  map: "Bedroom",
-                  colors: "Warm tones, soft pastels, wood browns, and fabric colors",
-                  desc: "Mixed materials — wood furniture, fabric bedding, and carpet. Warm palettes work best. Match the bedding for easy camo.",
+                  map: "Osaka",
+                  colors: "Reds, oranges, grays, dark alley tones",
+                  desc: "Neon signs, traditional red accents, and modern gray buildings. Japanese-style architecture uses warm reds and oranges, while the urban sections need cool grays. Dark alley areas call for muted dark tones.",
                 },
                 {
-                  map: "Garage",
-                  colors: "Grays, metals, concrete, and dark industrial tones",
-                  desc: "Heavy on concrete and metal. Use cool grays and steel tones. Tools and shelves provide structured hiding opportunities.",
+                  map: "Penguin Hotel",
+                  colors: "Whites, light blues, hotel gold accents",
+                  desc: "White marble floors, ice sculptures, and blue-toned hotel decor. White and light blue paint blend into the lobby and hallways. Gold accent areas need warm metallic paint for fixtures and trim.",
                 },
                 {
                   map: "Sewer",
-                  colors: "Greens, dark browns, murky tones, and rusted metals",
-                  desc: "A damp, grimy environment. Muted greens and dark earth tones dominate. Rusted pipe sections need orange-brown metallics.",
+                  colors: "Grays, dark greens, rust oranges, muted tones",
+                  desc: "Muted grays, dark greens, and rusty metal dominate. Gray-green paint on pipes and metal grates disappears into the damp, low-lit tunnels. Rusted sections need orange-brown metallic values.",
                 },
                 {
-                  map: "Backrooms",
-                  colors: "Yellows, beiges, sickly warm tones, and fluorescent whites",
-                  desc: "The iconic yellowish wallpaper and stained carpet. Match the eerie yellow-beige palette. Fluorescent lighting washes out colors — desaturate slightly.",
+                  map: "Sugar Land",
+                  colors: "Pinks, candy pastels, bright multicolor",
+                  desc: "A candy wonderland of pinks, pastels, and bright sweets. Pink and pastel paint matches nearly everything on this map. The gingerbread and cake areas offer rich warm brown accents for variety.",
                 },
               ].map((item, i) => (
                 <div key={i} className="bg-surface border border-outline-variant rounded-lg p-5">

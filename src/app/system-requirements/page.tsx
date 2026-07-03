@@ -6,7 +6,7 @@ import RelatedPages from "@/components/RelatedPages";
 export const metadata: Metadata = {
   title: "MECCHA CHAMELEON System Requirements — Can You Run It?",
   description:
-    "MECCHA CHAMELEON PC system requirements. Minimum and recommended specs. Check if your PC can run MECCHA CHAMELEON.",
+    "MECCHA CHAMELEON PC system requirements. Check the minimum specs to see if your PC can run MECCHA CHAMELEON.",
   alternates: {
     canonical: "https://mecchachameleonlab.com/system-requirements",
   },
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     title:
       "MECCHA CHAMELEON System Requirements — Can You Run It? | MECCHA CHAMELEON Lab",
     description:
-      "MECCHA CHAMELEON PC system requirements. Minimum and recommended specs. Check if your PC can run MECCHA CHAMELEON.",
+      "MECCHA CHAMELEON PC system requirements. Check the minimum specs to see if your PC can run MECCHA CHAMELEON.",
     url: "https://mecchachameleonlab.com/system-requirements",
     type: "article",
   },
@@ -29,14 +29,12 @@ export const metadata: Metadata = {
     title:
       "MECCHA CHAMELEON System Requirements — Can You Run It? | MECCHA CHAMELEON Lab",
     description:
-      "MECCHA CHAMELEON PC system requirements. Minimum and recommended specs. Check if your PC can run MECCHA CHAMELEON.",
+      "MECCHA CHAMELEON PC system requirements. Check the minimum specs to see if your PC can run MECCHA CHAMELEON.",
   },
 };
 
 const sections = [
   { id: "minimum", title: "Minimum Requirements" },
-  { id: "recommended", title: "Recommended Requirements" },
-  { id: "performance", title: "Performance Tips" },
   { id: "faq", title: "FAQ" },
 ];
 
@@ -87,9 +85,8 @@ export default function SystemRequirementsPage() {
               System Requirements
             </h1>
             <p className="font-body-main text-body-main text-on-surface-variant mb-8">
-              Can your PC run MECCHA CHAMELEON? Built on Valve&apos;s Source
-              engine, the game is lightweight and runs well on most modern
-              hardware. Check the specs below to see if your rig qualifies.
+              Can your PC run MECCHA CHAMELEON? Check the Steam-listed minimum
+              requirements below to see if your PC qualifies.
             </p>
 
             <div className="space-y-10 font-body-main text-body-main text-on-surface-variant">
@@ -99,19 +96,17 @@ export default function SystemRequirementsPage() {
                   Minimum Requirements
                 </h2>
                 <p className="mb-6">
-                  These specs will let you launch and play the game at low
-                  settings with a playable frame rate (30+ FPS).
+                  These are the minimum requirements listed on the Steam store page.
                 </p>
                 <div className="bg-surface border border-outline-variant rounded-lg overflow-hidden">
                   <div className="divide-y divide-outline-variant/50">
                     {[
                       { label: "OS", value: "Windows 10 64-bit" },
-                      { label: "Processor", value: "Intel Core i3 / AMD Ryzen 3" },
-                      { label: "Memory", value: "4 GB RAM" },
-                      { label: "Graphics", value: "NVIDIA GTX 750 Ti / AMD Radeon R7 260" },
-                      { label: "DirectX", value: "Version 11" },
-                      { label: "Storage", value: "2 GB available space" },
-                      { label: "Network", value: "Broadband Internet connection" },
+                      { label: "Processor", value: "Intel Core i5" },
+                      { label: "Graphics", value: "DirectX 11 or 12 compatible graphics card" },
+                      { label: "Memory", value: "Not specified on Steam" },
+                      { label: "Storage", value: "Not specified on Steam" },
+                      { label: "Network", value: "Not specified on Steam" },
                     ].map((item, i) => (
                       <div
                         key={i}
@@ -126,96 +121,6 @@ export default function SystemRequirementsPage() {
                       </div>
                     ))}
                   </div>
-                </div>
-              </section>
-
-              {/* Recommended Requirements */}
-              <section id="recommended">
-                <h2 className="font-headline-md text-headline-md text-on-surface mb-4">
-                  Recommended Requirements
-                </h2>
-                <p className="mb-6">
-                  These specs will let you play at high settings with a smooth
-                  frame rate (60+ FPS at 1080p).
-                </p>
-                <div className="bg-surface border border-outline-variant rounded-lg overflow-hidden">
-                  <div className="divide-y divide-outline-variant/50">
-                    {[
-                      { label: "OS", value: "Windows 10/11 64-bit" },
-                      { label: "Processor", value: "Intel Core i5 / AMD Ryzen 5" },
-                      { label: "Memory", value: "8 GB RAM" },
-                      {
-                        label: "Graphics",
-                        value: "NVIDIA GTX 1060 / AMD RX 580 (4 GB VRAM)",
-                      },
-                      { label: "DirectX", value: "Version 11" },
-                      { label: "Storage", value: "2 GB available space (SSD recommended)" },
-                      { label: "Network", value: "Broadband Internet connection" },
-                    ].map((item, i) => (
-                      <div
-                        key={i}
-                        className="flex justify-between items-center p-4"
-                      >
-                        <span className="font-label-caps text-label-caps text-primary">
-                          {item.label}
-                        </span>
-                        <span className="text-on-surface text-sm text-right">
-                          {item.value}
-                        </span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </section>
-
-              {/* Performance Tips */}
-              <section id="performance">
-                <h2 className="font-headline-md text-headline-md text-on-surface mb-4">
-                  Performance Tips
-                </h2>
-                <p className="mb-6">
-                  Even if your PC barely meets the minimum specs, these tips can
-                  help you get a playable experience.
-                </p>
-                <div className="space-y-4">
-                  {[
-                    {
-                      title: "Lower Your Resolution",
-                      desc: "Dropping from 1080p to 720p can nearly double your FPS on integrated or low-end GPUs. The Source engine still looks decent at lower resolutions.",
-                    },
-                    {
-                      title: "Disable Shadows",
-                      desc: "Shadows are the single most expensive graphics setting. Turning them off gives a massive FPS boost with minimal gameplay impact in a hide-and-seek game.",
-                    },
-                    {
-                      title: "Close Background Programs",
-                      desc: "Web browsers, streaming apps, and Discord overlays all consume RAM and CPU. Close everything you don't need while playing.",
-                    },
-                    {
-                      title: "Use Launch Options",
-                      desc: "Right-click MECCHA CHAMELEON in Steam → Properties → Launch Options. Try: -high -threads 4 -novid -nojoy for better performance.",
-                    },
-                    {
-                      title: "Update Your Drivers",
-                      desc: "Outdated GPU drivers are a common cause of poor performance. Download the latest from NVIDIA, AMD, or Intel's website.",
-                    },
-                    {
-                      title: "Install on an SSD",
-                      desc: "While the game is only 2 GB, an SSD reduces load times significantly. If you have an SSD, install the game there.",
-                    },
-                  ].map((tip, i) => (
-                    <div
-                      key={i}
-                      className="bg-surface border-l-4 border-primary rounded-r-lg p-4"
-                    >
-                      <h3 className="font-label-caps text-label-caps text-on-surface mb-1">
-                        {tip.title}
-                      </h3>
-                      <p className="font-body-sm text-body-sm">
-                        {tip.desc}
-                      </p>
-                    </div>
-                  ))}
                 </div>
               </section>
 
@@ -228,7 +133,7 @@ export default function SystemRequirementsPage() {
                   {[
                     {
                       q: "Can I run MECCHA CHAMELEON on a laptop?",
-                      a: "Yes. The Source engine is very lightweight. Even laptops with integrated graphics (Intel UHD 620+) can run the game at low settings. Gaming laptops will have no issues at all.",
+                      a: "Yes. Even laptops with integrated graphics can likely run the game at low settings. Gaming laptops will have no issues at all.",
                     },
                     {
                       q: "Does it work on Windows 11?",
@@ -240,7 +145,7 @@ export default function SystemRequirementsPage() {
                     },
                     {
                       q: "How much storage do I need?",
-                      a: "The game requires about 2 GB of free disk space. An SSD is recommended for faster load times but not required.",
+                      a: "The exact storage requirement is not specified on the Steam page, but the game is relatively small. An SSD is recommended for faster load times but not required.",
                     },
                     {
                       q: "Is an internet connection required?",

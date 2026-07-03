@@ -38,7 +38,6 @@ const sections = [
   { id: "fps", title: "FPS Optimization" },
   { id: "audio", title: "Audio Settings" },
   { id: "controls", title: "Control Settings" },
-  { id: "pc-tiers", title: "Recommended Setup per PC Tier" },
 ];
 
 export default function SettingsPage() {
@@ -97,9 +96,7 @@ export default function SettingsPage() {
                   Graphics Settings
                 </h2>
                 <p className="mb-6">
-                  MECCHA CHAMELEON runs on Valve&apos;s Source engine, so it
-                  scales well across a wide range of hardware. Here are the key
-                  graphics options and what they do.
+                  Here are the key graphics options and what they do.
                 </p>
 
                 <div className="space-y-4">
@@ -111,7 +108,7 @@ export default function SettingsPage() {
                       Set this to your monitor&apos;s native resolution for the
                       sharpest image. If you need more FPS, dropping to 1600×900
                       or 1280×720 gives a significant boost with minimal visual
-                      loss in a Source engine game.
+                      loss.
                     </p>
                     <p className="font-body-sm text-body-sm text-on-surface">
                       <strong>Recommended:</strong> Native (e.g. 1920×1080) for
@@ -151,7 +148,7 @@ export default function SettingsPage() {
 
                   <div className="bg-surface border border-outline-variant rounded-lg p-5">
                     <h3 className="font-label-caps text-label-caps text-primary mb-2">
-                      Anti-Aliasing & Post-Processing
+                      Anti-Aliasing &amp; Post-Processing
                     </h3>
                     <p className="font-body-sm text-body-sm">
                       FXAA is lightweight and removes jagged edges. MSAA is
@@ -178,7 +175,7 @@ export default function SettingsPage() {
                       {
                         step: "1",
                         title: "Lower Shadows to Off or Low",
-                        desc: "The single biggest FPS gain. Shadows are expensive in the Source engine.",
+                        desc: "The single biggest FPS gain. Shadows are typically the most expensive graphics setting.",
                       },
                       {
                         step: "2",
@@ -204,11 +201,6 @@ export default function SettingsPage() {
                         step: "6",
                         title: "Update GPU Drivers",
                         desc: "Always use the latest drivers from NVIDIA, AMD, or Intel for the best game compatibility.",
-                      },
-                      {
-                        step: "7",
-                        title: "Set Launch Options in Steam",
-                        desc: "Right-click the game → Properties → Launch Options. Try: -high -threads 4 -novid",
                       },
                     ].map((item, i) => (
                       <div
@@ -271,16 +263,6 @@ export default function SettingsPage() {
                       can save your round.
                     </p>
                   </div>
-                  <div className="bg-surface border border-outline-variant rounded-lg p-5">
-                    <h3 className="font-label-caps text-label-caps text-primary mb-2">
-                      Voice Chat
-                    </h3>
-                    <p className="font-body-sm text-body-sm">
-                      Enable voice chat for team coordination. Set the input
-                      threshold low enough to pick up your voice but high enough
-                      to filter out keyboard noise.
-                    </p>
-                  </div>
                 </div>
               </section>
 
@@ -333,97 +315,6 @@ export default function SettingsPage() {
                   </div>
                 </div>
               </section>
-
-              {/* Recommended Setup per PC Tier */}
-              <section id="pc-tiers">
-                <h2 className="font-headline-md text-headline-md text-on-surface mb-4">
-                  Recommended Setup per PC Tier
-                </h2>
-                <p className="mb-6">
-                  Not sure where to start? Match your PC to one of these tiers
-                  and apply the suggested settings.
-                </p>
-
-                <div className="space-y-6">
-                  {/* Low End */}
-                  <div className="bg-surface border border-outline-variant rounded-lg p-5">
-                    <div className="flex items-center gap-3 mb-3">
-                      <span className="w-3 h-3 rounded-full bg-red-500 flex-shrink-0" />
-                      <h3 className="font-label-caps text-label-caps text-on-surface">
-                        Low-End PC
-                      </h3>
-                    </div>
-                    <p className="font-body-sm text-body-sm mb-3 text-on-surface-variant">
-                      Integrated GPU or GTX 1050 · 8 GB RAM · Older CPU
-                    </p>
-                    <ul className="list-disc list-inside space-y-1 font-body-sm text-body-sm text-on-surface-variant">
-                      <li>Resolution: 1280×720</li>
-                      <li>Textures: Low</li>
-                      <li>Shadows: Off</li>
-                      <li>Anti-Aliasing: Off</li>
-                      <li>Post-Processing: Low</li>
-                      <li>Motion Blur: Off</li>
-                      <li>Expected FPS: 60+</li>
-                    </ul>
-                  </div>
-
-                  {/* Mid Range */}
-                  <div className="bg-surface border border-outline-variant rounded-lg p-5">
-                    <div className="flex items-center gap-3 mb-3">
-                      <span className="w-3 h-3 rounded-full bg-yellow-500 flex-shrink-0" />
-                      <h3 className="font-label-caps text-label-caps text-on-surface">
-                        Mid-Range PC
-                      </h3>
-                    </div>
-                    <p className="font-body-sm text-body-sm mb-3 text-on-surface-variant">
-                      GTX 1660 / RX 5600 · 16 GB RAM · Modern i5 / Ryzen 5
-                    </p>
-                    <ul className="list-disc list-inside space-y-1 font-body-sm text-body-sm text-on-surface-variant">
-                      <li>Resolution: 1920×1080</li>
-                      <li>Textures: High</li>
-                      <li>Shadows: Low</li>
-                      <li>Anti-Aliasing: FXAA</li>
-                      <li>Post-Processing: Medium</li>
-                      <li>Motion Blur: Off</li>
-                      <li>Expected FPS: 144+</li>
-                    </ul>
-                  </div>
-
-                  {/* High End */}
-                  <div className="bg-surface border border-outline-variant rounded-lg p-5">
-                    <div className="flex items-center gap-3 mb-3">
-                      <span className="w-3 h-3 rounded-full bg-primary flex-shrink-0" />
-                      <h3 className="font-label-caps text-label-caps text-on-surface">
-                        High-End PC
-                      </h3>
-                    </div>
-                    <p className="font-body-sm text-body-sm mb-3 text-on-surface-variant">
-                      RTX 3070+ / RX 6800+ · 16–32 GB RAM · Modern i7 / Ryzen 7
-                    </p>
-                    <ul className="list-disc list-inside space-y-1 font-body-sm text-body-sm text-on-surface-variant">
-                      <li>Resolution: 2560×1440 or higher</li>
-                      <li>Textures: High</li>
-                      <li>Shadows: Medium</li>
-                      <li>Anti-Aliasing: MSAA 4x</li>
-                      <li>Post-Processing: High</li>
-                      <li>Motion Blur: Personal preference</li>
-                      <li>Expected FPS: 240+</li>
-                    </ul>
-                  </div>
-                </div>
-
-                <div className="bg-primary/5 border border-primary/20 rounded-lg p-5 mt-6">
-                  <p className="font-label-caps text-label-caps text-primary mb-2">
-                    Pro Tip
-                  </p>
-                  <p className="font-body-sm text-body-sm">
-                    If your PC falls between tiers, start with the higher
-                    tier&apos;s settings and lower individual options until you
-                    hit a stable FPS target. Shadows are always the first thing
-                    to lower.
-                  </p>
-                </div>
-              </section>
             </div>
 
             {/* CTAs */}
@@ -444,7 +335,7 @@ export default function SettingsPage() {
                 href="/guides/tips"
                 className="border border-secondary text-secondary font-label-caps text-label-caps px-8 py-4 rounded text-center hover:bg-secondary/10 transition-all"
               >
-                TIPS & TRICKS
+                TIPS &amp; TRICKS
               </Link>
             </div>
           </article>

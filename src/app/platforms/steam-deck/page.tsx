@@ -4,7 +4,7 @@ import RelatedPages from "@/components/RelatedPages";
 export const metadata: Metadata = {
   title: "Steam Deck — Setup & Performance Guide",
   description:
-    "Is MECCHA CHAMELEON playable on Steam Deck? Performance settings, controller mapping, and recommended configuration for the best handheld experience.",
+    "Is MECCHA CHAMELEON playable on Steam Deck? Check compatibility status and tips for the best handheld experience.",
   alternates: {
     canonical: "https://mecchachameleonlab.com/platforms/steam-deck",
   },
@@ -40,16 +40,14 @@ export default function SteamDeckPage() {
               </span>
             </div>
             <p>
-              MECCHA CHAMELEON runs on the Steam Deck via Proton compatibility
-              layer. The game is built on Valve&apos;s Source engine, which has
-              strong Proton support. You can launch and play the game on Steam
-              Deck without major issues.
+              MECCHA CHAMELEON has a Steam Deck compatibility status of
+              &quot;Playable&quot;. You can launch and play the game on Steam
+              Deck.
             </p>
           </div>
           <p>
             The Steam Deck&apos;s native resolution of 1280×800 is well-suited for
-            the game, and the Source engine is lightweight enough to maintain
-            stable performance on the Deck&apos;s hardware.
+            the game.
           </p>
         </section>
 
@@ -59,41 +57,10 @@ export default function SteamDeckPage() {
             Performance Settings
           </h2>
           <p className="mb-4">
-            For the smoothest experience on Steam Deck, use these recommended
-            performance settings:
+            Performance on Steam Deck will vary depending on your settings.
+            Experiment with the in-game graphics options to find the best
+            balance for your experience.
           </p>
-          <div className="bg-surface border border-outline-variant rounded-lg overflow-hidden">
-            <div className="border-b border-outline-variant p-4">
-              <p className="font-label-caps text-label-caps text-primary mb-1">
-                Resolution
-              </p>
-              <p>1280×800 (native) or 1280×720 for a slight performance boost</p>
-            </div>
-            <div className="border-b border-outline-variant p-4">
-              <p className="font-label-caps text-label-caps text-primary mb-1">
-                Frame Rate Target
-              </p>
-              <p>60 FPS — the Source engine can easily hit this on Deck hardware</p>
-            </div>
-            <div className="border-b border-outline-variant p-4">
-              <p className="font-label-caps text-label-caps text-primary mb-1">
-                Texture Quality
-              </p>
-              <p>Medium or High — the Deck&apos;s 16GB shared memory handles this well</p>
-            </div>
-            <div className="border-b border-outline-variant p-4">
-              <p className="font-label-caps text-label-caps text-primary mb-1">
-                Shadow Quality
-              </p>
-              <p>Low to Medium — shadows are the biggest FPS impact in Source games</p>
-            </div>
-            <div className="p-4">
-              <p className="font-label-caps text-label-caps text-primary mb-1">
-                Anti-Aliasing
-              </p>
-              <p>MSAA 2x or 4x — at 800p, MSAA looks clean without heavy GPU cost</p>
-            </div>
-          </div>
         </section>
 
         {/* Controller Mapping */}
@@ -164,40 +131,10 @@ export default function SteamDeckPage() {
             Recommended Configuration
           </h2>
           <p className="mb-4">
-            For the best experience, apply these Steam Deck-specific settings:
+            Experiment with the in-game graphics settings to find what works
+            best for you on Steam Deck. Adjust resolution, texture quality,
+            and shadows until you get a smooth experience.
           </p>
-          <ol className="list-decimal list-inside space-y-3 ml-2">
-            <li>
-              <strong className="text-on-surface">Enable Proton Experimental</strong>{" "}
-              — In Steam, go to the game&apos;s Properties → Compatibility → Force
-              Proton Experimental for the latest compatibility fixes.
-            </li>
-            <li>
-              <strong className="text-on-surface">Set TDP to 10–12W</strong>{" "}
-              — The Source engine doesn&apos;t need full Deck power. Limiting TDP
-              saves battery without hurting performance.
-            </li>
-            <li>
-              <strong className="text-on-surface">Use the right trackpad as mouse</strong>{" "}
-              — In Steam Input, set the right trackpad to &quot;Mouse&quot; mode
-              with a comfortable sensitivity (start around 70%).
-            </li>
-            <li>
-              <strong className="text-on-surface">Enable Gyro Aiming (optional)</strong>{" "}
-              — Set gyro to activate on right trackpad touch for precision aiming.
-              Great for competitive play.
-            </li>
-            <li>
-              <strong className="text-on-surface">Lock to 60 FPS</strong>{" "}
-              — Use the Deck&apos;s performance overlay (⋯ button) to cap the frame
-              rate at 60 for consistent frame pacing.
-            </li>
-            <li>
-              <strong className="text-on-surface">Use FSR if needed</strong>{" "}
-              — If you drop below 60 FPS, enable AMD FSR in the Deck&apos;s
-              performance menu with the game set to 720p.
-            </li>
-          </ol>
         </section>
 
         {/* Troubleshooting */}
@@ -211,9 +148,9 @@ export default function SteamDeckPage() {
                 Game won&apos;t launch
               </h3>
               <p>
-                Force Proton Experimental or Proton 9.x in the game&apos;s
-                compatibility settings. If it still fails, try verifying game
-                files (Properties → Installed Files → Verify).
+                Try verifying game files (Properties → Installed Files → Verify).
+                If it still fails, try switching to a different Proton version
+                in the game&apos;s compatibility settings.
               </p>
             </div>
 
@@ -233,9 +170,9 @@ export default function SteamDeckPage() {
                 Low frame rate or stuttering
               </h3>
               <p>
-                Lower shadow quality to Low, disable anti-aliasing, and cap FPS
-                to 60. If stutters persist, try clearing the shader cache
-                (Settings → Storage → Shader Cache).
+                Try lowering shadow quality and disabling anti-aliasing in the
+                in-game settings. Experiment with different graphics presets
+                until you find a stable experience.
               </p>
             </div>
 
@@ -246,7 +183,7 @@ export default function SteamDeckPage() {
               <p>
                 The Deck&apos;s 7-inch screen can make UI text hard to read. Use the
                 built-in magnifier (Steam + L1) or lower the resolution to 720p
-                and let FSR upscale for larger UI elements.
+                for larger UI elements.
               </p>
             </div>
 
