@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 const R2_BASE = "https://pub-42f70497cda741b99d02e6434a897ec1.r2.dev";
 
 const screenshots = [
@@ -94,12 +92,11 @@ export default function GalleryPage() {
             className="group bg-surface border border-outline-variant rounded-lg overflow-hidden glow-hover transition-all"
           >
             <div className="relative aspect-video overflow-hidden">
-              <Image
+              <img
                 src={screenshot.src}
                 alt={screenshot.alt}
-                fill
-                className="object-cover group-hover:scale-105 transition-transform duration-300"
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                loading="lazy"
               />
             </div>
             <div className="p-4">
