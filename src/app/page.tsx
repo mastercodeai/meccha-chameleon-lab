@@ -2,6 +2,7 @@
 
 import { useRef, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { FAQSchema, WebSiteSchema, GameSchema } from "@/components/Schema";
@@ -271,7 +272,7 @@ export default function HomePage() {
   }, []);
 
   return (
-    <>
+    <main>
       <WebSiteSchema />
       <GameSchema />
       <FAQSchema items={faqItems} />
@@ -303,12 +304,16 @@ export default function HomePage() {
         </div>
         <div className="w-full md:w-1/2 relative z-10 hero-image">
           <div className="relative rounded-lg overflow-hidden border-2 border-[#1e1e32] shadow-[0_0_15px_rgba(75,226,119,0.2)]">
-            <img
+            <Image
               src="/hero-character.jpg"
               alt="MECCHA CHAMELEON character peeling off a brick wall"
               width={800}
               height={450}
+              sizes="(max-width: 768px) 100vw, 50vw"
+              preload={true}
+              loading="eager"
               className="w-full h-auto object-cover"
+              unoptimized
             />
           </div>
         </div>
@@ -399,6 +404,6 @@ export default function HomePage() {
           </Link>
         </div>
       </section>
-    </>
+    </main>
   );
 }

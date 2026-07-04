@@ -2,6 +2,7 @@
 
 import { useRef, useEffect, use } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { maps, getMapBySlug } from "@/data/maps";
@@ -130,10 +131,16 @@ export default function MapPage({ params }: { params: Promise<{ slug: string }> 
 
       {/* Map Hero */}
       <div ref={heroRef} className="relative rounded-lg overflow-hidden border-2 border-[#1e1e32] mb-stack-lg">
-        <img
+        <Image
           src={map.image}
           alt={`${map.name} map`}
+          width={1200}
+          height={675}
+          sizes="(max-width: 768px) 100vw, 100vw"
+          preload={true}
+          loading="eager"
           className="w-full h-auto object-cover"
+          unoptimized
         />
         <div className="absolute inset-0 bg-gradient-to-t from-surface/90 via-surface/30 to-transparent" />
         <div className="absolute bottom-6 left-6">
@@ -161,10 +168,14 @@ export default function MapPage({ params }: { params: Promise<{ slug: string }> 
                 {/* Spot Image */}
                 {spot.image && (
                   <div className="relative aspect-video overflow-hidden">
-                    <img
+                    <Image
                       src={spot.image}
                       alt={spot.name}
-                      className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
+                      fill
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                      loading="lazy"
+                      className="object-cover hover:scale-110 transition-transform duration-500"
+                      unoptimized
                     />
                     <div className="absolute top-3 left-3">
                       <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center shadow-[0_0_8px_rgba(75,226,119,0.6)]">
@@ -261,10 +272,14 @@ export default function MapPage({ params }: { params: Promise<{ slug: string }> 
                 className="other-map-card group bg-surface border border-outline-variant rounded-lg overflow-hidden glow-hover hover:scale-105 hover:border-primary/50 transition-all"
               >
                 <div className="relative aspect-video overflow-hidden">
-                  <img
+                  <Image
                     src={m.image}
                     alt={`${m.name} map`}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    fill
+                    sizes="(max-width: 768px) 50vw, 25vw"
+                    loading="lazy"
+                    className="object-cover group-hover:scale-110 transition-transform duration-500"
+                    unoptimized
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-surface/80 to-transparent" />
                   <div className="absolute bottom-2 left-2">

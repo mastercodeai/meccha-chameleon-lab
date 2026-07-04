@@ -220,11 +220,19 @@ export default function RootLayout({
       className={`dark ${orbitron.variable} ${rajdhani.variable} ${inter.variable}`}
     >
       <head>
+        {/* Preconnect to third-party domains */}
+        <link rel="preconnect" href="https://www.clarity.ms" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://analytics.ahrefs.com" />
+        <link rel="preconnect" href="https://plausible.shipsolo.io" />
+        <link rel="preconnect" href="https://www.googletagmanager.com" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+
         {/* Bing Webmaster */}
         <meta name="msvalidate.01" content="711D023A581945A37EA78CB925D2A7A9" />
 
         {/* Microsoft Clarity */}
-        <Script id="microsoft-clarity" strategy="afterInteractive">
+        <Script id="microsoft-clarity" strategy="lazyOnload">
           {`(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, document, "clarity", "script", "xggeuggf7b");`}
         </Script>
       </head>
@@ -259,7 +267,7 @@ export default function RootLayout({
         <Script
           src="https://analytics.ahrefs.com/analytics.js"
           data-key="crBy5UYpsRs/kdvFGmkIrg"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
         />
 
         <ParticleBg />
