@@ -4,7 +4,7 @@ export interface SpotData {
   description: string;
   difficulty: "EASY" | "MEDIUM" | "HARD";
   bestFor: "Hider" | "Seeker" | "Both";
-  image: string;
+  image?: string;
 }
 
 // Backrooms Spots (7 spots - from IGN, DualShockers, TheGamer, GameRant)
@@ -39,7 +39,6 @@ export const backroomsSpots: SpotData[] = [
     description: "Along the side of any piece of furniture in the stack of furniture. Match the wood or fabric colors.",
     difficulty: "EASY",
     bestFor: "Hider",
-    image: "/api/r2/spots/backrooms-gr-01.png",
   },
   {
     id: 5,
@@ -55,7 +54,6 @@ export const backroomsSpots: SpotData[] = [
     description: "Paint yourself to resemble the bikes on the wall. Match the frame shape and colors.",
     difficulty: "HARD",
     bestFor: "Hider",
-    image: "/api/r2/spots/backrooms-gr-01.png",
   },
   {
     id: 7,
@@ -63,7 +61,6 @@ export const backroomsSpots: SpotData[] = [
     description: "Attached to the bright ceiling light. Paint yourself bright yellow/white to match the light glow.",
     difficulty: "HARD",
     bestFor: "Hider",
-    image: "/api/r2/spots/backrooms-gr-03.png",
   },
 ];
 
@@ -115,7 +112,6 @@ export const mansionSpots: SpotData[] = [
     description: "Hide under the chair in the library corner. It's out of the way and hunters take a while to reach the library.",
     difficulty: "EASY",
     bestFor: "Hider",
-    image: "/api/r2/spots/mansion-spot-02-luggage.jpg",
   },
   {
     id: 7,
@@ -123,7 +119,6 @@ export const mansionSpots: SpotData[] = [
     description: "The upper corners of the mansion are easy to overlook. Paint yourself the wall color, climb up, and use side-lying pose.",
     difficulty: "MEDIUM",
     bestFor: "Hider",
-    image: "/api/r2/spots/mansion-spot-01-post.jpg",
   },
   {
     id: 8,
@@ -131,7 +126,6 @@ export const mansionSpots: SpotData[] = [
     description: "In the back storage room with boxes and barrels. Hide among the concrete columns next to the entrance. Paint yourself red with a few lines.",
     difficulty: "HARD",
     bestFor: "Hider",
-    image: "/api/r2/spots/mansion-spot-04-basket.jpg",
   },
   {
     id: 9,
@@ -139,7 +133,6 @@ export const mansionSpots: SpotData[] = [
     description: "Walk down the green hallway from main hall - there's a painting of a staircase. Copy the painting (mostly wide lines of different colors).",
     difficulty: "HARD",
     bestFor: "Hider",
-    image: "/api/r2/spots/mansion-spot-01-post.jpg",
   },
   {
     id: 10,
@@ -147,7 +140,6 @@ export const mansionSpots: SpotData[] = [
     description: "At the kitchen entrance, there is a pile of meat. Curl up in the back left corner. Paint yourself red with white edge.",
     difficulty: "MEDIUM",
     bestFor: "Hider",
-    image: "/api/r2/spots/mansion-spot-03-laundry.jpg",
   },
 ];
 
@@ -183,7 +175,6 @@ export const indoorCountrySpots: SpotData[] = [
     description: "Perched on one of the cow standees, painted to resemble a cow. Match the black and white pattern.",
     difficulty: "HARD",
     bestFor: "Hider",
-    image: "/api/r2/spots/country-gr-01.png",
   },
   {
     id: 5,
@@ -191,7 +182,6 @@ export const indoorCountrySpots: SpotData[] = [
     description: "Painted to match the teal wall where it transitions into the ceiling. Blend with both colors.",
     difficulty: "MEDIUM",
     bestFor: "Hider",
-    image: "/api/r2/spots/country-gr-02.jpg",
   },
   {
     id: 6,
@@ -199,7 +189,6 @@ export const indoorCountrySpots: SpotData[] = [
     description: "Tucked behind one of the large green crates. Paint yourself green to match.",
     difficulty: "EASY",
     bestFor: "Hider",
-    image: "/api/r2/spots/country-gr-03.png",
   },
   {
     id: 7,
@@ -207,7 +196,6 @@ export const indoorCountrySpots: SpotData[] = [
     description: "Crouched on one of the fallen standees. Paint yourself to match the standee pattern.",
     difficulty: "MEDIUM",
     bestFor: "Hider",
-    image: "/api/r2/spots/country-gr-03.png",
   },
   {
     id: 8,
@@ -215,7 +203,6 @@ export const indoorCountrySpots: SpotData[] = [
     description: "On the ceiling near the clouds. Paint yourself white/light blue to match the sky theme.",
     difficulty: "HARD",
     bestFor: "Hider",
-    image: "/api/r2/spots/country-gr-02.jpg",
   },
 ];
 
@@ -251,7 +238,6 @@ export const osakaSpots: SpotData[] = [
     description: "Blend in with shop displays and market stalls. Match the colorful merchandise colors.",
     difficulty: "MEDIUM",
     bestFor: "Hider",
-    image: "/api/r2/maps/osaka-shops.jpg",
   },
   {
     id: 5,
@@ -287,7 +273,6 @@ export const penguinHotelSpots: SpotData[] = [
     description: "Hidden within the penguin plushies on the couch. Paint yourself black and white to match the penguins.",
     difficulty: "MEDIUM",
     bestFor: "Hider",
-    image: "/api/r2/spots/penguin-gr-01.png",
   },
   {
     id: 4,
@@ -295,7 +280,6 @@ export const penguinHotelSpots: SpotData[] = [
     description: "Behind the vase in one of the rooms. Paint yourself to match the vase color and pattern.",
     difficulty: "EASY",
     bestFor: "Hider",
-    image: "/api/r2/spots/penguin-gr-02.png",
   },
   {
     id: 5,
@@ -303,7 +287,6 @@ export const penguinHotelSpots: SpotData[] = [
     description: "On the balloon garland. Paint yourself to match the colorful balloons.",
     difficulty: "HARD",
     bestFor: "Hider",
-    image: "/api/r2/spots/penguin-gr-02.png",
   },
 ];
 
@@ -339,7 +322,6 @@ export const sewerSpots: SpotData[] = [
     description: "On the ceiling, hidden behind a pipe in the darkest section of the map. Paint yourself dark gray.",
     difficulty: "HARD",
     bestFor: "Hider",
-    image: "/api/r2/spots/sewer-gr-01.png",
   },
   {
     id: 5,
@@ -347,7 +329,6 @@ export const sewerSpots: SpotData[] = [
     description: "Lying on top of one of the oil barrels. Paint yourself to match the barrel color and texture.",
     difficulty: "MEDIUM",
     bestFor: "Hider",
-    image: "/api/r2/spots/sewer-gr-02.png",
   },
 ];
 
@@ -367,7 +348,6 @@ export const sugarLandSpots: SpotData[] = [
     description: "The ground is easy to paint, and the circle of gingerbread men provides shelter from being seen without shelter from getting points.",
     difficulty: "EASY",
     bestFor: "Hider",
-    image: "/api/r2/spots/sugar-gr-01.png",
   },
   {
     id: 3,
@@ -375,7 +355,6 @@ export const sugarLandSpots: SpotData[] = [
     description: "The cakes go up high enough that you can stay out of direct line of sight but be close enough to still rack up the points.",
     difficulty: "MEDIUM",
     bestFor: "Hider",
-    image: "/api/r2/spots/sugar-gr-01.png",
   },
   {
     id: 4,
@@ -383,7 +362,6 @@ export const sugarLandSpots: SpotData[] = [
     description: "Hidden as a gingerbread man. Paint yourself brown with white icing details to match the gingerbread men.",
     difficulty: "MEDIUM",
     bestFor: "Hider",
-    image: "/api/r2/spots/sugar-gr-01.png",
   },
   {
     id: 5,
@@ -391,7 +369,6 @@ export const sugarLandSpots: SpotData[] = [
     description: "Hidden within the pretzel fence. Paint yourself brown to match the pretzel texture.",
     difficulty: "EASY",
     bestFor: "Hider",
-    image: "/api/r2/spots/sugar-gr-01.png",
   },
   {
     id: 6,
@@ -399,7 +376,6 @@ export const sugarLandSpots: SpotData[] = [
     description: "Painted as icing on the pink floor. Match the pink and white frosting patterns.",
     difficulty: "MEDIUM",
     bestFor: "Hider",
-    image: "/api/r2/spots/sugar-gr-01.png",
   },
 ];
 
