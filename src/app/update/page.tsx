@@ -1,29 +1,42 @@
+import type { Metadata } from "next";
 import Link from "next/link";
-import { BreadcrumbSchema } from "@/components/Schema";
 import { knownUpdates } from "@/data/updates";
 
-export default function UpdatePage() {
+export const metadata: Metadata = {
+  title: "Update Log — MECCHA CHAMELEON Patch Notes",
+  description:
+    "Full patch notes and update history for MECCHA CHAMELEON. See what changed in every version since launch.",
+  keywords: [
+    "meccha chameleon update",
+    "meccha chameleon patch notes",
+    "meccha chameleon changelog",
+    "meccha chameleon version history",
+    "meccha chameleon new update",
+    "meccha chameleon v1.3.0",
+    "meccha chameleon latest update",
+  ],
+  alternates: {
+    canonical: "https://mecchachameleonlab.com/update",
+  },
+};
+
+export default function UpdateIndexPage() {
   return (
     <main className="pt-[100px] pb-stack-lg max-w-[1440px] mx-auto px-4 md:px-gutter">
-      <BreadcrumbSchema
-        items={[
-          { name: "Home", url: "https://mecchachameleonlab.com" },
-          { name: "Updates", url: "https://mecchachameleonlab.com/update" },
-        ]}
-      />
-
       <h1 className="font-display-lg text-3xl md:text-display-lg text-on-surface uppercase mb-8">
-        Update History
+        Update Log
       </h1>
-      <p className="font-body-main text-body-main text-on-surface-variant mb-8">
-        Full patch notes and update history for MECCHA CHAMELEON. Every version, every change, documented here.
+      <p className="font-body-main text-body-main text-on-surface-variant mb-8 max-w-2xl">
+        Full patch notes and update history for MECCHA CHAMELEON. Every version,
+        every change, documented here.
       </p>
 
       <div className="space-y-6">
         {knownUpdates.map((update) => (
-          <div
+          <Link
             key={update.version}
-            className="bg-surface border border-outline-variant rounded-lg p-6"
+            href={`/update/${update.version}`}
+            className="block bg-surface border border-outline-variant rounded-lg p-6 hover:border-primary/50 transition-colors"
           >
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-4">
               <h2 className="font-headline-md text-headline-md text-primary">
@@ -44,11 +57,10 @@ export default function UpdatePage() {
                 </li>
               ))}
             </ul>
-          </div>
+          </Link>
         ))}
       </div>
 
-      {/* CTAs */}
       <div className="flex flex-col sm:flex-row gap-4 mt-stack-lg">
         <a
           href="https://store.steampowered.com/app/4704690/MECCHA_CHAMELEON/"
@@ -59,14 +71,8 @@ export default function UpdatePage() {
           VIEW ON STEAM
         </a>
         <Link
-          href="/price"
-          className="border border-primary text-primary font-label-caps text-label-caps px-8 py-4 rounded text-center hover:bg-primary/10 transition-all"
-        >
-          PRICE & VALUE
-        </Link>
-        <Link
           href="/guides/beginner"
-          className="border border-secondary text-secondary font-label-caps text-label-caps px-8 py-4 rounded text-center hover:bg-secondary/10 transition-all"
+          className="border border-primary text-primary font-label-caps text-label-caps px-8 py-4 rounded text-center hover:bg-primary/10 transition-all"
         >
           BEGINNER GUIDE
         </Link>

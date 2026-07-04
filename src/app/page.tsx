@@ -110,7 +110,6 @@ export default function HomePage() {
     if (heroRef.current) {
       const heroTitle = heroRef.current.querySelector("h1");
       const heroParagraph = heroRef.current.querySelector("p");
-      const heroButtons = heroRef.current.querySelectorAll("a");
       const heroImage = heroRef.current.querySelector(".hero-image");
 
       heroTl
@@ -126,7 +125,7 @@ export default function HomePage() {
           duration: 0.6,
           ease: "power2.out",
         }, "-=0.4")
-        .from(heroButtons, {
+        .from(".hero-cta", {
           y: 20,
           opacity: 0,
           duration: 0.5,
@@ -279,7 +278,7 @@ export default function HomePage() {
       <FAQSchema items={faqItems} />
       
       {/* Hero Section */}
-      <section ref={heroRef} className="min-h-[80vh] flex flex-col md:flex-row items-center gap-gutter py-stack-lg px-4 md:px-gutter max-w-[1440px] mx-auto hero-bg relative">
+      <section ref={heroRef} className="min-h-[80vh] flex flex-col md:flex-row items-start md:items-center gap-gutter pt-24 md:pt-28 pb-stack-lg px-4 md:px-gutter max-w-[1440px] mx-auto hero-bg relative">
         <div className="w-full md:w-1/2 flex flex-col gap-stack-lg z-10">
           <h1 className="font-display-lg text-3xl md:text-display-lg text-on-surface leading-tight">
             MECCHA CHAMELEON:{" "}
@@ -291,13 +290,13 @@ export default function HomePage() {
           <div className="flex flex-col sm:flex-row gap-4">
             <Link
               href="/maps"
-              className="bg-gradient-to-r from-primary to-inverse-primary text-on-primary font-label-caps text-label-caps px-8 py-4 rounded text-center shadow-[0_0_8px_rgba(75,226,119,0.4)] hover:brightness-110 transition-all hover:scale-105 active:scale-95"
+              className="hero-cta bg-gradient-to-r from-primary to-inverse-primary text-on-primary font-label-caps text-label-caps px-8 py-4 rounded text-center shadow-[0_0_8px_rgba(75,226,119,0.4)] hover:brightness-110 transition-all hover:scale-105 active:scale-95"
             >
               BROWSE ALL MAPS
             </Link>
             <Link
               href="/guides/beginner"
-              className="border border-primary text-primary font-label-caps text-label-caps px-8 py-4 rounded text-center hover:bg-primary/10 transition-all hover:scale-105 active:scale-95"
+              className="hero-cta border border-primary text-primary font-label-caps text-label-caps px-8 py-4 rounded text-center hover:bg-primary/10 transition-all hover:scale-105 active:scale-95"
             >
               READ THE BEGINNER GUIDE
             </Link>
