@@ -7,7 +7,7 @@ export interface VideoData {
   category: "beginner" | "painting" | "advanced" | "maps" | "entertainment";
   keyTopics: string[];
   description: string;
-  url: string;
+  videoId: string;
 }
 
 export const videos: VideoData[] = [
@@ -15,7 +15,7 @@ export const videos: VideoData[] = [
     id: "beginner-guide-ditech",
     title: "Meccha Chameleon Game Complete Beginner Guide (Painting Mechanics and Gameplay)",
     channel: "Ditech Gaming",
-    views: "95K",
+    views: "96K",
     duration: "9:35",
     category: "beginner",
     keyTopics: [
@@ -27,13 +27,13 @@ export const videos: VideoData[] = [
     ],
     description:
       "Comprehensive beginner guide covering everything new players need to know — from painting mechanics to gameplay basics. Covers the 3D Eyedropper, brush tools, and essential hiding strategies.",
-    url: "https://www.youtube.com/watch?v=Meccha+Chameleon+Game+Complete+Beginner+Guide",
+    videoId: "OwrQrvNRHoY",
   },
   {
     id: "painting-tricks-lpflea",
     title: "Meccha Chameleon Painting Tricks NOBODY Is Sharing",
     channel: "LPFlea",
-    views: "85K",
+    views: "86K",
     duration: "19:00",
     category: "painting",
     keyTopics: [
@@ -48,7 +48,7 @@ export const videos: VideoData[] = [
     ],
     description:
       "Deep-dive into painting techniques most players don't know. Covers brush speed tricks, color theory for camouflage, and how the game's scoring system actually evaluates your paint job.",
-    url: "https://www.youtube.com/watch?v=Meccha+Chameleon+Painting+Tricks+NOBODY+Is+Sharing",
+    videoId: "h7aoHAgUtbE",
   },
   {
     id: "5-painting-tips-flipbros",
@@ -66,7 +66,7 @@ export const videos: VideoData[] = [
     ],
     description:
       "Quick-fire 5 essential painting tips — roughness/metallic sliders, X-Ray rendering for hard-to-reach areas, dot technique, and color profiles. Under 2 minutes.",
-    url: "https://www.youtube.com/watch?v=5+MUST+HAVE+PAINTING+TIPS+Meccha+Chameleon",
+    videoId: "C_1Kedecd_A",
   },
   {
     id: "10-advanced-tips-glc",
@@ -84,23 +84,7 @@ export const videos: VideoData[] = [
     ],
     description:
       "10 advanced tips for experienced players looking to level up. Covers map-specific strategies, lighting-aware color matching, and understanding seeker behavior patterns.",
-    url: "https://www.youtube.com/watch?v=MECCHA+CHAMELEON+10+Advanced+Tips",
-  },
-  {
-    id: "how-to-hide-pro",
-    title: "How to Hide Like a PRO in Meccha Chameleon",
-    channel: "Various",
-    views: "2.3K",
-    duration: "Short",
-    category: "advanced",
-    keyTopics: [
-      "Pro hiding techniques",
-      "Spot selection",
-      "Paint accuracy",
-    ],
-    description:
-      "Short-form tips on professional-level hiding techniques — spot selection, paint precision, and reading the environment like a pro.",
-    url: "https://www.youtube.com/watch?v=How+to+Hide+Like+A+PRO+Meccha+Chameleon",
+    videoId: "1_p9HKjNqnk",
   },
   {
     id: "osaka-spots-lpflea",
@@ -111,19 +95,21 @@ export const videos: VideoData[] = [
     category: "maps",
     keyTopics: [
       "Osaka map-specific spots",
-      "Lesser-known hiding locations",
-      "Osaka color palettes",
-      "Vertical hiding spots",
+      "Under the Win-Win Sign trick",
+      "AC Unit eye-level trick",
+      "Truck painting walkthrough",
+      "Octopus spot",
+      "Pole + Brick blend",
     ],
     description:
-      "Map-specific deep dive into Osaka — lesser-known hiding spots, optimal color palettes for the Japanese-themed environment, and vertical hiding strategies.",
-    url: "https://www.youtube.com/watch?v=Nobody+Knows+These+Osaka+Spots",
+      "Map-specific deep dive into the reworked Osaka — 5 lesser-known hiding spots with full painting walkthroughs. Includes what NOT to do and where seekers look first.",
+    videoId: "cGXHr5aMcCw",
   },
   {
     id: "yogscast-custom-maps",
     title: "We become works of art in Meccha Chameleon's custom maps!",
     channel: "The Yogscast",
-    views: "56K",
+    views: "57K",
     duration: "18:00",
     category: "entertainment",
     keyTopics: [
@@ -133,13 +119,13 @@ export const videos: VideoData[] = [
     ],
     description:
       "The Yogscast explores Workshop custom maps with creative painting and hilarious hiding attempts. Great for seeing the game's creative potential in action.",
-    url: "https://www.youtube.com/watch?v=Yogscast+Meccha+Chameleon+custom+maps",
+    videoId: "_QkGn6GVqSo",
   },
   {
-    id: "color-matching-jp",
-    title: "Meccha Chameleon Paint Tutorial",
+    id: "paint-tutorial-jfourmes",
+    title: "How To Paint In MECCHA CHAMELEON - Tutorial",
     channel: "JfourmesPlays",
-    views: "763",
+    views: "790",
     duration: "5:04",
     category: "painting",
     keyTopics: [
@@ -149,8 +135,8 @@ export const videos: VideoData[] = [
       "How to blend colors",
     ],
     description:
-      "Clear 5-minute tutorial walking through the complete painting workflow — from tools to brush size to blending techniques. Good visual walkthrough.",
-    url: "https://www.youtube.com/watch?v=Meccha+Chameleon+Paint+Tutorial+JfourmesPlays",
+      "Clear 5-minute tutorial walking through the complete painting workflow — from tools to brush size to blending techniques. Good visual walkthrough for beginners.",
+    videoId: "qOcwoaNtQrI",
   },
 ];
 

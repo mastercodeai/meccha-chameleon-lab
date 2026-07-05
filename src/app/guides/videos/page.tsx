@@ -37,7 +37,7 @@ export default function VideosPage() {
       </h1>
       <p className="font-body-main text-body-main text-on-surface-variant mb-8 max-w-2xl">
         Curated collection of the best MECCHA CHAMELEON tutorials on YouTube.
-        All videos are from verified community creators — not AI-generated content.
+        All videos are from verified community creators.
       </p>
 
       {/* Category filter */}
@@ -66,52 +66,57 @@ export default function VideosPage() {
               <span>{info.icon}</span>
               {info.label} Guides
             </h2>
-            <div className="grid gap-4 md:grid-cols-2">
+            <div className="grid gap-6">
               {catVideos.map((video) => (
                 <div
                   key={video.id}
-                  className="bg-surface border border-outline-variant rounded-lg p-5 hover:border-primary/30 transition-colors"
+                  className="bg-surface border border-outline-variant rounded-lg overflow-hidden hover:border-primary/30 transition-colors"
                 >
-                  <div className="flex items-start justify-between gap-3 mb-3">
-                    <h3 className="font-body-main text-body-main text-on-surface font-semibold leading-snug">
-                      {video.title}
-                    </h3>
-                    <span className={`font-label-caps text-label-caps px-2 py-0.5 rounded shrink-0 ${info.color}`}>
-                      {info.label}
-                    </span>
+                  {/* YouTube Embed */}
+                  <div className="relative w-full" style={{ paddingBottom: "56.25%" }}>
+                    <iframe
+                      src={`https://www.youtube.com/embed/${video.videoId}`}
+                      title={video.title}
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                      className="absolute top-0 left-0 w-full h-full"
+                      loading="lazy"
+                    />
                   </div>
 
-                  <div className="flex items-center gap-3 text-on-surface-variant font-body-sm text-body-sm mb-3">
-                    <span>{video.channel}</span>
-                    <span>•</span>
-                    <span>{video.views} views</span>
-                    <span>•</span>
-                    <span>{video.duration}</span>
-                  </div>
-
-                  <p className="font-body-sm text-body-sm text-on-surface-variant mb-4">
-                    {video.description}
-                  </p>
-
-                  <div className="flex flex-wrap gap-1.5 mb-4">
-                    {video.keyTopics.map((topic, i) => (
-                      <span
-                        key={i}
-                        className="font-body-sm text-xs bg-surface-container-high text-on-surface-variant px-2 py-0.5 rounded"
-                      >
-                        {topic}
+                  <div className="p-5">
+                    <div className="flex items-start justify-between gap-3 mb-3">
+                      <h3 className="font-body-main text-body-main text-on-surface font-semibold leading-snug">
+                        {video.title}
+                      </h3>
+                      <span className={`font-label-caps text-label-caps px-2 py-0.5 rounded shrink-0 ${info.color}`}>
+                        {info.label}
                       </span>
-                    ))}
-                  </div>
+                    </div>
 
-                  <a
-                    href={video.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 font-label-caps text-label-caps text-primary hover:text-primary/80 transition-colors"
-                  >
-                    WATCH ON YOUTUBE →
-                  </a>
+                    <div className="flex items-center gap-3 text-on-surface-variant font-body-sm text-body-sm mb-3">
+                      <span>{video.channel}</span>
+                      <span>•</span>
+                      <span>{video.views} views</span>
+                      <span>•</span>
+                      <span>{video.duration}</span>
+                    </div>
+
+                    <p className="font-body-sm text-body-sm text-on-surface-variant mb-4">
+                      {video.description}
+                    </p>
+
+                    <div className="flex flex-wrap gap-1.5">
+                      {video.keyTopics.map((topic, i) => (
+                        <span
+                          key={i}
+                          className="font-body-sm text-xs bg-surface-container-high text-on-surface-variant px-2 py-0.5 rounded"
+                        >
+                          {topic}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
                 </div>
               ))}
             </div>
