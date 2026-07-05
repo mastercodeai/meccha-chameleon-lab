@@ -59,6 +59,26 @@ const faqItems = [
     a: "No. This is an independent fan site. We are not affiliated with the developer (lemorion_1224) or Valve Corporation. All game assets belong to their respective owners.",
   },
   {
+    q: "How does the 3D Eyedropper work?",
+    a: "Right-click any surface in the game to sample its exact color AND material properties (roughness and metallic values). The eyedropper captures the color with lighting context from that specific spot. Always sample from the exact location where you plan to hide — colors look different under different lighting.",
+  },
+  {
+    q: "What do the Roughness and Metallic sliders do?",
+    a: "Roughness controls how matte or shiny your surface appears (0 = mirror-shiny, 1 = completely matte). Metallic controls how metallic the surface looks (0 = non-metal like wood or fabric, 1 = full metal like chrome). Matching these to the environment is just as important as matching the color — wrong metallic values are one of the biggest tells for experienced seekers.",
+  },
+  {
+    q: "How do I paint faster?",
+    a: "Move your mouse quickly while painting to create dot patterns instead of solid strokes — this covers area faster. Use Color Profiles to save and switch between pre-mixed colors instantly. Also, pre-mix your map's dominant colors before the round starts so you're not mixing mid-round.",
+  },
+  {
+    q: "What is X-Ray Rendering?",
+    a: "X-Ray Rendering lets you see through your own body to paint hard-to-reach areas like your back, underside, and between limbs. Toggle it on when you need to paint areas you can't normally see, then toggle it off to check your overall appearance.",
+  },
+  {
+    q: "How is the visibility score calculated?",
+    a: "The game compares your painted body against the surrounding environment at the vertex level. It evaluates color distance (how close your colors are to the environment), material matching (roughness and metallic values), and how well your silhouette blends in. Lower visibility = harder for seekers to find you.",
+  },
+  {
     q: "Does MECCHA CHAMELEON support crossplay?",
     a: "No. As of July 2026, MECCHA CHAMELEON is PC (Windows) only. There is no crossplay because the game is not available on other platforms.",
   },
@@ -67,32 +87,28 @@ const faqItems = [
     a: "No. The game costs $5.99 on Steam. However, this guide site is completely free — no sign-up, no paywall, no catch.",
   },
   {
-    q: "How many maps does the game have?",
-    a: "The game has multiple official maps including Sewer and The Backrooms. The Workshop adds 500+ community-created maps.",
+    q: "How many official maps are there?",
+    a: "There are 7 official maps: Backrooms, Hide-and-Seek Mansion, Indoor Country, Osaka, Penguin Hotel, Sewer, and Sugar Land. The Steam Workshop adds 521+ community-created maps. Both Backrooms and Osaka have been reworked in recent updates.",
   },
   {
-    q: "How often is the content updated?",
-    a: "We update guides when the game releases new maps or major balance changes. Workshop data refreshes daily via the Steam API.",
+    q: "What game modes are available?",
+    a: "The core mode is hide-and-seek (Hiders vs Seekers). Additional modes include Double Mode (two players share a hiding spot), Reverse Chicken Race (deduce the hidden player from their paint), and various community-made modes via Workshop maps.",
   },
   {
-    q: "What are the best hiding spots in MECCHA CHAMELEON?",
-    a: "The best MECCHA CHAMELEON hiding spots depend on the map. On Sewer, pipes and dark corners are top-tier. On Backrooms, blending into furniture works best. Check our per-map guides with screenshots for the best hiding spots on every MECCHA CHAMELEON map.",
-  },
-  {
-    q: "How do I paint my character in MECCHA CHAMELEON?",
-    a: "In MECCHA CHAMELEON, you can paint your character before each round to match the environment. Use the paint tool to pick colors that blend with the current map surface. Our MECCHA CHAMELEON paint guide covers the best color combinations for every map.",
-  },
-  {
-    q: "What maps are in MECCHA CHAMELEON?",
-    a: "MECCHA CHAMELEON has 7 official maps including Sewer and The Backrooms. The Steam Workshop adds 500+ community-created maps. Each map has unique hiding spots, layouts, and surfaces to blend into. Browse our MECCHA CHAMELEON map guide for details on every map.",
-  },
-  {
-    q: "Is MECCHA CHAMELEON on Steam Deck?",
-    a: "MECCHA CHAMELEON is a PC game on Steam, so it can run on Steam Deck through Proton compatibility. However, there is no official Steam Deck optimization. Check our MECCHA CHAMELEON Steam Deck guide for setup tips and recommended settings.",
+    q: "Can I play MECCHA CHAMELEON with a controller?",
+    a: "Controller support is in development. Update v2.5.0 added an experimental color palette for upcoming controller support. The game currently works best with keyboard and mouse for precise painting.",
   },
   {
     q: "How many players can play MECCHA CHAMELEON?",
-    a: "MECCHA CHAMELEON supports multiple players in online PvP matches. One player is the Seeker while the rest are Hiders who morph into objects and hide. The game is best with larger groups for maximum chaos and fun.",
+    a: "The game supports 2-10 players per match, depending on the host's network environment. Public matches allow anyone to join, while private matches are invite-only. Streamers can easily host viewer participation games.",
+  },
+  {
+    q: "What are the best hiding spots?",
+    a: "The best spots depend on the map. In general: look for areas with natural cover, match the dominant color of your surroundings, and use the environment's shape to break your silhouette. Check our per-map guides for specific spot recommendations with screenshots.",
+  },
+  {
+    q: "Is MECCHA CHAMELEON on Steam Deck?",
+    a: "MECCHA CHAMELEON is a PC game on Steam, so it can run on Steam Deck through Proton compatibility. However, there is no official Steam Deck optimization. Check our Steam Deck guide for setup tips and recommended settings.",
   },
 ];
 

@@ -25,6 +25,7 @@ const navLinks: NavItem[] = [
       { href: "/guides/seeker-counters", label: "Seeker Counters" },
       { href: "/guides/beginner-mistakes", label: "Common Mistakes" },
       { href: "/guides/easter-eggs", label: "Secrets & Rumors" },
+      { href: "/guides/videos", label: "Video Tutorials" },
     ],
   },
   { href: "/tier-list", label: "TIER LIST" },

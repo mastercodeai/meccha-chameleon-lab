@@ -12,6 +12,7 @@ export default function Footer() {
           <Link href="/guides/tips" className="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-all">Tips & Tricks</Link>
           <Link href="/guides/controls" className="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-all">Controls Guide</Link>
           <Link href="/guides/combos" className="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-all">Combo Guide</Link>
+          <Link href="/guides/videos" className="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-all">Video Tutorials</Link>
         </div>
         <div className="flex flex-col gap-2">
           <span className="font-label-caps text-label-caps text-on-surface mb-2">TOOLS</span>

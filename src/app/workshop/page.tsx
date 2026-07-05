@@ -1,96 +1,172 @@
 import type { Metadata } from "next";
-import RelatedPages from "@/components/RelatedPages";
+import Link from "next/link";
+import { workshopMaps } from "@/data/workshop";
 
 export const metadata: Metadata = {
-  title: "Workshop — Best Maps & Mods",
-  description: "Browse 521 community-created Workshop maps for MECCHA CHAMELEON. Find the best custom maps with ratings and subscribe links.",
+  title: "Workshop Maps — Best Community Maps for MECCHA CHAMELEON",
+  description:
+    "Discover the best community-created Workshop maps for MECCHA CHAMELEON. Curated list of top-rated maps with descriptions, difficulty notes, and direct Steam links.",
+  keywords: [
+    "meccha chameleon workshop",
+    "meccha chameleon custom maps",
+    "meccha chameleon community maps",
+    "meccha chameleon workshop maps",
+    "meccha chameleon best maps",
+    "steam workshop meccha chameleon",
+  ],
   alternates: {
     canonical: "https://mecchachameleonlab.com/workshop",
   },
 };
 
+const categoryLabels: Record<string, { label: string; color: string; icon: string }> = {
+  popular: { label: "Top Rated", color: "bg-yellow-500/20 text-yellow-400", icon: "⭐" },
+  trending: { label: "Trending", color: "bg-green-500/20 text-green-400", icon: "🔥" },
+  crossover: { label: "Crossover", color: "bg-purple-500/20 text-purple-400", icon: "🎮" },
+  creative: { label: "Creative", color: "bg-pink-500/20 text-pink-400", icon: "🎨" },
+};
+
+const categories = ["popular", "trending", "crossover", "creative"] as const;
+
 export default function WorkshopPage() {
   return (
     <main className="pt-[100px] pb-stack-lg max-w-[1440px] mx-auto px-4 md:px-gutter">
-      <div className="text-center mb-stack-lg">
-        <h1 className="font-display-lg text-3xl md:text-display-lg text-on-surface uppercase">
-          Workshop
-        </h1>
-        <p className="font-body-main text-body-main text-on-surface-variant mt-4">
-          521 community maps and mods. Find your next favorite custom map.
-        </p>
+      <h1 className="font-display-lg text-3xl md:text-display-lg text-on-surface uppercase mb-4">
+        Workshop Maps
+      </h1>
+      <p className="font-body-main text-body-main text-on-surface-variant mb-4 max-w-2xl">
+        MECCHA CHAMELEON has a thriving Workshop community with hundreds of custom maps.
+        Here are some of the best ones we&apos;ve found — curated from the Steam Workshop.
+      </p>
+      <p className="font-body-sm text-body-sm text-on-surface-variant mb-8">
+        Total Workshop maps: <span className="text-primary font-semibold">521+</span> and growing
+      </p>
+
+      {/* Quick stats */}
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+        {categories.map((cat) => {
+          const info = categoryLabels[cat];
+          const count = workshopMaps.filter((m) => m.category === cat).length;
+          return (
+            <div
+              key={cat}
+              className="bg-surface border border-outline-variant rounded-lg p-4 text-center"
+            >
+              <div className="text-2xl mb-1">{info.icon}</div>
+              <div className="font-headline-sm text-headline-sm text-on-surface">{count}</div>
+              <div className="font-label-caps text-label-caps text-on-surface-variant">
+                {info.label}
+              </div>
+            </div>
+          );
+        })}
+      </div>
+
+      {categories.map((cat) => {
+        const info = categoryLabels[cat];
+        const maps = workshopMaps.filter((m) => m.category === cat);
+        if (maps.length === 0) return null;
+        return (
+          <section key={cat} className="mb-stack-lg">
+            <h2 className="font-headline-md text-headline-md text-on-surface mb-6 flex items-center gap-3">
+              <span>{info.icon}</span>
+              {info.label} Maps
+            </h2>
+            <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+              {maps.map((map) => (
+                <div
+                  key={map.name}
+                  className="bg-surface border border-outline-variant rounded-lg p-5 hover:border-primary/30 transition-colors flex flex-col"
+                >
+                  <div className="flex items-start justify-between gap-2 mb-2">
+                    <h3 className="font-body-main text-body-main text-on-surface font-semibold">
+                      {map.name}
+                    </h3>
+                    <span className={`font-label-caps text-label-caps px-2 py-0.5 rounded shrink-0 ${info.color}`}>
+                      {info.label}
+                    </span>
+                  </div>
+
+                  <p className="font-body-sm text-sm text-primary mb-2">
+                    by {map.author}
+                  </p>
+
+                  <p className="font-body-sm text-body-sm text-on-surface-variant mb-4 flex-1">
+                    {map.description}
+                  </p>
+
+                  <div className="flex flex-wrap gap-1.5 mb-4">
+                    {map.tags.map((tag, i) => (
+                      <span
+                        key={i}
+                        className="font-body-sm text-xs bg-surface-container-high text-on-surface-variant px-2 py-0.5 rounded"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+
+                  <a
+                    href={map.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 font-label-caps text-label-caps text-primary hover:text-primary/80 transition-colors"
+                  >
+                    VIEW ON STEAM WORKSHOP →
+                  </a>
+                </div>
+              ))}
+            </div>
+          </section>
+        );
+      })}
+
+      <div className="bg-surface border border-outline-variant rounded-lg p-6 mt-stack-lg">
+        <h3 className="font-headline-sm text-headline-sm text-on-surface mb-3">
+          How to Install Workshop Maps
+        </h3>
+        <ol className="space-y-2 font-body-sm text-body-sm text-on-surface-variant">
+          <li className="flex items-start gap-2">
+            <span className="text-primary font-semibold">1.</span>
+            <span>Visit the Steam Workshop page for MECCHA CHAMELEON</span>
+          </li>
+          <li className="flex items-start gap-2">
+            <span className="text-primary font-semibold">2.</span>
+            <span>Find a map you like and click &quot;Subscribe&quot;</span>
+          </li>
+          <li className="flex items-start gap-2">
+            <span className="text-primary font-semibold">3.</span>
+            <span>The map will automatically download when you launch the game</span>
+          </li>
+          <li className="flex items-start gap-2">
+            <span className="text-primary font-semibold">4.</span>
+            <span>In-game, create a server and select the Workshop map from the map list</span>
+          </li>
+        </ol>
         <a
           href="https://steamcommunity.com/app/4704690/workshop/"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 mt-4 px-6 py-3 bg-gradient-to-r from-primary to-inverse-primary text-on-primary font-label-caps text-label-caps rounded shadow-[0_0_8px_rgba(75,226,119,0.4)] hover:brightness-110 transition-all"
+          className="inline-block mt-4 bg-gradient-to-r from-primary to-green-400 text-on-primary font-label-caps text-label-caps px-6 py-3 rounded text-center hover:brightness-110 transition-all"
         >
-          BROWSE ON STEAM
-          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-          </svg>
+          BROWSE ALL WORKSHOP MAPS
         </a>
       </div>
 
-      {/* Top Workshop Maps */}
-      <div className="mb-stack-lg">
-        <h2 className="font-headline-md text-headline-md text-on-surface mb-6 uppercase">Most Popular Maps</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {[
-            { name: "Minecraft", author: "Skolas", rank: 1 },
-            { name: "ART GALLERY", author: "Popunia", rank: 2 },
-            { name: "Simpsons Family House", author: "Nico", rank: 3 },
-            { name: "Swimming Pool", author: "Popunia", rank: 4 },
-            { name: "Bikini Bottom", author: "GewoonKerin", rank: 5 },
-            { name: "Meeting Room", author: "acid_fox", rank: 6 },
-            { name: "Police Station", author: "RareKiwi", rank: 7 },
-            { name: "Peak Airport", author: "RT", rank: 8 },
-            { name: "The Market", author: "Tunep", rank: 9 },
-          ].map((item) => (
-            <div
-              key={item.rank}
-              className="bg-surface border border-outline-variant rounded-lg p-5 glow-hover transition-all"
-            >
-              <div className="flex items-center gap-3 mb-3">
-                <div className="w-8 h-8 rounded-full bg-primary/10 border border-primary/30 flex items-center justify-center">
-                  <span className="text-sm font-bold text-primary">#{item.rank}</span>
-                </div>
-                <div>
-                  <h3 className="font-headline-md text-base text-on-surface">{item.name}</h3>
-                  <p className="text-xs text-on-surface-variant">by {item.author}</p>
-                </div>
-              </div>
-              <a
-                href="https://steamcommunity.com/app/4704690/workshop/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1 text-sm text-primary hover:text-primary-container transition-colors font-label-caps"
-              >
-                Subscribe on Steam
-                <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                </svg>
-              </a>
-            </div>
-          ))}
-        </div>
+      <div className="flex flex-col sm:flex-row gap-4 mt-stack-lg">
+        <Link
+          href="/maps"
+          className="border border-primary text-primary font-label-caps text-label-caps px-8 py-4 rounded text-center hover:bg-primary/10 transition-all"
+        >
+          OFFICIAL MAPS
+        </Link>
+        <Link
+          href="/guides/beginner"
+          className="border border-secondary text-secondary font-label-caps text-label-caps px-8 py-4 rounded text-center hover:bg-secondary/10 transition-all"
+        >
+          BEGINNER GUIDE
+        </Link>
       </div>
-
-      {/* Info */}
-      <div className="bg-surface border border-outline-variant rounded-lg p-8 text-center">
-        <h2 className="font-headline-md text-headline-md text-on-surface mb-4">Full Workshop Database Coming Soon</h2>
-        <p className="font-body-main text-body-main text-on-surface-variant max-w-2xl mx-auto">
-          We&apos;re building a searchable database of all 521 Workshop items with ratings, subscriber counts, and detailed descriptions. In the meantime, browse the full collection on Steam Workshop.
-        </p>
-      </div>
-
-      <RelatedPages
-        pages={[
-          { title: "All Maps", description: "Browse all 7 official maps with hiding spot guides and strategies.", href: "/maps", icon: "🗺️" },
-          { title: "Gallery", description: "Game screenshots, map previews, and character art.", href: "/gallery", icon: "🖼️" },
-          { title: "Tier List", description: "All 7 official maps ranked from S-tier to C-tier.", href: "/tier-list", icon: "🏆" },
-        ]}
-      />
     </main>
   );
 }
