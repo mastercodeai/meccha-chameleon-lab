@@ -1,6 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
-import { BreadcrumbSchema } from "@/components/Schema";
+import { BreadcrumbSchema, FAQSchema } from "@/components/Schema";
 import RelatedPages from "@/components/RelatedPages";
 import Comments from "@/components/Comments";
 
@@ -37,6 +37,8 @@ const sections = [
   { id: "common-spots", title: "Common Hider Spots to Check" },
   { id: "advanced-techniques", title: "Advanced Techniques" },
   { id: "map-tips", title: "Map-Specific Tips" },
+  { id: "seeker-vs-hider", title: "Seeker vs Hider Mindset" },
+  { id: "faq", title: "FAQ" },
 ];
 
 export default function SeekerCountersPage() {
@@ -316,44 +318,202 @@ export default function SeekerCountersPage() {
 
           <section id="map-tips" className="mb-stack-lg">
             <h2 className="font-headline-md text-headline-md text-on-surface mb-4">
-              Map-Specific Tips
+              Map-Specific Seeker Strategies
             </h2>
             <p className="font-body-main text-body-main text-on-surface-variant mb-4">
-              Each map has unique characteristics that affect how you should
-              approach your search:
+              Each of the 7 official maps has unique geometry, lighting, and
+              hiding hotspots. Here's how to approach each one as Seeker:
             </p>
-            <div className="space-y-4">
+            <div className="space-y-6">
               {[
                 {
-                  tip: "Exploit Color Zones",
-                  desc: "Maps have distinct color zones — a red carpet area, a blue wall section, a green garden. Hiders moving between zones often have imperfect paint transitions at zone boundaries.",
+                  map: "Backrooms",
+                  color: "#DAA520",
+                  tips: [
+                    "The sickly yellow wallpaper makes color mismatches obvious. Scan for anything too saturated or too dark against the off-yellow surfaces.",
+                    "Check under tables and inside chair piles — hiders love these spots but their shapes often give them away.",
+                    "The broken highway section has police cars. Scan vehicle outlines for human shapes.",
+                    "Vending machines have distinct colors. If something near them doesn't match, investigate.",
+                    "Fluorescent lighting washes out colors — hiders who didn't desaturate will glow against the walls.",
+                  ],
                 },
                 {
-                  tip: "Control Vertical Sightlines",
-                  desc: "On maps with multiple floors or elevated areas, check vertical spaces systematically. Many Seekers forget to look up, and hiders exploit this.",
+                  map: "Hide-and-Seek Mansion",
+                  color: "#8B4513",
+                  tips: [
+                    "The Mansion has 10 known spots. Systematically check each room instead of wandering randomly.",
+                    "Laundry baskets are S-tier hiding spots. Check every basket and shelf carefully.",
+                    "Gold trim and velvet curtains are hard to match perfectly. Look for slight color differences near fabric surfaces.",
+                    "The globe room has a suitcase under stacked tables — a very popular spot for experienced hiders.",
+                    "Furniture randomization (v2.2.0) changes layout each round. Don't rely on memorized positions.",
+                  ],
                 },
                 {
-                  tip: "Know the Lighting Map",
-                  desc: "Understand which areas are well-lit and which are dark. Dark areas are more forgiving for hiders — prioritize checking them with extra scrutiny or damage probes.",
+                  map: "Indoor Country",
+                  color: "#228B22",
+                  tips: [
+                    "This is the easiest map for seekers (difficulty 2/5). Natural environments have fewer hiding spots.",
+                    "Check behind hay bales and inside farm equipment — hiders often tuck into tight spaces.",
+                    "The balloon center has bright colors that are hard to match. Look for miscolored objects near balloons.",
+                    "Cow corners are popular but the black/white pattern is hard to replicate. Look for solid-color imposters.",
+                    "Use the open sightlines to your advantage — this map has fewer corners than others.",
+                  ],
                 },
                 {
-                  tip: "Use Environmental Features",
-                  desc: "Pay attention to map-specific features and areas with unique lighting or visual elements. These can help you spot inconsistencies that indicate a hider's presence.",
+                  map: "Osaka",
+                  color: "#FF69B4",
+                  tips: [
+                    "The Osaka rework changed many hiding spots. Old knowledge may be outdated — explore thoroughly.",
+                    "Narrow alleyways force hiders into predictable positions. Sweep both sides systematically.",
+                    "Neon signs create color distortion. If something near a sign looks off, it might be a hider who sampled wrong.",
+                    "Check elevated positions — many hiders climb to rooftops thinking seekers won't look up.",
+                    "Open areas seem safe but hiders can flatten against walls. Check wall edges carefully.",
+                  ],
+                },
+                {
+                  map: "Penguin Hotel",
+                  color: "#4169E1",
+                  tips: [
+                    "White marble floors make dark-colored hiders stand out. Scan for anything that isn't white or light blue.",
+                    "The ballroom is large and open — use sightlines to spot hiders who thought they were hidden.",
+                    "Check behind penguin decorations — their irregular shapes create natural hiding pockets.",
+                    "Hallways are choke points. If you're patient, hiders will eventually move and reveal themselves.",
+                    "The play room has colorful toys that are hard to match. Look for slightly-off colors in that area.",
+                  ],
+                },
+                {
+                  map: "Sewer",
+                  color: "#556B2F",
+                  tips: [
+                    "The Sewer's low visibility works against you too. Move slowly and scan methodically.",
+                    "v2.2.1 added random elements — the layout has slight variations each round.",
+                    "Flooded sections reflect light differently. If a surface's color doesn't match the reflection pattern, investigate.",
+                    "Gas zones have a green tint that affects color perception. Hiders who sampled from gas areas will look slightly off.",
+                    "Check inside lockers — a popular spot but tight space means hiders can't adjust their pose well.",
+                  ],
+                },
+                {
+                  map: "Sugar Land",
+                  color: "#FF1493",
+                  tips: [
+                    "This map's bright colors make it easy to spot hiders who used generic paint. Look for flat, untextured surfaces.",
+                    "Gumdrop gardens are popular hiding spots. Check each gumdrop cluster for human-shaped irregularities.",
+                    "Candy house interiors are often overlooked. Sweep inside each house systematically.",
+                    "The locker area near the cake zone is a common spot — check every locker.",
+                    "Gingerbread houses have door openings. Hiders often hide inside and paint themselves brown.",
+                  ],
                 },
               ].map((item, i) => (
                 <div
                   key={i}
-                  className="bg-surface border-l-4 border-primary rounded-r-lg p-4"
+                  className="bg-surface border border-outline-variant rounded-lg overflow-hidden"
                 >
-                  <h3 className="font-label-caps text-label-caps text-on-surface mb-1">
-                    {item.tip}
-                  </h3>
-                  <p className="font-body-sm text-body-sm text-on-surface-variant">
-                    {item.desc}
-                  </p>
+                  <div className="flex items-center gap-3 px-4 py-3 border-b border-outline-variant">
+                    <div
+                      className="w-3 h-3 rounded-full"
+                      style={{ backgroundColor: item.color }}
+                    />
+                    <h3 className="font-label-caps text-label-caps text-on-surface">
+                      {item.map}
+                    </h3>
+                    <Link
+                      href={`/maps/${item.map.toLowerCase().replace(/\s+/g, "-").replace("hide-and-seek-mansion", "hide-and-seek-mansion")}`}
+                      className="ml-auto text-xs text-primary hover:underline"
+                    >
+                      Full map guide →
+                    </Link>
+                  </div>
+                  <ul className="p-4 space-y-2">
+                    {item.tips.map((tip, j) => (
+                      <li
+                        key={j}
+                        className="font-body-sm text-body-sm text-on-surface-variant flex items-start gap-2"
+                      >
+                        <span className="text-primary mt-1 shrink-0">•</span>
+                        <span>{tip}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               ))}
             </div>
+          </section>
+
+          <section id="seeker-vs-hider" className="mb-stack-lg">
+            <h2 className="font-headline-md text-headline-md text-on-surface mb-4">
+              Seeker vs Hider Mindset
+            </h2>
+            <p className="font-body-main text-body-main text-on-surface-variant mb-4">
+              The biggest mistake new Seekers make is thinking like a Hider.
+              These two roles require opposite approaches:
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="bg-surface border border-outline-variant rounded-lg p-5">
+                <h3 className="font-label-caps text-label-caps text-red-400 mb-3">
+                  ❌ HIDER MINDSET (wrong for Seeker)
+                </h3>
+                <ul className="space-y-2 font-body-sm text-body-sm text-on-surface-variant">
+                  <li>• Looking for good hiding spots</li>
+                  <li>• Appreciating the scenery</li>
+                  <li>• Moving slowly and carefully</li>
+                  <li>• Focusing on one area</li>
+                  <li>• Trusting your first impression</li>
+                </ul>
+              </div>
+              <div className="bg-surface border border-primary/50 rounded-lg p-5">
+                <h3 className="font-label-caps text-label-caps text-primary mb-3">
+                  ✅ SEEKER MINDSET (what works)
+                </h3>
+                <ul className="space-y-2 font-body-sm text-body-sm text-on-surface-variant">
+                  <li>• Scanning for anomalies and mismatches</li>
+                  <li>• Questioning every object's color/shape</li>
+                  <li>• Moving at medium speed for better scanning</li>
+                  <li>• Covering the entire map systematically</li>
+                  <li>• Double-checking areas you've already cleared</li>
+                </ul>
+              </div>
+            </div>
+            <p className="font-body-main text-body-main text-on-surface-variant mt-4">
+              The best Seekers develop a "sixth sense" for visual anomalies.
+              After enough rounds, your brain automatically flags objects that
+              don't belong. This skill comes from practice — the more maps you
+              play, the faster you spot disguised hiders.
+            </p>
+          </section>
+
+          {/* FAQ */}
+          <section id="faq" className="mb-stack-lg">
+            <h2 className="font-headline-md text-headline-md text-on-surface mb-4">
+              Frequently Asked Questions
+            </h2>
+            <FAQSchema
+              items={[
+                {
+                  q: "How do I find hiders in MECCHA CHAMELEON?",
+                  a: "Use systematic search patterns (sweep, spiral, or zone split), check common hiding spots first (corners, closets, under furniture), and train your eye to spot color mismatches, texture flatness, and lighting inconsistencies in painted surfaces.",
+                },
+                {
+                  q: "What's the best search pattern for Seekers?",
+                  a: "The Sweep Method is the most reliable — start from one edge and move in a straight line to the other side, scanning every object as you pass. This guarantees full coverage. For smaller rooms, use the High-Traffic First approach and check popular spots immediately.",
+                },
+                {
+                  q: "How can I tell if an object is a painted hider?",
+                  a: "Look for five signs: color mismatch with surroundings, edge bleeding where paint meets real surfaces, lighting inconsistencies (painted surfaces react differently to light), texture flatness (real surfaces have micro-detail), and chipped paint that exposes original colors.",
+                },
+                {
+                  q: "Which map is easiest for Seekers?",
+                  a: "Indoor Country is the easiest map for Seekers (difficulty 2/5). The natural environments have fewer hiding spots, open sightlines, and the bright balloon center makes color mismatches obvious.",
+                },
+                {
+                  q: "Which map is hardest for Seekers?",
+                  a: "Backrooms and Sewer are the hardest for Seekers (both difficulty 4/5). Backrooms has sickly yellow wallpaper that makes subtle mismatches hard to spot, while Sewer's low visibility works against both hiders and seekers.",
+                },
+                {
+                  q: "Should I listen for audio cues as Seeker?",
+                  a: "Yes. Paint spraying sounds, footsteps, and object collisions can pinpoint a hider's location before you see them. Sound travels through walls, so audio cues are especially useful in enclosed maps like Sewer and Backrooms.",
+                },
+              ]}
+            />
           </section>
 
           {/* CTAs */}
