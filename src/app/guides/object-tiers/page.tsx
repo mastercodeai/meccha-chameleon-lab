@@ -2,6 +2,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { BreadcrumbSchema } from "@/components/Schema";
 import RelatedPages from "@/components/RelatedPages";
+import Comments from "@/components/Comments";
 
 export const metadata: Metadata = {
   title: "MECCHA CHAMELEON Object Tier List — Best Objects to Disguise As",
@@ -478,6 +479,8 @@ export default function ObjectTiersPage() {
           { title: "All Maps", description: "Browse all 7 official maps with hiding spot guides.", href: "/maps", icon: "🗺️" },
         ]}
       />
+
+      <Comments slug="guides/object-tiers" />
     </main>
   );
 }

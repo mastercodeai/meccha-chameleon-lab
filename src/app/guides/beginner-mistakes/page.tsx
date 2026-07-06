@@ -2,6 +2,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { BreadcrumbSchema } from "@/components/Schema";
 import RelatedPages from "@/components/RelatedPages";
+import Comments from "@/components/Comments";
 
 export const metadata: Metadata = {
   title: "10 MECCHA CHAMELEON Mistakes Beginners Make",
@@ -257,6 +258,8 @@ export default function BeginnerMistakesPage() {
           { title: "Hider Guide", description: "Become an invisible master of disguise.", href: "/guides/hider", icon: "🎨" },
         ]}
       />
+
+      <Comments slug="guides/beginner-mistakes" />
     </main>
   );
 }

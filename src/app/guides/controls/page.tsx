@@ -2,6 +2,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { BreadcrumbSchema, ArticleSchema } from "@/components/Schema";
 import RelatedPages from "@/components/RelatedPages";
+import Comments from "@/components/Comments";
 
 export const metadata: Metadata = {
   title: "Controls — Keyboard & Controller Guide",
@@ -193,6 +194,8 @@ export default function ControlsGuidePage() {
           { title: "Beginner Guide", description: "Everything you need to know before your first round.", href: "/guides/beginner", icon: "📖" },
         ]}
       />
+
+      <Comments slug="guides/controls" />
     </main>
   );
 }

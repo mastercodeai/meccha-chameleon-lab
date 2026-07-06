@@ -2,6 +2,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { BreadcrumbSchema, ArticleSchema } from "@/components/Schema";
 import RelatedPages from "@/components/RelatedPages";
+import Comments from "@/components/Comments";
 
 export const metadata: Metadata = {
   title: "Seeker Guide — Hunt Like a Pro",
@@ -215,6 +216,8 @@ export default function SeekerGuidePage() {
           { title: "Tips & Tricks", description: "50 essential tips for hiders, seekers, painters, and map experts.", href: "/guides/tips", icon: "💡" },
         ]}
       />
+
+      <Comments slug="guides/seeker" />
     </main>
   );
 }

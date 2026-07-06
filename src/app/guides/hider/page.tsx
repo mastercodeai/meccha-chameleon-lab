@@ -2,6 +2,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { BreadcrumbSchema, ArticleSchema } from "@/components/Schema";
 import RelatedPages from "@/components/RelatedPages";
+import Comments from "@/components/Comments";
 
 export const metadata: Metadata = {
   title: "Hider Guide — Master the Art of Blending",
@@ -214,6 +215,8 @@ export default function HiderGuidePage() {
           { title: "Tips & Tricks", description: "50 essential tips for hiders, seekers, painters, and map experts.", href: "/guides/tips", icon: "💡" },
         ]}
       />
+
+      <Comments slug="guides/hider" />
     </main>
   );
 }

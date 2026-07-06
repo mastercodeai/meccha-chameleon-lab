@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { workshopMaps } from "@/data/workshop";
+import Comments from "@/components/Comments";
 
 export const metadata: Metadata = {
   title: "Workshop Maps — Best Community Maps for MECCHA CHAMELEON",
@@ -167,6 +168,8 @@ export default function WorkshopPage() {
           BEGINNER GUIDE
         </Link>
       </div>
+
+      <Comments slug="workshop" />
     </main>
   );
 }

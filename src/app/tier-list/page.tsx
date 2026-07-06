@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { maps } from "@/data/maps";
 import { BreadcrumbSchema, FAQSchema } from "@/components/Schema";
 import RelatedPages from "@/components/RelatedPages";
+import Comments from "@/components/Comments";
 
 export const metadata: Metadata = {
   title: "MECCHA CHAMELEON Tier List — Best Maps Ranked (2026)",
@@ -312,6 +313,8 @@ export default function TierListPage() {
             </div>
           </article>
         </div>
+
+        <Comments slug="tier-list" />
 
         <RelatedPages
           pages={[

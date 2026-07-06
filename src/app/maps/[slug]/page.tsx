@@ -9,6 +9,7 @@ import { maps, getMapBySlug } from "@/data/maps";
 import { BreadcrumbSchema } from "@/components/Schema";
 import { getSpotsByMapSlug } from "@/data/spots";
 import { notFound } from "next/navigation";
+import Comments from "@/components/Comments";
 
 function DifficultyBadge({ difficulty }: { difficulty: string }) {
   const colors: Record<string, string> = {
@@ -290,6 +291,9 @@ export default function MapPage({ params }: { params: Promise<{ slug: string }> 
           </Link>
         </div>
       </div>
+
+      {/* Comments */}
+      <Comments slug={`maps/${slug}`} />
 
       {/* Other Maps */}
       <div ref={otherMapsRef} className="mt-16">

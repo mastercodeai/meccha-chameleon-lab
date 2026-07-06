@@ -2,6 +2,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { BreadcrumbSchema, ArticleSchema } from "@/components/Schema";
 import RelatedPages from "@/components/RelatedPages";
+import Comments from "@/components/Comments";
 
 export const metadata: Metadata = {
   title: "Paint Guide — Best Color Combinations",
@@ -286,6 +287,8 @@ export default function PaintGuidePage() {
           { title: "All Maps", description: "Browse all 7 official maps with hiding spot guides.", href: "/maps", icon: "🗺️" },
         ]}
       />
+
+      <Comments slug="guides/paint" />
     </main>
   );
 }

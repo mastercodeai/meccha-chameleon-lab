@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { videos } from "@/data/videos";
 import LiteYouTube from "@/components/LiteYouTube";
+import Comments from "@/components/Comments";
 
 export const metadata: Metadata = {
   title: "Video Tutorials — Best MECCHA CHAMELEON Guides on YouTube",
@@ -150,6 +151,8 @@ export default function VideosPage() {
           PAINT GUIDE
         </Link>
       </div>
+
+      <Comments slug="guides/videos" />
     </main>
   );
 }

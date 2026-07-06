@@ -2,6 +2,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { BreadcrumbSchema } from "@/components/Schema";
 import RelatedPages from "@/components/RelatedPages";
+import Comments from "@/components/Comments";
 
 export const metadata: Metadata = {
   title: "MECCHA CHAMELEON Community Secrets & Rumors",
@@ -321,6 +322,8 @@ export default function EasterEggsPage() {
           { title: "Beginner Guide", description: "Everything you need to know before your first round.", href: "/guides/beginner", icon: "📖" },
         ]}
       />
+
+      <Comments slug="guides/easter-eggs" />
     </main>
   );
 }
