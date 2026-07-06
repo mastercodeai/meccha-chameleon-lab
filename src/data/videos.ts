@@ -139,25 +139,7 @@ export const videos: VideoData[] = [
       "Deep exploration of secret hiding spots across multiple maps that most players don't know about. Shows the painting process step by step and explains why each spot works so well.",
     videoId: "KnFtN02_eYA",
   },
-  {
-    id: "osaka-spots-lpflea",
-    title: "Nobody Knows These Osaka Spots Yet… (Meccha Chameleon)",
-    channel: "LPFlea",
-    views: "14K",
-    duration: "20:00",
-    category: "maps",
-    keyTopics: [
-      "Osaka map-specific spots",
-      "Under the Win-Win Sign trick",
-      "AC Unit eye-level trick",
-      "Truck painting walkthrough",
-      "Octopus spot",
-      "Pole + Brick blend",
-    ],
-    description:
-      "Map-specific deep dive into the reworked Osaka — 5 lesser-known hiding spots with full painting walkthroughs. Includes what NOT to do and where seekers look first.",
-    videoId: "cGXHr5aMcCw",
-  },
+
   {
     id: "yogscast-custom-maps",
     title: "We become works of art in Meccha Chameleon's custom maps!",
