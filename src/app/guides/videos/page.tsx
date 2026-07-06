@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { videos } from "@/data/videos";
+import LiteYouTube from "@/components/LiteYouTube";
 
 export const metadata: Metadata = {
   title: "Video Tutorials — Best MECCHA CHAMELEON Guides on YouTube",
@@ -74,14 +75,7 @@ export default function VideosPage() {
                 >
                   {/* YouTube Embed */}
                   <div className="relative w-full" style={{ paddingBottom: "56.25%" }}>
-                    <iframe
-                      src={`https://www.youtube.com/embed/${video.videoId}`}
-                      title={video.title}
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                      className="absolute top-0 left-0 w-full h-full"
-                      loading="lazy"
-                    />
+                    <LiteYouTube videoId={video.videoId} title={video.title} />
                   </div>
 
                   <div className="p-5">
