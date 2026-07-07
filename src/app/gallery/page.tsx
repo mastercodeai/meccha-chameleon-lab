@@ -81,7 +81,7 @@ const screenshots = [
   {
     src: `${R2_BASE}/screenshots/10m-downloads.png`,
     alt: "10 Million Downloads Milestone",
-    title: "10M Downloads!",
+    title: "15M Downloads!",
     description: "Celebrating 15 million downloads! A testament to the game's popularity.",
   },
 ];
@@ -125,7 +125,7 @@ export default function GalleryPage() {
       <RelatedPages
         pages={[
           { title: "All Maps", description: "Browse all 7 official maps with hiding spot guides and strategies.", href: "/maps", icon: "🗺️" },
-          { title: "Workshop", description: "Browse 521 community-created Workshop maps with ratings and subscribe links.", href: "/workshop", icon: "🔧" },
+          { title: "Workshop", description: "Browse 605 community-created Workshop maps with ratings and subscribe links.", href: "/workshop", icon: "🔧" },
           { title: "Beginner Guide", description: "Everything you need to know before your first round of MECCHA CHAMELEON.", href: "/guides/beginner", icon: "📖" },
         ]}
       />

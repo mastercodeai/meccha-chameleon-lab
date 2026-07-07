@@ -40,7 +40,7 @@ export default function WorkshopPage() {
         Here are some of the best ones we&apos;ve found — curated from the Steam Workshop.
       </p>
       <p className="font-body-sm text-body-sm text-on-surface-variant mb-8">
-        Total Workshop maps: <span className="text-primary font-semibold">521+</span> and growing
+        Total Workshop maps: <span className="text-primary font-semibold">605+</span> and growing
       </p>
 
       {/* Quick stats */}

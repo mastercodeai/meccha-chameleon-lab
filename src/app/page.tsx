@@ -13,11 +13,11 @@ if (typeof window !== "undefined") {
 }
 
 const stats = [
-  { value: "10M+", label: "COPIES SOLD" },
+  { value: "15M+", label: "COPIES SOLD" },
   { value: "93M+", label: "YOUTUBE VIEWS" },
-  { value: "42K+", label: "STEAM REVIEWS" },
+  { value: "53K+", label: "STEAM REVIEWS" },
   { value: "7+", label: "OFFICIAL MAPS" },
-  { value: "521", label: "WORKSHOP ITEMS" },
+  { value: "605", label: "WORKSHOP ITEMS" },
 ];
 
 const features = [
@@ -88,7 +88,7 @@ const faqItems = [
   },
   {
     q: "How many official maps are there?",
-    a: "There are 7 official maps: Backrooms, Hide-and-Seek Mansion, Indoor Country, Osaka, Penguin Hotel, Sewer, and Sugar Land. The Steam Workshop adds 521+ community-created maps. Both Backrooms and Osaka have been reworked in recent updates.",
+    a: "There are 7 official maps: Backrooms, Hide-and-Seek Mansion, Indoor Country, Osaka, Penguin Hotel, Sewer, and Sugar Land. The Steam Workshop adds 605+ community-created maps. Both Backrooms and Osaka have been reworked in recent updates.",
   },
   {
     q: "What game modes are available?",

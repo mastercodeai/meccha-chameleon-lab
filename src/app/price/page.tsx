@@ -40,7 +40,7 @@ const faqItems = [
   },
   {
     q: "Is MECCHA CHAMELEON free-to-play?",
-    a: "No, MECCHA CHAMELEON is a premium game at $5.99. However, it offers exceptional value with 7+ maps, 521+ Workshop items, and multiplayer — all included.",
+    a: "No, MECCHA CHAMELEON is a premium game at $5.99. However, it offers exceptional value with 7+ maps, 605+ Workshop items, and multiplayer — all included.",
   },
   {
     q: "Are there microtransactions in MECCHA CHAMELEON?",
@@ -57,7 +57,7 @@ const faqItems = [
 ];
 
 const comparisonGames = [
-  { name: "MECCHA CHAMELEON", price: "$5.99", maps: "7+", workshop: "521+", multiplayer: "Yes", verdict: "Best value" },
+  { name: "MECCHA CHAMELEON", price: "$5.99", maps: "7+", workshop: "605+", multiplayer: "Yes", verdict: "Best value" },
   { name: "Prop Hunt (Garry's Mod)", price: "$9.99", maps: "Varies", workshop: "Massive", multiplayer: "Yes", verdict: "Needs GMod" },
   { name: "Unspottable", price: "$14.99", maps: "10+", workshop: "No", multiplayer: "Local only", verdict: "Party game" },
   { name: "Hidden in Plain Sight", price: "$5.99", maps: "5", workshop: "No", multiplayer: "Local only", verdict: "Niche" },
@@ -146,7 +146,7 @@ export default function PricePage() {
                   desc: "From kitchen counters to night-time rooftops, each map offers unique hiding spots, paint challenges, and strategic depth. New maps arrive in free updates.",
                 },
                 {
-                  item: "521+ Workshop Items",
+                  item: "605+ Workshop Items",
                   desc: "The Steam Workshop community has created nearly 500 custom objects, maps, and cosmetics. This number grows every week, giving you essentially unlimited content.",
                 },
                 {
@@ -228,7 +228,7 @@ export default function PricePage() {
                 </span>
               </div>
               <p className="font-body-main text-body-main text-on-surface-variant mb-4">
-                At $5.99, MECCHA CHAMELEON is one of the best value propositions in casual gaming. You&apos;re getting a fully-featured multiplayer hide-and-seek game with a unique paint mechanic, 7+ maps, 521+ Workshop items, and active developer support — all for less than the price of a fast food meal.
+                At $5.99, MECCHA CHAMELEON is one of the best value propositions in casual gaming. You&apos;re getting a fully-featured multiplayer hide-and-seek game with a unique paint mechanic, 7+ maps, 605+ Workshop items, and active developer support — all for less than the price of a fast food meal.
               </p>
               <p className="font-body-main text-body-main text-on-surface-variant mb-4">
                 The game has a 4.2/5 aggregate rating from over 42,000 reviews on Steam. Most players report getting dozens to hundreds of hours of entertainment, making the cost-per-hour essentially negligible.
