@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { updates } from "@/data/updates";
 import { FAQSchema } from "@/components/Schema";
+import { MediumRectAd } from "@/components/Adsterra";
 
 export const metadata: Metadata = {
   title: "Update Log — MECCHA CHAMELEON Patch Notes",
@@ -85,6 +86,11 @@ export default function UpdateIndexPage() {
           <div className="font-display-lg text-2xl text-primary">15M+</div>
           <div className="font-label-caps text-label-caps text-on-surface-variant">Copies Sold</div>
         </div>
+      </div>
+
+      {/* Ad placement */}
+      <div className="flex justify-center my-8">
+        <MediumRectAd />
       </div>
 
       <div className="space-y-6">

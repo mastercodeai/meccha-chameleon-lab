@@ -6,6 +6,7 @@ import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { FAQSchema, WebSiteSchema, GameSchema } from "@/components/Schema";
+import { NativeBanner } from "@/components/Adsterra";
 
 // Register plugins
 if (typeof window !== "undefined") {
@@ -361,6 +362,11 @@ export default function HomePage() {
           ))}
         </div>
       </section>
+
+      {/* Native Ad between content sections */}
+      <div className="max-w-[1440px] mx-auto px-4 md:px-gutter py-4">
+        <NativeBanner />
+      </div>
 
       {/* How It Works */}
       <section ref={howItWorksRef} className="py-stack-lg px-4 md:px-gutter max-w-[1440px] mx-auto">

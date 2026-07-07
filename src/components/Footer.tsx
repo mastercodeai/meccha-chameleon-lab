@@ -1,8 +1,17 @@
 import Link from "next/link";
+import { LeaderboardAd, MobileBannerAd } from "./Adsterra";
 
 export default function Footer() {
   return (
     <footer className="bg-surface-container-lowest w-full py-stack-lg px-4 md:px-gutter border-t border-outline-variant overflow-hidden">
+      {/* Ad Banner above footer */}
+      <div className="max-w-[1440px] mx-auto mb-8">
+        <div className="flex justify-center">
+          <LeaderboardAd />
+          <MobileBannerAd />
+        </div>
+      </div>
+
       <div className="max-w-[1440px] mx-auto grid grid-cols-1 md:grid-cols-4 gap-gutter">
         <div className="flex flex-col gap-2">
           <span className="font-label-caps text-label-caps text-on-surface mb-2">GUIDES</span>
