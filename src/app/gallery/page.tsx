@@ -82,7 +82,7 @@ const screenshots = [
     src: `${R2_BASE}/screenshots/10m-downloads.png`,
     alt: "10 Million Downloads Milestone",
     title: "10M Downloads!",
-    description: "Celebrating 10 million downloads! A testament to the game's popularity.",
+    description: "Celebrating 15 million downloads! A testament to the game's popularity.",
   },
 ];
 

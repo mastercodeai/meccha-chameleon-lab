@@ -77,7 +77,7 @@ export default function BeginnerGuidePage() {
           <section id="what-is" className="mb-stack-lg">
             <h2 className="font-headline-md text-headline-md text-on-surface mb-4">What is MECCHA CHAMELEON?</h2>
             <p className="font-body-main text-body-main text-on-surface-variant mb-4">
-              MECCHA CHAMELEON is a casual PvP hide-and-seek game where you paint your body to blend into the environment. Released on June 9, 2026, it has already sold over 10 million copies and received 42,000+ Steam reviews.
+              MECCHA CHAMELEON is a casual PvP hide-and-seek game where you paint your body to blend into the environment. Released on June 9, 2026, it has already sold over 15 million copies and received 42,000+ Steam reviews.
             </p>
             <p className="font-body-main text-body-main text-on-surface-variant">
               The game features multiple maps, each with unique environments and hiding opportunities. Players split into two teams: Hiders and Seekers.

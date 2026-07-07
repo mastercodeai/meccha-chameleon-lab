@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { updates } from "@/data/updates";
+import { FAQSchema } from "@/components/Schema";
 
 export const metadata: Metadata = {
   title: "Update Log — MECCHA CHAMELEON Patch Notes",
@@ -35,15 +36,56 @@ const categoryBadge: Record<string, { label: string; color: string }> = {
 };
 
 export default function UpdateIndexPage() {
+  const latestUpdate = updates[0];
+  const faqItems = [
+    {
+      q: "What is the latest MECCHA CHAMELEON update?",
+      a: `The latest version is v${latestUpdate.version} (${latestUpdate.title}), released on ${latestUpdate.date}. It includes ${latestUpdate.changes.length} changes.`,
+    },
+    {
+      q: "How often does MECCHA CHAMELEON get updated?",
+      a: "MECCHA CHAMELEON receives frequent updates, often multiple times per week. The solo developer (lemorion_1224) actively pushes hotfixes, balance changes, and new content.",
+    },
+    {
+      q: "Where can I find official MECCHA CHAMELEON patch notes?",
+      a: "Official patch notes are published on the Steam news page. This page compiles all updates in a readable format with categories and version history.",
+    },
+    {
+      q: "How many updates has MECCHA CHAMELEON had since launch?",
+      a: `Since its launch on June 9, 2026, MECCHA CHAMELEON has received ${updates.length} updates — from v1.0.1 bug fixes to major content additions like new maps, characters, and game modes.`,
+    },
+  ];
+
   return (
     <main className="pt-[100px] pb-stack-lg max-w-[1440px] mx-auto px-4 md:px-gutter">
+      <FAQSchema items={faqItems} />
       <h1 className="font-display-lg text-3xl md:text-display-lg text-on-surface uppercase mb-4">
-        Update Log
+        MECCHA CHAMELEON Patch Notes
       </h1>
       <p className="font-body-main text-body-main text-on-surface-variant mb-8 max-w-2xl">
-        Full patch notes for MECCHA CHAMELEON, sourced from official Steam news.
-        All {updates.length} updates documented since launch.
+        Full patch notes and update history for MECCHA CHAMELEON, sourced from official Steam news.
+        All {updates.length} updates documented since launch on June 9, 2026.
       </p>
+
+      {/* Version milestones summary */}
+      <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-10">
+        <div className="bg-surface border border-outline-variant rounded-lg p-4 text-center">
+          <div className="font-display-lg text-2xl text-primary">{updates.length}</div>
+          <div className="font-label-caps text-label-caps text-on-surface-variant">Total Updates</div>
+        </div>
+        <div className="bg-surface border border-outline-variant rounded-lg p-4 text-center">
+          <div className="font-display-lg text-2xl text-primary">v{latestUpdate.version}</div>
+          <div className="font-label-caps text-label-caps text-on-surface-variant">Latest Version</div>
+        </div>
+        <div className="bg-surface border border-outline-variant rounded-lg p-4 text-center">
+          <div className="font-display-lg text-2xl text-primary">7</div>
+          <div className="font-label-caps text-label-caps text-on-surface-variant">Official Maps</div>
+        </div>
+        <div className="bg-surface border border-outline-variant rounded-lg p-4 text-center">
+          <div className="font-display-lg text-2xl text-primary">15M+</div>
+          <div className="font-label-caps text-label-caps text-on-surface-variant">Copies Sold</div>
+        </div>
+      </div>
 
       <div className="space-y-6">
         {updates.map((update) => {
@@ -100,6 +142,28 @@ export default function UpdateIndexPage() {
           );
         })}
       </div>
+
+      {/* FAQ Section */}
+      <section className="mt-stack-lg">
+        <h2 className="font-headline-md text-headline-md text-on-surface mb-6">
+          Frequently Asked Questions
+        </h2>
+        <div className="space-y-4">
+          {faqItems.map((item, i) => (
+            <details
+              key={i}
+              className="bg-surface border border-outline-variant rounded-lg group"
+            >
+              <summary className="font-body-main text-body-main text-on-surface p-5 cursor-pointer hover:text-primary transition-colors">
+                {item.q}
+              </summary>
+              <p className="font-body-sm text-body-sm text-on-surface-variant px-5 pb-5">
+                {item.a}
+              </p>
+            </details>
+          ))}
+        </div>
+      </section>
 
       <div className="flex flex-col sm:flex-row gap-4 mt-stack-lg">
         <a

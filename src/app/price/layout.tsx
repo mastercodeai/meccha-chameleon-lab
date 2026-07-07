@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     "meccha chameleon under $10",
     "meccha chameleon game value",
     "meccha chameleon review",
-    "meccha chameleon 10 million copies",
+    "meccha chameleon 15 million copies",
     "meccha chameleon sales",
     "meccha chameleon copies sold",
     "meccha chameleon popularity",
