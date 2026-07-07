@@ -1,13 +1,18 @@
 "use client";
 
-import { useEffect, useRef, useCallback } from "react";
-import Script from "next/script";
+import { useEffect, useRef } from "react";
 
 /**
- * Adsterra Banner Ad (iframe format)
- * Uses a dedicated iframe to isolate ad scripts from React's rendering cycle.
- * The atOptions + invoke.js pair runs inside the iframe, avoiding 403/referrer issues.
+ * Adsterra Ad Components
+ * 
+ * All ads use iframe srcdoc to fully isolate ad scripts from React.
+ * This prevents: infinite re-render loops, referrer issues, 403 errors from CDN.
+ * 
+ * If Adsterra returns 403 (account not approved / domain not verified),
+ * the iframe will be empty — no JS errors leak into the main page.
  */
+
+/* ─── Banner Ad (iframe format) ─── */
 
 interface AdBannerProps {
   adKey: string;
@@ -21,40 +26,24 @@ export function AdBanner({ adKey, width, height, className = "" }: AdBannerProps
   const loadedRef = useRef(false);
 
   useEffect(() => {
-    if (loadedRef.current) return;
+    if (loadedRef.current || !iframeRef.current) return;
     loadedRef.current = true;
 
-    const iframe = iframeRef.current;
-    if (!iframe) return;
-
-    const html = `<!DOCTYPE html>
-<html><head><style>body{margin:0;overflow:hidden}</style></head><body>
+    iframeRef.current.srcdoc = `<!DOCTYPE html>
+<html><head><style>*{margin:0;padding:0}body{overflow:hidden}</style></head><body>
 <script>
-atOptions = {
-  'key': '${adKey}',
-  'format': 'iframe',
-  'height': ${height},
-  'width': ${width},
-  'params': {}
-};
+atOptions={key:'${adKey}',format:'iframe',height:${height},width:${width},params:{}};
 <\/script>
 <script src="https://www.highperformanceformat.com/${adKey}/invoke.js"><\/script>
 </body></html>`;
-
-    iframe.srcdoc = html;
   }, [adKey, width, height]);
 
   return (
     <div className={`adsterra-ad flex justify-center overflow-hidden ${className}`}>
       <iframe
         ref={iframeRef}
-        title={`Ad ${width}x${height}`}
-        style={{
-          width: Math.min(width, 728),
-          height,
-          border: "none",
-          maxWidth: "100%",
-        }}
+        title="Advertisement"
+        style={{ width: Math.min(width, 728), height, border: "none", maxWidth: "100%" }}
         sandbox="allow-scripts allow-popups"
         loading="lazy"
       />
@@ -62,36 +51,43 @@ atOptions = {
   );
 }
 
-/**
- * Adsterra Native Banner
- * Loads the native ad script via next/script with lazyOnload strategy.
- * The script auto-discovers its container div by ID.
- */
+/* ─── Native Banner ─── */
 
-export function NativeBanner({
-  containerId = "container-7ca6320f2d3ceba4b0bdc28b4b562d30",
-  className = "",
-}: {
-  containerId?: string;
+interface NativeBannerProps {
   className?: string;
-}) {
+}
+
+export function NativeBanner({ className = "" }: NativeBannerProps) {
+  const iframeRef = useRef<HTMLIFrameElement>(null);
+  const loadedRef = useRef(false);
+
+  useEffect(() => {
+    if (loadedRef.current || !iframeRef.current) return;
+    loadedRef.current = true;
+
+    iframeRef.current.srcdoc = `<!DOCTYPE html>
+<html><head>
+<style>*{margin:0;padding:0}body{background:transparent}</style>
+</head><body>
+<div id="container-7ca6320f2d3ceba4b0bdc28b4b562d30"></div>
+<script src="https://pl30239505.effectivecpmnetwork.com/7ca6320f2d3ceba4b0bdc28b4b562d30/invoke.js"><\/script>
+</body></html>`;
+  }, []);
+
   return (
-    <div className={`adsterra-native ${className}`}>
-      <div id={containerId} />
-      <Script
-        src="https://pl30239505.effectivecpmnetwork.com/7ca6320f2d3ceba4b0bdc28b4b562d30/invoke.js"
-        strategy="lazyOnload"
+    <div className={`adsterra-native flex justify-center overflow-hidden ${className}`}>
+      <iframe
+        ref={iframeRef}
+        title="Sponsored Content"
+        style={{ width: "100%", height: 300, border: "none" }}
+        sandbox="allow-scripts allow-popups"
+        loading="lazy"
       />
     </div>
   );
 }
 
-/**
- * Pre-configured ad size components.
- * LeaderboardAd: 728x90 — desktop only (hidden on mobile)
- * MediumRectAd: 300x250 — all screen sizes
- * MobileBannerAd: 320x50 — mobile only (hidden on desktop)
- */
+/* ─── Pre-configured sizes ─── */
 
 export function LeaderboardAd({ className }: { className?: string }) {
   return (
