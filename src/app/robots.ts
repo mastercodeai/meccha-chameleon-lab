@@ -6,7 +6,7 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: "*",
         allow: "/",
-        disallow: ["/api/"],
+        disallow: ["/api/", "/logo.svg", "/og-image.jpg"],
       },
     ],
     sitemap: "https://mecchachameleonlab.com/sitemap.xml",

@@ -4,9 +4,9 @@ import { BreadcrumbSchema } from "@/components/Schema";
 import RelatedPages from "@/components/RelatedPages";
 
 export const metadata: Metadata = {
-  title: "MECCHA CHAMELEON System Requirements — Can You Run It?",
+  title: "MECCHA CHAMELEON System Requirements — Can You Run It? (2026)",
   description:
-    "MECCHA CHAMELEON PC system requirements. Check the minimum specs to see if your PC can run MECCHA CHAMELEON.",
+    "MECCHA CHAMELEON minimum specs: Windows 10 64-bit, Intel Core i5, DirectX 11 GPU. Runs on laptops and low-end PCs. Full system requirements and compatibility guide.",
   alternates: {
     canonical: "https://mecchachameleonlab.com/system-requirements",
   },
@@ -18,18 +18,18 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title:
-      "MECCHA CHAMELEON System Requirements — Can You Run It? | MECCHA CHAMELEON Lab",
+      "MECCHA CHAMELEON System Requirements — Can You Run It? (2026) | MECCHA CHAMELEON Lab",
     description:
-      "MECCHA CHAMELEON PC system requirements. Check the minimum specs to see if your PC can run MECCHA CHAMELEON.",
+      "MECCHA CHAMELEON minimum specs: Windows 10 64-bit, Intel Core i5, DirectX 11 GPU. Runs on laptops and low-end PCs. Full system requirements and compatibility guide.",
     url: "https://mecchachameleonlab.com/system-requirements",
     type: "article",
   },
   twitter: {
     card: "summary_large_image",
     title:
-      "MECCHA CHAMELEON System Requirements — Can You Run It? | MECCHA CHAMELEON Lab",
+      "MECCHA CHAMELEON System Requirements — Can You Run It? (2026) | MECCHA CHAMELEON Lab",
     description:
-      "MECCHA CHAMELEON PC system requirements. Check the minimum specs to see if your PC can run MECCHA CHAMELEON.",
+      "MECCHA CHAMELEON minimum specs: Windows 10 64-bit, Intel Core i5, DirectX 11 GPU. Runs on laptops and low-end PCs. Full system requirements and compatibility guide.",
   },
 };
 

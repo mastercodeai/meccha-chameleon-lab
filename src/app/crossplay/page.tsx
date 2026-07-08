@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import RelatedPages from "@/components/RelatedPages";
 
 export const metadata: Metadata = {
-  title: "Crossplay — Can You Play Together?",
+  title: "MECCHA CHAMELEON Crossplay — Is It Cross-Platform? (2026)",
   description:
-    "Can you play MECCHA CHAMELEON with friends on different platforms? Check the current crossplay status and platform availability.",
+    "Is MECCHA CHAMELEON cross-platform in 2026? Currently PC-only on Steam — no PS5, Xbox, or Switch. All you need to know about crossplay status, supported platforms, and how to play with friends.",
   alternates: {
     canonical: "https://mecchachameleonlab.com/crossplay",
   },
@@ -162,6 +162,49 @@ export default function CrossplayPage() {
           </ol>
         </section>
       </div>
+
+      {/* FAQ — natural variant coverage */}
+      <section className="max-w-3xl mx-auto px-4 md:px-gutter mt-12">
+        <h2 className="font-headline-md text-lg text-on-surface mb-4">
+          Frequently Asked Questions
+        </h2>
+        <div className="space-y-4 font-body-main text-body-main text-on-surface-variant">
+          <div>
+            <p className="text-on-surface font-medium mb-1">
+              Does Mecha Chameleon have crossplay?
+            </p>
+            <p>
+              No. Meccha Chameleon is currently PC-only on Steam, so
+              cross-platform play is not applicable. All players are on the
+              same platform.
+            </p>
+          </div>
+          <div>
+            <p className="text-on-surface font-medium mb-1">
+              Is Meccha Chameleon cross platform?
+            </p>
+            <p>
+              Not yet. The game is a Windows exclusive — there are no PS5,
+              Xbox, Nintendo Switch, or mobile versions announced. Cross
+              platform support would only be relevant if console ports are
+              released.
+            </p>
+          </div>
+          <div>
+            <p className="text-on-surface font-medium mb-1">
+              Can I play Meccha Chameleon on Steam Deck?
+            </p>
+            <p>
+              The game runs on Windows. Steam Deck uses Linux/Proton, so
+              compatibility is not guaranteed. Check our{" "}
+              <a href="/platforms/steam-deck" className="text-primary hover:underline">
+                Steam Deck page
+              </a>{" "}
+              for the latest status.
+            </p>
+          </div>
+        </div>
+      </section>
 
       <RelatedPages
         pages={[

@@ -5,21 +5,21 @@ import RelatedPages from "@/components/RelatedPages";
 import Comments from "@/components/Comments";
 
 export const metadata: Metadata = {
-  title: "Hider Guide — Master the Art of Blending",
-  description: "Become an invisible master of disguise. Learn advanced painting techniques, positioning strategies, and map-specific hiding spots to dominate as a Hider in MECCHA CHAMELEON.",
+  title: "MECCHA CHAMELEON Hider Guide — Best Hiding Spots & Strategies (2026)",
+  description: "Master the Hider role in MECCHA CHAMELEON. Best hiding spots on all 7 maps, painting techniques, object selection tips, and advanced blending strategies to never get caught.",
   alternates: {
     canonical: "https://mecchachameleonlab.com/guides/hider",
   },
   openGraph: {
-    title: "Hider Guide — Master the Art of Blending | MECCHA CHAMELEON Lab",
-    description: "Become an invisible master of disguise. Learn advanced painting techniques, positioning strategies, and map-specific hiding spots to dominate as a Hider in MECCHA CHAMELEON.",
+    title: "MECCHA CHAMELEON Hider Guide — Best Hiding Spots & Strategies (2026) | MECCHA CHAMELEON Lab",
+    description: "Master the Hider role in MECCHA CHAMELEON. Best hiding spots on all 7 maps, painting techniques, object selection tips, and advanced blending strategies to never get caught.",
     url: "https://mecchachameleonlab.com/guides/hider",
     type: "article",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Hider Guide — Master the Art of Blending | MECCHA CHAMELEON Lab",
-    description: "Become an invisible master of disguise. Learn advanced painting techniques, positioning strategies, and map-specific hiding spots to dominate as a Hider in MECCHA CHAMELEON.",
+    title: "MECCHA CHAMELEON Hider Guide — Best Hiding Spots & Strategies (2026) | MECCHA CHAMELEON Lab",
+    description: "Master the Hider role in MECCHA CHAMELEON. Best hiding spots on all 7 maps, painting techniques, object selection tips, and advanced blending strategies to never get caught.",
   },
 };
 
