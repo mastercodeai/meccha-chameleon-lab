@@ -653,56 +653,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Quick Links for SEO — ensures Google discovers all important pages */}
-      <section className="py-8 px-4 md:px-gutter max-w-[1440px] mx-auto border-t border-[#1e1e32]">
-        <h2 className="sr-only">Quick Links</h2>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
-          <div>
-            <h3 className="font-label-caps text-label-caps text-on-surface-variant mb-2">Maps</h3>
-            <ul className="space-y-1">
-              <li><Link href="/maps/backrooms" className="text-on-surface-variant hover:text-primary transition-colors">Backrooms</Link></li>
-              <li><Link href="/maps/hide-and-seek-mansion" className="text-on-surface-variant hover:text-primary transition-colors">Hide-and-Seek Mansion</Link></li>
-              <li><Link href="/maps/indoor-country" className="text-on-surface-variant hover:text-primary transition-colors">Indoor Country</Link></li>
-              <li><Link href="/maps/osaka" className="text-on-surface-variant hover:text-primary transition-colors">Osaka</Link></li>
-              <li><Link href="/maps/penguin-hotel" className="text-on-surface-variant hover:text-primary transition-colors">Penguin Hotel</Link></li>
-              <li><Link href="/maps/sewer" className="text-on-surface-variant hover:text-primary transition-colors">Sewer</Link></li>
-              <li><Link href="/maps/sugar-land" className="text-on-surface-variant hover:text-primary transition-colors">Sugar Land</Link></li>
-            </ul>
-          </div>
-          <div>
-            <h3 className="font-label-caps text-label-caps text-on-surface-variant mb-2">Guides</h3>
-            <ul className="space-y-1">
-              <li><Link href="/guides/beginner" className="text-on-surface-variant hover:text-primary transition-colors">Beginner Guide</Link></li>
-              <li><Link href="/guides/hider" className="text-on-surface-variant hover:text-primary transition-colors">Hider Guide</Link></li>
-              <li><Link href="/guides/seeker" className="text-on-surface-variant hover:text-primary transition-colors">Seeker Guide</Link></li>
-              <li><Link href="/guides/paint" className="text-on-surface-variant hover:text-primary transition-colors">Paint Guide</Link></li>
-              <li><Link href="/guides/combos" className="text-on-surface-variant hover:text-primary transition-colors">Combo Guide</Link></li>
-              <li><Link href="/guides/controls" className="text-on-surface-variant hover:text-primary transition-colors">Controls Guide</Link></li>
-              <li><Link href="/guides/videos" className="text-on-surface-variant hover:text-primary transition-colors">Video Tutorials</Link></li>
-            </ul>
-          </div>
-          <div>
-            <h3 className="font-label-caps text-label-caps text-on-surface-variant mb-2">Resources</h3>
-            <ul className="space-y-1">
-              <li><Link href="/tier-list" className="text-on-surface-variant hover:text-primary transition-colors">Map Tier List</Link></li>
-              <li><Link href="/gallery" className="text-on-surface-variant hover:text-primary transition-colors">Gallery</Link></li>
-              <li><Link href="/workshop" className="text-on-surface-variant hover:text-primary transition-colors">Workshop Maps</Link></li>
-              <li><Link href="/update" className="text-on-surface-variant hover:text-primary transition-colors">Update Log</Link></li>
-              <li><Link href="/guides/easter-eggs" className="text-on-surface-variant hover:text-primary transition-colors">Easter Eggs</Link></li>
-            </ul>
-          </div>
-          <div>
-            <h3 className="font-label-caps text-label-caps text-on-surface-variant mb-2">Game Info</h3>
-            <ul className="space-y-1">
-              <li><Link href="/price" className="text-on-surface-variant hover:text-primary transition-colors">Price</Link></li>
-              <li><Link href="/system-requirements" className="text-on-surface-variant hover:text-primary transition-colors">System Requirements</Link></li>
-              <li><Link href="/crossplay" className="text-on-surface-variant hover:text-primary transition-colors">Crossplay</Link></li>
-              <li><Link href="/platforms/steam-deck" className="text-on-surface-variant hover:text-primary transition-colors">Steam Deck</Link></li>
-              <li><Link href="/settings" className="text-on-surface-variant hover:text-primary transition-colors">Settings Guide</Link></li>
-            </ul>
-          </div>
-        </div>
-      </section>
     </main>
   );
 }
