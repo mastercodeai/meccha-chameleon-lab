@@ -290,7 +290,8 @@ export default function HomePage() {
 
     // Overview section animation
     if (overviewRef.current) {
-      gsap.from(overviewRef.current.querySelectorAll("p, .grid > div"), {
+      const overviewEls = overviewRef.current.querySelectorAll(".max-w-3xl p, .grid > div");
+      gsap.from(overviewEls, {
         y: 40,
         opacity: 0,
         duration: 0.5,
@@ -323,7 +324,8 @@ export default function HomePage() {
 
     // Platform section animation
     if (platformRef.current) {
-      gsap.from(platformRef.current.querySelectorAll(".grid > div"), {
+      const platformCards = platformRef.current.querySelectorAll(".grid > div");
+      gsap.from(platformCards, {
         scale: 0.85,
         opacity: 0,
         duration: 0.5,
