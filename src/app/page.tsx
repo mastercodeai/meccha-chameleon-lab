@@ -172,45 +172,47 @@ export default function HomePage() {
         },
       });
 
-      // Counter animation for stats
-      statElements.forEach((stat) => {
-        const valueEl = stat.querySelector(".stat-value");
-        if (valueEl) {
-          const finalText = valueEl.textContent || "";
-          const numMatch = finalText.match(/[\d.]+/);
-          if (numMatch) {
-            const finalNum = parseFloat(numMatch[0]);
-            const suffix = finalText.replace(numMatch[0], "");
-            const isDecimal = finalText.includes(".");
-            
-            // Set initial display to preserve text width
-            valueEl.textContent = (isDecimal ? "0.0" : "0") + suffix;
-            
-            const counter = { val: 0 };
-            gsap.to(counter, {
-              val: finalNum,
-              duration: 2,
-              ease: "power1.out",
-              scrollTrigger: {
-                trigger: stat,
-                start: "top 80%",
-              },
-              onUpdate: function() {
-                if (isDecimal) {
-                  valueEl.textContent = counter.val.toFixed(1) + suffix;
-                } else if (finalNum >= 100) {
-                  valueEl.textContent = Math.round(counter.val) + suffix;
-                } else {
-                  valueEl.textContent = Math.round(counter.val) + suffix;
-                }
-              },
-              onComplete: function() {
-                valueEl.textContent = finalText;
+      // Counter animation for stats — only start when visible
+      const counterObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const valueEl = entry.target.querySelector(".stat-value") as HTMLElement | null;
+            if (valueEl && !valueEl.dataset.animated) {
+              valueEl.dataset.animated = "true";
+              const finalText = valueEl.textContent || "";
+              const numMatch = finalText.match(/[\d.]+/);
+              if (numMatch) {
+                const finalNum = parseFloat(numMatch[0]);
+                const suffix = finalText.replace(numMatch[0], "");
+                const isDecimal = finalText.includes(".");
+                
+                // Only replace text AFTER animation starts
+                valueEl.textContent = (isDecimal ? "0.0" : "0") + suffix;
+                
+                const counter = { val: 0 };
+                gsap.to(counter, {
+                  val: finalNum,
+                  duration: 2,
+                  ease: "power1.out",
+                  onUpdate: function() {
+                    if (isDecimal) {
+                      valueEl.textContent = counter.val.toFixed(1) + suffix;
+                    } else {
+                      valueEl.textContent = Math.round(counter.val) + suffix;
+                    }
+                  },
+                  onComplete: function() {
+                    valueEl.textContent = finalText;
+                  }
+                });
               }
-            });
+            }
+            counterObserver.unobserve(entry.target);
           }
-        }
-      });
+        });
+      }, { threshold: 0.3 });
+      
+      statElements.forEach((stat) => counterObserver.observe(stat));
     }
 
     // Features animation
@@ -385,6 +387,78 @@ export default function HomePage() {
               <p className="font-body-sm text-body-sm text-on-surface-variant">{item.desc}</p>
             </div>
           ))}
+        </div>
+      </section>
+
+
+      {/* Game Overview — SEO content */}
+      <section className="py-stack-lg px-4 md:px-gutter max-w-[1440px] mx-auto">
+        <h2 className="font-headline-md text-headline-md text-on-surface text-center mb-stack-lg uppercase">What Is MECCHA CHAMELEON?</h2>
+        <div className="max-w-3xl mx-auto space-y-4 font-body-main text-body-main text-on-surface-variant">
+          <p>
+            <strong className="text-on-surface">MECCHA CHAMELEON</strong> is a multiplayer hide-and-seek game on Steam where you paint your character's body to blend into the environment. Instead of choosing a skin, you use a 3D color picker with a right-click eyedropper to sample colors directly from the map surface — matching color, roughness, and metallic values to become nearly invisible. The game supports 2–10 players per match, with Hiders trying to camouflage and Seekers trying to spot them before time runs out.
+          </p>
+          <p>
+            What makes MECCHA CHAMELEON different from other hide-and-seek games is the <strong className="text-on-surface">paint system</strong>. You are not limited to preset skins — you can paint any color, adjust roughness (matte vs shiny) and metallic (wood vs chrome) sliders, and even use X-Ray Rendering to paint hard-to-reach areas like your back. The game calculates a visibility score by comparing your painted body against the surrounding environment at the vertex level, so getting the paint right is the core skill.
+          </p>
+          <p>
+            The game launched in June 2026 and sold over 15 million copies in its first month. It has 7 official maps — each with a unique theme, color palette, and hiding dynamics — plus 600+ community-created Workshop maps. Top YouTube videos have accumulated 93 million views, and the game has over 53,000 Steam reviews. At $5.99, it is one of the most popular casual PvP games on Steam right now.
+          </p>
+          <p>
+            MECCHA CHAMELEON is developed by <strong className="text-on-surface">lemorion_1224</strong> and published by <strong className="text-on-surface">Moloko</strong>. It is available exclusively on PC (Windows) through Steam. There is no mobile version, no console version, and no crossplay — it is a PC-only experience. The game receives regular updates, with the latest being v2.5.0 which reworked the Osaka map and improved the paint brush resolution.
+          </p>
+        </div>
+      </section>
+
+      {/* Maps Overview — SEO internal linking + content */}
+      <section className="py-stack-lg px-4 md:px-gutter max-w-[1440px] mx-auto">
+        <h2 className="font-headline-md text-headline-md text-on-surface text-center mb-stack-lg uppercase">All 7 Official Maps</h2>
+        <p className="font-body-main text-body-main text-on-surface-variant text-center max-w-2xl mx-auto mb-8">
+          Each map has a different theme, color palette, and difficulty level. Click into any map for detailed hiding spot guides with screenshots, difficulty ratings, and hider vs seeker strategies.
+        </p>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {[
+            { slug: "backrooms", name: "Backrooms", desc: "Off-yellow wallpaper, office spaces, broken highways, and birthday party hallways. The sickly fluorescent lighting makes desaturated paint essential. Difficulty: Hard.", spots: 7, diff: "Hard", color: "#DAA520" },
+            { slug: "hide-and-seek-mansion", desc: "Fancy ballroom, library, laundry room, and globe room with dark walnut and velvet surfaces. Furniture randomization was added in v2.2.0. Difficulty: Medium.", name: "Hide-and-Seek Mansion", spots: 10, diff: "Medium", color: "#8B4513" },
+            { slug: "indoor-country", name: "Indoor Country", desc: "Farm equipment, hay bales, cow corners, and pumpkin patches. Green foliage and warm browns make this the easiest map for beginners. Difficulty: Easy.", spots: 8, diff: "Easy", color: "#228B22" },
+            { slug: "osaka", name: "Osaka", desc: "Japanese-themed with traditional temples and neon shopping streets. Reworked in v2.5.0 with new layout and hiding spots. Elevated rooftops are high-risk high-reward. Difficulty: Medium.", spots: 5, diff: "Medium", color: "#FF69B4" },
+            { slug: "penguin-hotel", name: "Penguin Hotel", desc: "White marble lobby, ballroom, play room, and bedrooms across two floors. Penguin decorations create unique hiding challenges. Re-sample colors when changing floors. Difficulty: Medium.", spots: 5, diff: "Medium", color: "#4169E1" },
+            { slug: "sewer", name: "Sewer", desc: "Underground tunnels with pipes, flooded sections, and gas zones. Low visibility is both your ally and enemy. Muted grays and rusty metal tones dominate. Difficulty: Hard.", spots: 5, diff: "Hard", color: "#556B2F" },
+            { slug: "sugar-land", name: "Sugar Land", desc: "Candy-themed with colorful houses, gumdrop gardens, and gingerbread buildings. Pink and pastel paint match nearly everything. The most forgiving map for hiders. Difficulty: Easy.", spots: 6, diff: "Easy", color: "#FF1493" },
+          ].map((map) => (
+            <Link
+              key={map.slug}
+              href={`/maps/${map.slug}`}
+              className="group bg-surface border border-outline-variant rounded-lg p-5 hover:border-primary/50 transition-all hover:scale-[1.02]"
+            >
+              <div className="flex items-center justify-between mb-3">
+                <h3 className="font-headline-md text-lg text-on-surface group-hover:text-primary transition-colors">{map.name}</h3>
+                <span className={`font-label-caps text-label-caps px-2 py-0.5 rounded ${
+                  map.diff === "Easy" ? "bg-green-500/20 text-green-400" :
+                  map.diff === "Medium" ? "bg-yellow-500/20 text-yellow-400" :
+                  "bg-red-500/20 text-red-400"
+                }`}>{map.diff}</span>
+              </div>
+              <p className="font-body-sm text-body-sm text-on-surface-variant mb-3">{map.desc}</p>
+              <span className="font-label-caps text-label-caps text-primary">View {map.spots} hiding spots →</span>
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      {/* Platform & Pricing — SEO long-tail coverage */}
+      <section className="py-stack-lg px-4 md:px-gutter max-w-[1440px] mx-auto">
+        <h2 className="font-headline-md text-headline-md text-on-surface text-center mb-stack-lg uppercase">Platform, Price & Requirements</h2>
+        <div className="max-w-3xl mx-auto space-y-4 font-body-main text-body-main text-on-surface-variant">
+          <p>
+            <strong className="text-on-surface">MECCHA CHAMELEON</strong> is available on <strong className="text-on-surface">Steam for PC (Windows)</strong> at a price of <strong className="text-on-surface">$5.99 USD</strong>. There is no free-to-play version, no demo, and no mobile app. The game runs on most modern PCs — the minimum requirements include a DirectX 11 compatible GPU and 4 GB of RAM. It is verified to run on Steam Deck through Proton, though there is no official Steam Deck optimization yet.
+          </p>
+          <p>
+            The game does <strong className="text-on-surface">not support crossplay</strong>. Since it is PC-only, there are no PlayStation, Xbox, Nintendo Switch, Android, or iOS versions. All players connect through Steam, and matches can be public (anyone can join) or private (invite-only). Streamers can easily host viewer participation games through public lobbies.
+          </p>
+          <p>
+            For the best experience, a mouse with a high polling rate is recommended for precise painting. Controller support is in development — update v2.5.0 added an experimental color palette for the upcoming controller mode. Keyboard and mouse remain the recommended input method for competitive play.
+          </p>
         </div>
       </section>
 

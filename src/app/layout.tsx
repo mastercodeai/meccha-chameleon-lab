@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     template: "%s | MECCHA CHAMELEON Lab",
   },
   description:
-    "Free MECCHA CHAMELEON guides: best hiding spots for every map with screenshots, Workshop map database, beginner guide, and tips. Updated for 2026.",
+    "Free MECCHA CHAMELEON guides: best hiding spots for every map with screenshots, paint tips, hider & seeker strategies. 7 official maps + 600+ Workshop maps covered. Updated for 2026.",
   keywords: [
     "meccha chameleon",
     "meccha chameleon guide",

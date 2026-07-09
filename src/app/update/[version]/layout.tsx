@@ -17,6 +17,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const title = `MECCHA CHAMELEON ${decoded} Update — Patch Notes`;
   const description = `Full patch notes for MECCHA CHAMELEON ${decoded} update. See what changed, what was fixed, and what's new.`;
 
+  const isOld = version.startsWith("v1.") || version.startsWith("1.");
+
   return {
     title,
     description,
@@ -29,6 +31,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     alternates: {
       canonical: `https://mecchachameleonlab.com/update/${version}`,
     },
+    // Noindex old v1.x pages — thin content, dilutes crawl budget
+    ...(isOld && {
+      robots: { index: false, follow: true },
+    }),
   };
 }
 

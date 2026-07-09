@@ -25,10 +25,12 @@ export function GameSchema() {
     "@context": "https://schema.org",
     "@type": "VideoGame",
     name: "MECCHA CHAMELEON",
+    alternateName: ["Mecha Chameleon", "MECCHA CHAMELEON", "Meccha Chamelion"],
     description:
       "A casual PvP hide-and-seek game where you paint your body to blend into the environment.",
-    genre: "Casual",
-    gamePlatform: "PC",
+    genre: ["Casual", "Action", "Multiplayer"],
+    gamePlatform: ["PC", "Steam"],
+    playMode: "MultiPlayer",
     applicationCategory: "Game",
     operatingSystem: "Windows",
     author: {
@@ -122,6 +124,11 @@ export function WebSiteSchema() {
     url: "https://mecchachameleonlab.com",
     description:
       "Free MECCHA CHAMELEON guides: best hiding spots for every map with screenshots, Workshop map database, beginner guide, and tips.",
+    potentialAction: {
+      "@type": "SearchAction",
+      target: "https://mecchachameleonlab.com/maps?q={search_term_string}",
+      "query-input": "required name=search_term_string",
+    },
   };
 
   return (
