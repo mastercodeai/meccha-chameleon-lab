@@ -7,10 +7,26 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { FAQSchema, WebSiteSchema, GameSchema } from "@/components/Schema";
 import { NativeBanner } from "@/components/Adsterra";
+import { maps } from "@/data/maps";
 
 // Register plugins
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
+}
+
+function DifficultyStars({ level }: { level: number }) {
+  return (
+    <div className="flex gap-1">
+      {[1, 2, 3, 4, 5].map((i) => (
+        <div
+          key={i}
+          className={`w-3 h-3 [clip-path:polygon(50%_0%,61%_35%,98%_35%,68%_57%,79%_91%,50%_70%,21%_91%,32%_57%,2%_35%,39%_35%)] ${
+            i <= level ? "bg-yellow-400 shadow-[0_0_4px_rgba(250,204,21,0.4)]" : "bg-surface-container-highest"
+          }`}
+        />
+      ))}
+    </div>
+  );
 }
 
 const stats = [
@@ -120,6 +136,9 @@ export default function HomePage() {
   const howItWorksRef = useRef<HTMLElement>(null);
   const faqRef = useRef<HTMLElement>(null);
   const ctaRef = useRef<HTMLElement>(null);
+  const overviewRef = useRef<HTMLElement>(null);
+  const mapsOverviewRef = useRef<HTMLElement>(null);
+  const platformRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     // Hero animations
@@ -269,6 +288,55 @@ export default function HomePage() {
       });
     }
 
+    // Overview section animation
+    if (overviewRef.current) {
+      gsap.from(overviewRef.current.querySelectorAll("p, .grid > div"), {
+        y: 40,
+        opacity: 0,
+        duration: 0.5,
+        stagger: 0.08,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: overviewRef.current,
+          start: "top 75%",
+          toggleActions: "play none none reverse",
+        },
+      });
+    }
+
+    // Maps overview animation
+    if (mapsOverviewRef.current) {
+      const mapCards = mapsOverviewRef.current.querySelectorAll(".map-card");
+      gsap.from(mapCards, {
+        y: 80,
+        opacity: 0,
+        duration: 0.6,
+        stagger: 0.1,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: mapsOverviewRef.current,
+          start: "top 75%",
+          toggleActions: "play none none reverse",
+        },
+      });
+    }
+
+    // Platform section animation
+    if (platformRef.current) {
+      gsap.from(platformRef.current.querySelectorAll(".grid > div"), {
+        scale: 0.85,
+        opacity: 0,
+        duration: 0.5,
+        stagger: 0.08,
+        ease: "back.out(1.4)",
+        scrollTrigger: {
+          trigger: platformRef.current,
+          start: "top 75%",
+          toggleActions: "play none none reverse",
+        },
+      });
+    }
+
     // CTA animation
     if (ctaRef.current) {
       gsap.from(ctaRef.current, {
@@ -391,10 +459,13 @@ export default function HomePage() {
       </section>
 
 
-      {/* Game Overview — SEO content */}
-      <section className="py-stack-lg px-4 md:px-gutter max-w-[1440px] mx-auto">
-        <h2 className="font-headline-md text-headline-md text-on-surface text-center mb-stack-lg uppercase">What Is MECCHA CHAMELEON?</h2>
-        <div className="max-w-3xl mx-auto space-y-4 font-body-main text-body-main text-on-surface-variant">
+      {/* Game Overview — SEO content with feature highlight cards */}
+      <section ref={overviewRef} className="py-stack-lg px-4 md:px-gutter max-w-[1440px] mx-auto">
+        <h2 className="font-display-lg text-2xl md:text-display-lg text-on-surface text-center mb-4 uppercase">What Is MECCHA CHAMELEON?</h2>
+        <p className="font-body-main text-body-main text-on-surface-variant text-center max-w-2xl mx-auto mb-stack-lg">
+          A multiplayer hide-and-seek game on Steam where you paint your character to blend into the environment. 15M+ copies sold. 93M+ YouTube views. $5.99 on Steam.
+        </p>
+        <div className="max-w-3xl mx-auto space-y-4 font-body-main text-body-main text-on-surface-variant mb-stack-lg">
           <p>
             <strong className="text-on-surface">MECCHA CHAMELEON</strong> is a multiplayer hide-and-seek game on Steam where you paint your character's body to blend into the environment. Instead of choosing a skin, you use a 3D color picker with a right-click eyedropper to sample colors directly from the map surface — matching color, roughness, and metallic values to become nearly invisible. The game supports 2–10 players per match, with Hiders trying to camouflage and Seekers trying to spot them before time runs out.
           </p>
@@ -408,57 +479,136 @@ export default function HomePage() {
             MECCHA CHAMELEON is developed by <strong className="text-on-surface">lemorion_1224</strong> and published by <strong className="text-on-surface">Moloko</strong>. It is available exclusively on PC (Windows) through Steam. There is no mobile version, no console version, and no crossplay — it is a PC-only experience. The game receives regular updates, with the latest being v2.5.0 which reworked the Osaka map and improved the paint brush resolution.
           </p>
         </div>
+        {/* Key feature highlight cards */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-4xl mx-auto">
+          {[
+            { icon: "🎨", title: "Paint System", desc: "3D eyedropper + roughness/metallic sliders. Match any surface." },
+            { icon: "🗺️", title: "7 Official Maps", desc: "Each with unique themes, colors, and 5–10 hiding spots." },
+            { icon: "👥", title: "2–10 Players", desc: "Public or private matches. Streamer-friendly lobbies." },
+            { icon: "🔧", title: "600+ Workshop", desc: "Community-created maps with daily data refresh via Steam API." },
+          ].map((item) => (
+            <div key={item.title} className="bg-surface border border-outline-variant rounded-lg p-5 text-center glow-hover transition-all hover:scale-105 hover:border-primary/50">
+              <span className="text-3xl mb-3 block">{item.icon}</span>
+              <h3 className="font-label-caps text-label-caps text-primary mb-1">{item.title}</h3>
+              <p className="font-body-sm text-body-sm text-on-surface-variant">{item.desc}</p>
+            </div>
+          ))}
+        </div>
       </section>
 
-      {/* Maps Overview — SEO internal linking + content */}
-      <section className="py-stack-lg px-4 md:px-gutter max-w-[1440px] mx-auto">
-        <h2 className="font-headline-md text-headline-md text-on-surface text-center mb-stack-lg uppercase">All 7 Official Maps</h2>
-        <p className="font-body-main text-body-main text-on-surface-variant text-center max-w-2xl mx-auto mb-8">
+      {/* Maps Overview — same card design as /maps page */}
+      <section ref={mapsOverviewRef} className="py-stack-lg px-4 md:px-gutter max-w-[1440px] mx-auto">
+        <h2 className="font-display-lg text-2xl md:text-display-lg text-on-surface text-center mb-4 uppercase">All 7 Official Maps</h2>
+        <p className="font-body-main text-body-main text-on-surface-variant text-center max-w-2xl mx-auto mb-stack-lg">
           Each map has a different theme, color palette, and difficulty level. Click into any map for detailed hiding spot guides with screenshots, difficulty ratings, and hider vs seeker strategies.
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {[
-            { slug: "backrooms", name: "Backrooms", desc: "Off-yellow wallpaper, office spaces, broken highways, and birthday party hallways. The sickly fluorescent lighting makes desaturated paint essential. Difficulty: Hard.", spots: 7, diff: "Hard", color: "#DAA520" },
-            { slug: "hide-and-seek-mansion", desc: "Fancy ballroom, library, laundry room, and globe room with dark walnut and velvet surfaces. Furniture randomization was added in v2.2.0. Difficulty: Medium.", name: "Hide-and-Seek Mansion", spots: 10, diff: "Medium", color: "#8B4513" },
-            { slug: "indoor-country", name: "Indoor Country", desc: "Farm equipment, hay bales, cow corners, and pumpkin patches. Green foliage and warm browns make this the easiest map for beginners. Difficulty: Easy.", spots: 8, diff: "Easy", color: "#228B22" },
-            { slug: "osaka", name: "Osaka", desc: "Japanese-themed with traditional temples and neon shopping streets. Reworked in v2.5.0 with new layout and hiding spots. Elevated rooftops are high-risk high-reward. Difficulty: Medium.", spots: 5, diff: "Medium", color: "#FF69B4" },
-            { slug: "penguin-hotel", name: "Penguin Hotel", desc: "White marble lobby, ballroom, play room, and bedrooms across two floors. Penguin decorations create unique hiding challenges. Re-sample colors when changing floors. Difficulty: Medium.", spots: 5, diff: "Medium", color: "#4169E1" },
-            { slug: "sewer", name: "Sewer", desc: "Underground tunnels with pipes, flooded sections, and gas zones. Low visibility is both your ally and enemy. Muted grays and rusty metal tones dominate. Difficulty: Hard.", spots: 5, diff: "Hard", color: "#556B2F" },
-            { slug: "sugar-land", name: "Sugar Land", desc: "Candy-themed with colorful houses, gumdrop gardens, and gingerbread buildings. Pink and pastel paint match nearly everything. The most forgiving map for hiders. Difficulty: Easy.", spots: 6, diff: "Easy", color: "#FF1493" },
-          ].map((map) => (
+          {maps.map((map) => (
             <Link
               key={map.slug}
               href={`/maps/${map.slug}`}
-              className="group bg-surface border border-outline-variant rounded-lg p-5 hover:border-primary/50 transition-all hover:scale-[1.02]"
+              className="map-card group bg-surface border border-outline-variant rounded-lg overflow-hidden glow-hover transition-all hover:scale-105 hover:border-primary/50 hover:shadow-[0_0_20px_rgba(75,226,119,0.2)]"
             >
-              <div className="flex items-center justify-between mb-3">
-                <h3 className="font-headline-md text-lg text-on-surface group-hover:text-primary transition-colors">{map.name}</h3>
-                <span className={`font-label-caps text-label-caps px-2 py-0.5 rounded ${
-                  map.diff === "Easy" ? "bg-green-500/20 text-green-400" :
-                  map.diff === "Medium" ? "bg-yellow-500/20 text-yellow-400" :
-                  "bg-red-500/20 text-red-400"
-                }`}>{map.diff}</span>
+              <div className="relative aspect-video overflow-hidden">
+                <img
+                  src={map.image}
+                  alt={`${map.name} map`}
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-surface/80 to-transparent" />
+                <div className="absolute bottom-3 left-4">
+                  <h3 className="font-display-lg text-xl text-on-surface uppercase tracking-wide">
+                    {map.name}
+                  </h3>
+                </div>
+                <div className="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </div>
-              <p className="font-body-sm text-body-sm text-on-surface-variant mb-3">{map.desc}</p>
-              <span className="font-label-caps text-label-caps text-primary">View {map.spots} hiding spots →</span>
+              <div className="p-4 flex items-center justify-between">
+                <div className="flex items-center gap-3">
+                  <span className="inline-flex items-center gap-1 px-2 py-1 bg-primary/10 text-primary rounded text-xs font-label-caps">
+                    {map.spots} SPOTS
+                  </span>
+                  <DifficultyStars level={map.difficulty} />
+                </div>
+                <svg className="w-5 h-5 text-on-surface-variant group-hover:text-primary group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </div>
             </Link>
           ))}
         </div>
       </section>
 
-      {/* Platform & Pricing — SEO long-tail coverage */}
-      <section className="py-stack-lg px-4 md:px-gutter max-w-[1440px] mx-auto">
-        <h2 className="font-headline-md text-headline-md text-on-surface text-center mb-stack-lg uppercase">Platform, Price & Requirements</h2>
-        <div className="max-w-3xl mx-auto space-y-4 font-body-main text-body-main text-on-surface-variant">
-          <p>
-            <strong className="text-on-surface">MECCHA CHAMELEON</strong> is available on <strong className="text-on-surface">Steam for PC (Windows)</strong> at a price of <strong className="text-on-surface">$5.99 USD</strong>. There is no free-to-play version, no demo, and no mobile app. The game runs on most modern PCs — the minimum requirements include a DirectX 11 compatible GPU and 4 GB of RAM. It is verified to run on Steam Deck through Proton, though there is no official Steam Deck optimization yet.
-          </p>
-          <p>
-            The game does <strong className="text-on-surface">not support crossplay</strong>. Since it is PC-only, there are no PlayStation, Xbox, Nintendo Switch, Android, or iOS versions. All players connect through Steam, and matches can be public (anyone can join) or private (invite-only). Streamers can easily host viewer participation games through public lobbies.
-          </p>
-          <p>
-            For the best experience, a mouse with a high polling rate is recommended for precise painting. Controller support is in development — update v2.5.0 added an experimental color palette for the upcoming controller mode. Keyboard and mouse remain the recommended input method for competitive play.
-          </p>
+      {/* Platform & Pricing — info cards with consistent styling */}
+      <section ref={platformRef} className="py-stack-lg px-4 md:px-gutter max-w-[1440px] mx-auto">
+        <h2 className="font-display-lg text-2xl md:text-display-lg text-on-surface text-center mb-4 uppercase">Platform, Price & Requirements</h2>
+        <p className="font-body-main text-body-main text-on-surface-variant text-center max-w-2xl mx-auto mb-stack-lg">
+          MECCHA CHAMELEON is a PC-exclusive Steam game. Here is everything you need to know before buying.
+        </p>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-4xl mx-auto">
+          {[
+            {
+              icon: (
+                <svg className="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 17.25v1.007a3 3 0 01-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0115 18.257V17.25m6-12V15a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15V5.25m18 0A2.25 2.25 0 0018.75 3H5.25A2.25 2.25 0 003 5.25m18 0V12a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 12V5.25" />
+                </svg>
+              ),
+              title: "PC (Windows) Only",
+              desc: "Available exclusively on Steam. No PlayStation, Xbox, Switch, Android, or iOS versions. Runs on most modern PCs with a DirectX 11 GPU and 4 GB RAM.",
+            },
+            {
+              icon: (
+                <svg className="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 6v12m-3-2.818l.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              ),
+              title: "$5.99 USD",
+              desc: "One-time purchase on Steam. No free-to-play version, no demo, no microtransactions. Free Workshop maps included. No subscription required.",
+            },
+            {
+              icon: (
+                <svg className="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
+                </svg>
+              ),
+              title: "2–10 Players",
+              desc: "Public matches (anyone joins) or private matches (invite-only). No crossplay — all players connect through Steam. Streamer-friendly public lobbies.",
+            },
+            {
+              icon: (
+                <svg className="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M6.75 7.5l3 2.25-3 2.25m4.5 0h3m-9 8.25h13.5A2.25 2.25 0 0021 18V6a2.25 2.25 0 00-2.25-2.25H5.25A2.25 2.25 0 003 6v12a2.25 2.25 0 002.25 2.25z" />
+                </svg>
+              ),
+              title: "Keyboard + Mouse",
+              desc: "Controller support in development (experimental palette in v2.5.0). High-polling-rate mouse recommended for precise painting. Keyboard + mouse is the competitive standard.",
+            },
+            {
+              icon: (
+                <svg className="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182M2.985 19.644l3.181-3.183" />
+                </svg>
+              ),
+              title: "Steam Deck (Proton)",
+              desc: "Verified to run via Proton compatibility. No official Steam Deck optimization yet. Check our Steam Deck guide for setup tips and recommended settings.",
+            },
+            {
+              icon: (
+                <svg className="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3.75 3v11.25A2.25 2.25 0 006 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0118 16.5h-2.25m-7.5 0h7.5m-7.5 0l-1 3m8.5-3l1 3m0 0l.5 1.5m-.5-1.5h-9.5m0 0l-.5 1.5m.75-9l3-3 2.148 2.148A12.061 12.061 0 0116.5 7.605" />
+                </svg>
+              ),
+              title: "Active Development",
+              desc: "Regular updates since launch. Latest: v2.5.0 (Osaka rework + paint brush improvements). Developer lemorion_1224 actively responds to community feedback.",
+            },
+          ].map((item) => (
+            <div key={item.title} className="bg-surface border border-outline-variant rounded-lg p-6 glow-hover transition-all hover:scale-[1.02] hover:border-primary/50">
+              <div className="mb-3">{item.icon}</div>
+              <h3 className="font-label-caps text-label-caps text-primary mb-2">{item.title}</h3>
+              <p className="font-body-sm text-body-sm text-on-surface-variant">{item.desc}</p>
+            </div>
+          ))}
         </div>
       </section>
 
