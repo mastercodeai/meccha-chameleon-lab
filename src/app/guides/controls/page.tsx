@@ -2,6 +2,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { BreadcrumbSchema, ArticleSchema } from "@/components/Schema";
 import RelatedPages from "@/components/RelatedPages";
+import { relatedGuides } from "@/data/relatedGuides";
 import Comments from "@/components/Comments";
 
 export const metadata: Metadata = {
@@ -188,10 +189,11 @@ export default function ControlsGuidePage() {
       </div>
 
       <RelatedPages
-        pages={[
-          { title: "Settings Guide", description: "Optimize your settings for maximum performance.", href: "/settings", icon: "⚙️" },
-          { title: "Combo Guide", description: "Master every disguise combination with paint + object combos.", href: "/guides/combos", icon: "🎯" },
-          { title: "Beginner Guide", description: "Everything you need to know before your first round.", href: "/guides/beginner", icon: "📖" },
+        pages={relatedGuides["controls"]}
+        nextSteps={[
+          { label: "HIDER PATH", title: "Master Hiding", description: "Deep dive into camouflage, painting, and positioning", href: "/guides/hider", icon: "🎨" },
+          { label: "SEEKER PATH", title: "Hunt Better", description: "Learn to read the environment and catch hiders", href: "/guides/seeker", icon: "🔍" },
+          { label: "SOCIAL PLAY", title: "Play With Friends", description: "Set up the perfect lobby for your group", href: "/guides/tips", icon: "🎮" },
         ]}
       />
 

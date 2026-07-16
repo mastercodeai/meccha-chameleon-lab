@@ -2,6 +2,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { BreadcrumbSchema } from "@/components/Schema";
 import RelatedPages from "@/components/RelatedPages";
+import { relatedGuides } from "@/data/relatedGuides";
 import Comments from "@/components/Comments";
 
 export const metadata: Metadata = {
@@ -316,10 +317,11 @@ export default function EasterEggsPage() {
       </div>
 
       <RelatedPages
-        pages={[
-          { title: "All Maps", description: "Browse all 7 official maps with hiding spot guides.", href: "/maps", icon: "🗺️" },
-          { title: "Gallery", description: "Game screenshots, map previews, and character art.", href: "/gallery", icon: "🖼️" },
-          { title: "Beginner Guide", description: "Everything you need to know before your first round.", href: "/guides/beginner", icon: "📖" },
+        pages={relatedGuides["easter-eggs"]}
+        nextSteps={[
+          { label: "HIDER PATH", title: "Master Hiding", description: "Deep dive into camouflage, painting, and positioning", href: "/guides/hider", icon: "🎨" },
+          { label: "SEEKER PATH", title: "Hunt Better", description: "Learn to read the environment and catch hiders", href: "/guides/seeker", icon: "🔍" },
+          { label: "SOCIAL PLAY", title: "Play With Friends", description: "Set up the perfect lobby for your group", href: "/guides/tips", icon: "🎮" },
         ]}
       />
 

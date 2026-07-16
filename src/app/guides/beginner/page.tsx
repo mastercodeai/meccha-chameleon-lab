@@ -2,6 +2,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { BreadcrumbSchema, ArticleSchema } from "@/components/Schema";
 import RelatedPages from "@/components/RelatedPages";
+import { relatedGuides } from "@/data/relatedGuides";
 import Comments from "@/components/Comments";
 
 export const metadata: Metadata = {
@@ -76,6 +77,9 @@ export default function BeginnerGuidePage() {
 
           <section id="what-is" className="mb-stack-lg">
             <h2 className="font-headline-md text-headline-md text-on-surface mb-4">What is MECCHA CHAMELEON?</h2>
+            <p className="font-body-main text-body-main text-on-surface-variant mb-4">
+              Whether you want to hide or hunt, this guide covers both. For deep strategies, check the <Link href="/guides/hider" className="text-primary hover:underline">Hider Guide</Link> and <Link href="/guides/seeker" className="text-primary hover:underline">Seeker Guide</Link>.
+            </p>
             <p className="font-body-main text-body-main text-on-surface-variant mb-4">
               MECCHA CHAMELEON is a casual PvP hide-and-seek game where you paint your body to blend into the environment. Released on June 9, 2026, it has already sold over 15 million copies and received 42,000+ Steam reviews.
             </p>
@@ -218,11 +222,11 @@ export default function BeginnerGuidePage() {
       </div>
 
       <RelatedPages
-        pages={[
-          { title: "Hider Guide", description: "Become an invisible master of disguise with advanced painting techniques.", href: "/guides/hider", icon: "🎨" },
-          { title: "Seeker Guide", description: "Sharpen your detection skills and hunt like a pro.", href: "/guides/seeker", icon: "🔍" },
-          { title: "Tips & Tricks", description: "50 essential tips for hiders, seekers, painters, and map experts.", href: "/guides/tips", icon: "💡" },
-          { title: "All Maps", description: "Browse all 7 official maps with hiding spot guides.", href: "/maps", icon: "🗺️" },
+        pages={relatedGuides["beginner"]}
+        nextSteps={[
+          { label: "HIDER PATH", title: "Master Hiding", description: "Deep dive into camouflage, painting, and positioning", href: "/guides/hider", icon: "🎨" },
+          { label: "SEEKER PATH", title: "Hunt Better", description: "Learn to read the environment and catch hiders", href: "/guides/seeker", icon: "🔍" },
+          { label: "SOCIAL PLAY", title: "Play With Friends", description: "Set up the perfect lobby for your group", href: "/guides/tips", icon: "🎮" },
         ]}
       />
 

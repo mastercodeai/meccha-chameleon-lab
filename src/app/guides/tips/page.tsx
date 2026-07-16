@@ -2,6 +2,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { BreadcrumbSchema, ArticleSchema } from "@/components/Schema";
 import RelatedPages from "@/components/RelatedPages";
+import { relatedGuides } from "@/data/relatedGuides";
 import Comments from "@/components/Comments";
 
 export const metadata: Metadata = {
@@ -137,6 +138,11 @@ export default function TipsGuidePage() {
             Top 50 Tips & Tricks
           </h1>
 
+          <p className="font-body-main text-body-main text-on-surface-variant mb-6">
+            New to the game? Start with the <Link href="/guides/beginner" className="text-primary hover:underline">Beginner Guide</Link> first. Also check the <Link href="/guides/controls" className="text-primary hover:underline">Controls Guide</Link> to optimize your setup.
+          </p>
+
+
           {sections.map((section) => {
             const sectionTips = tips[section.id];
             return (
@@ -181,10 +187,11 @@ export default function TipsGuidePage() {
       </div>
 
       <RelatedPages
-        pages={[
-          { title: "Beginner Guide", description: "Everything you need to know before your first round.", href: "/guides/beginner", icon: "📖" },
-          { title: "Hider Guide", description: "Become an invisible master of disguise.", href: "/guides/hider", icon: "🎨" },
-          { title: "Seeker Guide", description: "Sharpen your detection skills and hunt like a pro.", href: "/guides/seeker", icon: "🔍" },
+        pages={relatedGuides["tips"]}
+        nextSteps={[
+          { label: "HIDER PATH", title: "Master Hiding", description: "Deep dive into camouflage, painting, and positioning", href: "/guides/hider", icon: "🎨" },
+          { label: "SEEKER PATH", title: "Hunt Better", description: "Learn to read the environment and catch hiders", href: "/guides/seeker", icon: "🔍" },
+          { label: "SOCIAL PLAY", title: "Play With Friends", description: "Set up the perfect lobby for your group", href: "/guides/tips", icon: "🎮" },
         ]}
       />
 

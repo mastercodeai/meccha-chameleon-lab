@@ -2,6 +2,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { BreadcrumbSchema, ArticleSchema } from "@/components/Schema";
 import RelatedPages from "@/components/RelatedPages";
+import { relatedGuides } from "@/data/relatedGuides";
 import Comments from "@/components/Comments";
 
 export const metadata: Metadata = {
@@ -75,6 +76,9 @@ export default function HiderGuidePage() {
 
           <section id="overview" className="mb-stack-lg">
             <h2 className="font-headline-md text-headline-md text-on-surface mb-4">Overview</h2>
+            <p className="font-body-main text-body-main text-on-surface-variant mb-4">
+              Before diving in, make sure you understand the <Link href="/guides/paint" className="text-primary hover:underline">paint guide</Link> for color matching and review the <Link href="/maps" className="text-primary hover:underline">map breakdowns</Link> for your favorite arena.
+            </p>
             <p className="font-body-main text-body-main text-on-surface-variant mb-4">
               As a Hider in MECCHA CHAMELEON, your goal is simple: become invisible. You start each round with a blank white body and must paint yourself to perfectly blend into the environment before the Seekers begin their search.
             </p>
@@ -209,10 +213,11 @@ export default function HiderGuidePage() {
       </div>
 
       <RelatedPages
-        pages={[
-          { title: "Seeker Guide", description: "Sharpen your detection skills and hunt like a pro.", href: "/guides/seeker", icon: "🔍" },
-          { title: "Paint Guide", description: "Best color combinations for every surface type.", href: "/guides/paint", icon: "🎨" },
-          { title: "Tips & Tricks", description: "50 essential tips for hiders, seekers, painters, and map experts.", href: "/guides/tips", icon: "💡" },
+        pages={relatedGuides["hider"]}
+        nextSteps={[
+          { label: "HIDER PATH", title: "Master Hiding", description: "Deep dive into camouflage, painting, and positioning", href: "/guides/hider", icon: "🎨" },
+          { label: "SEEKER PATH", title: "Hunt Better", description: "Learn to read the environment and catch hiders", href: "/guides/seeker", icon: "🔍" },
+          { label: "SOCIAL PLAY", title: "Play With Friends", description: "Set up the perfect lobby for your group", href: "/guides/tips", icon: "🎮" },
         ]}
       />
 
