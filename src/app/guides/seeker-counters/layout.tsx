@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "MECCHA CHAMELEON Seeker Counters — How to Outplay the Hunter (2026)",
+  title: "Seeker Counters — Outplay the Hunter",
   description:
     "Counter the Seeker in MECCHA CHAMELEON. Learn anti-seeker strategies, escape techniques, repositioning tricks, and how to survive as a Hider.",
   keywords: [

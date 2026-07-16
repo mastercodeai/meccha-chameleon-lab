@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "MECCHA CHAMELEON Controls Guide — Keyboard & Controller Setup (2026)",
+  title: "Controls — Keyboard & Controller Setup",
   description:
     "Complete MECCHA CHAMELEON controls guide. All keyboard bindings, mouse settings, controller support, and optimal keybind configurations.",
   keywords: [

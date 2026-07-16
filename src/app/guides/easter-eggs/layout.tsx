@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "MECCHA CHAMELEON Easter Eggs & Secrets — All Hidden References (2026)",
+  title: "Easter Eggs & Secrets — Hidden References",
   description:
     "Discover every MECCHA CHAMELEON easter egg. Hidden secrets, developer references, fun details, and obscure facts you probably missed.",
   keywords: [

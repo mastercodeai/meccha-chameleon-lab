@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "MECCHA CHAMELEON System Requirements — Minimum & Recommended PC Specs",
+  title: "System Requirements — PC Specs",
   description:
     "MECCHA CHAMELEON system requirements for PC. Minimum and recommended specs, GPU benchmarks, RAM needs, and storage requirements for smooth gameplay.",
   keywords: [

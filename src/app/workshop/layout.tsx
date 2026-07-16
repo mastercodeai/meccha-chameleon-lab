@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "MECCHA CHAMELEON Workshop Maps — 605+ Community Maps Database",
+  title: "Workshop Maps — 605+ Community Maps",
   description:
     "Browse 605+ MECCHA CHAMELEON Workshop maps. Search, filter, and subscribe to community-created maps with ratings, subscriber counts, and Steam links.",
   keywords: [

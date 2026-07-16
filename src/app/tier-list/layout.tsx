@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "MECCHA CHAMELEON Tier List — Best Objects & Map Rankings (2026)",
+  title: "Tier List — Best Objects & Maps",
   description:
     "The definitive MECCHA CHAMELEON tier list. Rankings for every map and object type based on win rate, hiding effectiveness, and community votes.",
   keywords: [

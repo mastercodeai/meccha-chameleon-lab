@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "MECCHA CHAMELEON Settings Guide — Best Graphics & Performance",
+  title: "Settings — Best Graphics & Performance",
   description:
     "Optimize your MECCHA CHAMELEON settings for maximum performance. Best graphics settings, FPS tweaks, keybinds, and configuration guide.",
   keywords: [

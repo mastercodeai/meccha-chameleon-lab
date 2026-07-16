@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "All Maps — MECCHA CHAMELEON Map Guide",
-  description: "Complete map guide for MECCHA CHAMELEON. Find the best hiding spots for every official map with screenshots, difficulty ratings, and strategies.",
+  description: "Complete MECCHA CHAMELEON map guide: best hiding spots for every official map with screenshots, difficulty ratings, and hider vs seeker strategies. Updated for 2026.",
   keywords: [
     "meccha chameleon maps",
     "meccha chameleon all maps",
