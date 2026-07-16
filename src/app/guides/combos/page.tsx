@@ -4,6 +4,7 @@ import { BreadcrumbSchema, ArticleSchema } from "@/components/Schema";
 import RelatedPages from "@/components/RelatedPages";
 import { relatedGuides } from "@/data/relatedGuides";
 import Comments from "@/components/Comments";
+import GuideSeries from "@/components/GuideSeries";
 
 export const metadata: Metadata = {
   title: "MECCHA CHAMELEON Combo Guide — Best Paint + Object Combos",
@@ -140,6 +141,18 @@ export default function ComboGuidePage() {
           <h1 className="font-display-lg text-3xl md:text-display-lg text-on-surface uppercase mb-8">
             MECCHA CHAMELEON Combo Guide — Best Paint + Object Combos
           </h1>
+
+          <GuideSeries
+            parentTitle="Hider Guide"
+            parentHref="/guides/hider"
+            seriesTitle="Hider Guide Series"
+            pages={[
+              { title: "Hider Guide", href: "/guides/hider", icon: "🎨" },
+              { title: "Paint Guide", href: "/guides/paint", icon: "🎨" },
+              { title: "Object Combos", href: "/guides/combos", icon: "🧩", current: true },
+              { title: "Object Tier List", href: "/guides/object-tiers", icon: "📊" },
+            ]}
+          />
 
           {/* How Combos Work */}
           <section id="how-combos-work" className="mb-stack-lg">

@@ -4,6 +4,7 @@ import { BreadcrumbSchema } from "@/components/Schema";
 import RelatedPages from "@/components/RelatedPages";
 import { relatedGuides } from "@/data/relatedGuides";
 import Comments from "@/components/Comments";
+import GuideSeries from "@/components/GuideSeries";
 
 export const metadata: Metadata = {
   title: "MECCHA CHAMELEON Object Tier List — Best Objects to Disguise As",
@@ -84,6 +85,19 @@ export default function ObjectTiersPage() {
           <h1 className="font-display-lg text-3xl md:text-display-lg text-on-surface uppercase mb-8">
             Object Tier List
           </h1>
+
+          <GuideSeries
+            parentTitle="Hider Guide"
+            parentHref="/guides/hider"
+            seriesTitle="Hider Guide Series"
+            pages={[
+              { title: "Hider Guide", href: "/guides/hider", icon: "🎨" },
+              { title: "Paint Guide", href: "/guides/paint", icon: "🎨" },
+              { title: "Object Combos", href: "/guides/combos", icon: "🧩" },
+              { title: "Object Tier List", href: "/guides/object-tiers", icon: "📊", current: true },
+            ]}
+          />
+
           <div className="bg-yellow-500/10 border border-yellow-500/30 rounded-lg p-4 mb-6">
             <p className="font-body-sm text-body-sm text-yellow-200">
               ⚠️ <strong>Note:</strong> Ratings are based on community experience and player feedback. Actual effectiveness may vary by lobby and playstyle.

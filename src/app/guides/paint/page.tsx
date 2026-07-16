@@ -4,6 +4,7 @@ import { BreadcrumbSchema, ArticleSchema } from "@/components/Schema";
 import RelatedPages from "@/components/RelatedPages";
 import { relatedGuides } from "@/data/relatedGuides";
 import Comments from "@/components/Comments";
+import GuideSeries from "@/components/GuideSeries";
 
 export const metadata: Metadata = {
   title: "Paint Guide — Best Color Combinations",
@@ -72,6 +73,18 @@ export default function PaintGuidePage() {
           <h1 className="font-display-lg text-3xl md:text-display-lg text-on-surface uppercase mb-8">
             Paint Guide — Best Color Combinations
           </h1>
+
+          <GuideSeries
+            parentTitle="Hider Guide"
+            parentHref="/guides/hider"
+            seriesTitle="Hider Guide Series"
+            pages={[
+              { title: "Hider Guide", href: "/guides/hider", icon: "🎨" },
+              { title: "Paint Guide", href: "/guides/paint", icon: "🎨", current: true },
+              { title: "Object Combos", href: "/guides/combos", icon: "🧩" },
+              { title: "Object Tier List", href: "/guides/object-tiers", icon: "📊" },
+            ]}
+          />
 
           {/* How Paint Works */}
           <section id="how-paint-works" className="mb-stack-lg">

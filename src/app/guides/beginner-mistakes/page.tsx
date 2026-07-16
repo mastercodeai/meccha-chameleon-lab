@@ -4,6 +4,7 @@ import { BreadcrumbSchema } from "@/components/Schema";
 import RelatedPages from "@/components/RelatedPages";
 import { relatedGuides } from "@/data/relatedGuides";
 import Comments from "@/components/Comments";
+import GuideSeries from "@/components/GuideSeries";
 
 export const metadata: Metadata = {
   title: "10 MECCHA CHAMELEON Mistakes Beginners Make",
@@ -162,6 +163,17 @@ export default function BeginnerMistakesPage() {
           <h1 className="font-display-lg text-3xl md:text-display-lg text-on-surface uppercase mb-8">
             10 MECCHA CHAMELEON Mistakes Beginners Make
           </h1>
+
+          <GuideSeries
+            parentTitle="Beginner Guide"
+            parentHref="/guides/beginner"
+            seriesTitle="Beginner Guide Series"
+            pages={[
+              { title: "Beginner Guide", href: "/guides/beginner", icon: "📖" },
+              { title: "Common Mistakes", href: "/guides/beginner-mistakes", icon: "⚠️", current: true },
+              { title: "Tips & Tricks", href: "/guides/tips", icon: "💡" },
+            ]}
+          />
 
           <section id="overview" className="mb-stack-lg">
             <h2 className="font-headline-md text-headline-md text-on-surface mb-4">

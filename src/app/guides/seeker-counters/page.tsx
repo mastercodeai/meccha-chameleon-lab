@@ -4,6 +4,7 @@ import { BreadcrumbSchema, FAQSchema } from "@/components/Schema";
 import RelatedPages from "@/components/RelatedPages";
 import { relatedGuides } from "@/data/relatedGuides";
 import Comments from "@/components/Comments";
+import GuideSeries from "@/components/GuideSeries";
 
 export const metadata: Metadata = {
   title:
@@ -78,6 +79,16 @@ export default function SeekerCountersPage() {
           <h1 className="font-display-lg text-3xl md:text-display-lg text-on-surface uppercase mb-8">
             Seeker Counter Guide — How to Find Every Hider
           </h1>
+
+          <GuideSeries
+            parentTitle="Seeker Guide"
+            parentHref="/guides/seeker"
+            seriesTitle="Seeker Guide Series"
+            pages={[
+              { title: "Seeker Guide", href: "/guides/seeker", icon: "🔍" },
+              { title: "Seeker Counters", href: "/guides/seeker-counters", icon: "🎯", current: true },
+            ]}
+          />
 
           <section id="overview" className="mb-stack-lg">
             <h2 className="font-headline-md text-headline-md text-on-surface mb-4">

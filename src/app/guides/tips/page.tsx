@@ -4,6 +4,7 @@ import { BreadcrumbSchema, ArticleSchema } from "@/components/Schema";
 import RelatedPages from "@/components/RelatedPages";
 import { relatedGuides } from "@/data/relatedGuides";
 import Comments from "@/components/Comments";
+import GuideSeries from "@/components/GuideSeries";
 
 export const metadata: Metadata = {
   title: "Top 50 Tips & Tricks",
@@ -137,6 +138,17 @@ export default function TipsGuidePage() {
           <h1 className="font-display-lg text-3xl md:text-display-lg text-on-surface uppercase mb-8">
             Top 50 Tips & Tricks
           </h1>
+
+          <GuideSeries
+            parentTitle="Beginner Guide"
+            parentHref="/guides/beginner"
+            seriesTitle="Beginner Guide Series"
+            pages={[
+              { title: "Beginner Guide", href: "/guides/beginner", icon: "📖" },
+              { title: "Common Mistakes", href: "/guides/beginner-mistakes", icon: "⚠️" },
+              { title: "Tips & Tricks", href: "/guides/tips", icon: "💡", current: true },
+            ]}
+          />
 
           <p className="font-body-main text-body-main text-on-surface-variant mb-6">
             New to the game? Start with the <Link href="/guides/beginner" className="text-primary hover:underline">Beginner Guide</Link> first. Also check the <Link href="/guides/controls" className="text-primary hover:underline">Controls Guide</Link> to optimize your setup.

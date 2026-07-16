@@ -209,6 +209,33 @@ export default function HiderGuidePage() {
               SEEKER GUIDE
             </Link>
           </div>
+
+          {/* Deep Dive Section */}
+          <section className="mb-stack-lg">
+            <h2 className="font-headline-md text-headline-md text-on-surface mb-4">
+              Deep Dive: Master Every Aspect of Hiding
+            </h2>
+            <p className="font-body-main text-body-main text-on-surface-variant mb-6">
+              Want to go deeper? These specialized guides cover every hiding technique in detail.
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              <Link href="/guides/paint" className="group bg-surface border border-outline-variant rounded-lg p-5 hover:border-primary/50 transition-all">
+                <span className="text-2xl mb-2 block">🎨</span>
+                <h3 className="font-label-caps text-label-caps text-on-surface group-hover:text-primary transition-colors mb-2">Paint Guide</h3>
+                <p className="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">Best colors for every surface and map. Master the eyedropper, color mixing, and surface matching.</p>
+              </Link>
+              <Link href="/guides/combos" className="group bg-surface border border-outline-variant rounded-lg p-5 hover:border-primary/50 transition-all">
+                <span className="text-2xl mb-2 block">🧩</span>
+                <h3 className="font-label-caps text-label-caps text-on-surface group-hover:text-primary transition-colors mb-2">Object Combos</h3>
+                <p className="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">Best paint + object combinations for each map. Tested combos that fool even experienced seekers.</p>
+              </Link>
+              <Link href="/guides/object-tiers" className="group bg-surface border border-outline-variant rounded-lg p-5 hover:border-primary/50 transition-all">
+                <span className="text-2xl mb-2 block">📊</span>
+                <h3 className="font-label-caps text-label-caps text-on-surface group-hover:text-primary transition-colors mb-2">Object Tier List</h3>
+                <p className="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">Ranked list of every object. Know which disguises work and which will get you caught instantly.</p>
+              </Link>
+            </div>
+          </section>
         </article>
       </div>
 

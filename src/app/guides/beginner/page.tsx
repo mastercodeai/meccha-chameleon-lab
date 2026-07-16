@@ -218,6 +218,28 @@ export default function BeginnerGuidePage() {
               SEEKER GUIDE
             </Link>
           </div>
+
+          {/* Deep Dive Section */}
+          <section className="mb-stack-lg">
+            <h2 className="font-headline-md text-headline-md text-on-surface mb-4">
+              Deep Dive: Level Up Your Game
+            </h2>
+            <p className="font-body-main text-body-main text-on-surface-variant mb-6">
+              Ready for more? These guides go deeper into specific topics.
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <Link href="/guides/beginner-mistakes" className="group bg-surface border border-outline-variant rounded-lg p-5 hover:border-primary/50 transition-all">
+                <span className="text-2xl mb-2 block">🚫</span>
+                <h3 className="font-label-caps text-label-caps text-on-surface group-hover:text-primary transition-colors mb-2">Beginner Mistakes</h3>
+                <p className="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">The most common mistakes new players make and how to avoid them.</p>
+              </Link>
+              <Link href="/guides/tips" className="group bg-surface border border-outline-variant rounded-lg p-5 hover:border-primary/50 transition-all">
+                <span className="text-2xl mb-2 block">💡</span>
+                <h3 className="font-label-caps text-label-caps text-on-surface group-hover:text-primary transition-colors mb-2">Pro Tips</h3>
+                <p className="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">Expert tips and tricks to accelerate your improvement and win more rounds.</p>
+              </Link>
+            </div>
+          </section>
         </article>
       </div>
 
