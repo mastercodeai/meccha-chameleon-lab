@@ -131,7 +131,7 @@ export default function BeginnerMistakesPage() {
       <BreadcrumbSchema
         items={[
           { name: "Home", url: "https://mecchachameleonlab.com" },
-          { name: "Guides", url: "https://mecchachameleonlab.com/guides/beginner" },
+          { name: "Guides", url: "https://mecchachameleonlab.com/guides" },
           { name: "Beginner Mistakes", url: "https://mecchachameleonlab.com/guides/beginner-mistakes" },
         ]}
       />

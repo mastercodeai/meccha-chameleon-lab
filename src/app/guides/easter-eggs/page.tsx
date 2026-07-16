@@ -40,7 +40,7 @@ export default function EasterEggsPage() {
       <BreadcrumbSchema
         items={[
           { name: "Home", url: "https://mecchachameleonlab.com" },
-          { name: "Guides", url: "https://mecchachameleonlab.com/guides/beginner" },
+          { name: "Guides", url: "https://mecchachameleonlab.com/guides" },
           { name: "Community Secrets", url: "https://mecchachameleonlab.com/guides/easter-eggs" },
         ]}
       />

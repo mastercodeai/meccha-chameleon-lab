@@ -47,7 +47,7 @@ export default function SeekerCountersPage() {
       <BreadcrumbSchema
         items={[
           { name: "Home", url: "https://mecchachameleonlab.com" },
-          { name: "Guides", url: "https://mecchachameleonlab.com/guides/beginner" },
+          { name: "Guides", url: "https://mecchachameleonlab.com/guides" },
           { name: "Seeker Counters", url: "https://mecchachameleonlab.com/guides/seeker-counters" },
         ]}
       />

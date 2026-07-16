@@ -49,7 +49,7 @@ export default function ObjectTiersPage() {
       <BreadcrumbSchema
         items={[
           { name: "Home", url: "https://mecchachameleonlab.com" },
-          { name: "Guides", url: "https://mecchachameleonlab.com/guides/beginner" },
+          { name: "Guides", url: "https://mecchachameleonlab.com/guides" },
           {
             name: "Object Tier List",
             url: "https://mecchachameleonlab.com/guides/object-tiers",

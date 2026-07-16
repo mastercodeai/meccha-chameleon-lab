@@ -102,7 +102,7 @@ export default function ComboGuidePage() {
       <BreadcrumbSchema
         items={[
           { name: "Home", url: "https://mecchachameleonlab.com" },
-          { name: "Guides", url: "https://mecchachameleonlab.com/guides/beginner" },
+          { name: "Guides", url: "https://mecchachameleonlab.com/guides" },
           { name: "Combo Guide", url: "https://mecchachameleonlab.com/guides/combos" },
         ]}
       />

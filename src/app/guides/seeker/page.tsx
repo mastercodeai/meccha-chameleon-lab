@@ -38,7 +38,7 @@ export default function SeekerGuidePage() {
       <BreadcrumbSchema
         items={[
           { name: "Home", url: "https://mecchachameleonlab.com" },
-          { name: "Guides", url: "https://mecchachameleonlab.com/guides/beginner" },
+          { name: "Guides", url: "https://mecchachameleonlab.com/guides" },
           { name: "Seeker Guide", url: "https://mecchachameleonlab.com/guides/seeker" },
         ]}
       />

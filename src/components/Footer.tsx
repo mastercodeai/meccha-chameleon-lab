@@ -15,6 +15,7 @@ export default function Footer() {
       <div className="max-w-[1440px] mx-auto grid grid-cols-1 md:grid-cols-4 gap-gutter">
         <div className="flex flex-col gap-2">
           <span className="font-label-caps text-label-caps text-on-surface mb-2">GUIDES</span>
+          <Link href="/guides" className="font-body-sm text-body-sm text-primary hover:text-primary/80 transition-all font-medium">All Guides</Link>
           <Link href="/guides/beginner" className="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-all">Beginner Guide</Link>
           <Link href="/guides/hider" className="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-all">Hider Guide</Link>
           <Link href="/guides/seeker" className="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-all">Seeker Guide</Link>
