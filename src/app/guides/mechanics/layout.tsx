@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "MECCHA CHAMELEON Mechanics — Paint System, Clones & Scoring Explained",
+  title: "Mechanics — Paint System, Clones & Scoring Explained",
   description: "Deep dive into MECCHA CHAMELEON game mechanics: how the paint system works, clone mechanics, scoring system, taunts, and camera controls.",
   alternates: {
     canonical: "https://mecchachameleonlab.com/guides/mechanics",

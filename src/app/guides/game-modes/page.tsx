@@ -266,7 +266,7 @@ export default function GameModesPage() {
       </div>
 
       <RelatedPages
-        pages={relatedGuides["tips"]}
+        pages={relatedGuides["game-modes"]}
         nextSteps={[
           { label: "LEARN MECHANICS", title: "Game Mechanics", description: "Deep dive into paint, clones, and scoring", href: "/guides/mechanics", icon: "⚙️" },
           { label: "HIDER PATH", title: "Master Hiding", description: "Camouflage and positioning strategies", href: "/guides/hider", icon: "🎨" },

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
-import { BreadcrumbSchema, FAQSchema } from "@/components/Schema";
+import { BreadcrumbSchema, ArticleSchema, FAQSchema } from "@/components/Schema";
 import RelatedPages from "@/components/RelatedPages";
 import { relatedGuides } from "@/data/relatedGuides";
 import Comments from "@/components/Comments";
@@ -137,6 +137,12 @@ export default function BeginnerMistakesPage() {
           { name: "Guides", url: "https://mecchachameleonlab.com/guides" },
           { name: "Beginner Mistakes", url: "https://mecchachameleonlab.com/guides/beginner-mistakes" },
         ]}
+      />
+      <ArticleSchema
+        title="MECCHA CHAMELEON Common Mistakes — 10 Errors New Players Make"
+        description="The most common mistakes new MECCHA CHAMELEON players make and how to fix them."
+        url="https://mecchachameleonlab.com/guides/beginner-mistakes"
+        datePublished="2026-06-15"
       />
       <div className="flex flex-col lg:flex-row gap-8">
         {/* Sidebar TOC */}

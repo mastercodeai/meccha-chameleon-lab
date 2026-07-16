@@ -227,7 +227,7 @@ export default function MechanicsPage() {
       </div>
 
       <RelatedPages
-        pages={relatedGuides["tips"]}
+        pages={relatedGuides["mechanics"]}
         nextSteps={[
           { label: "PAINT DEEP DIVE", title: "Paint Guide", description: "Best colors and techniques for every surface", href: "/guides/paint", icon: "🎨" },
           { label: "HIDER PATH", title: "Master Hiding", description: "Use mechanics to become invisible", href: "/guides/hider", icon: "🫥" },

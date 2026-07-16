@@ -13,14 +13,14 @@ export const metadata: Metadata = {
     canonical: "https://mecchachameleonlab.com/guides/tips",
   },
   openGraph: {
-    title: "Tips & Tricks — 50 Pro Strategies for 2026",
+    title: "Top 50 Tips & Tricks",
     description: "Master MECCHA CHAMELEON with 50 essential tips for hiders, seekers, painters, and map experts. Level up your gameplay today.",
     url: "https://mecchachameleonlab.com/guides/tips",
     type: "article",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Tips & Tricks — 50 Pro Strategies for 2026",
+    title: "Top 50 Tips & Tricks",
     description: "Master MECCHA CHAMELEON with 50 essential tips for hiders, seekers, painters, and map experts. Level up your gameplay today.",
   },
 };

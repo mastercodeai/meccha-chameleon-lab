@@ -1,6 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
-import { BreadcrumbSchema, FAQSchema } from "@/components/Schema";
+import { BreadcrumbSchema, ArticleSchema, FAQSchema } from "@/components/Schema";
 import RelatedPages from "@/components/RelatedPages";
 import { relatedGuides } from "@/data/relatedGuides";
 import Comments from "@/components/Comments";
@@ -58,6 +58,12 @@ export default function ObjectTiersPage() {
             url: "https://mecchachameleonlab.com/guides/object-tiers",
           },
         ]}
+      />
+      <ArticleSchema
+        title="MECCHA CHAMELEON Object Tier List — Best & Worst Objects Ranked"
+        description="Complete MECCHA CHAMELEON object tier list ranking every disguise from S-tier to C-tier. Learn which objects are the best and worst to hide as."
+        url="https://mecchachameleonlab.com/guides/object-tiers"
+        datePublished="2026-06-15"
       />
 
       <div className="flex flex-col lg:flex-row gap-8">

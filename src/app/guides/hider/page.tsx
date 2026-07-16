@@ -329,6 +329,15 @@ export default function HiderGuidePage() {
 
           <section id="faq" className="mb-stack-lg">
             <h2 className="font-headline-md text-headline-md text-on-surface mb-4">Frequently Asked Questions</h2>
+            <FAQSchema
+              items={[
+                { q: "What\u2019s the best object to hide as in MECCHA CHAMELEON?", a: "Small, common objects work best. Avoid anything that looks out of place. The best disguise is one that blends with the specific surface you\u2019re standing against." },
+                { q: "Should I move during the hiding phase?", a: "Minimize movement. Find your spot, paint yourself, and stay still. Even small movements can catch a seeker\u2019s eye due to animation differences between players and static objects." },
+                { q: "How do I use the eyedropper tool?", a: "Right-click on any surface to sample its color, roughness, and metallic values. This gives you the exact match needed to blend in. Sample from the surface directly behind your hiding spot for best results." },
+                { q: "What are clones used for?", a: "Clones are decoy copies of your character. Place them as distractions to waste the seeker\u2019s time, or use them to confuse the seeker about your real position during the hunting phase." },
+                { q: "How do I paint fast enough in time?", a: "Use a large brush for base coverage, paint head and torso first (most visible), and use the eyedropper before painting to avoid wrong colors. With practice, full-body painting takes under 10 seconds." },
+              ]}
+            />
             <div className="space-y-4">
               {[
                 { q: "What\u2019s the best object to hide as in MECCHA CHAMELEON?", a: "Small, common objects work best. Avoid anything that looks out of place. The best disguise is one that blends with the specific surface you\u2019re standing against." },
@@ -344,15 +353,6 @@ export default function HiderGuidePage() {
               ))}
             </div>
           </section>
-          <FAQSchema
-            items={[
-              { q: "What\u2019s the best object to hide as in MECCHA CHAMELEON?", a: "Small, common objects work best. Avoid anything that looks out of place. The best disguise is one that blends with the specific surface you\u2019re standing against." },
-              { q: "Should I move during the hiding phase?", a: "Minimize movement. Find your spot, paint yourself, and stay still. Even small movements can catch a seeker\u2019s eye due to animation differences between players and static objects." },
-              { q: "How do I use the eyedropper tool?", a: "Right-click on any surface to sample its color, roughness, and metallic values. This gives you the exact match needed to blend in. Sample from the surface directly behind your hiding spot for best results." },
-              { q: "What are clones used for?", a: "Clones are decoy copies of your character. Place them as distractions to waste the seeker\u2019s time, or use them to confuse the seeker about your real position during the hunting phase." },
-              { q: "How do I paint fast enough in time?", a: "Use a large brush for base coverage, paint head and torso first (most visible), and use the eyedropper before painting to avoid wrong colors. With practice, full-body painting takes under 10 seconds." },
-            ]}
-          />
 
           {/* CTAs */}
           <div className="flex flex-col sm:flex-row gap-4 mt-stack-lg">

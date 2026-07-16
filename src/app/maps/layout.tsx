@@ -63,6 +63,11 @@ export const metadata: Metadata = {
     url: "https://mecchachameleonlab.com/maps",
     type: "website",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "All Maps | MECCHA CHAMELEON Guide",
+    description: "Complete map guide for MECCHA CHAMELEON. Find the best hiding spots for every official map.",
+  },
 };
 
 export default function MapsLayout({ children }: { children: React.ReactNode }) {

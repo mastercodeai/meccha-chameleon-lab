@@ -1,6 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
-import { BreadcrumbSchema, FAQSchema } from "@/components/Schema";
+import { BreadcrumbSchema, ArticleSchema, FAQSchema } from "@/components/Schema";
 import RelatedPages from "@/components/RelatedPages";
 import { relatedGuides } from "@/data/relatedGuides";
 import Comments from "@/components/Comments";
@@ -45,6 +45,12 @@ export default function EasterEggsPage() {
           { name: "Guides", url: "https://mecchachameleonlab.com/guides" },
           { name: "Community Secrets", url: "https://mecchachameleonlab.com/guides/easter-eggs" },
         ]}
+      />
+      <ArticleSchema
+        title="MECCHA CHAMELEON Easter Eggs & Secrets — All Hidden References"
+        description="Discover every hidden secret, easter egg, and developer reference in MECCHA CHAMELEON. Community-verified findings across all maps."
+        url="https://mecchachameleonlab.com/guides/easter-eggs"
+        datePublished="2026-06-15"
       />
 
       <div className="flex flex-col lg:flex-row gap-8">

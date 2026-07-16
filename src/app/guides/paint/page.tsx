@@ -13,14 +13,14 @@ export const metadata: Metadata = {
     canonical: "https://mecchachameleonlab.com/guides/paint",
   },
   openGraph: {
-    title: "Paint Guide — Best Colors for Every Map (2026)",
+    title: "Paint Guide — Best Color Combinations",
     description: "Master the art of painting in MECCHA CHAMELEON. Learn color matching, surface-specific techniques, map palettes, and advanced tricks to become invisible.",
     url: "https://mecchachameleonlab.com/guides/paint",
     type: "article",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Paint Guide — Best Colors for Every Map (2026)",
+    title: "Paint Guide — Best Color Combinations",
     description: "Master the art of painting in MECCHA CHAMELEON. Learn color matching, surface-specific techniques, map palettes, and advanced tricks to become invisible.",
   },
 };

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "MECCHA CHAMELEON Guides — All Tips, Strategies & Walkthroughs",
+  title: "All Guides — Tips, Strategies & Walkthroughs",
   description:
     "Browse all MECCHA CHAMELEON guides: beginner tips, hider strategies, seeker tactics, paint techniques, map breakdowns, and more.",
   alternates: {

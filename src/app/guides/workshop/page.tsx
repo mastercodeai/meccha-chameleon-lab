@@ -247,7 +247,7 @@ export default function WorkshopPage() {
       </div>
 
       <RelatedPages
-        pages={relatedGuides["tips"]}
+        pages={relatedGuides["workshop"]}
         nextSteps={[
           { label: "LEARN MAPS", title: "Official Maps", description: "Master the 7 built-in maps first", href: "/maps", icon: "🗺️" },
           { label: "GAME MODES", title: "All Game Modes", description: "Which mode works best on Workshop maps", href: "/guides/game-modes", icon: "🎮" },

@@ -5,7 +5,7 @@ import { updates } from "@/data/updates";
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://mecchachameleonlab.com";
   // Use meaningful dates — homepage & maps update frequently, guides less so
-  const today = new Date("2026-07-09");
+  const today = new Date();
   const weekAgo = new Date("2026-07-02");
   const monthAgo = new Date("2026-06-09");
 
@@ -35,9 +35,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/terms`, lastModified: new Date("2026-01-15"), changeFrequency: "yearly" as const, priority: 0.3 },
     { url: `${baseUrl}/price`, lastModified: weekAgo, changeFrequency: "monthly" as const, priority: 0.9 },
     { url: `${baseUrl}/guides/easter-eggs`, lastModified: monthAgo, changeFrequency: "monthly" as const, priority: 0.7 },
-    { url: `${baseUrl}/guides/game-modes`, lastModified: today, changeFrequency: "monthly" as const, priority: 0.7 },
-    { url: `${baseUrl}/guides/mechanics`, lastModified: today, changeFrequency: "monthly" as const, priority: 0.7 },
-    { url: `${baseUrl}/guides/workshop`, lastModified: today, changeFrequency: "monthly" as const, priority: 0.7 },
+    { url: `${baseUrl}/guides/game-modes`, lastModified: today, changeFrequency: "weekly" as const, priority: 0.7 },
+    { url: `${baseUrl}/guides/mechanics`, lastModified: today, changeFrequency: "weekly" as const, priority: 0.7 },
+    { url: `${baseUrl}/guides/workshop`, lastModified: today, changeFrequency: "weekly" as const, priority: 0.7 },
     { url: `${baseUrl}/update`, lastModified: today, changeFrequency: "weekly" as const, priority: 0.7 },
   ];
 
