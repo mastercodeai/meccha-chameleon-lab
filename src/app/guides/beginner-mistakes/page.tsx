@@ -1,6 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
-import { BreadcrumbSchema } from "@/components/Schema";
+import { BreadcrumbSchema, FAQSchema } from "@/components/Schema";
 import RelatedPages from "@/components/RelatedPages";
 import { relatedGuides } from "@/data/relatedGuides";
 import Comments from "@/components/Comments";
@@ -32,6 +32,7 @@ const sections = [
   { id: "overview", title: "Overview" },
   { id: "mistakes", title: "The 10 Mistakes" },
   { id: "next-steps", title: "Next Steps" },
+  { id: "faq", title: "Frequently Asked Questions" },
 ];
 
 const mistakes = [
@@ -238,6 +239,32 @@ export default function BeginnerMistakesPage() {
             <p className="font-body-main text-body-main text-on-surface-variant mb-4">
               Now that you know what NOT to do, dive deeper into the strategies that actually work. Our detailed guides will take your gameplay to the next level.
             </p>
+          </section>
+
+          <section id="faq" className="mb-stack-lg">
+            <h2 className="font-headline-md text-headline-md text-on-surface mb-4">
+              Frequently Asked Questions
+            </h2>
+            <FAQSchema
+              items={[
+                { q: "What is the most common beginner mistake in MECCHA CHAMELEON?", a: "The most common mistake is choosing oversized objects to disguise as. New players feel safe inside something huge, but large objects stand out immediately and Seekers know the map layout well enough to notice them." },
+                { q: "How can I improve quickly as a new player?", a: "Focus on three things: always use the 3D Eyedropper to match colors, pick small common objects that appear multiple times on the map, and study each map's layout before playing seriously. Avoid the 10 mistakes covered in this guide and you'll improve rapidly." },
+                { q: "Is it normal to die a lot as a beginner?", a: "Yes, absolutely. MECCHA CHAMELEON has a learning curve and most beginners get caught frequently at first. The key is to learn from each loss — think about why you were spotted and adjust your strategy. Every experienced player went through the same learning phase." },
+              ]}
+            />
+            {/* Visual FAQ cards */}
+            <div className="space-y-4 mt-4">
+              {[
+                { q: "What is the most common beginner mistake in MECCHA CHAMELEON?", a: "The most common mistake is choosing oversized objects to disguise as. New players feel safe inside something huge, but large objects stand out immediately and Seekers know the map layout well enough to notice them." },
+                { q: "How can I improve quickly as a new player?", a: "Focus on three things: always use the 3D Eyedropper to match colors, pick small common objects that appear multiple times on the map, and study each map's layout before playing seriously. Avoid the 10 mistakes covered in this guide and you'll improve rapidly." },
+                { q: "Is it normal to die a lot as a beginner?", a: "Yes, absolutely. MECCHA CHAMELEON has a learning curve and most beginners get caught frequently at first. The key is to learn from each loss — think about why you were spotted and adjust your strategy. Every experienced player went through the same learning phase." },
+              ].map((item, i) => (
+                <div key={i} className="bg-surface border border-outline-variant rounded-lg p-4">
+                  <h3 className="font-label-caps text-label-caps text-on-surface mb-2">{item.q}</h3>
+                  <p className="font-body-sm text-body-sm text-on-surface-variant">{item.a}</p>
+                </div>
+              ))}
+            </div>
           </section>
 
           {/* CTAs */}

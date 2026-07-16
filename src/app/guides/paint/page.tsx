@@ -1,6 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
-import { BreadcrumbSchema, ArticleSchema } from "@/components/Schema";
+import { BreadcrumbSchema, ArticleSchema, FAQSchema } from "@/components/Schema";
 import RelatedPages from "@/components/RelatedPages";
 import { relatedGuides } from "@/data/relatedGuides";
 import Comments from "@/components/Comments";
@@ -31,6 +31,7 @@ const sections = [
   { id: "map-colors", title: "Map-Specific Colors" },
   { id: "advanced-techniques", title: "Advanced Techniques" },
   { id: "common-mistakes", title: "Common Color Mistakes" },
+  { id: "faq", title: "Frequently Asked Questions" },
 ];
 
 export default function PaintGuidePage() {
@@ -277,6 +278,34 @@ export default function PaintGuidePage() {
                 <div key={i} className="bg-surface border-l-4 border-error rounded-r-lg p-4">
                   <h3 className="font-label-caps text-label-caps text-error mb-1">⚠ {item.mistake}</h3>
                   <p className="font-body-sm text-body-sm text-on-surface-variant">{item.desc}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          <section id="faq" className="mb-stack-lg">
+            <h2 className="font-headline-md text-headline-md text-on-surface mb-4">
+              Frequently Asked Questions
+            </h2>
+            <FAQSchema
+              items={[
+                { q: "What is the best paint color for each surface type?", a: "Wood surfaces need warm browns with high roughness and zero metallic. Metal requires silvers and grays with high metallic. Fabric needs rich deep colors with zero metallic and very high roughness. Stone works with muted grays and medium roughness. Tile surfaces match clean whites and blues with low roughness." },
+                { q: "How do I use the roughness slider effectively?", a: "The roughness slider controls how matte or shiny a surface appears. High roughness creates matte finishes like wood and fabric. Low roughness creates shiny surfaces like tile and polished metal. Always sample the exact surface you're hiding against with the 3D Eyedropper to get the correct roughness value." },
+                { q: "When should I use metallic vs non-metallic paint?", a: "Use metallic paint only on metal surfaces — faucets, pipes, vending machines, and steel furniture. Everything else should have zero metallic. Using metallic paint on wood, fabric, or stone is one of the biggest tells for experienced Seekers." },
+                { q: "How do I match textured surfaces?", a: "Use multiple similar tones to replicate natural surface variation. Real surfaces aren't perfectly uniform — they have dirt, scratches, and color shifts. Layer similar shades and use gradient blending to mimic the texture pattern of the surface you're matching." },
+              ]}
+            />
+            {/* Visual FAQ cards */}
+            <div className="space-y-4 mt-4">
+              {[
+                { q: "What is the best paint color for each surface type?", a: "Wood surfaces need warm browns with high roughness and zero metallic. Metal requires silvers and grays with high metallic. Fabric needs rich deep colors with zero metallic and very high roughness. Stone works with muted grays and medium roughness. Tile surfaces match clean whites and blues with low roughness." },
+                { q: "How do I use the roughness slider effectively?", a: "The roughness slider controls how matte or shiny a surface appears. High roughness creates matte finishes like wood and fabric. Low roughness creates shiny surfaces like tile and polished metal. Always sample the exact surface you're hiding against with the 3D Eyedropper to get the correct roughness value." },
+                { q: "When should I use metallic vs non-metallic paint?", a: "Use metallic paint only on metal surfaces — faucets, pipes, vending machines, and steel furniture. Everything else should have zero metallic. Using metallic paint on wood, fabric, or stone is one of the biggest tells for experienced Seekers." },
+                { q: "How do I match textured surfaces?", a: "Use multiple similar tones to replicate natural surface variation. Real surfaces aren't perfectly uniform — they have dirt, scratches, and color shifts. Layer similar shades and use gradient blending to mimic the texture pattern of the surface you're matching." },
+              ].map((item, i) => (
+                <div key={i} className="bg-surface border border-outline-variant rounded-lg p-4">
+                  <h3 className="font-label-caps text-label-caps text-on-surface mb-2">{item.q}</h3>
+                  <p className="font-body-sm text-body-sm text-on-surface-variant">{item.a}</p>
                 </div>
               ))}
             </div>

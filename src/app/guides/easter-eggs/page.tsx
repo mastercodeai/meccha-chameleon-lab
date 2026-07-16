@@ -1,6 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
-import { BreadcrumbSchema } from "@/components/Schema";
+import { BreadcrumbSchema, FAQSchema } from "@/components/Schema";
 import RelatedPages from "@/components/RelatedPages";
 import { relatedGuides } from "@/data/relatedGuides";
 import Comments from "@/components/Comments";
@@ -33,6 +33,7 @@ const sections = [
   { id: "developer-references", title: "Developer References" },
   { id: "community-discoveries", title: "Community Discoveries" },
   { id: "map-specific", title: "Map-Specific Secrets" },
+  { id: "faq", title: "Frequently Asked Questions" },
 ];
 
 export default function EasterEggsPage() {
@@ -287,6 +288,32 @@ export default function EasterEggsPage() {
                   <span className="font-body-sm text-body-sm text-on-surface-variant">
                     {item.secret}
                   </span>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          <section id="faq" className="mb-stack-lg">
+            <h2 className="font-headline-md text-headline-md text-on-surface mb-4">
+              Frequently Asked Questions
+            </h2>
+            <FAQSchema
+              items={[
+                { q: "How many easter eggs are in MECCHA CHAMELEON?", a: "The community has discovered numerous secrets across all maps including hidden rooms, secret objects like the Golden Chameleon figurines, developer references, and map-specific discoveries. New secrets are still being found with each update." },
+                { q: "Do easter eggs affect gameplay in MECCHA CHAMELEON?", a: "Most easter eggs are cosmetic and don't affect gameplay mechanics. They include hidden rooms, developer references, and collectible figurines. Finding all Golden Chameleon figurines across every map does unlock a special achievement." },
+                { q: "Can I find easter eggs in Workshop maps?", a: "The easter eggs documented here are from official maps. Workshop maps created by the community may have their own secrets, but the confirmed easter eggs like hidden rooms, developer references, and the Golden Chameleon collection are found on official maps only." },
+              ]}
+            />
+            {/* Visual FAQ cards */}
+            <div className="space-y-4 mt-4">
+              {[
+                { q: "How many easter eggs are in MECCHA CHAMELEON?", a: "The community has discovered numerous secrets across all maps including hidden rooms, secret objects like the Golden Chameleon figurines, developer references, and map-specific discoveries. New secrets are still being found with each update." },
+                { q: "Do easter eggs affect gameplay in MECCHA CHAMELEON?", a: "Most easter eggs are cosmetic and don't affect gameplay mechanics. They include hidden rooms, developer references, and collectible figurines. Finding all Golden Chameleon figurines across every map does unlock a special achievement." },
+                { q: "Can I find easter eggs in Workshop maps?", a: "The easter eggs documented here are from official maps. Workshop maps created by the community may have their own secrets, but the confirmed easter eggs like hidden rooms, developer references, and the Golden Chameleon collection are found on official maps only." },
+              ].map((item, i) => (
+                <div key={i} className="bg-surface border border-outline-variant rounded-lg p-4">
+                  <h3 className="font-label-caps text-label-caps text-on-surface mb-2">{item.q}</h3>
+                  <p className="font-body-sm text-body-sm text-on-surface-variant">{item.a}</p>
                 </div>
               ))}
             </div>

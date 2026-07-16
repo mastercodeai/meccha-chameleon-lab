@@ -1,6 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
-import { BreadcrumbSchema, ArticleSchema } from "@/components/Schema";
+import { BreadcrumbSchema, ArticleSchema, FAQSchema } from "@/components/Schema";
 import RelatedPages from "@/components/RelatedPages";
 import { relatedGuides } from "@/data/relatedGuides";
 import Comments from "@/components/Comments";
@@ -37,6 +37,7 @@ const sections = [
   { id: "per-map-combos", title: "Per-Map Best Combos" },
   { id: "advanced-techniques", title: "Advanced Techniques" },
   { id: "common-mistakes", title: "Common Mistakes" },
+  { id: "faq", title: "Frequently Asked Questions" },
 ];
 
 const mapCombos = [
@@ -391,6 +392,32 @@ export default function ComboGuidePage() {
                   <p className="font-body-sm text-body-sm text-on-surface-variant">
                     {item.desc}
                   </p>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          <section id="faq" className="mb-stack-lg">
+            <h2 className="font-headline-md text-headline-md text-on-surface mb-4">
+              Frequently Asked Questions
+            </h2>
+            <FAQSchema
+              items={[
+                { q: "What is an object combo in MECCHA CHAMELEON?", a: "An object combo is the pairing of your paint color with the object you disguise as. The best players match their paint to a specific prop on the map, then position themselves near identical copies of that object to create confusion for Seekers." },
+                { q: "What is the best combo for the Backrooms map?", a: "The best Backrooms combo is yellow or tan paint on office chairs, trash cans, or filing cabinets. The sickly yellow fluorescent lighting washes out colors, so desaturate your yellow slightly. Sample the wallpaper near the ceiling for the most accurate tone." },
+                { q: "Do combos work in all game modes?", a: "Yes, object combos work in all modes. The core mechanic of matching paint to objects and hiding among identical copies is effective regardless of mode. However, some modes may have different time limits or seeker counts that affect how aggressive you need to be with positioning." },
+              ]}
+            />
+            {/* Visual FAQ cards */}
+            <div className="space-y-4 mt-4">
+              {[
+                { q: "What is an object combo in MECCHA CHAMELEON?", a: "An object combo is the pairing of your paint color with the object you disguise as. The best players match their paint to a specific prop on the map, then position themselves near identical copies of that object to create confusion for Seekers." },
+                { q: "What is the best combo for the Backrooms map?", a: "The best Backrooms combo is yellow or tan paint on office chairs, trash cans, or filing cabinets. The sickly yellow fluorescent lighting washes out colors, so desaturate your yellow slightly. Sample the wallpaper near the ceiling for the most accurate tone." },
+                { q: "Do combos work in all game modes?", a: "Yes, object combos work in all modes. The core mechanic of matching paint to objects and hiding among identical copies is effective regardless of mode. However, some modes may have different time limits or seeker counts that affect how aggressive you need to be with positioning." },
+              ].map((item, i) => (
+                <div key={i} className="bg-surface border border-outline-variant rounded-lg p-4">
+                  <h3 className="font-label-caps text-label-caps text-on-surface mb-2">{item.q}</h3>
+                  <p className="font-body-sm text-body-sm text-on-surface-variant">{item.a}</p>
                 </div>
               ))}
             </div>

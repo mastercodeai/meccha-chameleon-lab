@@ -1,6 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
-import { BreadcrumbSchema, ArticleSchema } from "@/components/Schema";
+import { BreadcrumbSchema, ArticleSchema, FAQSchema } from "@/components/Schema";
 import RelatedPages from "@/components/RelatedPages";
 import { relatedGuides } from "@/data/relatedGuides";
 import Comments from "@/components/Comments";
@@ -26,11 +26,13 @@ export const metadata: Metadata = {
 
 const sections = [
   { id: "overview", title: "Overview" },
+  { id: "search-methodology", title: "Search Methodology" },
   { id: "search-strategies", title: "Search Strategies" },
   { id: "reading-environment", title: "Reading the Environment" },
   { id: "team-coordination", title: "Team Coordination" },
   { id: "time-management", title: "Time Management" },
   { id: "mistakes", title: "Common Mistakes" },
+  { id: "faq", title: "Frequently Asked Questions" },
 ];
 
 export default function SeekerGuidePage() {
@@ -85,6 +87,31 @@ export default function SeekerGuidePage() {
             <p className="font-body-main text-body-main text-on-surface-variant">
               The best Seekers don't just wander around randomly — they follow systematic patterns, read subtle environmental clues, and coordinate with teammates to cover the entire map efficiently. This guide will sharpen your hunting instincts.
             </p>
+          </section>
+
+          <section id="search-methodology" className="mb-stack-lg">
+            <h2 className="font-headline-md text-headline-md text-on-surface mb-4">Search Methodology</h2>
+            <p className="font-body-main text-body-main text-on-surface-variant mb-4">
+              The difference between a good Seeker and a great one is methodology. Don't just look — learn to read the environment like a detective.
+            </p>
+            <div className="bg-surface border border-primary/30 rounded-lg p-6 mb-4">
+              <h3 className="font-label-caps text-label-caps text-primary mb-3 uppercase">Core Principle</h3>
+              <p className="font-body-main text-body-main text-on-surface">
+                <strong>Color Lies, Shape Does Not.</strong> Painted players can match colors perfectly, but their shape and silhouette often give them away. Look for human proportions, unnatural angles, or objects that simply don't belong in the scene.
+              </p>
+            </div>
+            <div className="space-y-4">
+              {[
+                { step: "1. Suspect", desc: "Something looks off? A shadow that shouldn't be there, a texture that's too flat, an object at a weird angle. Mark it mentally and move closer." },
+                { step: "2. Verify", desc: "Walk around the suspicious spot. Check from multiple angles. Real objects look consistent from all sides — painted players often reveal a tell from a different perspective." },
+                { step: "3. Act", desc: "Confirmed? Eliminate them. Not sure? Move on quickly — don't waste 30 seconds staring at a chair. Come back later if needed." },
+              ].map((item, i) => (
+                <div key={i} className="bg-surface border-l-4 border-purple-500 rounded-r-lg p-4">
+                  <h3 className="font-label-caps text-label-caps text-on-surface mb-1">{item.step}</h3>
+                  <p className="font-body-sm text-body-sm text-on-surface-variant">{item.desc}</p>
+                </div>
+              ))}
+            </div>
           </section>
 
           <section id="search-strategies" className="mb-stack-lg">
@@ -193,6 +220,32 @@ export default function SeekerGuidePage() {
                 <div key={i} className="bg-surface border-l-4 border-error rounded-r-lg p-4">
                   <h3 className="font-label-caps text-label-caps text-error mb-1">⚠ {item.mistake}</h3>
                   <p className="font-body-sm text-body-sm text-on-surface-variant">{item.desc}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          <section id="faq" className="mb-stack-lg">
+            <h2 className="font-headline-md text-headline-md text-on-surface mb-4">
+              Frequently Asked Questions
+            </h2>
+            <FAQSchema
+              items={[
+                { q: "What is the best search pattern for Seekers?", a: "Use a systematic sweep method — pick a direction and scan the entire area in a grid pattern. Don't double back or skip sections. Methodical coverage beats random wandering every time." },
+                { q: "How do I spot a well-hidden Hider?", a: "Look for slight color mismatches, shapes that don't match expected geometry, subtle shadows indicating 3D objects, and painted edges that don't line up with the underlying surface. Trust your instincts when something looks off." },
+                { q: "How should Seeker teams coordinate?", a: "Split the map into zones and assign each team member a section before searching begins. Use emotes to communicate findings. Once you finish your zone, sweep through a teammate's cleared area — fresh eyes catch what they missed." },
+              ]}
+            />
+            {/* Visual FAQ cards */}
+            <div className="space-y-4 mt-4">
+              {[
+                { q: "What is the best search pattern for Seekers?", a: "Use a systematic sweep method — pick a direction and scan the entire area in a grid pattern. Don't double back or skip sections. Methodical coverage beats random wandering every time." },
+                { q: "How do I spot a well-hidden Hider?", a: "Look for slight color mismatches, shapes that don't match expected geometry, subtle shadows indicating 3D objects, and painted edges that don't line up with the underlying surface. Trust your instincts when something looks off." },
+                { q: "How should Seeker teams coordinate?", a: "Split the map into zones and assign each team member a section before searching begins. Use emotes to communicate findings. Once you finish your zone, sweep through a teammate's cleared area — fresh eyes catch what they missed." },
+              ].map((item, i) => (
+                <div key={i} className="bg-surface border border-outline-variant rounded-lg p-4">
+                  <h3 className="font-label-caps text-label-caps text-on-surface mb-2">{item.q}</h3>
+                  <p className="font-body-sm text-body-sm text-on-surface-variant">{item.a}</p>
                 </div>
               ))}
             </div>

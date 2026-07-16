@@ -1,6 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
-import { BreadcrumbSchema } from "@/components/Schema";
+import { BreadcrumbSchema, FAQSchema } from "@/components/Schema";
 import RelatedPages from "@/components/RelatedPages";
 import { relatedGuides } from "@/data/relatedGuides";
 import Comments from "@/components/Comments";
@@ -43,6 +43,7 @@ const sections = [
   { id: "c-tier", title: "C-Tier Objects (Avoid)" },
   { id: "size-matters", title: "Size Matters" },
   { id: "environment-matching", title: "Environment Matching" },
+  { id: "faq", title: "Frequently Asked Questions" },
 ];
 
 export default function ObjectTiersPage() {
@@ -461,6 +462,32 @@ export default function ObjectTiersPage() {
               </Link>{" "}
               for more advanced strategies.
             </p>
+          </section>
+
+          <section id="faq" className="mb-stack-lg">
+            <h2 className="font-headline-md text-headline-md text-on-surface mb-4">
+              Frequently Asked Questions
+            </h2>
+            <FAQSchema
+              items={[
+                { q: "What makes an object S-tier in MECCHA CHAMELEON?", a: "S-tier objects are universally common across maps, have a simple shape that's easy to replicate with paint, and are small enough to avoid suspicion. Examples include small trash cans, office chairs, potted plants, and cardboard boxes." },
+                { q: "What are the worst objects to disguise as?", a: "Avoid giant or oversized objects, rare or unique items that should only exist once on the map, and anything with animation like fans or swinging pendulums. These draw immediate attention from Seekers who know the map layout." },
+                { q: "Does object size matter for hiding?", a: "Yes, smaller is almost always better. Large objects draw the eye and are easier for Seekers to inspect up close. Small objects occupy a small visual footprint and Seekers scan over them without a second thought. Stick to small and medium objects for the best survival rate." },
+              ]}
+            />
+            {/* Visual FAQ cards */}
+            <div className="space-y-4 mt-4">
+              {[
+                { q: "What makes an object S-tier in MECCHA CHAMELEON?", a: "S-tier objects are universally common across maps, have a simple shape that's easy to replicate with paint, and are small enough to avoid suspicion. Examples include small trash cans, office chairs, potted plants, and cardboard boxes." },
+                { q: "What are the worst objects to disguise as?", a: "Avoid giant or oversized objects, rare or unique items that should only exist once on the map, and anything with animation like fans or swinging pendulums. These draw immediate attention from Seekers who know the map layout." },
+                { q: "Does object size matter for hiding?", a: "Yes, smaller is almost always better. Large objects draw the eye and are easier for Seekers to inspect up close. Small objects occupy a small visual footprint and Seekers scan over them without a second thought. Stick to small and medium objects for the best survival rate." },
+              ].map((item, i) => (
+                <div key={i} className="bg-surface border border-outline-variant rounded-lg p-4">
+                  <h3 className="font-label-caps text-label-caps text-on-surface mb-2">{item.q}</h3>
+                  <p className="font-body-sm text-body-sm text-on-surface-variant">{item.a}</p>
+                </div>
+              ))}
+            </div>
           </section>
 
           {/* CTAs */}

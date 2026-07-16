@@ -1,6 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
-import { BreadcrumbSchema, ArticleSchema } from "@/components/Schema";
+import { BreadcrumbSchema, ArticleSchema, FAQSchema } from "@/components/Schema";
 import RelatedPages from "@/components/RelatedPages";
 import { relatedGuides } from "@/data/relatedGuides";
 import Comments from "@/components/Comments";
@@ -182,6 +182,32 @@ export default function TipsGuidePage() {
               </section>
             );
           })}
+
+          <section id="faq" className="mb-stack-lg">
+            <h2 className="font-headline-md text-headline-md text-on-surface mb-4">
+              Frequently Asked Questions
+            </h2>
+            <FAQSchema
+              items={[
+                { q: "How many tips are in this guide?", a: "This guide contains 50 tips organized into 5 categories: General Tips (10), Hider Tips (10), Seeker Tips (10), Paint Tips (10), and Map Tips (10). Each category covers essential strategies for that aspect of MECCHA CHAMELEON." },
+                { q: "What is the best tip for beginners?", a: "The most important beginner tip is to find your hiding spot BEFORE painting. Locate the perfect position first, then paint yourself to match. Painting first wastes precious time and forces you to repaint when you move to a different spot." },
+                { q: "What is the best tip for advanced players?", a: "Advanced players should focus on object cluster strategies — find a group of identical objects, paint to match, and disguise as one of them. The Seeker has to check each one individually, and even if they find one, they may assume it was the only chameleon." },
+              ]}
+            />
+            {/* Visual FAQ cards */}
+            <div className="space-y-4 mt-4">
+              {[
+                { q: "How many tips are in this guide?", a: "This guide contains 50 tips organized into 5 categories: General Tips (10), Hider Tips (10), Seeker Tips (10), Paint Tips (10), and Map Tips (10). Each category covers essential strategies for that aspect of MECCHA CHAMELEON." },
+                { q: "What is the best tip for beginners?", a: "The most important beginner tip is to find your hiding spot BEFORE painting. Locate the perfect position first, then paint yourself to match. Painting first wastes precious time and forces you to repaint when you move to a different spot." },
+                { q: "What is the best tip for advanced players?", a: "Advanced players should focus on object cluster strategies — find a group of identical objects, paint to match, and disguise as one of them. The Seeker has to check each one individually, and even if they find one, they may assume it was the only chameleon." },
+              ].map((item, i) => (
+                <div key={i} className="bg-surface border border-outline-variant rounded-lg p-4">
+                  <h3 className="font-label-caps text-label-caps text-on-surface mb-2">{item.q}</h3>
+                  <p className="font-body-sm text-body-sm text-on-surface-variant">{item.a}</p>
+                </div>
+              ))}
+            </div>
+          </section>
 
           {/* CTAs */}
           <div className="flex flex-col sm:flex-row gap-4 mt-stack-lg">
