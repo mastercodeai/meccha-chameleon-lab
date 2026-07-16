@@ -35,6 +35,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/terms`, lastModified: new Date("2026-01-15"), changeFrequency: "yearly" as const, priority: 0.3 },
     { url: `${baseUrl}/price`, lastModified: weekAgo, changeFrequency: "monthly" as const, priority: 0.9 },
     { url: `${baseUrl}/guides/easter-eggs`, lastModified: monthAgo, changeFrequency: "monthly" as const, priority: 0.7 },
+    { url: `${baseUrl}/guides/game-modes`, lastModified: today, changeFrequency: "monthly" as const, priority: 0.7 },
+    { url: `${baseUrl}/guides/mechanics`, lastModified: today, changeFrequency: "monthly" as const, priority: 0.7 },
+    { url: `${baseUrl}/guides/workshop`, lastModified: today, changeFrequency: "monthly" as const, priority: 0.7 },
     { url: `${baseUrl}/update`, lastModified: today, changeFrequency: "weekly" as const, priority: 0.7 },
   ];
 

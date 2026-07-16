@@ -78,4 +78,22 @@ export const relatedGuides: Record<string, RelatedGuide[]> = {
     { title: "Seeker Guide", description: "Deep dive seeker strategies", href: "/guides/seeker", icon: "🔍" },
     { title: "Map Guides", description: "Visual map breakdowns", href: "/maps", icon: "🗺️" },
   ],
+  "game-modes": [
+    { title: "Beginner Guide", description: "Start with Basic mode first", href: "/guides/beginner", icon: "📖" },
+    { title: "Mechanics Guide", description: "Understand the systems behind each mode", href: "/guides/mechanics", icon: "⚙️" },
+    { title: "Tips & Tricks", description: "Mode-specific strategies", href: "/guides/tips", icon: "💡" },
+    { title: "Map Guides", description: "Maps play differently per mode", href: "/maps", icon: "🗺️" },
+  ],
+  mechanics: [
+    { title: "Beginner Guide", description: "Start playing before diving into mechanics", href: "/guides/beginner", icon: "📖" },
+    { title: "Hider Guide", description: "Apply paint mechanics to hiding", href: "/guides/hider", icon: "🎨" },
+    { title: "Game Modes", description: "How mechanics change per mode", href: "/guides/game-modes", icon: "🎮" },
+    { title: "Controls Guide", description: "Optimize your input for each mechanic", href: "/guides/controls", icon: "⌨️" },
+  ],
+  workshop: [
+    { title: "Map Guides", description: "Official maps to compare against", href: "/maps", icon: "🗺️" },
+    { title: "Beginner Guide", description: "Learn the basics on official maps first", href: "/guides/beginner", icon: "📖" },
+    { title: "Game Modes", description: "Best modes for Workshop maps", href: "/guides/game-modes", icon: "🎮" },
+    { title: "System Requirements", description: "Can your PC handle custom maps?", href: "/system-requirements", icon: "💻" },
+  ],
 };

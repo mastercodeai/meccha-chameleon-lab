@@ -87,6 +87,27 @@ const guides = [
     icon: "🎬",
     tag: "Visual",
   },
+  {
+    title: "Game Modes",
+    description: "Basic, Infection, and Double mode explained. Plus lobby settings for every play style.",
+    href: "/guides/game-modes",
+    icon: "🎮",
+    tag: "Essential",
+  },
+  {
+    title: "Game Mechanics",
+    description: "How the paint system, clones, taunts, and scoring actually work under the hood.",
+    href: "/guides/mechanics",
+    icon: "⚙️",
+    tag: "Deep Dive",
+  },
+  {
+    title: "Workshop Maps",
+    description: "600+ custom maps, how to subscribe, best picks, and creating your own.",
+    href: "/guides/workshop",
+    icon: "🔧",
+    tag: "Community",
+  },
 ];
 
 export default function GuidesPage() {
