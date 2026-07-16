@@ -27,14 +27,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title,
     description,
     openGraph: {
-      title: `${title} | MECCHA CHAMELEON Lab`,
+      title: `${title} | MECCHA CHAMELEON Guide`,
       description,
       url: `https://mecchachameleonlab.com/maps/${slug}`,
       type: "article",
     },
     twitter: {
       card: "summary_large_image",
-      title: `${title} | MECCHA CHAMELEON Lab`,
+      title: `${title} | MECCHA CHAMELEON Guide`,
       description,
     },
     alternates: {

@@ -11,14 +11,14 @@ export const metadata: Metadata = {
     canonical: "https://mecchachameleonlab.com/guides/hider",
   },
   openGraph: {
-    title: "MECCHA CHAMELEON Hider Guide — Best Hiding Spots & Strategies (2026) | MECCHA CHAMELEON Lab",
+    title: "MECCHA CHAMELEON Hider Guide — Best Hiding Spots & Strategies (2026)",
     description: "Master the Hider role in MECCHA CHAMELEON. Best hiding spots on all 7 maps, painting techniques, object selection tips, and advanced blending strategies to never get caught.",
     url: "https://mecchachameleonlab.com/guides/hider",
     type: "article",
   },
   twitter: {
     card: "summary_large_image",
-    title: "MECCHA CHAMELEON Hider Guide — Best Hiding Spots & Strategies (2026) | MECCHA CHAMELEON Lab",
+    title: "MECCHA CHAMELEON Hider Guide — Best Hiding Spots & Strategies (2026)",
     description: "Master the Hider role in MECCHA CHAMELEON. Best hiding spots on all 7 maps, painting techniques, object selection tips, and advanced blending strategies to never get caught.",
   },
 };

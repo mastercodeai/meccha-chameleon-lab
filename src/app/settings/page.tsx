@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title:
-      "Best MECCHA CHAMELEON Settings — FPS, Graphics & Controls | MECCHA CHAMELEON Lab",
+      "Best MECCHA CHAMELEON Settings — FPS, Graphics & Controls",
     description:
       "Optimize your MECCHA CHAMELEON settings for maximum performance. Best graphics, FPS, and control settings for competitive play.",
     url: "https://mecchachameleonlab.com/settings",
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title:
-      "Best MECCHA CHAMELEON Settings — FPS, Graphics & Controls | MECCHA CHAMELEON Lab",
+      "Best MECCHA CHAMELEON Settings — FPS, Graphics & Controls",
     description:
       "Optimize your MECCHA CHAMELEON settings for maximum performance. Best graphics, FPS, and control settings for competitive play.",
   },

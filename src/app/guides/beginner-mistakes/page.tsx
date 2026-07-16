@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     canonical: "https://mecchachameleonlab.com/guides/beginner-mistakes",
   },
   openGraph: {
-    title: "10 MECCHA CHAMELEON Mistakes Beginners Make | MECCHA CHAMELEON Lab",
+    title: "10 MECCHA CHAMELEON Mistakes Beginners Make",
     description:
       "Avoid these 10 common MECCHA CHAMELEON beginner mistakes. Learn what NOT to do as a new player and improve fast.",
     url: "https://mecchachameleonlab.com/guides/beginner-mistakes",
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "10 MECCHA CHAMELEON Mistakes Beginners Make | MECCHA CHAMELEON Lab",
+    title: "10 MECCHA CHAMELEON Mistakes Beginners Make",
     description:
       "Avoid these 10 common MECCHA CHAMELEON beginner mistakes. Learn what NOT to do as a new player and improve fast.",
   },

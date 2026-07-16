@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "MECCHA CHAMELEON Paint Guide — Best Colors for Every Map",
+  title: "MECCHA CHAMELEON Paint Guide — Best Colors for Every Map (2026)",
   description:
     "Master MECCHA CHAMELEON's paint system. Best color combinations for every map surface, paint tips, and how to blend in perfectly as a Hider.",
   keywords: [

@@ -12,14 +12,14 @@ export const metadata: Metadata = {
     canonical: "https://mecchachameleonlab.com/guides/combos",
   },
   openGraph: {
-    title: "MECCHA CHAMELEON Combo Guide — Best Paint + Object Combos | MECCHA CHAMELEON Lab",
+    title: "MECCHA CHAMELEON Combo Guide — Best Paint + Object Combos",
     description: "Master every disguise combination in MECCHA CHAMELEON. Best paint + object combos for each map with screenshots and strategies.",
     url: "https://mecchachameleonlab.com/guides/combos",
     type: "article",
   },
   twitter: {
     card: "summary_large_image",
-    title: "MECCHA CHAMELEON Combo Guide — Best Paint + Object Combos | MECCHA CHAMELEON Lab",
+    title: "MECCHA CHAMELEON Combo Guide — Best Paint + Object Combos",
     description: "Master every disguise combination in MECCHA CHAMELEON. Best paint + object combos for each map with screenshots and strategies.",
   },
   keywords: [

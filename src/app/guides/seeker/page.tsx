@@ -11,14 +11,14 @@ export const metadata: Metadata = {
     canonical: "https://mecchachameleonlab.com/guides/seeker",
   },
   openGraph: {
-    title: "Seeker Guide — Hunt Like a Pro | MECCHA CHAMELEON Lab",
+    title: "Seeker Guide — How to Find Every Hider (2026)",
     description: "Sharpen your detection skills and become an unstoppable Seeker. Learn search patterns, environment reading, team coordination, and time management in MECCHA CHAMELEON.",
     url: "https://mecchachameleonlab.com/guides/seeker",
     type: "article",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Seeker Guide — Hunt Like a Pro | MECCHA CHAMELEON Lab",
+    title: "Seeker Guide — How to Find Every Hider (2026)",
     description: "Sharpen your detection skills and become an unstoppable Seeker. Learn search patterns, environment reading, team coordination, and time management in MECCHA CHAMELEON.",
   },
 };

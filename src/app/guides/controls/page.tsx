@@ -11,14 +11,14 @@ export const metadata: Metadata = {
     canonical: "https://mecchachameleonlab.com/guides/controls",
   },
   openGraph: {
-    title: "Controls — Keyboard & Controller Guide | MECCHA CHAMELEON Lab",
+    title: "Controls Guide — Keyboard & Controller Setup (2026)",
     description: "Complete controls guide for MECCHA CHAMELEON. Keyboard, mouse, and controller mappings for movement, painting, and more.",
     url: "https://mecchachameleonlab.com/guides/controls",
     type: "article",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Controls — Keyboard & Controller Guide | MECCHA CHAMELEON Lab",
+    title: "Controls Guide — Keyboard & Controller Setup (2026)",
     description: "Complete controls guide for MECCHA CHAMELEON. Keyboard, mouse, and controller mappings for movement, painting, and more.",
   },
 };

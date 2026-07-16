@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "MECCHA CHAMELEON Object Combos — Best Hiding Combinations",
+  title: "MECCHA CHAMELEON Object Combos — Best Hiding Combinations (2026)",
   description:
     "Master MECCHA CHAMELEON object combos. Learn the best hiding combinations, object placements, and advanced blending techniques for every map.",
   keywords: [

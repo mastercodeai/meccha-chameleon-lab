@@ -31,11 +31,11 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL("https://mecchachameleonlab.com"),
   title: {
-    default: "MECCHA CHAMELEON Lab — Best Hiding Spots, Maps & Guides",
-    template: "%s | MECCHA CHAMELEON Lab",
+    default: "MECCHA CHAMELEON Guide & Help Hub — Maps, Tips & Strategies (2026)",
+    template: "%s | MECCHA CHAMELEON Guide",
   },
   description:
-    "Free MECCHA CHAMELEON guides: best hiding spots for every map with screenshots, paint tips, hider & seeker strategies. 7 official maps + 600+ Workshop maps covered. Updated for 2026.",
+    "The complete MECCHA CHAMELEON player guide: hiding spots, seeker tactics, paint techniques, map breakdowns, combo guides, and beginner tips. 7 official maps + 600+ Workshop maps. Updated for 2026.",
   keywords: [
     "meccha chameleon",
     "meccha chameleon guide",
@@ -169,15 +169,15 @@ export const metadata: Metadata = {
     canonical: "https://mecchachameleonlab.com",
   },
   openGraph: {
-    title: "MECCHA CHAMELEON Lab — Best Hiding Spots, Maps & Guides",
+    title: "MECCHA CHAMELEON Guide & Help Hub — Maps, Tips & Strategies (2026)",
     description:
-      "Free MECCHA CHAMELEON guides: best hiding spots for every map with screenshots, Workshop map database, beginner guide, and tips.",
+      "The complete MECCHA CHAMELEON player guide: hiding spots, seeker tactics, paint techniques, map breakdowns, and beginner tips. 7 official maps + 600+ Workshop maps.",
     images: [
       {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "MECCHA CHAMELEON Lab",
+        alt: "MECCHA CHAMELEON Guide & Help Hub",
       },
     ],
     type: "website",
@@ -186,9 +186,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "MECCHA CHAMELEON Lab — Best Hiding Spots, Maps & Guides",
+    title: "MECCHA CHAMELEON Guide & Help Hub — Maps, Tips & Strategies (2026)",
     description:
-      "Free MECCHA CHAMELEON guides: best hiding spots for every map with screenshots, Workshop map database, beginner guide, and tips.",
+      "The complete MECCHA CHAMELEON player guide: hiding spots, seeker tactics, paint techniques, map breakdowns, and beginner tips. 7 official maps + 600+ Workshop maps.",
     images: ["/og-image.jpg"],
   },
   icons: {

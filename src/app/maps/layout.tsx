@@ -58,7 +58,7 @@ export const metadata: Metadata = {
     canonical: "https://mecchachameleonlab.com/maps",
   },
   openGraph: {
-    title: "All Maps | MECCHA CHAMELEON Lab",
+    title: "All Maps | MECCHA CHAMELEON Guide",
     description: "Complete map guide for MECCHA CHAMELEON. Find the best hiding spots for every official map.",
     url: "https://mecchachameleonlab.com/maps",
     type: "website",

@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title:
-      "MECCHA CHAMELEON Object Tier List — Best Objects to Disguise As | MECCHA CHAMELEON Lab",
+      "MECCHA CHAMELEON Object Tier List — Best Objects to Disguise As",
     description:
       "Complete object tier list for MECCHA CHAMELEON: ranked from S-tier to C-tier. Learn which objects are the best to disguise as for maximum survival.",
     url: "https://mecchachameleonlab.com/guides/object-tiers",
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title:
-      "MECCHA CHAMELEON Object Tier List — Best Objects to Disguise As | MECCHA CHAMELEON Lab",
+      "MECCHA CHAMELEON Object Tier List — Best Objects to Disguise As",
     description:
       "Complete object tier list for MECCHA CHAMELEON: ranked from S-tier to C-tier. Learn which objects are the best to disguise as for maximum survival.",
   },

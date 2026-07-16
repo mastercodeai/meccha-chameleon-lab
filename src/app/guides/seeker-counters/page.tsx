@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title:
-      "MECCHA CHAMELEON Seeker Counter Guide — How to Find Every Hider | MECCHA CHAMELEON Lab",
+      "MECCHA CHAMELEON Seeker Counter Guide — How to Find Every Hider",
     description:
       "Master the seeker role in MECCHA CHAMELEON. Learn how to find every hider with proven search patterns and counter strategies.",
     url: "https://mecchachameleonlab.com/guides/seeker-counters",
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title:
-      "MECCHA CHAMELEON Seeker Counter Guide — How to Find Every Hider | MECCHA CHAMELEON Lab",
+      "MECCHA CHAMELEON Seeker Counter Guide — How to Find Every Hider",
     description:
       "Master the seeker role in MECCHA CHAMELEON. Learn how to find every hider with proven search patterns and counter strategies.",
   },

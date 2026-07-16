@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     canonical: "https://mecchachameleonlab.com/guides/easter-eggs",
   },
   openGraph: {
-    title: "MECCHA CHAMELEON Community Secrets & Rumors | MECCHA CHAMELEON Lab",
+    title: "MECCHA CHAMELEON Community Secrets & Rumors",
     description:
       "Community-reported secrets, rumored easter eggs, and hidden details in MECCHA CHAMELEON. Unverified findings from the community.",
     url: "https://mecchachameleonlab.com/guides/easter-eggs",
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "MECCHA CHAMELEON Community Secrets & Rumors | MECCHA CHAMELEON Lab",
+    title: "MECCHA CHAMELEON Community Secrets & Rumors",
     description:
       "Community-reported secrets, rumored easter eggs, and hidden details in MECCHA CHAMELEON. Unverified findings from the community.",
   },

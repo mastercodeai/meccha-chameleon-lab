@@ -371,10 +371,10 @@ export default function HomePage() {
         <div className="w-full md:w-1/2 flex flex-col gap-stack-lg z-10">
           <h1 className="font-display-lg text-3xl md:text-display-lg text-on-surface leading-tight">
             MECCHA CHAMELEON:{" "}
-            <span className="text-primary">Best Hiding Spots & Maps Guide (2026)</span>
+            <span className="text-primary">Complete Guide & Help Hub (2026)</span>
           </h1>
           <p className="font-body-main text-body-main text-on-surface-variant max-w-lg">
-            <Link href="/maps/backrooms" className="text-primary hover:underline">MECCHA CHAMELEON</Link> sold 15 million copies. Top YouTube videos have 93M+ views. But search for hiding spot guides and all you get is irrelevant results. Our <Link href="/tier-list" className="text-primary hover:underline">map tier list</Link> and <Link href="/maps" className="text-primary hover:underline">per-map spot guides</Link> fix that.
+            <Link href="/maps/backrooms" className="text-primary hover:underline">MECCHA CHAMELEON</Link> sold 15 million copies. Top YouTube videos have 93M+ views. This is the complete player guide — <Link href="/guides/hider" className="text-primary hover:underline">hiding spots</Link>, <Link href="/guides/seeker" className="text-primary hover:underline">seeker tactics</Link>, <Link href="/guides/paint" className="text-primary hover:underline">paint techniques</Link>, <Link href="/maps" className="text-primary hover:underline">map breakdowns</Link>, and everything you need to win.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <Link

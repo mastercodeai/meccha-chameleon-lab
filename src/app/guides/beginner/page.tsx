@@ -11,14 +11,14 @@ export const metadata: Metadata = {
     canonical: "https://mecchachameleonlab.com/guides/beginner",
   },
   openGraph: {
-    title: "Beginner Guide — How to Play | MECCHA CHAMELEON Lab",
+    title: "Beginner Guide — How to Play & Win (2026)",
     description: "Everything you need to know before your first round of MECCHA CHAMELEON. Rules, controls, painting tips, and common mistakes.",
     url: "https://mecchachameleonlab.com/guides/beginner",
     type: "article",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Beginner Guide — How to Play | MECCHA CHAMELEON Lab",
+    title: "Beginner Guide — How to Play & Win (2026)",
     description: "Everything you need to know before your first round of MECCHA CHAMELEON. Rules, controls, painting tips, and common mistakes.",
   },
 };

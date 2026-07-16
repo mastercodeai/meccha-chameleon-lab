@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     canonical: "https://mecchachameleonlab.com/price",
   },
   openGraph: {
-    title: "MECCHA CHAMELEON Price — Is It Worth $5.99? | MECCHA CHAMELEON Lab",
+    title: "MECCHA CHAMELEON Price — Is It Worth $5.99?",
     description:
       "Is MECCHA CHAMELEON worth buying? Price breakdown, what you get, and honest verdict for the $5.99 Steam game.",
     url: "https://mecchachameleonlab.com/price",
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "MECCHA CHAMELEON Price — Is It Worth $5.99? | MECCHA CHAMELEON Lab",
+    title: "MECCHA CHAMELEON Price — Is It Worth $5.99?",
     description:
       "Is MECCHA CHAMELEON worth buying? Price breakdown, what you get, and honest verdict for the $5.99 Steam game.",
   },

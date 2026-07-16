@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "MECCHA CHAMELEON Beginner Mistakes — 10 Errors New Players Make",
+  title: "MECCHA CHAMELEON Common Mistakes — 10 Errors New Players Make (2026)",
   description:
     "Avoid these common MECCHA CHAMELEON beginner mistakes. Learn what not to do as a new player and improve your win rate instantly.",
   keywords: [
