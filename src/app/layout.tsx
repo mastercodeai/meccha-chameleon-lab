@@ -31,7 +31,7 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL("https://mecchachameleonlab.com"),
   title: {
-    default: "Meccha Chameleon Guide — Tips, Maps & Strategies",
+    default: "Meccha Chameleon — Tips & Maps",
     template: "%s | Meccha Chameleon Guide",
   },
   description:
@@ -169,7 +169,7 @@ export const metadata: Metadata = {
     canonical: "https://mecchachameleonlab.com",
   },
   openGraph: {
-    title: "Meccha Chameleon Guide — Tips, Maps & Strategies",
+    title: "Meccha Chameleon — Tips & Maps",
     description:
       "Complete Meccha Chameleon guide: hiding spots, seeker tactics, paint techniques, and map breakdowns. 7 official maps + 600+ Workshop maps.",
     images: [
@@ -186,7 +186,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Meccha Chameleon Guide — Tips, Maps & Strategies",
+    title: "Meccha Chameleon — Tips & Maps",
     description:
       "Complete Meccha Chameleon guide: hiding spots, seeker tactics, paint techniques, and map breakdowns. 7 official maps + 600+ Workshop maps.",
     images: ["/og-image.jpg"],
