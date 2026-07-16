@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import { BreadcrumbSchema, ArticleSchema } from "@/components/Schema";
+import { FAQSchema } from "@/components/Schema";
 import RelatedPages from "@/components/RelatedPages";
 import { relatedGuides } from "@/data/relatedGuides";
 import Comments from "@/components/Comments";
@@ -26,12 +27,17 @@ export const metadata: Metadata = {
 
 const sections = [
   { id: "what-is", title: "What is MECCHA CHAMELEON?" },
+  { id: "how-round-works", title: "How a Round Works" },
+  { id: "getting-started", title: "Three Ways to Start Playing" },
   { id: "rules", title: "Rules" },
   { id: "painting", title: "How Painting Works" },
+  { id: "beginner-hider-steps", title: "Your First 5 Minutes as Hider" },
+  { id: "first-match-settings", title: "Recommended First Match Settings" },
   { id: "hider-tips", title: "Hider Tips" },
   { id: "seeker-tips", title: "Seeker Tips" },
   { id: "controls", title: "Controls" },
   { id: "mistakes", title: "Common Mistakes" },
+  { id: "faq", title: "Frequently Asked Questions" },
 ];
 
 export default function BeginnerGuidePage() {
@@ -87,6 +93,62 @@ export default function BeginnerGuidePage() {
               The game features multiple maps, each with unique environments and hiding opportunities. Players split into two teams: Hiders and Seekers.
             </p>
           </section>
+          <section id="how-round-works" className="mb-stack-lg">
+            <h2 className="font-headline-md text-headline-md text-on-surface mb-4">How a Round Works</h2>
+            <p className="font-body-main text-body-main text-on-surface-variant mb-4">
+              Every match of MECCHA CHAMELEON follows the same structure. Understanding the flow from lobby to scoreboard will help you know what to expect and when to act. Here is the full round cycle broken down step by step.
+            </p>
+            <ol className="space-y-4 font-body-main text-body-main text-on-surface-variant list-decimal list-inside">
+              <li>
+                <strong className="text-on-surface">Lobby & Settings</strong> — The host picks a map, round time, team sizes, and optional modifiers. You can tweak everything from paint capacity to taunt frequency before anyone spawns.
+              </li>
+              <li>
+                <strong className="text-on-surface">Role Assignment</strong> — Once the lobby is ready, the game splits everyone into Hiders and Seekers. Roles rotate each round so you get to experience both sides.
+              </li>
+              <li>
+                <strong className="text-on-surface">Hiding Phase</strong> — Hiders spawn first and get a head start. Use the 3D eyedropper to sample nearby surfaces, then spray-paint your body to blend in. Pick a strong spot and finish your camouflage before time runs out.
+              </li>
+              <li>
+                <strong className="text-on-surface">Hunting Phase</strong> — Seekers are released and start searching the map. They have a limited time to find every Hider. Shoot anything that looks suspicious — a wrong guess costs time.
+              </li>
+              <li>
+                <strong className="text-on-surface">Taunt Events</strong> — Periodically the game forces Hiders to play an animation or make a sound. These taunt events give Seekers a chance to narrow down locations, so stay near cover.
+              </li>
+              <li>
+                <strong className="text-on-surface">Round End & Scoring</strong> — When the timer runs out or every Hider is found, the round ends. Points are awarded for surviving, for finding Hiders, and for style. The scoreboard pops up before the next round.
+              </li>
+              <li>
+                <strong className="text-on-surface">Next Round</strong> — Roles rotate and a new round begins. Matches typically run several rounds, and the player with the most points at the end wins the match.
+              </li>
+            </ol>
+          </section>
+
+          <section id="getting-started" className="mb-stack-lg">
+            <h2 className="font-headline-md text-headline-md text-on-surface mb-4">Three Ways to Start Playing</h2>
+            <p className="font-body-main text-body-main text-on-surface-variant mb-4">
+              There is no single right way to jump in. Pick the approach that matches your comfort level and available friends.
+            </p>
+            <div className="space-y-4">
+              <div className="bg-surface border border-outline-variant rounded-lg p-5">
+                <h3 className="font-label-caps text-label-caps text-primary mb-2">Solo Practice</h3>
+                <p className="font-body-sm text-body-sm text-on-surface-variant">
+                  Jump into a public lobby and learn by watching. Nobody expects a newcomer to carry the team, so there is zero pressure. Observe how experienced players paint, where they hide, and how Seekers move through the map. You will pick up the basics faster than you think just by spectating a few rounds.
+                </p>
+              </div>
+              <div className="bg-surface border border-outline-variant rounded-lg p-5">
+                <h3 className="font-label-caps text-label-caps text-secondary mb-2">Friend Lobby</h3>
+                <p className="font-body-sm text-body-sm text-on-surface-variant">
+                  Create a private room and invite your friends. This is the best way to learn because everyone is on the same page. You can take your time painting, experiment with hiding spots, and give each other feedback without the pressure of experienced players hunting you down.
+                </p>
+              </div>
+              <div className="bg-surface border border-outline-variant rounded-lg p-5">
+                <h3 className="font-label-caps text-label-caps text-tertiary mb-2">Public Match</h3>
+                <p className="font-body-sm text-body-sm text-on-surface-variant">
+                  Jump straight into a full public match. It is chaotic and you will die a lot, but you learn fast. Experienced players often share tips in chat, and seeing creative hiding spots in action is the fastest way to improve your own game.
+                </p>
+              </div>
+            </div>
+          </section>
 
           <section id="rules" className="mb-stack-lg">
             <h2 className="font-headline-md text-headline-md text-on-surface mb-4">Rules</h2>
@@ -127,6 +189,77 @@ export default function BeginnerGuidePage() {
             </div>
           </section>
 
+          <section id="beginner-hider-steps" className="mb-stack-lg">
+            <h2 className="font-headline-md text-headline-md text-on-surface mb-4">Your First 5 Minutes as Hider</h2>
+            <p className="font-body-main text-body-main text-on-surface-variant mb-4">
+              Your first few rounds as Hider can feel overwhelming. Follow these five steps in order and you will survive longer than most beginners.
+            </p>
+            <div className="space-y-4">
+              <div className="bg-surface border-l-4 border-primary rounded-r-lg p-4">
+                <h3 className="font-label-caps text-label-caps text-on-surface mb-1">1. Find Your Spot First</h3>
+                <p className="font-body-sm text-body-sm text-on-surface-variant">
+                  Before you touch the paint tool, walk around the map and find a location that offers natural cover. Look for corners, behind furniture, or areas where a shaped object would not look out of place. Choosing your spot first saves you from repainting later.
+                </p>
+              </div>
+              <div className="bg-surface border-l-4 border-primary rounded-r-lg p-4">
+                <h3 className="font-label-caps text-label-caps text-on-surface mb-1">2. Sample the Surface</h3>
+                <p className="font-body-sm text-body-sm text-on-surface-variant">
+                  Aim at the wall or floor right behind where you plan to stand and right-click to activate the 3D eyedropper. This copies the exact color and material properties from the surface so your paint matches perfectly.
+                </p>
+              </div>
+              <div className="bg-surface border-l-4 border-primary rounded-r-lg p-4">
+                <h3 className="font-label-caps text-label-caps text-on-surface mb-1">3. Paint Your Body</h3>
+                <p className="font-body-sm text-body-sm text-on-surface-variant">
+                  Left-click to spray paint across your entire body. Work from head to toe, making sure there are no white patches left. Use multiple angles to cover hard-to-reach spots like your back and the soles of your feet.
+                </p>
+              </div>
+              <div className="bg-surface border-l-4 border-primary rounded-r-lg p-4">
+                <h3 className="font-label-caps text-label-caps text-on-surface mb-1">4. Break Your Silhouette</h3>
+                <p className="font-body-sm text-body-sm text-on-surface-variant">
+                  Stand at an angle rather than facing the seeker's likely approach path head-on. Crouch if the environment allows it. A human-shaped outline is the easiest thing for seekers to spot, so anything you can do to disrupt that silhouette helps.
+                </p>
+              </div>
+              <div className="bg-surface border-l-4 border-primary rounded-r-lg p-4">
+                <h3 className="font-label-caps text-label-caps text-on-surface mb-1">5. Stay Still</h3>
+                <p className="font-body-sm text-body-sm text-on-surface-variant">
+                  Once you are in position, stop moving. Movement is the number one way to get caught. Even a tiny adjustment can draw a seeker's eye. Trust your paint job and let the timer run down.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <section id="first-match-settings" className="mb-stack-lg">
+            <h2 className="font-headline-md text-headline-md text-on-surface mb-4">Recommended First Match Settings</h2>
+            <p className="font-body-main text-body-main text-on-surface-variant mb-4">
+              When you host your first game, use these settings to keep things simple while you learn the ropes. You can always crank up the difficulty later.
+            </p>
+            <div className="bg-surface border border-outline-variant rounded-lg overflow-hidden">
+              <table className="w-full">
+                <thead>
+                  <tr className="border-b border-outline-variant">
+                    <th className="text-left p-4 font-label-caps text-label-caps text-on-surface-variant uppercase">Setting</th>
+                    <th className="text-left p-4 font-label-caps text-label-caps text-on-surface-variant uppercase">Recommended</th>
+                    <th className="text-left p-4 font-label-caps text-label-caps text-on-surface-variant uppercase">Why</th>
+                  </tr>
+                </thead>
+                <tbody className="font-body-sm text-body-sm text-on-surface">
+                  {[
+                    ["Map", "Backrooms", "Simplest layout with consistent lighting — easy to learn hiding spots"],
+                    ["Mode", "Basic", "Standard hide and seek rules, no extra modifiers to confuse new players"],
+                    ["Players", "3–5", "Small group keeps things manageable without too much seeker pressure"],
+                    ["Round Time", "3 minutes", "Enough time to find a spot and paint without rushing"],
+                  ].map(([setting, value, reason]) => (
+                    <tr key={setting} className="border-b border-outline-variant/50">
+                      <td className="p-4">{setting}</td>
+                      <td className="p-4 text-primary font-label-caps">{value}</td>
+                      <td className="p-4 text-on-surface-variant">{reason}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </section>
+
           <section id="hider-tips" className="mb-stack-lg">
             <h2 className="font-headline-md text-headline-md text-on-surface mb-4">Hider Tips</h2>
             <div className="space-y-4">
@@ -151,6 +284,8 @@ export default function BeginnerGuidePage() {
                 { tip: "Look for color mismatches", desc: "Even the best painters can't perfectly match every surface. Look for slight color differences." },
                 { tip: "Check common spots", desc: "Experienced players tend to use the same hiding spots. Learn the maps." },
                 { tip: "Use the emote system", desc: "Emotes can help you communicate with teammates and coordinate searches." },
+               { tip: "Listen for audio cues", desc: "Footsteps and paint spray sounds can reveal a hider's location even when they are perfectly camouflaged. Turn up your volume and listen carefully." },
+               { tip: "Check suspicious shapes", desc: "If something looks slightly off — a bump on a wall, an unusual shadow, or a surface that seems to shimmer — shoot it. Trust your instincts." },
               ].map((item, i) => (
                 <div key={i} className="bg-surface border-l-4 border-secondary rounded-r-lg p-4">
                   <h3 className="font-label-caps text-label-caps text-on-surface mb-1">{item.tip}</h3>
@@ -202,6 +337,56 @@ export default function BeginnerGuidePage() {
                   <h3 className="font-label-caps text-label-caps text-error mb-1">⚠ {item.mistake}</h3>
                   <p className="font-body-sm text-body-sm text-on-surface-variant">{item.desc}</p>
                 </div>
+              ))}
+            </div>
+          </section>
+
+          <section id="faq" className="mb-stack-lg">
+            <h2 className="font-headline-md text-headline-md text-on-surface mb-4">Frequently Asked Questions</h2>
+            <FAQSchema
+              items={[
+                {
+                  q: "Is MECCHA CHAMELEON free?",
+                  a: "No, MECCHA CHAMELEON costs $5.99 on Steam. There are no microtransactions or DLC — all maps and Workshop content are included in the base price.",
+                },
+                {
+                  q: "How many players can play in one match?",
+                  a: "Matches support 2 to 10 players. The recommended sweet spot is 4-6 players for the best balance between hiding spots and seeker pressure.",
+                },
+                {
+                  q: "How long does one match last?",
+                  a: "Each round lasts 2-4 minutes depending on lobby settings. A full match typically runs 15-25 minutes with multiple rounds.",
+                },
+                {
+                  q: "What's the best map for beginners?",
+                  a: "Backrooms is the best beginner map. It has a simple layout, consistent lighting, and straightforward hiding spots that are easy to learn.",
+                },
+                {
+                  q: "Can I play on Steam Deck?",
+                  a: "Yes, MECCHA CHAMELEON runs on Steam Deck. Performance is solid but painting with the trackpad takes some practice. A mouse is recommended for precision painting.",
+                },
+                {
+                  q: "Do I need a microphone to play?",
+                  a: "Voice chat is not required but makes the game much more fun. The game has an emote system for basic communication if you don't have a mic.",
+                },
+              ]}
+            />
+            <div className="space-y-4">
+              {[
+                { q: "Is MECCHA CHAMELEON free?", a: "No, it costs $5.99 on Steam. There are no microtransactions or DLC — all maps and Workshop content are included." },
+                { q: "How many players can play?", a: "Matches support 2 to 10 players. The sweet spot is 4-6 for the best balance between hiding spots and seeker pressure." },
+                { q: "How long does one match last?", a: "Each round lasts 2-4 minutes. A full match with multiple rounds typically runs 15-25 minutes." },
+                { q: "What's the best map for beginners?", a: "Backrooms. It has a simple layout, consistent lighting, and straightforward hiding spots." },
+                { q: "Can I play on Steam Deck?", a: "Yes. Performance is solid but painting with the trackpad takes practice. A mouse is recommended for precision painting." },
+                { q: "Do I need a microphone?", a: "Not required, but voice chat makes the game more fun. The emote system works for basic communication." },
+              ].map((item, i) => (
+                <details key={i} className="bg-surface border border-outline-variant rounded-lg group">
+                  <summary className="flex items-center justify-between cursor-pointer p-4 font-label-caps text-label-caps text-on-surface hover:text-primary transition-colors">
+                    {item.q}
+                    <span className="text-on-surface-variant group-open:rotate-45 transition-transform">+</span>
+                  </summary>
+                  <p className="px-4 pb-4 font-body-sm text-body-sm text-on-surface-variant">{item.a}</p>
+                </details>
               ))}
             </div>
           </section>
